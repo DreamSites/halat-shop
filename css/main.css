@@ -8,8 +8,17 @@ div {
   box-sizing: border-box;
 }
 
+header {
+  position: fixed;
+  right: 0;
+  height: 100%;
+  width: 10%;
+  -webkit-box-shadow: -5px 0 5px rgba(230, 236, 248, 0.5);
+  box-shadow: -5px 0 5px rgba(230, 236, 248, 0.5);
+}
+
 .material {
-  width: 50%;
+  width: 45%;
   font-family: "Source Sans Pro", sans-serif;
   font-size: 18px;
 }
