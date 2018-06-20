@@ -37,6 +37,22 @@ Hello world!
       </div>
     </div>
   </section>
+  <section>
+    <form action = "" method = "post">
+      <script type="text/javascript">
+      function changeText2(){
+       var userInput = document.getElementById('userInput').value;
+       document.getElementById('boldStuff2').innerHTML = userInput;
+        userInput = document.getElementById('userInput').value="";
+      }
+      </script>
+      <input type='text' id='userInput' value='' />
+      <input type='button' onclick='changeText2()'    value='Применить'/>
+
+    </br></br>
+    <b id='boldStuff2'> </b> </p>
+    </form>
+  </section>
   <section class="constructor" style="margin-top: 1000px;">
     <div class="material">
       <h2>Материал</h2>
