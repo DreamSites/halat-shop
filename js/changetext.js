@@ -1,5 +1,6 @@
-function changeText2(){
- var userInput = document.getElementById('userInput').value;
- document.getElementById('boldStuff2').innerHTML = userInput;
-  userInput = document.getElementById('userInput').value="";
+function changetext() {
+  $(document).ready(function() {
+    var userInput = document.getElementById("signInput").value;
+    document.getElementById("sign").innerHTML = userInput;
+  });
 }
