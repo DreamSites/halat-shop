@@ -15,11 +15,12 @@
   <script type="text/javascript" src="js/wow.min.js"></script>
 
   <script type="text/javascript" src="js/materialPicker.js"></script>
+  <script type="text/javascript" src="js/changetext.js"></script>
 </head>
 
 <body>
   <header>
-Hello world!
+    Hello world!
   </header>
   <section class="constructor">
     <div class="material">
@@ -38,19 +39,12 @@ Hello world!
     </div>
   </section>
   <section>
-    <form action = "" method = "post">
-      <script type="text/javascript">
-      function changeText2(){
-       var userInput = document.getElementById('userInput').value;
-       document.getElementById('boldStuff2').innerHTML = userInput;
-        userInput = document.getElementById('userInput').value="";
-      }
-      </script>
+    <form action="" method="post">
       <input type='text' id='userInput' value='' />
-      <input type='button' onclick='changeText2()'    value='Применить'/>
-
-    </br></br>
-    <b id='boldStuff2'> </b> </p>
+      <input type='button' onclick='changeText2()' value='Применить' />
+      </br>
+      </br>
+      <b id='boldStuff2'> </b> </p>
     </form>
   </section>
   <section class="constructor" style="margin-top: 1000px;">
