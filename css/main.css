@@ -1,3 +1,27 @@
+.buttonsColor{
+  margin-left:auto;
+  margin-right:auto;
+}
+.b1 {
+background:red;
+
+}
+.b2 {
+background:orange;
+
+}
+.b3 {
+background:blue;
+
+}
+.b4{
+background:purple;
+
+}
+.b5 {
+background:yellow;
+
+}
 body {
   margin: 0;
   padding: 0;
