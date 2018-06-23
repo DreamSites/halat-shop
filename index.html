@@ -16,13 +16,19 @@
 
   <script type="text/javascript" src="js/materialPicker.js"></script>
   <script type="text/javascript" src="js/changetext.js"></script>
+  <script type="text/javascript" src="js/navigation.js"></script>
+
 </head>
 
 <body>
   <header>
-    Hello world!
+    <span>Навигация</span>
+    <div class="navigationItem" id="nav-1-item">Раздел 1</div>
+    <div class="navigationItem" id="nav-2-item">Раздел 2</div>
+    <div class="navigationItem" id="nav-3-item">Конструктор</div>
+    <div class="navigationItem" id="nav-4-item">Раздел 4</div>
   </header>
-  <section class="constructor">
+  <section class="constructor" id="nav-1">
     <div class="material">
       <h2>Материал</h2>
       <div class="materialPicker">
@@ -38,11 +44,11 @@
       </div>
     </div>
   </section>
-  <section>
+  <section style="margin-top: 1000px;">
     <input type="text" class="signInput" onkeyup="changetext()" id="signInput">
     <b class="sign" id="sign"></b>
   </section>
-  <section class="constructor" style="margin-top: 1000px;">
+  <section class="constructor" id="nav-2">
     <div class="material">
       <h2>Материал</h2>
       <div class="materialPicker">

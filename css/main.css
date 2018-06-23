@@ -12,11 +12,19 @@ header {
   position: fixed;
   right: 0;
   height: 100%;
-  width: 10%;
+  width: 250px;
   -webkit-box-shadow: -5px 0 5px rgba(230, 236, 248, 0.5);
   box-shadow: -5px 0 5px rgba(230, 236, 248, 0.5);
+  font-family: "Source Sans Pro", sans-serif;
+  font-size: 18px;
+  text-align: center;
 }
 
+header span {
+  font-family: "Source Sans Pro", sans-serif;
+  font-size: 36px;
+  font-weight: bold;
+}
 .material {
   width: 45%;
   font-family: "Source Sans Pro", sans-serif;
@@ -87,4 +95,11 @@ h2 {
   color: #FFF;
   font-weight: bold;
   background-color: #7166DF;
+}
+.navigationItem {
+  margin-top: 20px;
+}
+.N-Active {
+  color: #FFF;
+  font-weight: bold;
 }
