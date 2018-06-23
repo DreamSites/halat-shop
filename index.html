@@ -17,7 +17,7 @@
   <script type="text/javascript" src="js/materialPicker.js"></script>
   <script type="text/javascript" src="js/changetext.js"></script>
   <script type="text/javascript" src="js/navigation.js"></script>
-
+  <script type="text/javascript" src="js/ColorSwitch.js"></script>
 </head>
 
 <body>
@@ -64,9 +64,16 @@
       </div>
     </div>
   </section>
-  <footer>
-
-  </footer>
-</body>
+  <section>
+    <input type="text" class="signInput" onkeyup="changetext()" id="signInput">
+    <b class="sign" id="sign"></b>
+  </section>
+  <section class="buttonsColor">
+    <input onclick="b1()" class="b1" type="button" value="" name="red">
+    <input onclick="b2()" class="b2" type="button" value="" name="orange">
+    <input onclick="b3()" class="b3" type="button" value="" name="blue">
+    <input onclick="b4()" class="b4" type="button" value="" name="purple">
+    <input onclick="b5()" class="b5" type="button" value="" name="yellow">
+  </section>
 
 </html>
