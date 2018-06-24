@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <title>Халаты на заказ</title>
+
+  <link href="https://fonts.googleapis.com/css?family=Source+Sans+Pro" rel="stylesheet">
+
+  <link rel="stylesheet" href="css/main.css">
+
+  <script type="text/javascript" src="js/jquery-3.3.1.min.js"></script>
+  <script type="text/javascript" src="js/wow.min.js"></script>
+
+  <script type="text/javascript" src="js/materialPicker.js"></script>
+  <script type="text/javascript" src="js/changetext.js"></script>
+  <script type="text/javascript" src="js/navigation.js"></script>
+  <script type="text/javascript" src="js/ColorSwitch.js"></script>
+</head>
+
+<body>
+  <header>
+    <span>Навигация</span>
+    <div class="navigationItem" id="nav-1-item">Раздел 1</div>
+    <div class="navigationItem" id="nav-2-item">Раздел 2</div>
+    <div class="navigationItem" id="nav-3-item">Конструктор</div>
+    <div class="navigationItem" id="nav-4-item">Раздел 4</div>
+  </header>
+  <section class="constructor" id="nav-1">
+    <div class="material">
+      <h2>Материал</h2>
+      <div class="materialPicker">
+        <div class="MP-L" id="MP-1">
+          Махровый
+        </div>
+        <div class="MP" id="MP-2">
+          Бамбуковый
+        </div>
+        <div class="MP-R" id="MP-3">
+          Шёлковый
+        </div>
+      </div>
+    </div>
+  </section>
+  <section>
+    <h2>Надпись</h2>
+    <input type="text" class="signInput" onkeyup="changetext()" id="signInput">
+    <b class="sign" id="sign"></b>
+  </section>
+  <section class="buttonsColor">
+    <h2>Цвет надписи</h2>
+    <input onclick="b1()" class="b1" type="button" value="" name="red">
+    <input onclick="b2()" class="b2" type="button" value="" name="orange">
+    <input onclick="b3()" class="b3" type="button" value="" name="blue">
+    <input onclick="b4()" class="b4" type="button" value="" name="purple">
+    <input onclick="b5()" class="b5" type="button" value="" name="yellow">
+  </section>
+
+</html>
