@@ -19,6 +19,7 @@
   <script type="text/javascript" src="js/navigation.js"></script>
   <script type="text/javascript" src="js/ColorSwitch.js"></script>
   <script type="text/javascript" src="js/loadimg.js"></script>
+  <script type="text/javascript" src="js/fontselection.js"></script>
 </head>
 
 <body>
@@ -51,8 +52,20 @@
           <input type="text" class="signInput" onkeyup="changetext()" id="signInput">
         </div>
         <section>
-          <input  onclick="loadimg()" class="b6" type="button" value="" name="Img">
+          <input  onclick="loadimg()" class="b6" type="button" value="Ветки" name="Img">
+          <input  onclick="loadimg1()" class="b7" type="button" value="Корона№1" name="Img2">
+          <input  onclick="loadimg2()" class="b8" type="button" value="Корона№2" name="Img3">
+          <input  onclick="loadimg3()" class="b9" type="button" value="Завиток" name="Img4">
         </section>
+        <select>
+  <option></option>
+  <option id="Font1" onclik="fontchange()">Academia</option>
+  <option id="Font2" onclik="">Campus</option>
+  <option id="Font3" onclik="">CyrillicOld</option>
+  <option id="Font4" onclik="">Lobster-Regular</option>
+  <option id="Font5" onclik="">MonAmour (EDIT)</option>
+  <option id="Font6" onclik="">Sladkoeshka</option>
+</select>
         <div class="inputColor">
           <h2>Цвет надписи</h2>
           <input onclick="b1()" class="b1" type="button" value="" name="red">
@@ -65,10 +78,13 @@
       <div class="preview">
         <b class="sign" id="sign"></b>
         <img id="img">
+        <img id="img1">
+        <img id="img2">
+        <img id="img3">
       </div>
     </div>
   </section>
-  
+
 
 
 </html>
