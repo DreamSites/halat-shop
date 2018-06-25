@@ -28,34 +28,41 @@
     <div class="navigationItem" id="nav-3-item">Конструктор</div>
     <div class="navigationItem" id="nav-4-item">Раздел 4</div>
   </header>
-  <section class="constructor" id="nav-1">
-    <div class="material">
-      <h2>Материал</h2>
-      <div class="materialPicker">
-        <div class="MP-L" id="MP-1">
-          Махровый
+  <section class="container">
+    <div class="constructorSection">
+      <div class="constructor" id="nav-1">
+        <div class="material">
+          <h2>Материал</h2>
+          <div class="materialPicker">
+            <div class="MP-L" id="MP-1">
+              Махровый
+            </div>
+            <div class="MP" id="MP-2">
+              Бамбуковый
+            </div>
+            <div class="MP-R" id="MP-3">
+              Шёлковый
+            </div>
+          </div>
         </div>
-        <div class="MP" id="MP-2">
-          Бамбуковый
+        <div class="signSection">
+          <h2>Надпись</h2>
+          <input type="text" class="signInput" onkeyup="changetext()" id="signInput">
+          <b class="sign" id="sign"></b>
         </div>
-        <div class="MP-R" id="MP-3">
-          Шёлковый
+        <div class="inputColor">
+          <h2>Цвет надписи</h2>
+          <input onclick="b1()" class="b1" type="button" value="" name="red">
+          <input onclick="b2()" class="b2" type="button" value="" name="orange">
+          <input onclick="b3()" class="b3" type="button" value="" name="blue">
+          <input onclick="b4()" class="b4" type="button" value="" name="purple">
+          <input onclick="b5()" class="b5" type="button" value="" name="yellow">
         </div>
       </div>
+      <div class="preview">
+
+      </div>
     </div>
-  </section>
-  <section class="signSection">
-    <h2>Надпись</h2>
-    <input type="text" class="signInput" onkeyup="changetext()" id="signInput">
-    <b class="sign" id="sign"></b>
-  </section>
-  <section class="buttonsColor">
-    <h2>Цвет надписи</h2>
-    <input onclick="b1()" class="b1" type="button" value="" name="red">
-    <input onclick="b2()" class="b2" type="button" value="" name="orange">
-    <input onclick="b3()" class="b3" type="button" value="" name="blue">
-    <input onclick="b4()" class="b4" type="button" value="" name="purple">
-    <input onclick="b5()" class="b5" type="button" value="" name="yellow">
   </section>
 
 </html>

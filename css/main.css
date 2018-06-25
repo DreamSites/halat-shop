@@ -1,6 +1,10 @@
 body {
   margin: 0;
   padding: 0;
+  display: grid;
+  grid-template-columns: 1fr 250px;
+  grid-template-rows: auto;
+  grid-template-areas: "container header";
 }
 
 div {
@@ -19,6 +23,7 @@ header {
   font-family: "Source Sans Pro", sans-serif;
   font-size: 18px;
   text-align: center;
+  grid-area: header;
 }
 
 header span {
@@ -27,8 +32,12 @@ header span {
   font-weight: bold;
 }
 
+.container {
+  grid-area: container;
+}
+
 .material {
-  width: 45%;
+  width: 100%;
   font-family: "Source Sans Pro", sans-serif;
   font-size: 18px;
 }
@@ -39,6 +48,13 @@ h2 {
   margin: 0;
   font-weight: 400;
   margin-bottom: 10px;
+}
+
+.constructorSection {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  grid-template-rows: auto;
+  grid-template-areas: "constructor preview header";
 }
 
 .materialPicker {
@@ -108,7 +124,7 @@ h2 {
   font-weight: bold;
 }
 
-.buttonsColor {}
+.inputColor {}
 
 .b1 {
   display: inline-block;
@@ -177,6 +193,11 @@ h2 {
   width: 50%;
   padding-left: 10px;
 }
+
 .signSection {
-  width: 45%;
+  width: 100%;
+}
+
+.preview {
+  grid-area: preview;
 }
