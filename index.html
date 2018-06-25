@@ -18,6 +18,7 @@
   <script type="text/javascript" src="js/changetext.js"></script>
   <script type="text/javascript" src="js/navigation.js"></script>
   <script type="text/javascript" src="js/ColorSwitch.js"></script>
+  <script type="text/javascript" src="js/loadimg.js"></script>
 </head>
 
 <body>
@@ -49,6 +50,9 @@
           <h2>Надпись</h2>
           <input type="text" class="signInput" onkeyup="changetext()" id="signInput">
         </div>
+        <section>
+          <input  onclick="loadimg()" class="b6" type="button" value="" name="Img">
+        </section>
         <div class="inputColor">
           <h2>Цвет надписи</h2>
           <input onclick="b1()" class="b1" type="button" value="" name="red">
@@ -60,8 +64,11 @@
       </div>
       <div class="preview">
         <b class="sign" id="sign"></b>
+        <img id="img">
       </div>
     </div>
   </section>
+  
+
 
 </html>
