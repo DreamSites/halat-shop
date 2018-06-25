@@ -20,6 +20,7 @@
   <script type="text/javascript" src="js/ColorSwitch.js"></script>
   <script type="text/javascript" src="js/loadimg.js"></script>
   <script type="text/javascript" src="js/fontselection.js"></script>
+    <script type="text/javascript" src="js/fontsize.js"></script>
 </head>
 
 <body>
@@ -56,6 +57,9 @@
           <input  onclick="loadimg1()" class="b7" type="button" value="Корона№1" name="Img2">
           <input  onclick="loadimg2()" class="b8" type="button" value="Корона№2" name="Img3">
           <input  onclick="loadimg3()" class="b9" type="button" value="Завиток" name="Img4">
+        </section>
+        <section >
+          <input type="range" min="10" max="100" oninput="fontS(this.value);">
         </section>
         <select>
   <option></option>
