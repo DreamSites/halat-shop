@@ -124,7 +124,9 @@ h2 {
   font-weight: bold;
 }
 
-.inputColor {}
+.inputColor {
+  width: 45%;
+}
 
 .b1 {
   display: inline-block;
@@ -190,12 +192,12 @@ h2 {
   outline: none;
   font-family: "Source Sans Pro", sans-serif;
   font-size: 18px;
-  width: 50%;
+  width: 100%;
   padding-left: 10px;
 }
 
 .signSection {
-  width: 100%;
+
 }
 
 .preview {
