@@ -5,6 +5,7 @@ body {
 
 div {
   display: block;
+  -webkit-box-sizing: border-box;
   box-sizing: border-box;
 }
 
@@ -106,6 +107,7 @@ h2 {
   color: #FFF;
   font-weight: bold;
 }
+
 .buttonsColor {}
 
 .b1 {
@@ -161,4 +163,20 @@ h2 {
   cursor: pointer;
   border-radius: 50%;
   border: 0;
+}
+
+.signInput {
+  height: 50px;
+  border-radius: 50px;
+  border: 1px solid #7166DF;
+  -webkit-box-sizing: border-box;
+  box-sizing: border-box;
+  outline: none;
+  font-family: "Source Sans Pro", sans-serif;
+  font-size: 18px;
+  width: 50%;
+  padding-left: 10px;
+}
+.signSection {
+  width: 45%;
 }
