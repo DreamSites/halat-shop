@@ -208,5 +208,10 @@ h2 {
   grid-area: preview;
 }
 .slider{
-  
+
+}
+.imgh{
+  width: 30px;
+   height: 17px;
+    border: none;
 }
