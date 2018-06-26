@@ -182,10 +182,8 @@ h2 {
   border-radius: 50%;
   border: 0;
 }
-.b6 {
 
-}
-
+.b6 {}
 
 .signInput {
   height: 50px;
@@ -200,18 +198,16 @@ h2 {
   padding-left: 10px;
 }
 
-.signSection {
-
-}
+.signSection {}
 
 .preview {
   grid-area: preview;
 }
-.slider{
 
-}
-.imgh{
+.slider {}
+
+.imgh {
   width: 30px;
-   height: 17px;
-    border: none;
+  height: 17px;
+  border: none;
 }
