@@ -5,6 +5,7 @@ body {
   grid-template-columns: 1fr 250px;
   grid-template-rows: auto;
   grid-template-areas: "container header";
+  font-family: "Avenir Next", "Avenir Next Cyr", sans-serif;
 }
 
 div {
@@ -199,6 +200,10 @@ h2 {
 }
 
 .signSection {}
+
+.sign {
+  font-family: "Academia", serif;
+}
 
 .preview {
   grid-area: preview;
