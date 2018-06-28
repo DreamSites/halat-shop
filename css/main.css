@@ -20,14 +20,14 @@ header {
   width: 250px;
   -webkit-box-shadow: -5px 0 5px rgba(230, 236, 248, 0.5);
   box-shadow: -5px 0 5px rgba(230, 236, 248, 0.5);
-  font-family: "Source Sans Pro", sans-serif;
+  font-family: "Avenir Next Cyr", "Avenir Next", sans-serif;
   font-size: 18px;
   text-align: center;
   grid-area: header;
 }
 
 header span {
-  font-family: "Source Sans Pro", sans-serif;
+  font-family: "Avenir Next Cyr", "Avenir Next", sans-serif;
   font-size: 36px;
   font-weight: bold;
 }
@@ -38,12 +38,12 @@ header span {
 
 .material {
   width: 100%;
-  font-family: "Source Sans Pro", sans-serif;
+  font-family: "Avenir Next Cyr", "Avenir Next", sans-serif;
   font-size: 18px;
 }
 
 h2 {
-  font-family: "Source Sans Pro", sans-serif;
+  font-family: "Avenir Next Cyr", "Avenir Next", sans-serif;
   font-size: 36px;
   margin: 0;
   font-weight: 400;
@@ -182,10 +182,8 @@ h2 {
   border-radius: 50%;
   border: 0;
 }
-.b6 {
 
-}
-
+.b6 {}
 
 .signInput {
   height: 50px;
@@ -194,33 +192,35 @@ h2 {
   -webkit-box-sizing: border-box;
   box-sizing: border-box;
   outline: none;
-  font-family: "Source Sans Pro", sans-serif;
+  font-family: "Avenir Next Cyr", "Avenir Next", sans-serif;
   font-size: 18px;
   width: 100%;
   padding-left: 10px;
 }
 
-.signSection {
+.signSection {}
 
+.sign {
+  font-family: "Academia", serif;
 }
 
 .preview {
   grid-area: preview;
 }
 
+  {
+  box-sizing: border-box
+}
 
-{box-sizing:border-box}
 .slideshow-container {
   max-width: 1000px;
   position: relative;
   margin: auto;
 }
 
-
 .mySlides {
-    display: none;
+  display: none;
 }
-
 
 .prev, .next {
   cursor: pointer;
@@ -236,17 +236,14 @@ h2 {
   border-radius: 0 3px 3px 0;
 }
 
-
 .next {
   right: 0;
   border-radius: 3px 0 0 3px;
 }
 
-
 .prev:hover, .next:hover {
-  background-color: rgba(0,0,0,0.8);
+  background-color: rgba(0, 0, 0, 0.8);
 }
-
 
 .text {
   color: #f2f2f2;
@@ -258,7 +255,6 @@ h2 {
   text-align: center;
 }
 
-
 .numbertext {
   color: #f2f2f2;
   font-size: 12px;
@@ -266,7 +262,6 @@ h2 {
   position: absolute;
   top: 0;
 }
-
 
 .dot {
   cursor: pointer;
@@ -283,7 +278,6 @@ h2 {
   background-color: #717171;
 }
 
-
 .fade {
   -webkit-animation-name: fade;
   -webkit-animation-duration: 1.5s;
@@ -292,11 +286,19 @@ h2 {
 }
 
 @-webkit-keyframes fade {
-  from {opacity: .4}
-  to {opacity: 1}
+  from {
+    opacity: .4
+  }
+  to {
+    opacity: 1
+  }
 }
 
 @keyframes fade {
-  from {opacity: .4}
-  to {opacity: 1}
+  from {
+    opacity: .4
+  }
+  to {
+    opacity: 1
+  }
 }
