@@ -10,7 +10,7 @@ function fontchange() {
   } else if (value == 4) {
     document.getElementById("sign").style.fontFamily = "Lobster-Regular"
   } else if (value == 5) {
-    document.getElementById("sign").style.fontFamily = "MonAmour (EDIT)"
+    document.getElementById("sign").style.fontFamily = "MonAmour"
   } else if (value == 6) {
     document.getElementById("sign").style.fontFamily = "Sladkoeshka"
   }
