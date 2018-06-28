@@ -20,6 +20,7 @@
   <script type="text/javascript" src="js/fontselection.js"></script>
   <script type="text/javascript" src="js/fontsize.js"></script>
   <script type="text/javascript" src="js/slider.js"></script>
+  <script type="text/javascript" src="js/ImgSize.js"></script>
 
 </head>
 
@@ -46,10 +47,14 @@
           <input onclick="loadimg1()" class="b7" type="button" value="Корона№1" name="Img2">
           <input onclick="loadimg2()" class="b8" type="button" value="Корона№2" name="Img3">
           <input onclick="loadimg3()" class="b9" type="button" value="Завиток" name="Img4">
-
-          <input type="range" min="10" max="100" oninput="fontS(this.value);" class="fontSizePicker">
         </section>
+        <section>
+          <input type="range" min="10" max="100" oninput="fontS(this.value);" class="fontSize">
+        </section>
+<section>
+  <input type="range" min="10px" max="100px" oninput="img(this.value);" class="ImgSize">
 
+</section>
         <select onchange="fontchange()" id="fontSelect">
           <option id="Font1" value="1">Academia</option>
           <option id="Font2" value="2">Campus</option>
