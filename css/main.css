@@ -1,10 +1,15 @@
 body {
   margin: 0;
   padding: 0;
+  display: grid;
+  grid-template-columns: 1fr 250px;
+  grid-template-rows: auto;
+  grid-template-areas: "container header";
 }
 
 div {
   display: block;
+  -webkit-box-sizing: border-box;
   box-sizing: border-box;
 }
 
@@ -15,23 +20,35 @@ header {
   width: 250px;
   -webkit-box-shadow: -5px 0 5px rgba(230, 236, 248, 0.5);
   box-shadow: -5px 0 5px rgba(230, 236, 248, 0.5);
-  font-family: "Source Sans Pro", sans-serif;
+  font-family: "Avenir Next", "Avenir Next Cyr", sans-serif;
   font-size: 18px;
   text-align: center;
+  grid-area: header;
 }
 
 header span {
-  font-family: "Source Sans Pro", sans-serif;
+  font-family: "Avenir Next", "Avenir Next Cyr", sans-serif;
   font-size: 36px;
   font-weight: bold;
 }
 
+.container {
+  grid-area: container;
+}
+
 h2 {
-  font-family: "Source Sans Pro", sans-serif;
+  font-family: "Avenir Next", "Avenir Next Cyr", sans-serif;
   font-size: 36px;
   margin: 0;
   font-weight: 400;
   margin-bottom: 10px;
+}
+
+.constructorSection {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  grid-template-rows: auto;
+  grid-template-areas: "constructor preview header";
 }
 
 .navigationItem {
@@ -42,7 +59,10 @@ h2 {
   color: #FFF;
   font-weight: bold;
 }
-.buttonsColor {}
+
+.inputColor {
+  width: 45%;
+}
 
 .b1 {
   display: inline-block;
@@ -98,3 +118,125 @@ h2 {
   border-radius: 50%;
   border: 0;
 }
+
+.b6 {}
+
+.signInput {
+  height: 50px;
+  border-radius: 50px;
+  border: 1px solid #7166DF;
+  -webkit-box-sizing: border-box;
+  box-sizing: border-box;
+  outline: none;
+  font-family: "Avenir Next", "Avenir Next Cyr", sans-serif;
+  font-size: 18px;
+  width: 100%;
+  padding-left: 10px;
+}
+
+.signSection {}
+
+.sign {
+  font-family: "Academia", serif;
+}
+
+.preview {
+  grid-area: preview;
+}
+
+  {
+  box-sizing: border-box
+}
+
+.slideshow-container {
+  max-width: 1000px;
+  position: relative;
+  margin: auto;
+}
+
+.mySlides {
+  display: none;
+}
+
+.prev, .next {
+  cursor: pointer;
+  position: absolute;
+  top: 50%;
+  width: auto;
+  margin-top: -22px;
+  padding: 16px;
+  color: white;
+  font-weight: bold;
+  font-size: 18px;
+  transition: 0.6s ease;
+  border-radius: 0 3px 3px 0;
+}
+
+.next {
+  right: 0;
+  border-radius: 3px 0 0 3px;
+}
+
+.prev:hover, .next:hover {
+  background-color: rgba(0, 0, 0, 0.8);
+}
+
+.text {
+  color: #f2f2f2;
+  font-size: 15px;
+  padding: 8px 12px;
+  position: absolute;
+  bottom: 8px;
+  width: 100%;
+  text-align: center;
+}
+
+.numbertext {
+  color: #f2f2f2;
+  font-size: 12px;
+  padding: 8px 12px;
+  position: absolute;
+  top: 0;
+}
+
+.dot {
+  cursor: pointer;
+  height: 15px;
+  width: 15px;
+  margin: 0 2px;
+  background-color: #bbb;
+  border-radius: 50%;
+  display: inline-block;
+  transition: background-color 0.6s ease;
+}
+
+.active, .dot:hover {
+  background-color: #717171;
+}
+
+.fade {
+  -webkit-animation-name: fade;
+  -webkit-animation-duration: 1.5s;
+  animation-name: fade;
+  animation-duration: 1.5s;
+}
+
+@-webkit-keyframes fade {
+  from {
+    opacity: .4
+  }
+  to {
+    opacity: 1
+  }
+}
+
+@keyframes fade {
+  from {
+    opacity: .4
+  }
+  to {
+    opacity: 1
+  }
+}
+
+.fontSizePicker {}
