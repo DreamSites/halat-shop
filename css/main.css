@@ -9,7 +9,9 @@ div {
   display: block;
   -webkit-box-sizing: border-box;
   box-sizing: border-box;
-  transition: all ease 0.4s;
+  transition: all ease 0.2s;
+  margin: 0;
+  padding: 0;
 }
 
 header {
@@ -27,6 +29,17 @@ h1 {
   margin-top: 30px;
   margin-bottom: 10px;
   text-align: center;
+}
+
+h2 {
+  font-size: 26px;
+  font-weight: bold;
+  margin-top: 10px;
+  margin-bottom: 0;
+}
+
+h2:first-child {
+  margin-top: 0;
 }
 
 .logo {
@@ -72,6 +85,77 @@ h1 {
   height: 200px;
 }
 
+.constructorSection {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  max-width: 1024px;
+  margin: 0 auto;
+}
+
+.signInput {
+  height: 50px;
+  border: 1px solid #E6ECF8;
+  -webkit-box-sizing: border-box;
+  box-sizing: border-box;
+  outline: none;
+  font-size: 18px;
+  width: 100%;
+  padding-left: 10px;
+  font-family: "Avenir Next", "Avenir Next Cyr", sans-serif;
+  -webkit-appearance: none;
+  -moz-appearance: none;
+  appearance: none;
+}
+
+select {
+  height: 50px;
+  border: 1px solid #E6ECF8;
+  -webkit-box-sizing: border-box;
+  box-sizing: border-box;
+  outline: none;
+  font-size: 18px;
+  width: 100%;
+  padding-left: 10px;
+  font-family: "Avenir Next", "Avenir Next Cyr", sans-serif;
+  -webkit-appearance: none;
+  -moz-appearance: none;
+  appearance: none;
+  color: #a9a9a9;
+  border-radius: 0;
+}
+
+.sizePicker {
+  width: 100%;
+  height: 50px;
+  display: grid;
+  grid-template-columns: 1fr 1fr 1fr 1fr 1fr 1fr;
+  border: 1px solid #E6ECF8;
+  -webkit-user-select: none;
+  -moz-user-select: none;
+  -ms-user-select: none;
+  user-select: none;
+  cursor: pointer;
+}
+
+.SP-L {
+  border-right: 1px solid #E6ECF8;
+}
+
+.SP-R {
+  border-left: 1px solid #E6ECF8;
+}
+
+.SP {
+  text-align: center;
+  padding-top: 13px;
+}
+
+.SP-Active {
+  background: #72E572;
+  font-weight: bold;
+  color: #FFF;
+}
+
 @media screen and (max-width: 900px) {
   header {
     grid-template-columns: 200px 1fr 200px;
@@ -89,6 +173,7 @@ h1 {
     display: none;
   }
 }
+
 @media screen and (max-width: 621px) {
   .workBlocks {
     grid-template-columns: 1fr;
