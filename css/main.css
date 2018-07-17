@@ -93,6 +93,12 @@ h2:first-child {
   height: 800px;
 }
 
+.constructor {
+  height: 800px;
+  display: grid;
+  grid-template-rows: 1fr 50px;
+}
+
 .signInput {
   height: 50px;
   border: 1px solid #E6ECF8;
@@ -218,7 +224,6 @@ select {
   font-size: 18px;
   font-weight: bold;
   color: #FFF;
-  margin-top: 175px;
   cursor: pointer;
 }
 

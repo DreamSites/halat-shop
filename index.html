@@ -70,11 +70,12 @@
   <h1>Конструктор</h1>
   <section class="constructorSection">
     <div class="constructor">
-      <h2>Надпись</h2>
-      <input type="text" class="signInput" name="signInput" placeholder="Введите вашу надпись" id="signInput" onkeyup="changetext()">
+      <div>
+        <h2>Надпись</h2>
+        <input type="text" class="signInput" name="signInput" placeholder="Введите вашу надпись" id="signInput" onkeyup="changetext()">
 
-      <h2>Шрифт</h2>
-      <select onchange="fontchange()" id="fontSelect">
+        <h2>Шрифт</h2>
+        <select onchange="fontchange()" id="fontSelect">
         <option value="0" disabled selected>Выберите шрифт</option>
         <option id="Font1" value="1">Academia</option>
         <option id="Font2" value="2">Campus</option>
@@ -84,8 +85,8 @@
         <option id="Font6" value="6">Sladkoeshka</option>
       </select>
 
-      <h2>Цвет шрифта</h2>
-      <select>
+        <h2>Цвет шрифта</h2>
+        <select>
         <option value="0" disabled selected>Выберите цвет шрифта</option>
         <option id="Font1" value="1">Academia</option>
         <option id="Font2" value="2">Campus</option>
@@ -95,11 +96,11 @@
         <option id="Font6" value="6">Sladkoeshka</option>
       </select>
 
-      <h2>Размер шрифта</h2>
-      <input type="range" class="signSize" name="signSize" id="signSize">
+        <h2>Размер шрифта</h2>
+        <input type="range" class="signSize" name="signSize" id="signSize">
 
-      <h2>Рисунок</h2>
-      <select>
+        <h2>Рисунок</h2>
+        <select>
         <option value="0" disabled selected>Выберите цвет шрифта</option>
         <option id="Font1" value="1">Academia</option>
         <option id="Font2" value="2">Campus</option>
@@ -109,16 +110,16 @@
         <option id="Font6" value="6">Sladkoeshka</option>
       </select>
 
-      <h2>Размер</h2>
-      <div class="sizePicker">
-        <div class="SP SP-L" id="SP-1">S</div>
-        <div class="SP SP-L" id="SP-2">M</div>
-        <div class="SP SP-L" id="SP-3">L</div>
-        <div class="SP" id="SP-4">XL</div>
-        <div class="SP SP-R" id="SP-5">XXL</div>
-        <div class="SP SP-R" id="SP-6">XXXL</div>
+        <h2>Размер</h2>
+        <div class="sizePicker">
+          <div class="SP SP-L" id="SP-1">S</div>
+          <div class="SP SP-L" id="SP-2">M</div>
+          <div class="SP SP-L" id="SP-3">L</div>
+          <div class="SP" id="SP-4">XL</div>
+          <div class="SP SP-R" id="SP-5">XXL</div>
+          <div class="SP SP-R" id="SP-6">XXXL</div>
+        </div>
       </div>
-
       <button type="button" name="addToCart" class="addToCart" id="addToCart">Добавить в корзину</button>
     </div>
     <div class="preview">
