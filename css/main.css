@@ -142,6 +142,7 @@ select {
   background-color: #FFF;
   border: 1px solid #E6ECF8;
   margin: 0;
+  outline: none;
 }
 
 .signSize::-webkit-slider-runnable-track {
