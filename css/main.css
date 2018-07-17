@@ -114,6 +114,56 @@ h2:first-child {
   appearance: none;
 }
 
+.fontPicker {
+  height: 50px;
+  width: 100%;
+  border: 1px solid #E6ECF8;
+  cursor: pointer;
+}
+
+.FP-Placeholder {
+  padding-top: 12px;
+  padding-left: 10px;
+  color: #b9b9b9;
+  position: relative;
+  z-index: 2;
+}
+
+.FP-Item {
+  display: none;
+  opacity: 0;
+  padding-left: 10px;
+  height: 50px;
+}
+
+.FP-Active {
+  background: #72E572;
+  font-weight: bold;
+  color: white;
+}
+
+.FP-Active:hover {
+  background: #72E572 !important;
+}
+
+.FP-Item-1 {
+  margin-top: -37px !important;
+  display: none;
+  opacity: 0;
+  padding-left: 10px;
+  padding-top: 12px;
+  height: 50px;
+  position: relative;
+  z-index: 1;
+}
+
+.FP-Item:hover {
+  background: #E6ECF8;
+}
+.FP-Item-1:hover {
+  background: #E6ECF8;
+}
+
 select {
   height: 50px;
   border: 1px solid #E6ECF8;

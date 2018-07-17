@@ -17,6 +17,7 @@
   <script type="text/javascript" src="js/fontselection.js"></script>
   <script type="text/javascript" src="js/fontsize.js"></script>
   <script type="text/javascript" src="js/sizePicker.js"></script>
+  <script type="text/javascript" src="js/fontPicker.js"></script>
 
 </head>
 
@@ -76,15 +77,15 @@
         <input type="text" class="signInput" name="signInput" placeholder="Введите вашу надпись" id="signInput" onkeyup="changetext()">
 
         <h2>Шрифт</h2>
-        <select onchange="fontchange()" id="fontSelect">
-          <option value="0" disabled selected>Выберите шрифт</option>
-          <option id="Font1" value="1">Academia</option>
-          <option id="Font2" value="2">Campus</option>
-          <option id="Font3" value="3">CyrillicOld</option>
-          <option id="Font4" value="4">Lobster-Regular</option>
-          <option id="Font5" value="5">MonAmour</option>
-          <option id="Font6" value="6">Sladkoeshka</option>
-        </select>
+        <div class="fontPicker" id="fontPicker">
+          <div class="FP-Placeholder" id="FP-Placeholder">Выберите шрифт надписи</div>
+          <div class="FP-Item-1" id="FP-1">Academia</div>
+          <div class="FP-Item" id="FP-2">Campus</div>
+          <div class="FP-Item" id="FP-3">CyrillicOld</div>
+          <div class="FP-Item" id="FP-4">Lobster-Regular</div>
+          <div class="FP-Item" id="FP-5">MonAmour</div>
+          <div class="FP-Item" id="FP-6">Sladkoeshka</div>
+        </div>
 
         <h2>Цвет шрифта</h2>
         <select>
