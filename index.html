@@ -15,6 +15,7 @@
 
   <script type="text/javascript" src="js/changetext.js"></script>
   <script type="text/javascript" src="js/fontselection.js"></script>
+  <script type="text/javascript" src="js/fontsize.js"></script>
   <script type="text/javascript" src="js/sizePicker.js"></script>
 
 </head>
@@ -97,7 +98,7 @@
       </select>
 
         <h2>Размер шрифта</h2>
-        <input type="range" class="signSize" name="signSize" id="signSize">
+        <input type="range" class="signSize" name="signSize" id="signSize" min="10" max="100" oninput="fontSize(this.value)">
 
         <h2>Рисунок</h2>
         <select>

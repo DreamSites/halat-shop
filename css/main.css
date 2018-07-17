@@ -228,7 +228,11 @@ select {
   cursor: pointer;
 }
 
-@media screen and (max-width: 900px) {
+.sign {
+  font-size: 27.5px;
+}
+
+@media screenand (max-width: 900px) {
   header {
     grid-template-columns: 200px 1fr 200px;
   }
