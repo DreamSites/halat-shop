@@ -124,6 +124,52 @@ select {
   border-radius: 0;
 }
 
+.signSize {
+  -webkit-box-sizing: border-box;
+  box-sizing: border-box;
+  overflow: hidden;
+  width: 100%;
+  -webkit-appearance: none;
+  -moz-appearance: none;
+  appearance: none;
+  background-color: #FFF;
+  border: 1px solid #E6ECF8;
+  margin: 0;
+}
+
+.signSize::-webkit-slider-runnable-track {
+  height: 50px;
+  -webkit-appearance: none;
+  -moz-appearance: none;
+  appearance: none;
+  color: #FFF;
+  -webkit-box-sizing: border-box;
+  box-sizing: border-box;
+}
+
+.signSize::-webkit-slider-thumb {
+  width: 1px;
+  -webkit-appearance: none;
+  height: 50px;
+  background: #72E572;
+  box-shadow: -20rem 0 0 20rem #72E572;
+  -webkit-box-sizing: border-box;
+  box-sizing: border-box;
+}
+.signSize::-moz-range-progress {
+  background-color: #72E572;
+}
+.signSize::-moz-range-track {
+  background-color: #FFF;
+}
+/* IE*/
+.signSize::-ms-fill-lower {
+  background-color: #72E572;
+}
+.signSize::-ms-fill-upper {
+  background-color: #FFF;
+}
+
 .sizePicker {
   width: 100%;
   height: 50px;
