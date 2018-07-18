@@ -13,6 +13,12 @@
   <script type="text/javascript" src="js/jquery-3.3.1.min.js"></script>
   <script type="text/javascript" src="js/wow.min.js"></script>
 
+  <script type="text/javascript" src="js/changetext.js"></script>
+  <script type="text/javascript" src="js/fontselection.js"></script>
+  <script type="text/javascript" src="js/fontsize.js"></script>
+  <script type="text/javascript" src="js/sizePicker.js"></script>
+  <script type="text/javascript" src="js/fontPicker.js"></script>
+
 </head>
 
 <body>
@@ -25,7 +31,7 @@
         Главная
       </div>
       <div id="navitem-2" class="navitem">
-        Примеры работ
+        Наши работы
       </div>
       <div id="navitem-3" class="navitem">
         Конструктор
@@ -49,6 +55,91 @@
       </svg>
     </div>
   </header>
+  <section class="heroSlider">
+
+  </section>
+  <section class="ourWork">
+    <h1>Наши работы</h1>
+    <div class="workBlocks">
+      <div class="workBlock"></div>
+      <div class="workBlock"></div>
+      <div class="workBlock"></div>
+      <div class="workBlock"></div>
+      <div class="workBlock"></div>
+      <div class="workBlock"></div>
+    </div>
+  </section>
+  <h1>Конструктор</h1>
+  <section class="constructorSection">
+    <div class="constructor">
+      <div>
+        <h2>Надпись</h2>
+        <input type="text" class="signInput" name="signInput" placeholder="Введите вашу надпись" id="signInput" onkeyup="changetext()">
+
+        <h2>Шрифт</h2>
+        <div class="fontPicker" id="fontPicker">
+          <div class="FP-Placeholder" id="FP-Placeholder">
+            Выберите шрифт надписи
+            <svg id="FP-DownArrow" style="position: absolute; top: 21px; right: 10px;" width="16px" height="10px" viewBox="0 0 16 10" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
+                <g id="Page-1" stroke="none" stroke-width="1" fill="none" fill-rule="evenodd" fill-opacity="0.3">
+                    <g id="Desktop-HD" transform="translate(-684.000000, -1453.000000)" fill="#000000" fill-rule="nonzero">
+                        <g id="Group-2" transform="translate(218.000000, 1431.000000)">
+                            <g id="noun_down-arrow_661476" transform="translate(466.000000, 22.000000)">
+                                <polygon id="Shape" points="0 0 7.66666667 10 15.3333333 0"></polygon>
+                            </g>
+                        </g>
+                    </g>
+                </g></svg>
+          </div>
+          <div class="FP-Item-1" id="FP-1">Academia</div>
+          <div class="FP-Item" id="FP-2">Campus</div>
+          <div class="FP-Item" id="FP-3">CyrillicOld</div>
+          <div class="FP-Item" id="FP-4">Lobster-Regular</div>
+          <div class="FP-Item" id="FP-5">MonAmour</div>
+          <div class="FP-Item" id="FP-6">Sladkoeshka</div>
+        </div>
+
+        <h2>Цвет шрифта</h2>
+        <select>
+          <option value="0" disabled selected>Выберите цвет шрифта</option>
+          <option id="Font1" value="1">Academia</option>
+          <option id="Font2" value="2">Campus</option>
+          <option id="Font3" value="3">CyrillicOld</option>
+          <option id="Font4" value="4">Lobster-Regular</option>
+          <option id="Font5" value="5">MonAmour</option>
+          <option id="Font6" value="6">Sladkoeshka</option>
+        </select>
+
+        <h2>Размер шрифта</h2>
+        <input type="range" class="signSize" name="signSize" id="signSize" min="10" max="100" oninput="fontSize(this.value)">
+
+        <h2>Рисунок</h2>
+        <select>
+          <option value="0" disabled selected>Выберите цвет шрифта</option>
+          <option id="Font1" value="1">Academia</option>
+          <option id="Font2" value="2">Campus</option>
+          <option id="Font3" value="3">CyrillicOld</option>
+          <option id="Font4" value="4">Lobster-Regular</option>
+          <option id="Font5" value="5">MonAmour</option>
+          <option id="Font6" value="6">Sladkoeshka</option>
+        </select>
+
+        <h2>Размер</h2>
+        <div class="sizePicker">
+          <div class="SP SP-L" id="SP-1">S</div>
+          <div class="SP SP-L" id="SP-2">M</div>
+          <div class="SP SP-L" id="SP-3">L</div>
+          <div class="SP" id="SP-4">XL</div>
+          <div class="SP SP-R" id="SP-5">XXL</div>
+          <div class="SP SP-R" id="SP-6">XXXL</div>
+        </div>
+      </div>
+      <button type="button" name="addToCart" class="addToCart" id="addToCart">Добавить в корзину</button>
+    </div>
+    <div class="preview">
+      <span class="sign" id="sign"></span>
+    </div>
+  </section>
 </body>
 
 </html>
