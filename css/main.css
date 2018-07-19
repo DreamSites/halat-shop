@@ -41,60 +41,6 @@ h2 {
 h2:first-child {
   margin-top: 0;
 }
-.b1 {
-  display: inline-block;
-  margin: 3px;
-  width: 15px;
-  height: 15px;
-  background: red;
-  cursor: pointer;
-  border-radius: 50%;
-  border: 0;
-}
-
-.b2 {
-  display: inline-block;
-  margin: 3px;
-  width: 15px;
-  height: 15px;
-  background: orange;
-  cursor: pointer;
-  border-radius: 50%;
-  border: 0;
-}
-
-.b3 {
-  display: inline-block;
-  margin: 3px;
-  width: 15px;
-  height: 15px;
-  background: blue;
-  cursor: pointer;
-  border-radius: 50%;
-  border: 0;
-}
-
-.b4 {
-  display: inline-block;
-  margin: 3px;
-  width: 15px;
-  height: 15px;
-  background: purple;
-  cursor: pointer;
-  border-radius: 50%;
-  border: 0;
-}
-
-.b5 {
-  display: inline-block;
-  margin: 3px;
-  width: 15px;
-  height: 15px;
-  background: yellow;
-  cursor: pointer;
-  border-radius: 50%;
-  border: 0;
-}
 
 .logo {
   padding-left: 20px;
