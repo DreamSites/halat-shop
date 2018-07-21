@@ -18,6 +18,7 @@
   <script type="text/javascript" src="js/fontsize.js"></script>
   <script type="text/javascript" src="js/sizePicker.js"></script>
   <script type="text/javascript" src="js/fontPicker.js"></script>
+  <script type="text/javascript" src="js/slider.js"></script>
 
 </head>
 
@@ -60,13 +61,50 @@
   </section>
   <section class="ourWork">
     <h1>Наши работы</h1>
-    <div class="workBlocks">
-      <div class="workBlock"></div>
-      <div class="workBlock"></div>
-      <div class="workBlock"></div>
-      <div class="workBlock"></div>
-      <div class="workBlock"></div>
-      <div class="workBlock"></div>
+    <div class="slideshow-container">
+
+      <div class="mySlides fade">
+        <div class="numbertext"></div>
+        <img  src="img/5.jpg" style="width:100vw">
+        <div class="text">Халат</div>
+      </div>
+
+      <div class="mySlides fade">
+        <div class="numbertext"></div>
+        <img src="img/4.jpg" style="width:100vw">
+        <div class="text">Халат1</div>
+      </div>
+
+      <div class="mySlides fade">
+        <div class="numbertext"></div>
+        <img src="img/3.jpg" style="width:100vw">
+        <div class="text">Халат2</div>
+      </div>
+      <div class="mySlides fade">
+        <div class="numbertext"></div>
+        <img src="img/6.jpg" style="width:100vw">
+        <div class="text">Халат3</div>
+      </div>
+
+      <div class="mySlides fade">
+        <div class="numbertext"></div>
+        <img src="img/9.jpg" style="width:100vw">
+        <div class="text">Халат4</div>
+      </div>
+
+
+      <a class="prev" onclick="plusSlides(-1)">&#10094;</a>
+      <a class="next" onclick="plusSlides(1)">&#10095;</a>
+    </div>
+    <br>
+
+
+    <div style="text-align: center">
+      <span class="dot" onclick="currentSlide(1)"></span>
+      <span class="dot" onclick="currentSlide(2)"></span>
+      <span class="dot" onclick="currentSlide(3)"></span>
+      <span class="dot" onclick="currentSlide(4)"></span>
+      <span class="dot" onclick="currentSlide(5)"></span>
     </div>
   </section>
   <h1>Конструктор</h1>
