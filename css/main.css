@@ -199,19 +199,19 @@ slide {
 }
 
 #slide1 {
-  background: url(../img/slide-1.jpg);
+  background: url(../img/slide-1.jpg) no-repeat center top / cover;
 }
 
 #slide2 {
-  background: url(../img/slide-2.jpg);
+  background: url(../img/slide-2.jpg) no-repeat center top / cover;
 }
 
 #slide3 {
-  background: url(../img/slide-3.jpg);
+  background: url(../img/slide-3.jpg) no-repeat center top / cover;
 }
 
 #slide4 {
-  background: url(../img/slide-4.jpg);
+  background: url(../img/slide-4.jpg) no-repeat center top / cover;
 }
 
 .prev, .next {
