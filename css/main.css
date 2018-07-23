@@ -72,6 +72,13 @@ h2:first-child {
   height: 600px;
 }
 
+.slideIndex {
+  text-align: center;
+  z-index: 10;
+  margin-top: -40px;
+  position: relative;
+}
+
 .workBlocks {
   display: grid;
   grid-template-columns: 1fr 1fr 1fr;
@@ -160,6 +167,7 @@ h2:first-child {
 .FP-Item:hover {
   background: #E6ECF8;
 }
+
 .FP-Item-1:hover {
   background: #E6ECF8;
 }
@@ -179,14 +187,31 @@ select {
   appearance: none;
   border-radius: 0;
 }
-.slideshow-container {
 
+.slideshow-container {
   position: relative;
   margin: auto;
 }
 
-.mySlides {
-display: none;
+slide {
+  display: none;
+  height: 600px;
+}
+
+#slide1 {
+  background: url(../img/slide-1.jpg);
+}
+
+#slide2 {
+  background: url(../img/slide-2.jpg);
+}
+
+#slide3 {
+  background: url(../img/slide-3.jpg);
+}
+
+#slide4 {
+  background: url(../img/slide-4.jpg);
 }
 
 .prev, .next {
@@ -232,17 +257,16 @@ display: none;
 
 .dot {
   cursor: pointer;
-  height: 15px;
-  width: 15px;
+  height: 2px;
+  width: 30px;
   margin: 0 2px;
-  background-color: #bbb;
-  border-radius: 50%;
+  background-color: #BBB;
   display: inline-block;
   transition: background-color 0.6s ease;
 }
 
 .active, .dot:hover {
-  background-color: #717171;
+  background-color: #FFF;
 }
 
 .fade {

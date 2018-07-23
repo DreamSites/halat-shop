@@ -22,7 +22,7 @@
 
 </head>
 
-<body>
+<body onload="showSlides(1)">
   <header>
     <div class="logo">
       Логотип
@@ -59,48 +59,26 @@
   <section class="heroSlider">
     <div class="slideshow-container">
 
-      <div class="mySlides fade">
-        <div class="numbertext"></div>
-        <img src="img/5.jpg" style="width:100vw">
-        <div class="text">Халат</div>
-      </div>
+      <slide class="fade" id="slide1"></slide>
+      <slide class="fade" id="slide2">
 
-      <div class="mySlides fade">
-        <div class="numbertext"></div>
-        <img src="img/4.jpg" style="width:100vw">
-        <div class="text">Халат1</div>
-      </div>
+      </slide>
+      <slide class="fade" id="slide3">
 
-      <div class="mySlides fade">
-        <div class="numbertext"></div>
-        <img src="img/3.jpg" style="width:100vw">
-        <div class="text">Халат2</div>
-      </div>
-      <div class="mySlides fade">
-        <div class="numbertext"></div>
-        <img src="img/6.jpg" style="width:100vw">
-        <div class="text">Халат3</div>
-      </div>
+      </slide>
+      <slide class="fade" id="slide4">
 
-      <div class="mySlides fade">
-        <div class="numbertext"></div>
-        <img src="img/9.jpg" style="width:100vw">
-        <div class="text">Халат4</div>
-      </div>
-
+      </slide>
 
       <a class="prev" onclick="plusSlides(-1)">&#10094;</a>
       <a class="next" onclick="plusSlides(1)">&#10095;</a>
     </div>
-    <br>
 
-
-    <div style="text-align: center">
+    <div class="slideIndex">
       <span class="dot" onclick="currentSlide(1)"></span>
       <span class="dot" onclick="currentSlide(2)"></span>
       <span class="dot" onclick="currentSlide(3)"></span>
       <span class="dot" onclick="currentSlide(4)"></span>
-      <span class="dot" onclick="currentSlide(5)"></span>
     </div>
   </section>
   <section class="ourWork">
