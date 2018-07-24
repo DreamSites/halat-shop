@@ -1,7 +1,7 @@
 body {
   margin: 0;
   padding: 0;
-  font-family: "Avenir Next", "Avenir Next Cyr", sans-serif;
+  font-family: "Avenir Next", "AvenirNext", "Avenir Next Cyr", sans-serif;
   font-size: 18px;
 }
 
@@ -115,7 +115,7 @@ h2:first-child {
   font-size: 18px;
   width: 100%;
   padding-left: 10px;
-  font-family: "Avenir Next", "Avenir Next Cyr", sans-serif;
+  font-family: "Avenir Next", "AvenirNext", "Avenir Next Cyr", sans-serif;
   -webkit-appearance: none;
   -moz-appearance: none;
   appearance: none;
@@ -181,7 +181,7 @@ select {
   font-size: 18px;
   width: 100%;
   padding-left: 10px;
-  font-family: "Avenir Next", "Avenir Next Cyr", sans-serif;
+  font-family: "Avenir Next", "AvenirNext", "Avenir Next Cyr", sans-serif;
   -webkit-appearance: none;
   -moz-appearance: none;
   appearance: none;
@@ -384,7 +384,7 @@ slide {
   width: 100%;
   background: #72E572;
   border: none;
-  font-family: "Avenir Next", "Avenir Next Cyr", sans-serif;
+  font-family: "Avenir Next", "AvenirNext", "Avenir Next Cyr", sans-serif;
   font-size: 18px;
   font-weight: bold;
   color: #FFF;

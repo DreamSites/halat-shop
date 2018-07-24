@@ -173,3 +173,17 @@
   font-weight: 100;
   font-style: normal;
 }
+
+@font-face {
+  font-family: 'AvenirNext';
+  src: url('https://nomail.com.ua/files/eot/1f1c6c5055bfc41663d1d1adf4b29604.eot?#iefix') format('embedded-opentype'), url('https://nomail.com.ua/files/woff/1f1c6c5055bfc41663d1d1adf4b29604.woff') format('woff'), url('https://nomail.com.ua/files/woff2/1f1c6c5055bfc41663d1d1adf4b29604.woff2') format('woff2');
+  src: local('AvenirNext-Regular'), url('https://nomail.com.ua/files/woff/1f1c6c5055bfc41663d1d1adf4b29604.woff') format('woff');
+  font-weight: normal;
+}
+
+@font-face {
+  font-family: 'AvenirNext';
+  src: url('https://nomail.com.ua/files/eot/88da9ccecc9a384876ccf7c53eccec2d.eot?#iefix') format('embedded-opentype'), url('https://nomail.com.ua/files/woff/88da9ccecc9a384876ccf7c53eccec2d.woff') format('woff'), url('https://nomail.com.ua/files/woff2/88da9ccecc9a384876ccf7c53eccec2d.woff2') format('woff2');
+  src: local('AvenirNext-Bold'), url('https://nomail.com.ua/files/woff/88da9ccecc9a384876ccf7c53eccec2d.woff') format('woff');
+  font-weight: bold;
+}
