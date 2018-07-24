@@ -395,7 +395,13 @@ slide {
   font-size: 27.5px;
 }
 
-@media screenand (max-width: 900px) {
+.preview {
+  background: url(../img/halat.png) no-repeat center;
+  text-align: center;
+  padding-top: 80px;
+}
+
+@media screen and (max-width: 900px) {
   header {
     grid-template-columns: 200px 1fr 200px;
   }
