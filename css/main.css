@@ -55,6 +55,7 @@ h2:first-child {
 
 .navitem {
   padding-top: 29px;
+  cursor: pointer;
 }
 
 .nav-active {
@@ -399,6 +400,7 @@ slide {
   background: url(../img/halat.png) no-repeat center;
   text-align: center;
   padding-top: 80px;
+  height: 800px;
 }
 
 @media screen and (max-width: 900px) {
@@ -416,6 +418,9 @@ slide {
   }
   .nav {
     display: none;
+  }
+  .constructorSection {
+    grid-template-columns: 1fr;
   }
 }
 
