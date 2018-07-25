@@ -18,6 +18,7 @@
   <script type="text/javascript" src="js/sizePicker.js"></script>
   <script type="text/javascript" src="js/fontPicker.js"></script>
   <script type="text/javascript" src="js/slider.js"></script>
+  <script type="text/javascript" src="js/loadimg.js"></script>
 
 </head>
 
@@ -136,13 +137,14 @@
 
         <h2>Рисунок</h2>
         <select>
-          <option value="0" disabled selected>Выберите цвет шрифта</option>
-          <option id="Font1" value="1">Academia</option>
-          <option id="Font2" value="2">Campus</option>
-          <option id="Font3" value="3">CyrillicOld</option>
-          <option id="Font4" value="4">Lobster-Regular</option>
-          <option id="Font5" value="5">MonAmour</option>
-          <option id="Font6" value="6">Sladkoeshka</option>
+          <input onclick="loadimg()" class="b6" type="button" value="" name="Img">
+          <input onclick="loadimg1()" class="b7" type="button" value="" name="Img2">
+          <input onclick="loadimg2()" class="b8" type="button" value="" name="Img3">
+          <input onclick="loadimg3()" class="b9" type="button" value="" name="Img4">
+          <img width="100px" id="img">
+          <img width="100px" id="img1">
+          <img width="100px" id="img2">
+          <img width="100px" id="img3">
         </select>
 
         <h2>Размер</h2>
