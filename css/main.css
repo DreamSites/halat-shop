@@ -1,3 +1,43 @@
+.b6{
+    background: url(../img/img.png) no-repeat center top/ cover;
+    background-size:50px;
+    color: #000000;
+    cursor: pointer;
+    font-weight: bold;
+    height: 30px;
+    padding-bottom: 2px;
+    width: 60px;
+}
+.b7{
+    background: url(../img/img2.png) no-repeat center top/ cover;
+    background-size:50px;
+    color: #000000;
+    cursor: pointer;
+    font-weight: bold;
+    height: 30px;
+    padding-bottom: 2px;
+    width: 60px;
+}
+.b8{
+    background: url(../img/img3.png) no-repeat center top/ cover;
+    background-size:50px;
+    color: #000000;
+    cursor: pointer;
+    font-weight: bold;
+    height: 30px;
+    padding-bottom: 2px;
+    width: 60px;
+}
+.b9{
+    background: url(../img/img1.png) no-repeat center top/ cover;
+    background-size:50px;
+    color: #000000;
+    cursor: pointer;
+    font-weight: bold;
+    height: 30px;
+    padding-bottom: 2px;
+    width: 60px;
+}
 body {
   margin: 0;
   padding: 0;
