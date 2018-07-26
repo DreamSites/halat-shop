@@ -1,43 +1,60 @@
-.b6{
-    background: url(../img/img.png) no-repeat center top/ cover;
-    background-size:50px;
-    color: #000000;
-    cursor: pointer;
-    font-weight: bold;
-    height: 30px;
-    padding-bottom: 2px;
-    width: 60px;
+.imgButton {
+  background-size:50px;
+  color: #000000;
+  cursor: pointer;
+  font-weight: bold;
+  height: 30px;
+  padding-bottom: 2px;
+  width: 60px;
 }
-.b7{
-    background: url(../img/img2.png) no-repeat center top/ cover;
-    background-size:50px;
-    color: #000000;
-    cursor: pointer;
-    font-weight: bold;
-    height: 30px;
-    padding-bottom: 2px;
-    width: 60px;
+
+#imgButton-1 {
+  background: url(../img/img.png) no-repeat center top/ cover;
 }
-.b8{
-    background: url(../img/img3.png) no-repeat center top/ cover;
-    background-size:50px;
-    color: #000000;
-    cursor: pointer;
-    font-weight: bold;
-    height: 30px;
-    padding-bottom: 2px;
-    width: 60px;
+
+#imgButton-2 {
+  background: url(../img/img2.png) no-repeat center top/ cover;
 }
-.b9{
-    background: url(../img/img1.png) no-repeat center top/ cover;
-    background-size:50px;
-    color: #000000;
-    cursor: pointer;
-    font-weight: bold;
-    height: 30px;
-    padding-bottom: 2px;
-    width: 60px;
+
+#imgButton-3 {
+  background: url(../img/img3.png) no-repeat center top/ cover;
 }
+
+#imgButton-4 {
+  background: url(../img/img1.png) no-repeat center top/ cover;
+}
+
+.img {
+  opacity: 0;
+  margin: 0 auto;
+  position: relative;
+}
+
+#img-1 {
+  background: url(../img/img.png) no-repeat center top/ cover;
+  height: 100px;
+  width: 187px;
+  margin-top: -55px;
+}
+
+#img-2 {
+  background: url(../img/img2.png) no-repeat center top/ cover;
+  width: 60px;
+  height: 37px;
+}
+
+#img-3 {
+  background: url(../img/img3.png) no-repeat center top/ cover;
+  height: 60px;
+  width: 92px;
+}
+
+#img-4 {
+  background: url(../img/img1.png) no-repeat center top/ cover;
+  height: 30px;
+  width: 148px;
+}
+
 body {
   margin: 0;
   padding: 0;
@@ -438,6 +455,7 @@ slide {
 
 .sign {
   font-size: 27.5px;
+  position: relative;
 }
 
 .preview {

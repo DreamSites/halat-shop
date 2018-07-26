@@ -19,7 +19,7 @@
   <script type="text/javascript" src="js/fontPicker.js"></script>
   <script type="text/javascript" src="js/slider.js"></script>
   <script type="text/javascript" src="js/loadimg.js"></script>
-  <script type="text/javascript" src="js/scroll.js"></script>
+  <script type="text/javascript" src="js/navigation.js"></script>
 
 </head>
 
@@ -138,14 +138,10 @@
 
         <h2>Рисунок</h2>
         <select>
-          <input onclick="loadimg()" class="b6" type="button" value="" name="Img">
-          <input onclick="loadimg1()" class="b7" type="button" value="" name="Img2">
-          <input onclick="loadimg2()" class="b8" type="button" value="" name="Img3">
-          <input onclick="loadimg3()" class="b9" type="button" value="" name="Img4">
-          <img width="100px" id="img">
-          <img width="100px" id="img1">
-          <img width="100px" id="img2">
-          <img width="100px" id="img3">
+          <input class="imgButton" type="button" id="imgButton-1">
+          <input class="imgButton" type="button" id="imgButton-2">
+          <input class="imgButton" type="button" id="imgButton-3">
+          <input class="imgButton" type="button" id="imgButton-4">
         </select>
 
         <h2>Размер</h2>
@@ -162,6 +158,10 @@
     </div>
     <div class="preview">
       <span class="sign" id="sign"></span>
+      <div class="img" id="img-1"></div>
+      <div class="img" id="img-2"></div>
+      <div class="img" id="img-3"></div>
+      <div class="img" id="img-4"></div>
     </div>
   </section>
 </body>
