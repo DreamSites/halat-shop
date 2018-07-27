@@ -126,6 +126,11 @@ h2:first-child {
   -webkit-appearance: none;
   -moz-appearance: none;
   appearance: none;
+  transition: all 0.2s ease;
+}
+
+.signInput:focus {
+  border: 1px solid #72E572;
 }
 
 .fontPicker {
@@ -396,6 +401,11 @@ slide {
   font-family: "AvenirNext-Bold";
   color: #FFF;
   cursor: pointer;
+  transition: all 0.2s ease;
+}
+
+.addToCart:hover {
+  transform: scale(1.1);
 }
 
 .sign {
@@ -465,6 +475,27 @@ slide {
   background: url(../img/img1.png) no-repeat center top/ cover;
   height: 30px;
   width: 148px;
+}
+
+footer {
+  margin-top: 50px;
+  height: 100px;
+  width: 100%;
+  background: #72E572;
+  display: grid;
+  grid-template-columns: 1fr 1fr 1fr;
+}
+
+footer p {
+  color: #FFF;
+  text-align: center;
+  margin-top: 42px;
+}
+
+footer p a {
+  color: #FFF;
+  text-decoration: none;
+  font-weight: bold;
 }
 
 @media screen and (max-width: 900px) {
