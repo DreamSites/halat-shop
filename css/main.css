@@ -20,6 +20,8 @@ header {
   width: 100%;
   height: 700px;
   background: url(../img/headerBG.jpg) no-repeat center top / cover;
+  -webkit-box-sizing: border-box;
+  box-sizing: border-box;
 }
 
 navigation {
@@ -54,11 +56,44 @@ nav a {
   margin-top: 10px;
 }
 
-h1 {
-  font-size: 36px;
-  margin-top: 30px;
-  margin-bottom: 10px;
+header p {
+  color: #FFFFFF;
+  text-transform: uppercase;
+  margin-left: 50px;
+  margin-top: 62px;
+}
+
+header h1 {
+  color: #FFFFFF;
+  margin-left: 50px;
+  width: 582px;
+  margin-top: 15px;
+}
+
+.headerScrollButton {
+  height: 50px;
+  width: 425px;
+  margin-left: 50px;
+  margin-top: 75px;
+  padding: 16px;
+  background: #1EA896;
+  border-radius: 25px;
   text-align: center;
+  text-transform: uppercase;
+  color: #FFFFFF;
+  cursor: pointer;
+}
+
+p {
+  margin: 0;
+  padding: 0;
+}
+
+h1 {
+  font-size: 58px;
+  font-weight: 900;
+  margin: 0;
+  padding: 0;
 }
 
 h2 {
