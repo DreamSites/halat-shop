@@ -104,6 +104,17 @@ h2 {
   padding-top: 50px;
 }
 
+h4 {
+  font-size: 18px;
+  font-weight: 400;
+  margin-top: 10px;
+  margin-bottom: 0;
+}
+
+h4:first-child {
+  margin-top: 0;
+}
+
 .caption {
   font-size: 12px;
   text-transform: uppercase;
@@ -159,11 +170,15 @@ h2 {
 }
 
 .constructorSection {
-  display: grid;
-  grid-template-columns: 1fr 1fr;
   max-width: 1024px;
   margin: 0 auto;
   height: 800px;
+}
+
+.constructorGrid {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  margin-top: 30px;
 }
 
 .constructor {
@@ -174,35 +189,33 @@ h2 {
 
 .signInput {
   height: 50px;
-  border: 1px solid #E6ECF8;
+  border: 1px solid #C4C4C4;
   -webkit-box-sizing: border-box;
   box-sizing: border-box;
   outline: none;
-  font-size: 18px;
+  font-size: 14px;
   width: 100%;
   padding-left: 10px;
-  font-family: "Avenir Next", "AvenirNext-Regular", sans-serif;
+  font-family: "Montserrat", sans-serif;
   -webkit-appearance: none;
   -moz-appearance: none;
   appearance: none;
   transition: all 0.2s ease;
-}
-
-.signInput:focus {
-  border: 1px solid #72E572;
+  border-radius: 5px;
 }
 
 .fontPicker {
   height: 50px;
   width: 100%;
-  border: 1px solid #E6ECF8;
+  border: 1px solid #C4C4C4;
   cursor: pointer;
+  border-radius: 5px;
 }
 
 .FP-Placeholder {
-  padding-top: 12px;
+  padding-top: 15px;
   padding-left: 10px;
-  color: #b9b9b9;
+  color: #C4C4C4;
   position: relative;
   z-index: 2;
 }
@@ -211,35 +224,52 @@ h2 {
   display: none;
   opacity: 0;
   padding-left: 10px;
-  height: 50px;
+  height: 40px;
 }
 
 .FP-Active {
-  background: #72E572;
+  background: #1EA896;
   color: white;
 }
 
 .FP-Active:hover {
-  background: #72E572 !important;
+  background: #1EA896 !important;
 }
 
-.FP-Item-1 {
-  margin-top: -37px !important;
-  display: none;
-  opacity: 0;
-  padding-left: 10px;
-  padding-top: 12px;
-  height: 50px;
+#FP-1 {
+  margin-top: -33px !important;
+  padding-top: 10px !important;
   position: relative;
   z-index: 1;
+  font-family: "Academia", "Montserrat", sans-serif;
+  border-radius: 5px 5px 0 0;
+  height: 39px;
+}
+
+#FP-2 {
+  font-family: "Campus", "Montserrat", sans-serif;
+}
+
+#FP-3 {
+  font-family: "CyrillicOld", "Montserrat", sans-serif;
+}
+
+#FP-4 {
+  font-family: "Lobster-Regular", "Montserrat", sans-serif;
+}
+
+#FP-5 {
+  font-family: "MonAmour", "Montserrat", sans-serif;
+}
+
+#FP-6 {
+  font-family: "Sladkoeshka", "Montserrat", sans-serif;
+  height: 39px;
+  border-radius: 0 0 5px 5px;
 }
 
 .FP-Item:hover {
-  background: #E6ECF8;
-}
-
-.FP-Item-1:hover {
-  background: #E6ECF8;
+  background: #F2F2F2;
 }
 
 select {
