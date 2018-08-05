@@ -398,6 +398,7 @@ h4:first-child {
   padding: 0;
   transition: all 0.2s ease;
   background: -moz-linear-gradient(left, #C4C4C4 50%, #FFFFFF 50%);
+  background: -webkit-gradient(linear, left top, right top, color-stop(0.5, #C4C4C4), color-stop(0.5, #FFFFFF));
   background: -webkit-linear-gradient(left, #C4C4C4 50%, #FFFFFF 50%);
   background: -o-linear-gradient(left, #C4C4C4 50%, #FFFFFF 50%);
   background: -ms-linear-gradient(left, #C4C4C4 50%, #FFFFFF 50%);
