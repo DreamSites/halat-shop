@@ -483,22 +483,18 @@ input[type='range']::-webkit-slider-thumb {
 }
 
 #imgButton-1 {
-  background: url(../img/img.png) no-repeat center top/ cover;
   background-size: 100px auto;
 }
 
 #imgButton-2 {
-  background: url(../img/img2.png) no-repeat center top/ cover;
   background-size: 100px auto;
 }
 
 #imgButton-3 {
-  background: url(../img/img3.png) no-repeat center top/ cover;
   background-size: 80px auto;
 }
 
 #imgButton-4 {
-  background: url(../img/img1.png) no-repeat center top/ cover;
   background-size: 100px auto;
   position: relative;
   top: 20px;
@@ -511,26 +507,38 @@ input[type='range']::-webkit-slider-thumb {
 }
 
 #img-1 {
-  background: url(../img/img.png) no-repeat center top/ cover;
   height: 100px;
   width: 187px;
   margin-top: -55px;
 }
 
 #img-2 {
-  background: url(../img/img2.png) no-repeat center top/ cover;
   width: 60px;
   height: 37px;
 }
 
 #img-3 {
-  background: url(../img/img3.png) no-repeat center top/ cover;
   height: 60px;
   width: 92px;
 }
 
 #img-4 {
-  background: url(../img/img1.png) no-repeat center top/ cover;
   height: 30px;
   width: 148px;
+}
+
+#imgButton-1, #img-1 {
+  background: url(../img/img.png) no-repeat center top/ cover;
+}
+
+#imgButton-2, #img-2 {
+  background: url(../img/img2.png) no-repeat center top/ cover;
+}
+
+#imgButton-3, #img-3 {
+  background: url(../img/img3.png) no-repeat center top/ cover;
+}
+
+#imgButton-4, #img-24{
+  background: url(../img/img1.png) no-repeat center top/ cover;
 }
