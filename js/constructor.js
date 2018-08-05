@@ -126,9 +126,21 @@ $(document).ready(function() {
   //Выбор цвета надписи
 
 
+
+  function closeCP() {
+    $('#CP-Placeholder').css('color', 'black');
+    $('.colorPicker').css('border', '1px solid #1EA896');
+    $('.colorPicker').removeClass('opened');
+    $('.CP-Colors').css('opacity', '0');
+    $('.CP-Placeholder').css('opacity', '100');
+    $('.CP-Colors').css('z-index', '1');
+    $('.CP-Placeholder').css('z-index', '2');
+    $('.CP-Item').css('height', '0');
+    $('.CP-Item p').css('margin-top', '10px');
+    $('.CP-Item p').css('transition', 'all 0.2s ease');
+  }
   $('.CP-Placeholder').click(function() {
-    $('.colorPicker').css('height', '100px');
-    $('.colorPicker').css('cursor', 'default');
+    $('.colorPicker').addClass('opened');
     $('.CP-Colors').css('opacity', '100');
     $(this).css('opacity', '0');
     $('.CP-Colors').css('z-index', '2');
@@ -140,85 +152,34 @@ $(document).ready(function() {
   $('#CP-1').click(function() {
     $('#sign').css('color', '#F03434');
     $('#CP-Placeholder').html('Красный <img src="img/expandArrow.svg" alt="" style="float: right; margin-right: 15px;">');
-    $('#CP-Placeholder').css('color', 'black');
-    $('.colorPicker').css('border', '1px solid #1EA896');
-    $('.colorPicker').css('height', '50px');
-    $('.colorPicker').css('cursor', 'pointer');
-    $('.CP-Colors').css('opacity', '0');
-    $('.CP-Placeholder').css('opacity', '100');
-    $('.CP-Colors').css('z-index', '1');
-    $('.CP-Placeholder').css('z-index', '2');
-    $('.CP-Item').css('height', '0');
-    $('.CP-Item p').css('margin-top', '10px');
-    $('.CP-Item p').css('transition', 'all 0.2s ease');
+    closeCP();
   });
   $('#CP-2').click(function() {
     $('#sign').css('color', '#FABE58');
     $('#CP-Placeholder').html('Оранжевый <img src="img/expandArrow.svg" alt="" style="float: right; margin-right: 15px;">');
-    $('#CP-Placeholder').css('color', 'black');
-    $('.colorPicker').css('border', '1px solid #1EA896');
-    $('.colorPicker').css('height', '50px');
-    $('.colorPicker').css('cursor', 'pointer');
-    $('.CP-Colors').css('opacity', '0');
-    $('.CP-Placeholder').css('opacity', '100');
-    $('.CP-Colors').css('z-index', '1');
-    $('.CP-Placeholder').css('z-index', '2');
-    $('.CP-Item').css('height', '0');
-    $('.CP-Item p').css('margin-top', '10px');
-    $('.CP-Item p').css('transition', 'all 0.2s ease');
+    closeCP();
   });
   $('#CP-3').click(function() {
     $('#sign').css('color', '#446CB3');
     $('#CP-Placeholder').html('Синий <img src="img/expandArrow.svg" alt="" style="float: right; margin-right: 15px;">');
-    $('#CP-Placeholder').css('color', 'black');
-    $('.colorPicker').css('border', '1px solid #1EA896');
-    $('.colorPicker').css('height', '50px');
-    $('.colorPicker').css('cursor', 'pointer');
-    $('.CP-Colors').css('opacity', '0');
-    $('.CP-Placeholder').css('opacity', '100');
-    $('.CP-Colors').css('z-index', '1');
-    $('.CP-Placeholder').css('z-index', '2');
-    $('.CP-Item').css('height', '0');
-    $('.CP-Item p').css('margin-top', '10px');
-    $('.CP-Item p').css('transition', 'all 0.2s ease');
+    closeCP();
   });
   $('#CP-4').click(function() {
     $('#sign').css('color', '#BF55EC');
     $('#CP-Placeholder').html('Фиолетовый <img src="img/expandArrow.svg" alt="" style="float: right; margin-right: 15px;">');
-    $('#CP-Placeholder').css('color', 'black');
-    $('.colorPicker').css('border', '1px solid #1EA896');
-    $('.colorPicker').css('height', '50px');
-    $('.colorPicker').css('cursor', 'pointer');
-    $('.CP-Colors').css('opacity', '0');
-    $('.CP-Placeholder').css('opacity', '100');
-    $('.CP-Colors').css('z-index', '1');
-    $('.CP-Placeholder').css('z-index', '2');
-    $('.CP-Item').css('height', '0');
-    $('.CP-Item p').css('margin-top', '10px');
-    $('.CP-Item p').css('transition', 'all 0.2s ease');
+    closeCP();
   });
   $('#CP-5').click(function() {
     $('#sign').css('color', '#F7CA18');
     $('#CP-Placeholder').html('Золотой <img src="img/expandArrow.svg" alt="" style="float: right; margin-right: 15px;">');
-    $('#CP-Placeholder').css('color', 'black');
-    $('.colorPicker').css('border', '1px solid #1EA896');
-    $('.colorPicker').css('height', '50px');
-    $('.colorPicker').css('cursor', 'pointer');
-    $('.CP-Colors').css('opacity', '0');
-    $('.CP-Placeholder').css('opacity', '100');
-    $('.CP-Colors').css('z-index', '1');
-    $('.CP-Placeholder').css('z-index', '2');
-    $('.CP-Item').css('height', '0');
-    $('.CP-Item p').css('margin-top', '10px');
-    $('.CP-Item p').css('transition', 'all 0.2s ease');
+    closeCP();
   });
   $('body').click(function(evt) {
     if (evt.target.id == "colorPicker")
       return;
     if ($(evt.target).closest('#colorPicker').length)
       return;
-    $('.colorPicker').css('height', '50px');
-    $('.colorPicker').css('cursor', 'pointer');
+    $('.colorPicker').removeClass('opened');
     $('.CP-Colors').css('opacity', '0');
     $('.CP-Placeholder').css('opacity', '100');
     $('.CP-Colors').css('z-index', '1');
