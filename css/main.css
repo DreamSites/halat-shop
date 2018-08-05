@@ -310,16 +310,18 @@ h4:first-child {
 }
 
 .CP-Item {
-  height: 60px;
+  height: 0px;
   width: 60px;
   border-radius: 5px;
   margin: 0 auto;
   cursor: pointer;
+  transition: all 0.2s ease;
 }
 
 .CP-Item p {
   text-align: center;
-  margin-top: 65px;
+  margin-top: 10px;
+  transition: all 0.2s ease;
 }
 
 #CP-1 {
@@ -383,70 +385,27 @@ h4:first-child {
 
 #CP-5 p {}
 
-select {
-  height: 50px;
-  border: 1px solid #E6ECF8;
-  -webkit-box-sizing: border-box;
-  box-sizing: border-box;
-  outline: none;
-  font-size: 18px;
-  width: 100%;
-  padding-left: 10px;
-  font-family: "Avenir Next", "AvenirNext-Regular", sans-serif;
-  -webkit-appearance: none;
-  -moz-appearance: none;
-  appearance: none;
-  border-radius: 0;
-}
-
 .signSize {
-  -webkit-box-sizing: border-box;
-  box-sizing: border-box;
-  overflow: hidden;
+  -webkit-appearance: none;
+  -moz-apperance: none;
+  border-radius: 5px;
+  height: 50px;
+  background: -webkit-gradient( linear, left top, right top, color-stop(0.5, #C4C4C4), color-stop(0.5, #FFFFFF));
+  border: 1px solid #C4C4C4;
   width: 100%;
-  -webkit-appearance: none;
-  -moz-appearance: none;
-  appearance: none;
-  background-color: #FFF;
-  border: 1px solid #E6ECF8;
+  -webkit-box-sizing: border-box;
+  box-sizing: border-box;
   margin: 0;
-  outline: none;
+  padding: 0;
+  transition: all 0.2s ease;
 }
 
-.signSize::-webkit-slider-runnable-track {
+input[type='range']::-webkit-slider-thumb {
+  -webkit-appearance: none !important;
+  background-color: none;
+  border: none;
   height: 50px;
-  -webkit-appearance: none;
-  -moz-appearance: none;
-  appearance: none;
-  color: #FFF;
-  -webkit-box-sizing: border-box;
-  box-sizing: border-box;
-}
-
-.signSize::-webkit-slider-thumb {
   width: 1px;
-  -webkit-appearance: none;
-  height: 50px;
-  background: #72E572;
-  box-shadow: -20rem 0 0 20rem #72E572;
-  -webkit-box-sizing: border-box;
-  box-sizing: border-box;
-}
-
-.signSize::-moz-range-progress {
-  background-color: #72E572;
-}
-
-.signSize::-moz-range-track {
-  background-color: #FFF;
-}
-
-.signSize::-ms-fill-lower {
-  background-color: #72E572;
-}
-
-.signSize::-ms-fill-upper {
-  background-color: #FFF;
 }
 
 .sizePicker {
@@ -510,36 +469,6 @@ select {
   text-align: center;
   padding-top: 80px;
   height: 800px;
-}
-
-.colorswitch {
-  display: inline-block;
-  margin: 3px;
-  width: 25px;
-  height: 25px;
-  cursor: pointer;
-  border-radius: 50%;
-  border: 0;
-}
-
-#cs1 {
-  background: red;
-}
-
-#cs2 {
-  background: orange;
-}
-
-#cs3 {
-  background: blue;
-}
-
-#cs4 {
-  background: purple;
-}
-
-#cs5 {
-  background: yellow;
 }
 
 .imgButton {

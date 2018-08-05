@@ -133,6 +133,9 @@ $(document).ready(function() {
     $(this).css('opacity', '0');
     $('.CP-Colors').css('z-index', '2');
     $(this).css('z-index', '1');
+    $('.CP-Item').css('height', '60px');
+    $('.CP-Item p').css('margin-top', '65px');
+    $('.CP-Item p').css('transition', 'none');
   });
   $('#CP-1').click(function() {
     $('#sign').css('color', '#F03434');
@@ -145,6 +148,9 @@ $(document).ready(function() {
     $('.CP-Placeholder').css('opacity', '100');
     $('.CP-Colors').css('z-index', '1');
     $('.CP-Placeholder').css('z-index', '2');
+    $('.CP-Item').css('height', '0');
+    $('.CP-Item p').css('margin-top', '10px');
+    $('.CP-Item p').css('transition', 'all 0.2s ease');
   });
   $('#CP-2').click(function() {
     $('#sign').css('color', '#FABE58');
@@ -157,6 +163,9 @@ $(document).ready(function() {
     $('.CP-Placeholder').css('opacity', '100');
     $('.CP-Colors').css('z-index', '1');
     $('.CP-Placeholder').css('z-index', '2');
+    $('.CP-Item').css('height', '0');
+    $('.CP-Item p').css('margin-top', '10px');
+    $('.CP-Item p').css('transition', 'all 0.2s ease');
   });
   $('#CP-3').click(function() {
     $('#sign').css('color', '#446CB3');
@@ -169,6 +178,9 @@ $(document).ready(function() {
     $('.CP-Placeholder').css('opacity', '100');
     $('.CP-Colors').css('z-index', '1');
     $('.CP-Placeholder').css('z-index', '2');
+    $('.CP-Item').css('height', '0');
+    $('.CP-Item p').css('margin-top', '10px');
+    $('.CP-Item p').css('transition', 'all 0.2s ease');
   });
   $('#CP-4').click(function() {
     $('#sign').css('color', '#BF55EC');
@@ -181,6 +193,9 @@ $(document).ready(function() {
     $('.CP-Placeholder').css('opacity', '100');
     $('.CP-Colors').css('z-index', '1');
     $('.CP-Placeholder').css('z-index', '2');
+    $('.CP-Item').css('height', '0');
+    $('.CP-Item p').css('margin-top', '10px');
+    $('.CP-Item p').css('transition', 'all 0.2s ease');
   });
   $('#CP-5').click(function() {
     $('#sign').css('color', '#F7CA18');
@@ -193,6 +208,9 @@ $(document).ready(function() {
     $('.CP-Placeholder').css('opacity', '100');
     $('.CP-Colors').css('z-index', '1');
     $('.CP-Placeholder').css('z-index', '2');
+    $('.CP-Item').css('height', '0');
+    $('.CP-Item p').css('margin-top', '10px');
+    $('.CP-Item p').css('transition', 'all 0.2s ease');
   });
   $('body').click(function(evt) {
     if (evt.target.id == "colorPicker")
@@ -205,5 +223,35 @@ $(document).ready(function() {
     $('.CP-Placeholder').css('opacity', '100');
     $('.CP-Colors').css('z-index', '1');
     $('.CP-Placeholder').css('z-index', '2');
+    $('.CP-Item').css('height', '0');
+    $('.CP-Item p').css('margin-top', '10px');
+    $('.CP-Item p').css('transition', 'all 0.2s ease');
+  });
+
+
+  //Выбор размера надписи
+  $('#signSize').mouseover(function() {
+    $('span').css('transition', 'none');
+  });
+
+  $('#signSize').on('input', function() {
+    $(this).css('border', '1px solid #1EA896');
+    var val = ($(this).val() - $(this).attr('min')) / ($(this).attr('max') - $(this).attr('min'));
+
+    $(this).css('background-image',
+      '-webkit-gradient(linear, left top, right top, ' +
+      'color-stop(' + val + ', #1EA896), ' +
+      'color-stop(' + val + ', #FFFFFF)' +
+      ')'
+    );
+
+    $('#sign').css('font-size', $(this).val() / 2);
+  });
+  $('body').mouseover(function(evt) {
+    if (evt.target.id == "signSize")
+      return;
+    if ($(evt.target).closest('#signSize').length)
+      return;
+    $('span').css('transition', 'all 0.2s ease');
   });
 });
