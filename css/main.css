@@ -235,18 +235,22 @@ h4:first-child {
   padding-top: 12px;
 }
 
+.FP-Item:hover {
+  background: #F2F2F2;
+}
+
 .FP-Active {
   background: #1EA896;
   color: white;
 }
 
 .FP-Active:hover {
-  background: #1EA896 !important;
+  background: #1EA896;
 }
 
 #FP-1 {
-  margin-top: -33px !important;
-  padding-top: 10px !important;
+  margin-top: -33px;
+  padding-top: 10px;
   position: relative;
   z-index: 1;
   font-family: "Academia", "Montserrat", sans-serif;
@@ -274,10 +278,6 @@ h4:first-child {
   font-family: "Sladkoeshka", "Montserrat", sans-serif;
   height: 39px;
   border-radius: 0 0 5px 5px;
-}
-
-.FP-Item:hover {
-  background: #F2F2F2;
 }
 
 .colorPicker {
