@@ -277,6 +277,107 @@ h4:first-child {
   background: #F2F2F2;
 }
 
+.colorPicker {
+  height: 50px;
+  width: 100%;
+  border: 1px solid #C4C4C4;
+  cursor: pointer;
+  border-radius: 5px;
+  position: relative;
+}
+
+.CP-Colors {
+  display: grid;
+  grid-template-columns: repeat(5, 1fr);
+  grid-gap: 15px;
+  padding-top: 10px;
+  width: 100%;
+  margin: 0 auto;
+  position: absolute;
+  top: 0;
+  opacity: 0;
+}
+
+.CP-Placeholder {
+  padding-top: 15px;
+  padding-left: 15px;
+  color: #C4C4C4;
+  position: relative;
+}
+
+.CP-Item {
+  height: 60px;
+  width: 60px;
+  border-radius: 5px;
+  margin: 0 auto;
+}
+
+.CP-Item p {
+  text-align: center;
+  margin-top: 65px;
+}
+
+#CP-1 {
+  background: #F03434;
+}
+
+#CP-1:hover {
+  color: #F03434;
+  transform: scale(1.05);
+}
+
+#CP-1 p {
+  margin-left: -1px;
+}
+
+#CP-2 {
+  background: #FABE58;
+}
+
+#CP-2:hover {
+  color: #FABE58;
+  transform: scale(1.05);
+}
+
+#CP-2 p {
+  margin-left: -12px;
+}
+
+#CP-3 {
+  background: #446CB3;
+}
+
+#CP-3:hover {
+  color: #446CB3;
+  transform: scale(1.05);
+}
+
+#CP-3 p {}
+
+#CP-4 {
+  background: #BF55EC;
+}
+
+#CP-4:hover {
+  color: #BF55EC;
+  transform: scale(1.05);
+}
+
+#CP-4 p {
+  margin-left: -15px;
+}
+
+#CP-5 {
+  background: #F7CA18;
+}
+
+#CP-5:hover {
+  color: #F7CA18;
+  transform: scale(1.05);
+}
+
+#CP-5 p {}
+
 select {
   height: 50px;
   border: 1px solid #E6ECF8;
@@ -291,111 +392,6 @@ select {
   -moz-appearance: none;
   appearance: none;
   border-radius: 0;
-}
-
-.slideshow-container {
-  position: relative;
-  margin: auto;
-}
-
-slide {
-  display: none;
-  height: 600px;
-}
-
-#slide1 {
-  background: url(../img/slide-1.jpg) no-repeat center top / cover;
-}
-
-#slide2 {
-  background: url(../img/slide-2.jpg) no-repeat center top / cover;
-}
-
-#slide3 {
-  background: url(../img/slide-3.jpg) no-repeat center top / cover;
-}
-
-#slide4 {
-  background: url(../img/slide-4.jpg) no-repeat center top / cover;
-}
-
-.prev, .next {
-  cursor: pointer;
-  position: absolute;
-  top: 50%;
-  width: auto;
-  margin-top: -22px;
-  padding: 16px;
-  color: white;
-  font-size: 18px;
-  transition: 0.6s ease;
-  border-radius: 0 3px 3px 0;
-}
-
-.next {
-  right: 0;
-  border-radius: 3px 0 0 3px;
-}
-
-.prev:hover, .next:hover {
-  background-color: rgba(0, 0, 0, 0.8);
-}
-
-.text {
-  color: #f2f2f2;
-  font-size: 15px;
-  padding: 8px 12px;
-  position: absolute;
-  bottom: 8px;
-  width: 100%;
-  text-align: center;
-}
-
-.numbertext {
-  color: #f2f2f2;
-  font-size: 12px;
-  padding: 8px 12px;
-  position: absolute;
-  top: 0;
-}
-
-.indexLine {
-  cursor: pointer;
-  height: 2px;
-  width: 30px;
-  margin: 0 2px;
-  background-color: #BBB;
-  display: inline-block;
-  transition: background-color 0.6s ease;
-}
-
-.active, .indexLine:hover {
-  background-color: #FFF;
-}
-
-.fade {
-  -webkit-animation-name: fade;
-  -webkit-animation-duration: 1.5s;
-  animation-name: fade;
-  animation-duration: 1.5s;
-}
-
-@-webkit-keyframes fade {
-  from {
-    opacity: .4
-  }
-  to {
-    opacity: 1
-  }
-}
-
-@keyframes fade {
-  from {
-    opacity: .4
-  }
-  to {
-    opacity: 1
-  }
 }
 
 .signSize {
@@ -501,6 +497,7 @@ slide {
 .sign {
   font-size: 27.5px;
   position: relative;
+  transition: all 0.2s ease;
 }
 
 .preview {
@@ -509,6 +506,7 @@ slide {
   padding-top: 80px;
   height: 800px;
 }
+
 .colorswitch {
   display: inline-block;
   margin: 3px;
@@ -518,20 +516,25 @@ slide {
   border-radius: 50%;
   border: 0;
 }
-#cs1{
-background: red;
+
+#cs1 {
+  background: red;
 }
-#cs2{
-background: orange;
+
+#cs2 {
+  background: orange;
 }
-#cs3{
-background: blue;
+
+#cs3 {
+  background: blue;
 }
-#cs4{
-background: purple;
+
+#cs4 {
+  background: purple;
 }
-#cs5{
-background: yellow;
+
+#cs5 {
+  background: yellow;
 }
 
 .imgButton {
@@ -597,25 +600,4 @@ background: yellow;
   background: url(../img/img1.png) no-repeat center top/ cover;
   height: 30px;
   width: 148px;
-}
-
-footer {
-  margin-top: 50px;
-  height: 100px;
-  width: 100%;
-  background: #72E572;
-  display: grid;
-  grid-template-columns: 1fr 1fr 1fr;
-}
-
-footer p {
-  color: #FFF;
-  text-align: center;
-  margin-top: 42px;
-}
-
-footer p a {
-  color: #FFF;
-  text-decoration: none;
-  font-weight: bold;
 }

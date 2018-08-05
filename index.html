@@ -15,12 +15,10 @@
   <script type="text/javascript" src="js/jquery-3.3.1.min.js"></script>
   <script type="text/javascript" src="js/wow.min.js"></script>
 
-  <script type="text/javascript" src="js/changetext.js"></script>
   <script type="text/javascript" src="js/fontsize.js"></script>
   <script type="text/javascript" src="js/sizePicker.js"></script>
-
   <script type="text/javascript" src="js/loadimg.js"></script>
-  <script type="text/javascript" src="js/colorswitch.js"></script>
+
   <script type="text/javascript" src="js/navigation.js"></script>
   <script type="text/javascript" src="js/constructor.js"></script>
 
@@ -72,7 +70,7 @@
         <div>
 
           <h4>Надпись</h4>
-          <input type="text" class="signInput" name="signInput" placeholder="Введите вашу надпись" id="signInput" onkeyup="changetext()">
+          <input type="text" class="signInput" name="signInput" placeholder="Введите вашу надпись" id="signInput">
 
           <h4>Шрифт</h4>
           <div class="fontPicker" id="fontPicker">
@@ -89,12 +87,28 @@
           </div>
 
           <h4>Цвет надписи</h4>
-          <div>
-            <input onclick="b1()" class="colorswitch" type="button" value="" name="red" id="cs1">
-            <input onclick="b2()" class="colorswitch" type="button" value="" name="orange" id="cs2">
-            <input onclick="b3()" class="colorswitch" type="button" value="" name="blue" id="cs3">
-            <input onclick="b4()" class="colorswitch" type="button" value="" name="purple" id="cs4">
-            <input onclick="b5()" class="colorswitch" type="button" value="" name="yellow" id="cs5">
+          <div class="colorPicker" id="colorPicker">
+            <div class="CP-Placeholder" id="CP-Placeholder">
+              Выберите цвет надписи
+              <img src="img/expandArrow.svg" alt="" style="float: right; margin-right: 15px;">
+            </div>
+            <div class="CP-Colors">
+              <div class="CP-Item" id="CP-1">
+                <p>Красный</p>
+              </div>
+              <div class="CP-Item" id="CP-2">
+                <p>Оранжевый</p>
+              </div>
+              <div class="CP-Item" id="CP-3">
+                <p>Синий</p>
+              </div>
+              <div class="CP-Item" id="CP-4">
+                <p>Фиолетовый</p>
+              </div>
+              <div class="CP-Item" id="CP-5">
+                <p>Золотой</p>
+              </div>
+            </div>
           </div>
 
           <h4>Размер надписи</h4>
