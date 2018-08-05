@@ -254,4 +254,75 @@ $(document).ready(function() {
       return;
     $('span').css('transition', 'all 0.2s ease');
   });
+
+
+  //Выбор размера халата
+
+
+  $('#SP-1').click(function() {
+    $('#SP-1').addClass('SP-Active');
+    $('#SP-2').attr('class', 'SP SP-L');
+    $('#SP-3').attr('class', 'SP SP-L');
+    $('#SP-4').attr('class', 'SP');
+    $('#SP-5').attr('class', 'SP SP-R');
+    $('#SP-6').attr('class', 'SP SP-R');
+    $('.sizePicker').css('border', '1px solid #1EA896');
+    $('.SP-L').css('border-right', '1px solid #1EA896');
+    $('.SP-R').css('border-left', '1px solid #1EA896');
+  });
+  $('#SP-2').click(function() {
+    $('#SP-1').attr('class', 'SP SP-L');
+    $('#SP-2').addClass('SP-Active');
+    $('#SP-3').attr('class', 'SP SP-L');
+    $('#SP-4').attr('class', 'SP');
+    $('#SP-5').attr('class', 'SP SP-R');
+    $('#SP-6').attr('class', 'SP SP-R');
+    $('.sizePicker').css('border', '1px solid #1EA896');
+    $('.SP-L').css('border-right', '1px solid #1EA896');
+    $('.SP-R').css('border-left', '1px solid #1EA896');
+  });
+  $('#SP-3').click(function() {
+    $('#SP-1').attr('class', 'SP SP-L');
+    $('#SP-2').attr('class', 'SP SP-L');
+    $('#SP-3').addClass('SP-Active');
+    $('#SP-4').attr('class', 'SP');
+    $('#SP-5').attr('class', 'SP SP-R');
+    $('#SP-6').attr('class', 'SP SP-R');
+    $('.sizePicker').css('border', '1px solid #1EA896');
+    $('.SP-L').css('border-right', '1px solid #1EA896');
+    $('.SP-R').css('border-left', '1px solid #1EA896');
+  });
+  $('#SP-4').click(function() {
+    $('#SP-1').attr('class', 'SP SP-L');
+    $('#SP-2').attr('class', 'SP SP-L');
+    $('#SP-3').attr('class', 'SP SP-L');
+    $('#SP-4').addClass('SP-Active');
+    $('#SP-5').attr('class', 'SP SP-R');
+    $('#SP-6').attr('class', 'SP SP-R');
+    $('.sizePicker').css('border', '1px solid #1EA896');
+    $('.SP-L').css('border-right', '1px solid #1EA896');
+    $('.SP-R').css('border-left', '1px solid #1EA896');
+  });
+  $('#SP-5').click(function() {
+    $('#SP-1').attr('class', 'SP SP-L');
+    $('#SP-2').attr('class', 'SP SP-L');
+    $('#SP-3').attr('class', 'SP SP-L');
+    $('#SP-4').attr('class', 'SP');
+    $('#SP-5').addClass('SP-Active');
+    $('#SP-6').attr('class', 'SP SP-R');
+    $('.sizePicker').css('border', '1px solid #1EA896');
+    $('.SP-L').css('border-right', '1px solid #1EA896');
+    $('.SP-R').css('border-left', '1px solid #1EA896');
+  });
+  $('#SP-6').click(function() {
+    $('#SP-1').attr('class', 'SP SP-L');
+    $('#SP-2').attr('class', 'SP SP-L');
+    $('#SP-3').attr('class', 'SP SP-L');
+    $('#SP-4').attr('class', 'SP');
+    $('#SP-5').attr('class', 'SP SP-R');
+    $('#SP-6').addClass('SP-Active');
+    $('.sizePicker').css('border', '1px solid #1EA896');
+    $('.SP-L').css('border-right', '1px solid #1EA896');
+    $('.SP-R').css('border-left', '1px solid #1EA896');
+  });
 });

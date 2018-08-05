@@ -413,30 +413,33 @@ input[type='range']::-webkit-slider-thumb {
   height: 50px;
   display: grid;
   grid-template-columns: 1fr 1fr 1fr 1fr 1fr 1fr;
-  border: 1px solid #E6ECF8;
+  border: 1px solid #C4C4C4;
   -webkit-user-select: none;
   -moz-user-select: none;
   -ms-user-select: none;
   user-select: none;
   cursor: pointer;
+  border-radius: 5px;
+  overflow: hidden;
 }
 
 .SP-L {
-  border-right: 1px solid #E6ECF8;
+  border-right: 1px solid #C4C4C4;
 }
 
 .SP-R {
-  border-left: 1px solid #E6ECF8;
+  border-left: 1px solid #C4C4C4;
 }
 
 .SP {
   text-align: center;
-  padding-top: 13px;
+  padding-top: 16px;
 }
 
 .SP-Active {
-  background: #72E572;
+  background: #1EA896;
   color: #FFF;
+  font-weight: 900;
 }
 
 .addToCart {
@@ -445,17 +448,15 @@ input[type='range']::-webkit-slider-thumb {
   appearance: none;
   height: 50px;
   width: 100%;
-  background: #72E572;
+  background: #1EA896;
   border: none;
-  font-family: "Avenir Next", "AvenirNext-Regular", sans-serif;
-  font-size: 18px;
+  font-family: "Montserrat", sans-serif;
+  font-size: 14px;
+  text-transform: uppercase;
   color: #FFF;
   cursor: pointer;
   transition: all 0.2s ease;
-}
-
-.addToCart:hover {
-  transform: scale(1.1);
+  border-radius: 25px;
 }
 
 .sign {
