@@ -296,6 +296,7 @@ h4:first-child {
   position: absolute;
   top: 0;
   opacity: 0;
+  z-index: 1;
 }
 
 .CP-Placeholder {
@@ -303,6 +304,9 @@ h4:first-child {
   padding-left: 15px;
   color: #C4C4C4;
   position: relative;
+  width: 100%;
+  height: 100%;
+  z-index: 2;
 }
 
 .CP-Item {
@@ -310,6 +314,7 @@ h4:first-child {
   width: 60px;
   border-radius: 5px;
   margin: 0 auto;
+  cursor: pointer;
 }
 
 .CP-Item p {
