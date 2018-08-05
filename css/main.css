@@ -480,7 +480,6 @@ input[type='range']::-webkit-slider-thumb {
   height: 50px;
   padding-bottom: 2px;
   width: 100px;
-  outline: none;
   border: 0;
 }
 
