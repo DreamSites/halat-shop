@@ -18,7 +18,7 @@
   <script type="text/javascript" src="js/changetext.js"></script>
   <script type="text/javascript" src="js/fontsize.js"></script>
   <script type="text/javascript" src="js/sizePicker.js"></script>
-  <script type="text/javascript" src="js/fontPicker.js"></script>
+
   <script type="text/javascript" src="js/loadimg.js"></script>
 
   <script type="text/javascript" src="js/navigation.js"></script>
@@ -78,6 +78,7 @@
           <div class="fontPicker" id="fontPicker">
             <div class="FP-Placeholder" id="FP-Placeholder">
               Выберите шрифт надписи
+              <img src="img/expandArrow.svg" alt="" style="float: right; margin-right: 15px;">
             </div>
             <div class="FP-Item" id="FP-1">Academia</div>
             <div class="FP-Item" id="FP-2">Campus</div>
@@ -87,9 +88,9 @@
             <div class="FP-Item" id="FP-6">Sladkoeshka</div>
           </div>
 
-          <h4>Цвет шрифта</h4>
+          <h4>Цвет надписи</h4>
           <select>
-            <option value="0" disabled selected>Выберите цвет шрифта</option>
+            <option value="0" disabled selected>Выберите цвет надписи</option>
             <option id="Font1" value="1">Academia</option>
             <option id="Font2" value="2">Campus</option>
             <option id="Font3" value="3">CyrillicOld</option>
@@ -98,7 +99,7 @@
             <option id="Font6" value="6">Sladkoeshka</option>
           </select>
 
-          <h4>Размер шрифта</h4>
+          <h4>Размер надписи</h4>
           <input type="range" class="signSize" name="signSize" id="signSize" min="10" max="100" oninput="fontSize(this.value)">
 
           <h4>Рисунок</h4>

@@ -195,13 +195,17 @@ h4:first-child {
   outline: none;
   font-size: 14px;
   width: 100%;
-  padding-left: 10px;
+  padding-left: 15px;
   font-family: "Montserrat", sans-serif;
   -webkit-appearance: none;
   -moz-appearance: none;
   appearance: none;
   transition: all 0.2s ease;
   border-radius: 5px;
+}
+
+.signInput::placeholder {
+  color: #C4C4C4;
 }
 
 .fontPicker {
@@ -214,7 +218,7 @@ h4:first-child {
 
 .FP-Placeholder {
   padding-top: 15px;
-  padding-left: 10px;
+  padding-left: 15px;
   color: #C4C4C4;
   position: relative;
   z-index: 2;
@@ -225,6 +229,7 @@ h4:first-child {
   opacity: 0;
   padding-left: 10px;
   height: 40px;
+  padding-top: 12px;
 }
 
 .FP-Active {
