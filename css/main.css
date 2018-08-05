@@ -386,7 +386,8 @@ h4:first-child {
 
 .signSize {
   -webkit-appearance: none;
-  -moz-apperance: none;
+  -moz-appearance: none;
+  appearance: none;
   border-radius: 5px;
   height: 50px;
   background: -webkit-gradient( linear, left top, right top, color-stop(0.5, #C4C4C4), color-stop(0.5, #FFFFFF));
@@ -400,7 +401,9 @@ h4:first-child {
 }
 
 input[type='range']::-webkit-slider-thumb {
-  -webkit-appearance: none !important;
+  -webkit-appearance: none;
+  -moz-appearance: none;
+  appearance: none;
   background-color: none;
   border: none;
   height: 50px;
