@@ -238,12 +238,7 @@ $(document).ready(function() {
     $(this).css('border', '1px solid #1EA896');
     var val = ($(this).val() - $(this).attr('min')) / ($(this).attr('max') - $(this).attr('min'));
 
-    $(this).css('background-image',
-      '-webkit-gradient(linear, left top, right top, ' +
-      'color-stop(' + val + ', #1EA896), ' +
-      'color-stop(' + val + ', #FFFFFF)' +
-      ')'
-    );
+    $(this).css('background', '-webkit-linear-gradient(left, #1EA896 '+ val*100 +'%, #FFFFFF '+ val*100 +'%)');
 
     $('#sign').css('font-size', $(this).val() / 2);
   });
