@@ -509,31 +509,63 @@ slide {
   padding-top: 80px;
   height: 800px;
 }
+.colorswitch {
+  display: inline-block;
+  margin: 3px;
+  width: 25px;
+  height: 25px;
+  cursor: pointer;
+  border-radius: 50%;
+  border: 0;
+}
+#cs1{
+background: red;
+}
+#cs2{
+background: orange;
+}
+#cs3{
+background: blue;
+}
+#cs4{
+background: purple;
+}
+#cs5{
+background: yellow;
+}
 
 .imgButton {
   background-size: 50px;
   color: #000000;
   cursor: pointer;
   font-weight: bold;
-  height: 30px;
+  height: 50px;
   padding-bottom: 2px;
-  width: 60px;
+  width: 100px;
+  outline: none;
+  border: 0;
 }
 
 #imgButton-1 {
   background: url(../img/img.png) no-repeat center top/ cover;
+  background-size: 100px auto;
 }
 
 #imgButton-2 {
   background: url(../img/img2.png) no-repeat center top/ cover;
+  background-size: 100px auto;
 }
 
 #imgButton-3 {
   background: url(../img/img3.png) no-repeat center top/ cover;
+  background-size: 80px auto;
 }
 
 #imgButton-4 {
   background: url(../img/img1.png) no-repeat center top/ cover;
+  background-size: 100px auto;
+  position: relative;
+  top: 20px;
 }
 
 .img {

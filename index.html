@@ -20,7 +20,7 @@
   <script type="text/javascript" src="js/sizePicker.js"></script>
 
   <script type="text/javascript" src="js/loadimg.js"></script>
-
+  <script type="text/javascript" src="js/colorswitch.js"></script>
   <script type="text/javascript" src="js/navigation.js"></script>
   <script type="text/javascript" src="js/constructor.js"></script>
 
@@ -89,26 +89,24 @@
           </div>
 
           <h4>Цвет надписи</h4>
-          <select>
-            <option value="0" disabled selected>Выберите цвет надписи</option>
-            <option id="Font1" value="1">Academia</option>
-            <option id="Font2" value="2">Campus</option>
-            <option id="Font3" value="3">CyrillicOld</option>
-            <option id="Font4" value="4">Lobster-Regular</option>
-            <option id="Font5" value="5">MonAmour</option>
-            <option id="Font6" value="6">Sladkoeshka</option>
-          </select>
+          <div>
+            <input onclick="b1()" class="colorswitch" type="button" value="" name="red" id="cs1">
+            <input onclick="b2()" class="colorswitch" type="button" value="" name="orange" id="cs2">
+            <input onclick="b3()" class="colorswitch" type="button" value="" name="blue" id="cs3">
+            <input onclick="b4()" class="colorswitch" type="button" value="" name="purple" id="cs4">
+            <input onclick="b5()" class="colorswitch" type="button" value="" name="yellow" id="cs5">
+          </div>
 
           <h4>Размер надписи</h4>
           <input type="range" class="signSize" name="signSize" id="signSize" min="10" max="100" oninput="fontSize(this.value)">
 
           <h4>Рисунок</h4>
-          <select>
+          <div>
             <input class="imgButton" type="button" id="imgButton-1">
             <input class="imgButton" type="button" id="imgButton-2">
             <input class="imgButton" type="button" id="imgButton-3">
             <input class="imgButton" type="button" id="imgButton-4">
-          </select>
+          </div>
 
           <h4>Размер</h4>
           <div class="sizePicker">
