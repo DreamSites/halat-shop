@@ -19,11 +19,9 @@ $(document).ready(function() {
 
   $('#fontPicker').click(function() {
     $(this).css('height', '240px');
-    $('#FP-Placeholder').css('z-index', '1');
-    $('#FP-Placeholder').css('opacity', '0');
+    $('#FP-Placeholder').css({'z-index':'1', 'opacity':'0'});
     $('#FP-1').css('z-index', '10');
-    $('.FP-Item').css('display', 'block')
-    $('.FP-Item').css('opacity', '100')
+    $('.FP-Item').css({'display':'block', 'opacity':'100'});
   })
   $('#FP-1').click(function() {
     $(this).addClass('FP-Active');
@@ -115,11 +113,9 @@ $(document).ready(function() {
     if ($(evt.target).closest('#fontPicker').length)
       return;
     $('#fontPicker').css('height', '50px');
-    $('#FP-Placeholder').css('z-index', '10');
-    $('#FP-Placeholder').css('opacity', '100');
+    $('#FP-Placeholder').css({'z-index':'10', 'opacity':'100'});
     $('#FP-1').css('z-index', '1');
-    $('.FP-Item').css('display', 'none')
-    $('.FP-Item').css('opacity', '0')
+    $('.FP-Item').css({'display':'none', 'opacity':'0'})
   });
 
 
@@ -128,26 +124,20 @@ $(document).ready(function() {
 
 
   function closeCP() {
-    $('#CP-Placeholder').css('color', 'black');
+    $('#CP-Placeholder').css({'color':'black', 'opacity':'100', 'z-index':'2'});
     $('.colorPicker').css('border', '1px solid #1EA896');
     $('.colorPicker').removeClass('opened');
-    $('.CP-Colors').css('opacity', '0');
-    $('.CP-Placeholder').css('opacity', '100');
-    $('.CP-Colors').css('z-index', '1');
-    $('.CP-Placeholder').css('z-index', '2');
+    $('.CP-Colors').css({'opacity':'0', 'z-index':'1'});
     $('.CP-Item').css('height', '0');
-    $('.CP-Item p').css('margin-top', '10px');
-    $('.CP-Item p').css('transition', 'all 0.2s ease');
+    $('.CP-Item p').css({'margin-top':'10px', 'transition':'all 0.2s ease'});
   }
   $('.CP-Placeholder').click(function() {
     $('.colorPicker').addClass('opened');
-    $('.CP-Colors').css('opacity', '100');
+    $('.CP-Colors').css({'opacity':'100', 'z-index':'2'});
     $(this).css('opacity', '0');
-    $('.CP-Colors').css('z-index', '2');
     $(this).css('z-index', '1');
     $('.CP-Item').css('height', '60px');
-    $('.CP-Item p').css('margin-top', '65px');
-    $('.CP-Item p').css('transition', 'none');
+    $('.CP-Item p').css({'margin-top':'65px', 'transition':'none'});
   });
   $('#CP-1').click(function() {
     $('#sign').css('color', '#F03434');
@@ -180,13 +170,10 @@ $(document).ready(function() {
     if ($(evt.target).closest('#colorPicker').length)
       return;
     $('.colorPicker').removeClass('opened');
-    $('.CP-Colors').css('opacity', '0');
-    $('.CP-Placeholder').css('opacity', '100');
-    $('.CP-Colors').css('z-index', '1');
-    $('.CP-Placeholder').css('z-index', '2');
+    $('.CP-Colors').css({'opacity':'0', 'z-index':'1'});
+    $('.CP-Placeholder').css({'opacity':'100', 'z-index':'2'});
     $('.CP-Item').css('height', '0');
-    $('.CP-Item p').css('margin-top', '10px');
-    $('.CP-Item p').css('transition', 'all 0.2s ease');
+    $('.CP-Item p').css({'margin-top':'10px', 'transition':'all 0.2s ease'});
   });
 
 
