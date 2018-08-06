@@ -107,12 +107,14 @@ $(document).ready(function() {
 
 
   function closeCP() {
-    $('#CP-Placeholder').css({'color':'black', 'opacity':'100', 'z-index':'2'});
-    $('.colorPicker').css('border', '1px solid #1EA896');
+    $('#CP-Placeholder').css({'opacity':'100', 'z-index':'2'});
     $('.colorPicker').removeClass('opened');
     $('.CP-Colors').css({'opacity':'0', 'z-index':'1'});
     $('.CP-Item').css('height', '0');
     $('.CP-Item p').css({'margin-top':'10px', 'transition':'all 0.2s ease'});
+  }
+  function pickCP() {
+    $('#CP-Placeholder').css('color', 'black');
   }
   $('.CP-Placeholder').click(function() {
     $('.colorPicker').addClass('opened');
@@ -126,37 +128,38 @@ $(document).ready(function() {
     $('#sign').css('color', '#F03434');
     $('#CP-Placeholder').html('Красный <img src="img/expandArrow.svg" alt="" style="float: right; margin-right: 15px;">');
     closeCP();
+    pickCP();
   });
   $('#CP-2').click(function() {
     $('#sign').css('color', '#FABE58');
     $('#CP-Placeholder').html('Оранжевый <img src="img/expandArrow.svg" alt="" style="float: right; margin-right: 15px;">');
     closeCP();
+    pickCP();
   });
   $('#CP-3').click(function() {
     $('#sign').css('color', '#446CB3');
     $('#CP-Placeholder').html('Синий <img src="img/expandArrow.svg" alt="" style="float: right; margin-right: 15px;">');
     closeCP();
+    pickCP();
   });
   $('#CP-4').click(function() {
     $('#sign').css('color', '#BF55EC');
     $('#CP-Placeholder').html('Фиолетовый <img src="img/expandArrow.svg" alt="" style="float: right; margin-right: 15px;">');
     closeCP();
+    pickCP();
   });
   $('#CP-5').click(function() {
     $('#sign').css('color', '#F7CA18');
     $('#CP-Placeholder').html('Золотой <img src="img/expandArrow.svg" alt="" style="float: right; margin-right: 15px;">');
     closeCP();
+    pickCP();
   });
   $('body').click(function(evt) {
     if (evt.target.id == "colorPicker")
       return;
     if ($(evt.target).closest('#colorPicker').length)
       return;
-    $('.colorPicker').removeClass('opened');
-    $('.CP-Colors').css({'opacity':'0', 'z-index':'1'});
-    $('.CP-Placeholder').css({'opacity':'100', 'z-index':'2'});
-    $('.CP-Item').css('height', '0');
-    $('.CP-Item p').css({'margin-top':'10px', 'transition':'all 0.2s ease'});
+    closeCP();
   });
 
 

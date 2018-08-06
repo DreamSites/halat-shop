@@ -300,6 +300,7 @@ h4:first-child {
 .colorPicker.opened {
   height: 100px;
   cursor: default;
+  border-color: #1EA896;
 }
 
 .CP-Colors {
