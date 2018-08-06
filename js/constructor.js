@@ -1,14 +1,28 @@
 $(document).ready(function() {
 
 
+  //Надпись
+
+
+  $('#signInput').keyup(function() {
+    $('#sign').html($(this).val());
+  });
+
+
   //Выбор шрифта надписи
 
 
   $('#fontPicker').click(function() {
     $(this).css('height', '240px');
-    $('#FP-Placeholder').css({'z-index':'1', 'opacity':'0'});
+    $('#FP-Placeholder').css({
+      'z-index': '1',
+      'opacity': '0'
+    });
     $('#FP-1').css('z-index', '10');
-    $('.FP-Item').css({'display':'block', 'opacity':'100'});
+    $('.FP-Item').css({
+      'display': 'block',
+      'opacity': '100'
+    });
     $('.fontPicker').css('border-color', '#1EA896');
   })
   $('#FP-1').click(function() {
@@ -95,9 +109,15 @@ $(document).ready(function() {
     if ($(evt.target).closest('#fontPicker').length)
       return;
     $('#fontPicker').css('height', '50px');
-    $('#FP-Placeholder').css({'z-index':'10', 'opacity':'100'});
+    $('#FP-Placeholder').css({
+      'z-index': '10',
+      'opacity': '100'
+    });
     $('#FP-1').css('z-index', '1');
-    $('.FP-Item').css({'display':'none', 'opacity':'0'});
+    $('.FP-Item').css({
+      'display': 'none',
+      'opacity': '0'
+    });
     $('.fontPicker').css('border-color', '#C4C4C4');
   });
 
@@ -107,22 +127,38 @@ $(document).ready(function() {
 
 
   function closeCP() {
-    $('#CP-Placeholder').css({'opacity':'100', 'z-index':'2'});
+    $('#CP-Placeholder').css({
+      'opacity': '100',
+      'z-index': '2'
+    });
     $('.colorPicker').removeClass('opened');
-    $('.CP-Colors').css({'opacity':'0', 'z-index':'1'});
+    $('.CP-Colors').css({
+      'opacity': '0',
+      'z-index': '1'
+    });
     $('.CP-Item').css('height', '0');
-    $('.CP-Item p').css({'margin-top':'10px', 'transition':'all 0.2s ease'});
+    $('.CP-Item p').css({
+      'margin-top': '10px',
+      'transition': 'all 0.2s ease'
+    });
   }
+
   function pickCP() {
     $('#CP-Placeholder').css('color', 'black');
   }
   $('.CP-Placeholder').click(function() {
     $('.colorPicker').addClass('opened');
-    $('.CP-Colors').css({'opacity':'100', 'z-index':'2'});
+    $('.CP-Colors').css({
+      'opacity': '100',
+      'z-index': '2'
+    });
     $(this).css('opacity', '0');
     $(this).css('z-index', '1');
     $('.CP-Item').css('height', '60px');
-    $('.CP-Item p').css({'margin-top':'65px', 'transition':'none'});
+    $('.CP-Item p').css({
+      'margin-top': '65px',
+      'transition': 'none'
+    });
   });
   $('#CP-1').click(function() {
     $('#sign').css('color', '#F03434');
@@ -172,7 +208,7 @@ $(document).ready(function() {
     $(this).css('border-color', '#1EA896');
     var val = ($(this).val() - $(this).attr('min')) / ($(this).attr('max') - $(this).attr('min'));
 
-    $(this).css('background', '-webkit-linear-gradient(left, #1EA896 '+ val*100 +'%, #FFFFFF '+ val*100 +'%)');
+    $(this).css('background', '-webkit-linear-gradient(left, #1EA896 ' + val * 100 + '%, #FFFFFF ' + val * 100 + '%)');
 
     $('#sign').css('font-size', $(this).val() / 2);
   });
@@ -182,7 +218,7 @@ $(document).ready(function() {
     $(this).css('border-color', '#C4C4C4');
 
     var val = ($(this).val() - $(this).attr('min')) / ($(this).attr('max') - $(this).attr('min'));
-    $(this).css('background', '-webkit-linear-gradient(left, #C4C4C4 '+ val*100 +'%, #FFFFFF '+ val*100 +'%)');
+    $(this).css('background', '-webkit-linear-gradient(left, #C4C4C4 ' + val * 100 + '%, #FFFFFF ' + val * 100 + '%)');
   });
 
 
