@@ -192,6 +192,39 @@ h4:first-child {
   background: url(../img/workBlockBG-8.png) no-repeat center center / cover;
 }
 
+.comment {
+  height: 350px;
+  width: 100%;
+  margin-top: 50px;
+  background: url(../img/commentBG.jpg) no-repeat center top / cover;
+}
+
+.lightBlackLayer {
+  background: rgba(20, 51, 47, 0.2);
+  height: 100%;
+  width: 100%;
+  padding-top: 80px;
+}
+
+.comment h2 {
+  color: #FFF;
+  text-align: center;
+  max-width: 1024px;
+  margin: 0 auto;
+  padding: 0;
+}
+
+.comment-Image {
+  height: 100px;
+  width: 100px;
+}
+
+.comment .caption {
+  color: #FFF;
+  text-align: center;
+  margin-top: 15px;
+}
+
 .constructorSection {
   max-width: 1024px;
   margin: 0 auto;
