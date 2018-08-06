@@ -5,141 +5,193 @@
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <meta http-equiv="X-UA-Compatible" content="ie=edge">
-  <title>Халаты на заказ</title>
+  <title>Магазин халатов</title>
 
   <link rel="stylesheet" href="css/main.css">
   <link rel="stylesheet" href="css/fonts.css">
 
+  <link href="https://fonts.googleapis.com/css?family=Montserrat:300,400,900&amp;subset=cyrillic,cyrillic-ext,latin-ext" rel="stylesheet">
+
   <script type="text/javascript" src="js/jquery-3.3.1.min.js"></script>
   <script type="text/javascript" src="js/wow.min.js"></script>
 
-  <script type="text/javascript" src="js/changetext.js"></script>
-  <script type="text/javascript" src="js/fontselection.js"></script>
-  <script type="text/javascript" src="js/fontsize.js"></script>
-  <script type="text/javascript" src="js/sizePicker.js"></script>
-  <script type="text/javascript" src="js/fontPicker.js"></script>
+  <script type="text/javascript" src="js/loadimg.js"></script>
+
+  <script type="text/javascript" src="js/navigation.js"></script>
+  <script type="text/javascript" src="js/constructor.js"></script>
 
 </head>
 
 <body>
   <header>
-    <div class="logo">
-      Логотип
-    </div>
-    <div class="nav">
-      <div id="navitem-1" class="navitem">
-        Главная
+    <navigation>
+      <div></div>
+      <nav>
+        <div class="navItem"><a href="header">Главная</a></div>
+        <div class="navItem"><a href=".ourWork">Наши работы</a></div>
+        <img src="img/logoWhite.png" alt="" class="logo">
+        <div class="navItem"><a href=".constructorSection">Конструктор</a></div>
+        <div class="navItem"><a href=".aboutUs">О нас</a></div>
+      </nav>
+      <div class="cart">
+
       </div>
-      <div id="navitem-2" class="navitem">
-        Наши работы
-      </div>
-      <div id="navitem-3" class="navitem">
-        Конструктор
-      </div>
-    </div>
-    <div class="cart">
-      <svg style="float: right;" width="44px" height="40px" viewBox="0 0 44 40" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
-          <g id="Page-1" stroke="none" stroke-width="1" fill="none" fill-rule="evenodd">
-              <g id="Desktop-HD" transform="translate(-1166.000000, -23.000000)" fill="#72E572" fill-rule="nonzero">
-                  <g id="Header" transform="translate(217.000000, 18.000000)">
-                      <g id="noun_cart_1445045" transform="translate(949.000000, 5.000000)">
-                          <g id="Group">
-                              <ellipse id="Oval" cx="15.9238095" cy="35.8421053" rx="3.98095238" ry="4"></ellipse>
-                              <ellipse id="Oval" cx="32.0571429" cy="35.8421053" rx="3.98095238" ry="4"></ellipse>
-                              <path d="M41.8,6.36842105 L17.0238095,6.36842105 L17.0238095,10.5789474 L39.1809524,10.5789474 L36.6666667,21.3157895 C36.3499352,22.7500497 35.0906521,23.7753858 33.6285714,23.7894737 L16.447619,23.7894737 C14.9659131,23.8000178 13.67815,22.7692643 13.3571429,21.3157895 L8.95714286,1.78947368 C8.73753186,0.833900629 7.8903353,0.15726591 6.91428571,0.157894737 L0.104761905,0.157894299 L0.104761905,4.36842105 L5.23809524,4.36842105 L9.27142857,22.2631579 C10.0139036,25.6389752 13.0069592,28.0317055 16.447619,28 L33.6285714,28 C37.0496398,28.0068243 40.0140262,25.619588 40.752381,22.2631579 L43.8428571,8.94736842 C43.9865879,8.32196719 43.8385205,7.66484626 43.4407087,7.16263997 C43.0428969,6.66043369 42.4388027,6.36800944 41.8,6.36842105 Z" id="Shape"></path>
-                          </g>
-                      </g>
-                  </g>
-              </g>
-          </g>
-      </svg>
+    </navigation>
+    <p>Магазин халатов</p>
+    <div style="margin-top: -9px; height: 3px;"><svg width="145" height="3" viewBox="0 0 145 3" fill="none" xmlns="http://www.w3.org/2000/svg" style="margin-left: 51px;">
+      <line y1="-1.5" x2="144.5" y2="-1.5" transform="translate(0.5 3)" stroke="#1EA896" stroke-width="3"/>
+    </svg></div>
+    <h1>Мы делаем лучшие именные халаты на заказ!</h1>
+    <div class="headerScrollButton" href=".constructorSection">
+      Создай свой халат сам
     </div>
   </header>
-  <section class="heroSlider">
-
-  </section>
   <section class="ourWork">
-    <h1>Наши работы</h1>
+    <h2>Наши работы</h2>
+    <div class="caption">Галерея последних халатов</div>
     <div class="workBlocks">
-      <div class="workBlock"></div>
-      <div class="workBlock"></div>
-      <div class="workBlock"></div>
-      <div class="workBlock"></div>
-      <div class="workBlock"></div>
-      <div class="workBlock"></div>
+      <div class="workBlock" id="workBlock-1"></div>
+      <div class="workBlock" id="workBlock-2"></div>
+      <div class="workBlock" id="workBlock-3"></div>
+      <div class="workBlock" id="workBlock-4"></div>
+      <div class="workBlock" id="workBlock-5"></div>
+      <div class="workBlock" id="workBlock-6"></div>
+      <div class="workBlock" id="workBlock-7"></div>
+      <div class="workBlock" id="workBlock-8"></div>
     </div>
   </section>
-  <h1>Конструктор</h1>
+  <section class="comment">
+    <div class="lightBlackLayer">
+      <h2>«Очень мягкие и приятные халаты, качественная надпись, муж доволен!»</h2>
+      <div style="margin: 0 auto; height: 100px; width: 100px; margin-top: 17px;">
+        <img src="img/comment-Image.png" alt="" class="comment-Image">
+      </div>
+      <div class="caption">Мария охрипова</div>
+    </div>
+  </section>
   <section class="constructorSection">
-    <div class="constructor">
-      <div>
-        <h2>Надпись</h2>
-        <input type="text" class="signInput" name="signInput" placeholder="Введите вашу надпись" id="signInput" onkeyup="changetext()">
+    <h2>Конструктор</h2>
+    <div class="caption">Создай свой халат сам</div>
+    <div class="constructorGrid">
+      <div class="constructor">
+        <div>
 
-        <h2>Шрифт</h2>
-        <div class="fontPicker" id="fontPicker">
-          <div class="FP-Placeholder" id="FP-Placeholder">
-            Выберите шрифт надписи
-            <svg id="FP-DownArrow" style="position: absolute; top: 21px; right: 10px;" width="16px" height="10px" viewBox="0 0 16 10" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
-                <g id="Page-1" stroke="none" stroke-width="1" fill="none" fill-rule="evenodd" fill-opacity="0.3">
-                    <g id="Desktop-HD" transform="translate(-684.000000, -1453.000000)" fill="#000000" fill-rule="nonzero">
-                        <g id="Group-2" transform="translate(218.000000, 1431.000000)">
-                            <g id="noun_down-arrow_661476" transform="translate(466.000000, 22.000000)">
-                                <polygon id="Shape" points="0 0 7.66666667 10 15.3333333 0"></polygon>
-                            </g>
-                        </g>
-                    </g>
-                </g></svg>
+          <h4>Надпись</h4>
+          <input type="text" class="signInput" name="signInput" placeholder="Введите вашу надпись" id="signInput">
+
+          <h4>Шрифт</h4>
+          <div class="fontPicker" id="fontPicker">
+            <div class="FP-Placeholder" id="FP-Placeholder">
+              Выберите шрифт надписи
+              <img src="img/expandArrow.svg" alt="" style="float: right; margin-right: 15px;">
+            </div>
+            <div class="FP-Item" id="FP-1">Academia</div>
+            <div class="FP-Item" id="FP-2">Campus</div>
+            <div class="FP-Item" id="FP-3">CyrillicOld</div>
+            <div class="FP-Item" id="FP-4">Lobster-Regular</div>
+            <div class="FP-Item" id="FP-5">MonAmour</div>
+            <div class="FP-Item" id="FP-6">Sladkoeshka</div>
           </div>
-          <div class="FP-Item-1" id="FP-1">Academia</div>
-          <div class="FP-Item" id="FP-2">Campus</div>
-          <div class="FP-Item" id="FP-3">CyrillicOld</div>
-          <div class="FP-Item" id="FP-4">Lobster-Regular</div>
-          <div class="FP-Item" id="FP-5">MonAmour</div>
-          <div class="FP-Item" id="FP-6">Sladkoeshka</div>
+
+          <h4>Цвет надписи</h4>
+          <div class="colorPicker" id="colorPicker">
+            <div class="CP-Placeholder" id="CP-Placeholder">
+              Выберите цвет надписи
+              <img src="img/expandArrow.svg" alt="" style="float: right; margin-right: 15px;">
+            </div>
+            <div class="CP-Colors">
+              <div class="CP-Item" id="CP-1">
+                <p>Красный</p>
+              </div>
+              <div class="CP-Item" id="CP-2">
+                <p>Оранжевый</p>
+              </div>
+              <div class="CP-Item" id="CP-3">
+                <p>Синий</p>
+              </div>
+              <div class="CP-Item" id="CP-4">
+                <p>Фиолетовый</p>
+              </div>
+              <div class="CP-Item" id="CP-5">
+                <p>Золотой</p>
+              </div>
+            </div>
+          </div>
+
+          <h4>Размер надписи</h4>
+          <input type="range" class="signSize" name="signSize" id="signSize" min="10" max="100" value="55" step="1">
+
+          <h4>Рисунок</h4>
+          <div>
+            <input class="imgButton" type="button" id="imgButton-1">
+            <input class="imgButton" type="button" id="imgButton-2">
+            <input class="imgButton" type="button" id="imgButton-3">
+            <input class="imgButton" type="button" id="imgButton-4">
+          </div>
+
+          <h4>Размер халата</h4>
+          <div class="sizePicker">
+            <div class="SP SP-L" id="SP-1">S</div>
+            <div class="SP SP-L" id="SP-2">M</div>
+            <div class="SP SP-L" id="SP-3">L</div>
+            <div class="SP" id="SP-4">XL</div>
+            <div class="SP SP-R" id="SP-5">XXL</div>
+            <div class="SP SP-R" id="SP-6">XXXL</div>
+          </div>
         </div>
-
-        <h2>Цвет шрифта</h2>
-        <select>
-          <option value="0" disabled selected>Выберите цвет шрифта</option>
-          <option id="Font1" value="1">Academia</option>
-          <option id="Font2" value="2">Campus</option>
-          <option id="Font3" value="3">CyrillicOld</option>
-          <option id="Font4" value="4">Lobster-Regular</option>
-          <option id="Font5" value="5">MonAmour</option>
-          <option id="Font6" value="6">Sladkoeshka</option>
-        </select>
-
-        <h2>Размер шрифта</h2>
-        <input type="range" class="signSize" name="signSize" id="signSize" min="10" max="100" oninput="fontSize(this.value)">
-
-        <h2>Рисунок</h2>
-        <select>
-          <option value="0" disabled selected>Выберите цвет шрифта</option>
-          <option id="Font1" value="1">Academia</option>
-          <option id="Font2" value="2">Campus</option>
-          <option id="Font3" value="3">CyrillicOld</option>
-          <option id="Font4" value="4">Lobster-Regular</option>
-          <option id="Font5" value="5">MonAmour</option>
-          <option id="Font6" value="6">Sladkoeshka</option>
-        </select>
-
-        <h2>Размер</h2>
-        <div class="sizePicker">
-          <div class="SP SP-L" id="SP-1">S</div>
-          <div class="SP SP-L" id="SP-2">M</div>
-          <div class="SP SP-L" id="SP-3">L</div>
-          <div class="SP" id="SP-4">XL</div>
-          <div class="SP SP-R" id="SP-5">XXL</div>
-          <div class="SP SP-R" id="SP-6">XXXL</div>
+        <button type="button" name="addToCart" class="addToCart" id="addToCart">Добавить в корзину</button>
+      </div>
+      <div class="preview">
+        <span class="sign" id="sign"></span>
+        <div class="img" id="img-1"></div>
+        <div class="img" id="img-2"></div>
+        <div class="img" id="img-3"></div>
+        <div class="img" id="img-4"></div>
+      </div>
+    </div>
+  </section>
+  <section class="aboutOrder">
+    <div class="blackLayer">
+      <div class="aboutOrderContent">
+        <div class="AO-Item">
+          <div class="AO-Circle"><img src="img/AO-Item-1.svg" alt="" class="AO-Item-Image"></div>
+          <h3>Заказ сделан</h3>
+          <div class="caption">Вы только что сделали заказ</div>
+        </div>
+        <img src="img/nextArrow.svg" alt="—>" class="nextArrow">
+        <div class="AO-Item">
+          <div class="AO-Circle"><img src="img/AO-Item-2.svg" alt="" class="AO-Item-Image"></div>
+          <h3>Звонок менеджера</h3>
+          <div class="caption">Наш менеджер свяжется с вами и уточнит детали</div>
+        </div>
+        <img src="img/nextArrow.svg" alt="—>" class="nextArrow">
+        <div class="AO-Item">
+          <div class="AO-Circle"><img src="img/AO-Item-3.svg" alt="" class="AO-Item-Image"></div>
+          <h3>Доставка</h3>
+          <div class="caption">Наш курьер доставит вам халат</div>
+        </div>
+        <img src="img/nextArrow.svg" alt="—>" class="nextArrow">
+        <div class="AO-Item">
+          <div class="AO-Circle"><img src="img/AO-Item-4.svg" alt="" class="AO-Item-Image"></div>
+          <h3>Оплата</h3>
+          <div class="caption">Вы оплачиваете заказ наличными или картой</div>
+        </div>
+        <img src="img/nextArrow.svg" alt="—>" class="nextArrow">
+        <div class="AO-Item">
+          <div class="AO-Circle"><img src="img/AO-Item-5.svg" alt="" class="AO-Item-Image"></div>
+          <h3>Поздравляем!</h3>
+          <div class="caption">Вы обладатель собственного именного халата!</div>
         </div>
       </div>
-      <button type="button" name="addToCart" class="addToCart" id="addToCart">Добавить в корзину</button>
-    </div>
-    <div class="preview">
-      <span class="sign" id="sign"></span>
     </div>
   </section>
+  <section class="aboutUs">
+    <h2>О нас</h2>
+    <div class="caption">Интересная информация</div>
+  </section>
+  <footer>
+
+  </footer>
 </body>
 
 </html>
