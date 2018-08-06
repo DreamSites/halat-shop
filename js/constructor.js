@@ -169,19 +169,20 @@ $(document).ready(function() {
   });
 
   $('#signSize').on('input', function() {
-    $(this).css('border', '1px solid #1EA896');
+    $(this).css('border-color', '#1EA896');
     var val = ($(this).val() - $(this).attr('min')) / ($(this).attr('max') - $(this).attr('min'));
 
     $(this).css('background', '-webkit-linear-gradient(left, #1EA896 '+ val*100 +'%, #FFFFFF '+ val*100 +'%)');
 
     $('#sign').css('font-size', $(this).val() / 2);
   });
-  $('body').mouseover(function(evt) {
-    if (evt.target.id == "signSize")
-      return;
-    if ($(evt.target).closest('#signSize').length)
-      return;
+
+  $('#signSize').mouseout(function() {
     $('span').css('transition', 'all 0.2s ease');
+    $(this).css('border-color', '#C4C4C4');
+
+    var val = ($(this).val() - $(this).attr('min')) / ($(this).attr('max') - $(this).attr('min'));
+    $(this).css('background', '-webkit-linear-gradient(left, #C4C4C4 '+ val*100 +'%, #FFFFFF '+ val*100 +'%)');
   });
 
 

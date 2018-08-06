@@ -418,7 +418,7 @@ h4:first-child {
   background: -ms-linear-gradient(left, #C4C4C4 50%, #FFFFFF 50%);
 }
 
-input[type='range']::-webkit-slider-thumb {
+.signSize::-webkit-slider-thumb {
   -webkit-appearance: none;
   -moz-appearance: none;
   appearance: none;
