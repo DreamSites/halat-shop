@@ -497,10 +497,6 @@ h4:first-child {
   cursor: pointer;
   border-radius: 5px;
   overflow: hidden;
-  -webkit-user-select: none;
-  -moz-user-select: none;
-  -ms-user-select: none;
-  user-select: none;
 }
 
 .SP-L {
