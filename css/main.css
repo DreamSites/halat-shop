@@ -457,9 +457,13 @@ h4:first-child {
 }
 
 .SP-Active {
-  background: #1EA896;
+  background: #C4C4C4;
   color: #FFF;
   font-weight: 900;
+}
+
+.SP-Active.focus {
+  background: #1EA896;
 }
 
 .addToCart {

@@ -189,70 +189,37 @@ $(document).ready(function() {
   //Выбор размера халата
 
 
+  function setActiveSP(activeSP) {
+    $('.SP').removeClass('SP-Active');
+    $(activeSP).addClass('SP-Active focus');
+    $('.sizePicker').css('border-color', '#1EA896');
+    $('.SP-L').css('border-right-color', '#1EA896');
+    $('.SP-R').css('border-left-color', '#1EA896');
+  }
+
   $('#SP-1').click(function() {
-    $('#SP-1').addClass('SP-Active');
-    $('#SP-2').attr('class', 'SP SP-L');
-    $('#SP-3').attr('class', 'SP SP-L');
-    $('#SP-4').attr('class', 'SP');
-    $('#SP-5').attr('class', 'SP SP-R');
-    $('#SP-6').attr('class', 'SP SP-R');
-    $('.sizePicker').css('border', '1px solid #1EA896');
-    $('.SP-L').css('border-right', '1px solid #1EA896');
-    $('.SP-R').css('border-left', '1px solid #1EA896');
+    setActiveSP(this);
   });
   $('#SP-2').click(function() {
-    $('#SP-1').attr('class', 'SP SP-L');
-    $('#SP-2').addClass('SP-Active');
-    $('#SP-3').attr('class', 'SP SP-L');
-    $('#SP-4').attr('class', 'SP');
-    $('#SP-5').attr('class', 'SP SP-R');
-    $('#SP-6').attr('class', 'SP SP-R');
-    $('.sizePicker').css('border', '1px solid #1EA896');
-    $('.SP-L').css('border-right', '1px solid #1EA896');
-    $('.SP-R').css('border-left', '1px solid #1EA896');
+    setActiveSP(this);
   });
   $('#SP-3').click(function() {
-    $('#SP-1').attr('class', 'SP SP-L');
-    $('#SP-2').attr('class', 'SP SP-L');
-    $('#SP-3').addClass('SP-Active');
-    $('#SP-4').attr('class', 'SP');
-    $('#SP-5').attr('class', 'SP SP-R');
-    $('#SP-6').attr('class', 'SP SP-R');
-    $('.sizePicker').css('border', '1px solid #1EA896');
-    $('.SP-L').css('border-right', '1px solid #1EA896');
-    $('.SP-R').css('border-left', '1px solid #1EA896');
+    setActiveSP(this);
   });
   $('#SP-4').click(function() {
-    $('#SP-1').attr('class', 'SP SP-L');
-    $('#SP-2').attr('class', 'SP SP-L');
-    $('#SP-3').attr('class', 'SP SP-L');
-    $('#SP-4').addClass('SP-Active');
-    $('#SP-5').attr('class', 'SP SP-R');
-    $('#SP-6').attr('class', 'SP SP-R');
-    $('.sizePicker').css('border', '1px solid #1EA896');
-    $('.SP-L').css('border-right', '1px solid #1EA896');
-    $('.SP-R').css('border-left', '1px solid #1EA896');
+    setActiveSP(this);
   });
   $('#SP-5').click(function() {
-    $('#SP-1').attr('class', 'SP SP-L');
-    $('#SP-2').attr('class', 'SP SP-L');
-    $('#SP-3').attr('class', 'SP SP-L');
-    $('#SP-4').attr('class', 'SP');
-    $('#SP-5').addClass('SP-Active');
-    $('#SP-6').attr('class', 'SP SP-R');
-    $('.sizePicker').css('border', '1px solid #1EA896');
-    $('.SP-L').css('border-right', '1px solid #1EA896');
-    $('.SP-R').css('border-left', '1px solid #1EA896');
+    setActiveSP(this);
   });
   $('#SP-6').click(function() {
-    $('#SP-1').attr('class', 'SP SP-L');
-    $('#SP-2').attr('class', 'SP SP-L');
-    $('#SP-3').attr('class', 'SP SP-L');
-    $('#SP-4').attr('class', 'SP');
-    $('#SP-5').attr('class', 'SP SP-R');
-    $('#SP-6').addClass('SP-Active');
-    $('.sizePicker').css('border', '1px solid #1EA896');
-    $('.SP-L').css('border-right', '1px solid #1EA896');
-    $('.SP-R').css('border-left', '1px solid #1EA896');
+    setActiveSP(this);
+  });
+
+  $('.sizePicker').mouseout(function() {
+    $(this).css('border-color', '#C4C4C4');
+    $('.SP-L').css('border-right-color', '#C4C4C4');
+    $('.SP-R').css('border-left-color', '#C4C4C4');
+    $('.SP').removeClass('focus');
   });
 });
