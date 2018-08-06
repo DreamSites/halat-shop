@@ -212,6 +212,7 @@ h4:first-child {
 
 .signInput:focus {
   outline: none;
+  border-color: #1EA896;
 }
 
 .signInput::placeholder {

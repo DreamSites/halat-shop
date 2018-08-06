@@ -1,19 +1,6 @@
 $(document).ready(function() {
 
 
-  //Надпись
-
-
-  $('#signInput').keyup(function() {
-    $('#sign').html($(this).val());
-    if ($(this).val() != "") {
-      $(this).css('border', '1px solid #1EA896');
-    } else {
-      $(this).css('border', '1px solid #C4C4C4');
-    }
-  });
-
-
   //Выбор шрифта надписи
 
 
