@@ -91,8 +91,10 @@ $(document).ready(function() {
     });
   }
 
-  function pickCP() {
+  function pickCP(color, colorHEX) {
     $('#CP-Placeholder').css('color', 'black');
+    $('#CP-Placeholder').html(color + '<img src="img/expandArrow.svg" alt="" style="float: right; margin-right: 15px;">');
+    $('#sign').css('color', colorHEX);
   }
   $('.CP-Placeholder').click(function() {
     $('.colorPicker').addClass('opened');
@@ -108,35 +110,26 @@ $(document).ready(function() {
       'transition': 'none'
     });
   });
+
   $('#CP-1').click(function() {
-    $('#sign').css('color', '#F03434');
-    $('#CP-Placeholder').html('Красный <img src="img/expandArrow.svg" alt="" style="float: right; margin-right: 15px;">');
     closeCP();
-    pickCP();
+    pickCP('Красный', '#F03434');
   });
   $('#CP-2').click(function() {
-    $('#sign').css('color', '#FABE58');
-    $('#CP-Placeholder').html('Оранжевый <img src="img/expandArrow.svg" alt="" style="float: right; margin-right: 15px;">');
     closeCP();
-    pickCP();
+    pickCP('Оранжевый', '#FABE58');
   });
   $('#CP-3').click(function() {
-    $('#sign').css('color', '#446CB3');
-    $('#CP-Placeholder').html('Синий <img src="img/expandArrow.svg" alt="" style="float: right; margin-right: 15px;">');
     closeCP();
-    pickCP();
+    pickCP('Синий', '#446CB3');
   });
   $('#CP-4').click(function() {
-    $('#sign').css('color', '#BF55EC');
-    $('#CP-Placeholder').html('Фиолетовый <img src="img/expandArrow.svg" alt="" style="float: right; margin-right: 15px;">');
     closeCP();
-    pickCP();
+    pickCP('Фиолетовый', '#BF55EC');
   });
   $('#CP-5').click(function() {
-    $('#sign').css('color', '#F7CA18');
-    $('#CP-Placeholder').html('Золотой <img src="img/expandArrow.svg" alt="" style="float: right; margin-right: 15px;">');
     closeCP();
-    pickCP();
+    pickCP('Золотой', '#F7CA18');
   });
   $('body').click(function(evt) {
     if (evt.target.id == "colorPicker")
