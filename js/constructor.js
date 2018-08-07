@@ -12,6 +12,14 @@ $(document).ready(function() {
   //Выбор шрифта надписи
 
 
+
+  function setActiveFP(activeFP, font) {
+    $('.FP-Item').removeClass('FP-Active');
+    $(activeFP).addClass('FP-Active');
+    $('#sign').css('font-family', font);
+    $('#FP-Placeholder').css('color', 'black');
+    $('#FP-Placeholder').html(font + '<img src = "img/expandArrow.svg" alt = "" style = "float: right; margin-right: 15px;">');
+  }
   $('#fontPicker').click(function() {
     $(this).css('height', '240px');
     $('#FP-Placeholder').css({
@@ -23,85 +31,25 @@ $(document).ready(function() {
       'display': 'block',
       'opacity': '100'
     });
-    $('.fontPicker').css('border-color', '#1EA896');
+    $(this).css('border-color', '#1EA896');
   })
   $('#FP-1').click(function() {
-    $(this).addClass('FP-Active');
-    $(this).css('border-radius', '3px 3px 0 0');
-    $('#FP-2').attr('class', 'FP-Item');
-    $('#FP-3').attr('class', 'FP-Item');
-    $('#FP-4').attr('class', 'FP-Item');
-    $('#FP-5').attr('class', 'FP-Item');
-    $('#FP-6').attr('class', 'FP-Item');
-    $('#FP-6').css('border-radius', '0 0 5px 5px');
-    $('#sign').css('font-family', 'Academia');
-    $('#FP-Placeholder').css('color', 'black');
-    $('#FP-Placeholder').html('Academia <img src = "img/expandArrow.svg" alt = "" style = "float: right; margin-right: 15px;">');
+    setActiveFP(this, 'Academia');
   })
   $('#FP-2').click(function() {
-    $('#FP-1').attr('class', 'FP-Item');
-    $('#FP-1').css('border-radius', '5px 5px 0 0');
-    $(this).addClass('FP-Active');
-    $('#FP-3').attr('class', 'FP-Item');
-    $('#FP-4').attr('class', 'FP-Item');
-    $('#FP-5').attr('class', 'FP-Item');
-    $('#FP-6').attr('class', 'FP-Item');
-    $('#FP-6').css('border-radius', '0 0 5px 5px');
-    $('#sign').css('font-family', 'Campus');
-    $('#FP-Placeholder').css('color', 'black');
-    $('#FP-Placeholder').html('Campus <img src = "img/expandArrow.svg" alt = "" style = "float: right; margin-right: 15px;">');
+    setActiveFP(this, 'Campus');
   })
   $('#FP-3').click(function() {
-    $('#FP-1').attr('class', 'FP-Item');
-    $('#FP-1').css('border-radius', '5px 5px 0 0');
-    $('#FP-2').attr('class', 'FP-Item');
-    $(this).addClass('FP-Active');
-    $('#FP-4').attr('class', 'FP-Item');
-    $('#FP-5').attr('class', 'FP-Item');
-    $('#FP-6').attr('class', 'FP-Item');
-    $('#FP-6').css('border-radius', '0 0 5px 5px');
-    $('#sign').css('font-family', 'CyrillicOld');
-    $('#FP-Placeholder').css('color', 'black');
-    $('#FP-Placeholder').html('CyrillicOld <img src = "img/expandArrow.svg" alt = "" style = "float: right; margin-right: 15px;">');
+    setActiveFP(this, 'CyrillicOld');
   })
   $('#FP-4').click(function() {
-    $('#FP-1').attr('class', 'FP-Item');
-    $('#FP-1').css('border-radius', '5px 5px 0 0');
-    $('#FP-2').attr('class', 'FP-Item');
-    $('#FP-3').attr('class', 'FP-Item');
-    $(this).addClass('FP-Active');
-    $('#FP-5').attr('class', 'FP-Item');
-    $('#FP-6').attr('class', 'FP-Item');
-    $('#FP-6').css('border-radius', '0 0 5px 5px');
-    $('#sign').css('font-family', 'Lobster-Regular');
-    $('#FP-Placeholder').css('color', 'black');
-    $('#FP-Placeholder').html('Lobster-Regular <img src = "img/expandArrow.svg" alt = "" style = "float: right; margin-right: 15px;">');
+    setActiveFP(this, 'Lobster-Regular');
   })
   $('#FP-5').click(function() {
-    $('#FP-1').attr('class', 'FP-Item');
-    $('#FP-1').css('border-radius', '5px 5px 0 0');
-    $('#FP-2').attr('class', 'FP-Item');
-    $('#FP-3').attr('class', 'FP-Item');
-    $('#FP-4').attr('class', 'FP-Item');
-    $(this).addClass('FP-Active');
-    $('#FP-6').attr('class', 'FP-Item');
-    $('#FP-6').css('border-radius', '0 0 5px 5px');
-    $('#sign').css('font-family', 'MonAmour');
-    $('#FP-Placeholder').css('color', 'black');
-    $('#FP-Placeholder').html('MonAmour <img src = "img/expandArrow.svg" alt = "" style = "float: right; margin-right: 15px;">');
+    setActiveFP(this, 'MonAmour');
   })
   $('#FP-6').click(function() {
-    $('#FP-1').attr('class', 'FP-Item');
-    $('#FP-1').css('border-radius', '5px 5px 0 0');
-    $('#FP-2').attr('class', 'FP-Item');
-    $('#FP-3').attr('class', 'FP-Item');
-    $('#FP-4').attr('class', 'FP-Item');
-    $('#FP-5').attr('class', 'FP-Item');
-    $(this).addClass('FP-Active');
-    $(this).css('border-radius', '0 0 3px 3px');
-    $('#sign').css('font-family', 'Sladkoeshka');
-    $('#FP-Placeholder').css('color', 'black');
-    $('#FP-Placeholder').html('Sladkoeshka <img src = "img/expandArrow.svg" alt = "" style = "float: right; margin-right: 15px;">');
+    setActiveFP(this, 'Sladkoeshka');
   })
   $('body').click(function(evt) {
     if (evt.target.id == "fontPicker")
@@ -143,8 +91,10 @@ $(document).ready(function() {
     });
   }
 
-  function pickCP() {
+  function pickCP(color, colorHEX) {
     $('#CP-Placeholder').css('color', 'black');
+    $('#CP-Placeholder').html(color + '<img src="img/expandArrow.svg" alt="" style="float: right; margin-right: 15px;">');
+    $('#sign').css('color', colorHEX);
   }
   $('.CP-Placeholder').click(function() {
     $('.colorPicker').addClass('opened');
@@ -160,35 +110,26 @@ $(document).ready(function() {
       'transition': 'none'
     });
   });
+
   $('#CP-1').click(function() {
-    $('#sign').css('color', '#F03434');
-    $('#CP-Placeholder').html('Красный <img src="img/expandArrow.svg" alt="" style="float: right; margin-right: 15px;">');
     closeCP();
-    pickCP();
+    pickCP('Красный', '#F03434');
   });
   $('#CP-2').click(function() {
-    $('#sign').css('color', '#FABE58');
-    $('#CP-Placeholder').html('Оранжевый <img src="img/expandArrow.svg" alt="" style="float: right; margin-right: 15px;">');
     closeCP();
-    pickCP();
+    pickCP('Оранжевый', '#FABE58');
   });
   $('#CP-3').click(function() {
-    $('#sign').css('color', '#446CB3');
-    $('#CP-Placeholder').html('Синий <img src="img/expandArrow.svg" alt="" style="float: right; margin-right: 15px;">');
     closeCP();
-    pickCP();
+    pickCP('Синий', '#446CB3');
   });
   $('#CP-4').click(function() {
-    $('#sign').css('color', '#BF55EC');
-    $('#CP-Placeholder').html('Фиолетовый <img src="img/expandArrow.svg" alt="" style="float: right; margin-right: 15px;">');
     closeCP();
-    pickCP();
+    pickCP('Фиолетовый', '#BF55EC');
   });
   $('#CP-5').click(function() {
-    $('#sign').css('color', '#F7CA18');
-    $('#CP-Placeholder').html('Золотой <img src="img/expandArrow.svg" alt="" style="float: right; margin-right: 15px;">');
     closeCP();
-    pickCP();
+    pickCP('Золотой', '#F7CA18');
   });
   $('body').click(function(evt) {
     if (evt.target.id == "colorPicker")
