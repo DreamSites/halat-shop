@@ -197,7 +197,6 @@ h4:first-child {
 }
 
 .comment {
-  height: 350px;
   width: 100%;
   margin-top: 50px;
   background: url(../img/commentBG.jpg) no-repeat center top / cover;
@@ -227,6 +226,7 @@ h4:first-child {
   color: #FFF;
   text-align: center;
   margin-top: 15px;
+  padding-bottom: 50px;
 }
 
 .constructorSection {
@@ -712,6 +712,9 @@ footer {
   .workBlocks {
     grid-template-columns: repeat(2, 1fr);
   }
+  .comment h2 {
+    font-size: 30px;
+  }
 }
 
 @media (max-width: 750px) {
@@ -753,9 +756,7 @@ footer {
 }
 
 @media (max-width: 450px) {
-  .workBlocks {
-    grid-template-columns: 1fr;
-  }
+  .workBlocks {grid-template-columns: 1fr;}
 }
 
 @media (max-width: 370px) {
