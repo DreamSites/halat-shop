@@ -715,6 +715,25 @@ footer {
   .comment h2 {
     font-size: 30px;
   }
+  .constructorGrid {
+    grid-template-columns: 1fr;
+    grid-row-gap: 30px;
+  }
+  .constructorSection {
+    width: 90%;
+    margin: 0 auto;
+  }
+  .CP-Colors {
+    grid-template-columns: repeat(3, 1fr);
+    grid-row-gap: 35px;
+  }
+  .colorPicker.opened {
+    height: 200px;
+  }
+  .constructor {
+    grid-template-rows: auto;
+    height: auto;
+  }
 }
 
 @media (max-width: 750px) {
