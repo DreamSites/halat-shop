@@ -699,6 +699,21 @@ footer {
   background: #333D3C;
 }
 
+@media (max-width: 1024px) {
+  .ourWork {
+    width: 90%;
+  }
+  .workBlocks {
+    grid-template-columns: repeat(3, 1fr);
+  }
+}
+
+@media (max-width: 800px) {
+  .workBlocks {
+    grid-template-columns: repeat(2, 1fr);
+  }
+}
+
 @media (max-width: 750px) {
   .navItem {
     display: none;
@@ -734,6 +749,12 @@ footer {
     width: 90%;
     margin: 0 auto;
     margin-top: 75px;
+  }
+}
+
+@media (max-width: 450px) {
+  .workBlocks {
+    grid-template-columns: 1fr;
   }
 }
 
