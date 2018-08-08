@@ -74,6 +74,10 @@ header p {
   margin-top: 62px;
 }
 
+header svg {
+  margin-left: 51px;
+}
+
 header h1 {
   color: #FFFFFF;
   margin-left: 50px;
@@ -693,4 +697,60 @@ footer {
   height: 300px;
   width: 100%;
   background: #333D3C;
+}
+
+@media (max-width: 750px) {
+  .navItem {
+    display: none;
+  }
+  nav {
+    grid-template-columns: auto;
+  }
+}
+
+@media (max-width: 640px) {
+  h1 {
+    font-size: 52px;
+  }
+  header h1 {
+    max-width: 90%;
+    text-align: center;
+    margin: 0 auto;
+    margin-top: 15px;
+  }
+  header p {
+    margin-left: 0;
+    text-align: center;
+  }
+  header svg {
+    margin: 0;
+  }
+  .headerLine {
+    width: 145px;
+    margin: 0 auto;
+    margin-top: -9px;
+  }
+  .headerScrollButton {
+    width: 90%;
+    margin: 0 auto;
+    margin-top: 75px;
+  }
+}
+
+@media (max-width: 370px) {
+  h1 {
+    font-size: 48px;
+  }
+}
+
+@media (max-width: 342px) {
+  h1 {
+    font-size: 44px;
+  }
+}
+
+@media (max-width: 313px) {
+  h1 {
+    font-size: 40px;
+  }
 }
