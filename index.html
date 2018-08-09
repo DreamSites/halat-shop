@@ -51,6 +51,7 @@
         <img src="img/logoWhite.png" alt="" class="logo">
         <div class="navItem"><a href=".constructorSection">Конструктор</a></div>
         <div class="navItem"><a href=".aboutUs">О нас</a></div>
+        <div class="cart"><a href="#">Корзина</a><input class="cartcount" id="countcart" type="text" value="0" /></div>
       </nav>
       <div class="cart">
 
@@ -147,7 +148,6 @@
             <input class="imgButton" type="button" id="imgButton-3">
             <input class="imgButton" type="button" id="imgButton-4">
           </div>
-
           <h4>Размер халата</h4>
           <div class="sizePicker">
             <div class="SP SP-L" id="SP-1">S</div>
@@ -160,11 +160,11 @@
         </div>
         <div class="buttonContainer">
           <button type="button" name="addToCart" class="addToCart">Добавить в корзину</button>
-          <input class="cartcount" id="countcart" type="text" value="0" />
+
           <script type="text/javascript">
           $(document).ready(function() {
             $('.addToCart').click(function () {
-                var $input = $(this).parent().find('#countcart');
+                var $input = $('#countcart');
                 $input.val(parseInt($input.val()) + 1);
                 $input.change();
                 return false;

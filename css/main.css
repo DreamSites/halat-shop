@@ -196,12 +196,11 @@ h4:first-child {
   background: url(../img/workBlockBG-8.jpg) no-repeat center center / cover;
 }
 .cartcount{
-
+background: red;
   border: 0;
   width: 15px;
   height: 15px;
-
-border-radius: 15px;
+  border-radius: 15px;
 }
 
 .comment {
@@ -783,9 +782,7 @@ footer {
 }
 
 @media (max-width: 450px) {
-  .workBlocks {
-    grid-template-columns: auto;
-  }
+  .workBlocks {grid-template-columns: 1fr;}
 }
 
 @media (max-width: 370px) {
