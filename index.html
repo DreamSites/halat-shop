@@ -36,6 +36,8 @@
 
   <script type="text/javascript" src="js/navigation.js"></script>
   <script type="text/javascript" src="js/constructor.js"></script>
+  <script type="text/javascript" src="js/addToCart.js"></script>
+
 
 </head>
 
@@ -157,7 +159,18 @@
           </div>
         </div>
         <div class="buttonContainer">
-          <button type="button" name="addToCart" class="addToCart" id="addToCart">Добавить в корзину</button>
+          <button type="button" name="addToCart" class="addToCart">Добавить в корзину</button>
+          <input class="cartcount" id="countcart" type="text" value="0" />
+          <script type="text/javascript">
+          $(document).ready(function() {
+            $('.addToCart').click(function () {
+                var $input = $(this).parent().find('#countcart');
+                $input.val(parseInt($input.val()) + 1);
+                $input.change();
+                return false;
+              });
+              });
+          </script>
         </div>
       </div>
       <div class="preview">

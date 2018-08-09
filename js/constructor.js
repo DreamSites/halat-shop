@@ -13,6 +13,8 @@ $(document).ready(function() {
 
 
 
+
+
   function setActiveFP(activeFP, font) {
     $('.FP-Item').removeClass('FP-Active');
     $(activeFP).addClass('FP-Active');
