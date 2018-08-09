@@ -59,12 +59,26 @@ nav a {
 }
 
 .navItem {
-  padding-top: 38px;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
 }
 
 .logo {
   height: 75px;
-  margin-top: 10px;
+}
+
+.cart {
+  display: flex;
+  flex-direction: row-reverse;
+  align-items: center;
+  float: left;
+  padding-right: 30px;
+}
+
+.cartIcon {
+  height: 40px;
+  margin-top: -10px;
 }
 
 header p {
@@ -195,8 +209,9 @@ h4:first-child {
 #workBlock-8 {
   background: url(../img/workBlockBG-8.jpg) no-repeat center center / cover;
 }
-.cartcount{
-background: red;
+
+.cartcount {
+  background: red;
   border: 0;
   width: 15px;
   height: 15px;
@@ -743,7 +758,7 @@ footer {
     font-size: 30px;
   }
   .constructorGrid {
-    grid-template-columns: 1fr;
+    grid-template-columns: auto;
     grid-row-gap: 30px;
   }
   .constructorSection {
@@ -766,6 +781,9 @@ footer {
 @media (max-width: 750px) {
   .navItem {
     display: none;
+  }
+  #logo {
+    display: flex;
   }
   nav {
     grid-template-columns: auto;
@@ -802,7 +820,9 @@ footer {
 }
 
 @media (max-width: 450px) {
-  .workBlocks {grid-template-columns: 1fr;}
+  .workBlocks {
+    grid-template-columns: auto;
+  }
 }
 
 @media (max-width: 370px) {
