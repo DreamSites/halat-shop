@@ -775,7 +775,9 @@ footer {
 }
 
 @media (max-width: 450px) {
-  .workBlocks {grid-template-columns: 1fr;}
+  .workBlocks {
+    grid-template-columns: auto;
+  }
 }
 
 @media (max-width: 370px) {
