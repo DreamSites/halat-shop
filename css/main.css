@@ -29,6 +29,7 @@ header {
   background: url(../img/headerBG.jpg) no-repeat center top / cover;
   -webkit-box-sizing: border-box;
   box-sizing: border-box;
+  position: relative;
 }
 
 navigation {
@@ -79,6 +80,73 @@ nav a {
 .cartIcon {
   height: 40px;
   margin-top: -10px;
+  cursor: pointer;
+}
+
+.cartExpanded {
+  position: absolute;
+  top: 15px;
+  right: 15px;
+  width: 100px;
+  height: 100px;
+  background: #FFF;
+  border-radius: 20px;
+  -webkit-box-shadow: 0 10px 30px rgba(0, 0, 0, 0.4);
+  box-shadow: 0 10px 30px rgba(0, 0, 0, 0.4);
+  display: none;
+  opacity: 0;
+  padding: 10px 20px 20px 20px;
+  overflow: hidden;
+}
+
+.cartExpanded h4 {
+  font-size: 14px;
+}
+
+.cartExpanded h4:first-child {
+  margin-top: 10px;
+}
+
+.cartExpanded input {
+  width: 260px;
+  height: 40px;
+  font-family: "Montserrat", sans-serif;
+  font-size: 14px;
+  border-radius: 5px;
+  border: 1px solid #C4C4C4;
+  transition: all 0.2s ease;
+  padding-left: 10px;
+  -webkit-box-sizing: border-box;
+  box-sizing: border-box;
+}
+
+.cartExpanded input:focus {
+  border-color: #1EA896;
+  outline: none;
+}
+
+.cartExpanded input::placeholder {
+  color: #C4C4C4;
+}
+
+.authorize {
+  -webkit-box-sizing: border-box;
+  box-sizing: border-box;
+  width: 260px;
+  height: 40px;
+  border-radius: 20px;
+  outline: none;
+  border: none;
+  background: #1EA896;
+  font-size: 14px;
+  font-family: "Montserrat", sans-serif;
+  color: #FFF;
+  text-transform: uppercase;
+  margin-top: 20px;
+  cursor: pointer;
+  display: flex;
+  justify-content: center;
+  align-items: center;
 }
 
 header p {

@@ -18,4 +18,29 @@ $(document).ready(function() {
     }
     return false;
   });
+
+
+
+  //Корзина
+
+
+  $('.cartIcon').click(function() {
+    $('.cartExpanded').css({
+      'display': 'block',
+      'opacity': '100',
+      'width': '300px',
+      'height': '278px'
+    });
+  });
+  $('.authorize').click(function() {
+    if ($(this).html() == 'Войти') {
+      firebase.auth().signInWithEmailAndPassword($('#userEmail').val(), $('#userPassword').val()).catch(function(error) {
+        // Handle Errors here.
+        var errorCode = error.code;
+        var errorMessage = error.message;
+        console.log(error.message)
+        // ...
+      });
+    }
+  })
 });

@@ -29,6 +29,19 @@
 
   <link href="https://fonts.googleapis.com/css?family=Montserrat:300,400,900&amp;subset=cyrillic,cyrillic-ext,latin-ext" rel="stylesheet">
 
+  <script src="https://www.gstatic.com/firebasejs/5.3.1/firebase.js"></script>
+  <script>
+    var config = {
+      apiKey: "AIzaSyDJzKsIQ2FoqBK3XdxZMU95oWBXykq7cRo",
+      authDomain: "halat-shop.firebaseapp.com",
+      databaseURL: "https://halat-shop.firebaseio.com",
+      projectId: "halat-shop",
+      storageBucket: "halat-shop.appspot.com",
+      messagingSenderId: "560243577039"
+    };
+    firebase.initializeApp(config);
+  </script>
+
   <script type="text/javascript" src="js/jquery-3.3.1.min.js"></script>
   <script type="text/javascript" src="js/wow.min.js"></script>
 
@@ -63,6 +76,17 @@
     <h1>Мы делаем лучшие именные халаты на заказ!</h1>
     <div class="headerScrollButton" href=".constructorSection">
       Создай свой халат сам
+    </div>
+    <div class="cartExpanded">
+      <h3>Корзина</h3>
+      <div class="caption">Войдите, чтобы увидеть корзину</div>
+      <form class="accountForm" method="post">
+        <h4>Электронный адрес</h4>
+        <input type="email" name="userEmail" value="" id="userEmail" placeholder="something@example.com">
+        <h4>Пароль</h4>
+        <input type="password" name="userPassword" value="" id="userPassword" placeholder="Не меньше 8 символов">
+        <div class="authorize">Войти</button>
+      </form>
     </div>
   </header>
   <section class="ourWork">
@@ -161,14 +185,14 @@
           <button type="button" name="addToCart" class="addToCart">Добавить в корзину</button>
 
           <script type="text/javascript">
-          $(document).ready(function() {
-            $('.addToCart').click(function () {
+            $(document).ready(function() {
+              $('.addToCart').click(function() {
                 var $input = $('#countcart');
                 $input.val(parseInt($input.val()) + 1);
                 $input.change();
                 return false;
               });
-              });
+            });
           </script>
         </div>
       </div>
