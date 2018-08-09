@@ -13,6 +13,8 @@ $(document).ready(function() {
 
 
 
+
+
   function setActiveFP(activeFP, font) {
     $('.FP-Item').removeClass('FP-Active');
     $(activeFP).addClass('FP-Active');
@@ -198,5 +200,15 @@ $(document).ready(function() {
     $('.SP-L').css('border-right-color', '#C4C4C4');
     $('.SP-R').css('border-left-color', '#C4C4C4');
     $('.SP').removeClass('focus');
+
+
+
+
+    //Оптимизация
+
+    if ($(window).width() < 800) {
+      $('.buttonContainer').html('<div style="margin: 0 auto; margin-top: 10px; height: 3px; width: 200px;"><svg width="200px" height="3" viewBox="0 0 145 3" fill="none" xmlns="http://www.w3.org/2000/svg"><line y1="-1.5" x2="144.5" y2="-1.5" transform="translate(0.5 3)" stroke="#1EA896" stroke-width="3"/></svg></div>');
+      $('#buttonContainer-2').html('<button type="button" name="addToCart" class="addToCart" id="addToCart">Добавить в корзину</button>');
+    }
   });
 });

@@ -7,6 +7,23 @@
   <meta http-equiv="X-UA-Compatible" content="ie=edge">
   <title>Магазин халатов</title>
 
+  <link rel="apple-touch-icon" sizes="57x57" href="img/favicon/apple-touch-icon-57x57.png">
+  <link rel="apple-touch-icon" sizes="60x60" href="img/favicon/apple-touch-icon-60x60.png">
+  <link rel="apple-touch-icon" sizes="72x72" href="img/favicon/apple-touch-icon-72x72.png">
+  <link rel="apple-touch-icon" sizes="76x76" href="img/favicon/apple-touch-icon-76x76.png">
+  <link rel="apple-touch-icon" sizes="114x114" href="img/favicon/apple-touch-icon-114x114.png">
+  <link rel="apple-touch-icon" sizes="120x120" href="img/favicon/apple-touch-icon-120x120.png">
+  <link rel="apple-touch-icon" sizes="144x144" href="img/favicon/apple-touch-icon-144x144.png">
+  <link rel="apple-touch-icon" sizes="152x152" href="img/favicon/apple-touch-icon-152x152.png">
+  <link rel="apple-touch-icon" sizes="180x180" href="img/favicon/apple-touch-icon-180x180.png">
+  <link rel="icon" type="image/png" sizes="96x96" href="img/favicon/favicon-96x96.png">
+  <link rel="icon" type="image/png" sizes="32x32" href="img/favicon/favicon-32x32.png">
+  <link rel="icon" type="image/png" sizes="16x16" href="img/favicon/favicon-16x16.png">
+  <link rel="mask-icon" href="img/favicon/safari-pinned-tab.svg" color="#1ea896">
+  <meta name="msapplication-TileColor" content="#1ea896">
+  <meta name="msapplication-TileImage" content="img/favicon/mstile-144x144.png">
+  <meta name="theme-color" content="#1ea896">
+
   <link rel="stylesheet" href="css/main.css">
   <link rel="stylesheet" href="css/fonts.css">
 
@@ -19,6 +36,8 @@
 
   <script type="text/javascript" src="js/navigation.js"></script>
   <script type="text/javascript" src="js/constructor.js"></script>
+  <script type="text/javascript" src="js/addToCart.js"></script>
+
 
 </head>
 
@@ -29,16 +48,16 @@
       <nav>
         <div class="navItem"><a href="header">Главная</a></div>
         <div class="navItem"><a href=".ourWork">Наши работы</a></div>
-        <img src="img/logoWhite.png" alt="" class="logo">
+        <div class="navItem" id="logo"><img src="img/logoWhite.png" alt="" class="logo"></div>
         <div class="navItem"><a href=".constructorSection">Конструктор</a></div>
         <div class="navItem"><a href=".aboutUs">О нас</a></div>
       </nav>
       <div class="cart">
-
+        <img src="img/cartIcon.svg" alt="Корзина" class="cartIcon">
       </div>
     </navigation>
     <p>Магазин халатов</p>
-    <div style="margin-top: -9px; height: 3px;"><svg width="145" height="3" viewBox="0 0 145 3" fill="none" xmlns="http://www.w3.org/2000/svg" style="margin-left: 51px;">
+    <div class="headerLine" style="margin-top: -9px; height: 3px;"><svg width="145" height="3" viewBox="0 0 145 3" fill="none" xmlns="http://www.w3.org/2000/svg">
       <line y1="-1.5" x2="144.5" y2="-1.5" transform="translate(0.5 3)" stroke="#1EA896" stroke-width="3"/>
     </svg></div>
     <h1>Мы делаем лучшие именные халаты на заказ!</h1>
@@ -128,7 +147,6 @@
             <input class="imgButton" type="button" id="imgButton-3">
             <input class="imgButton" type="button" id="imgButton-4">
           </div>
-
           <h4>Размер халата</h4>
           <div class="sizePicker">
             <div class="SP SP-L" id="SP-1">S</div>
@@ -139,7 +157,20 @@
             <div class="SP SP-R" id="SP-6">XXXL</div>
           </div>
         </div>
-        <button type="button" name="addToCart" class="addToCart" id="addToCart">Добавить в корзину</button>
+        <div class="buttonContainer">
+          <button type="button" name="addToCart" class="addToCart">Добавить в корзину</button>
+
+          <script type="text/javascript">
+          $(document).ready(function() {
+            $('.addToCart').click(function () {
+                var $input = $('#countcart');
+                $input.val(parseInt($input.val()) + 1);
+                $input.change();
+                return false;
+              });
+              });
+          </script>
+        </div>
       </div>
       <div class="preview">
         <span class="sign" id="sign"></span>
@@ -147,6 +178,9 @@
         <div class="img" id="img-2"></div>
         <div class="img" id="img-3"></div>
         <div class="img" id="img-4"></div>
+      </div>
+      <div class="buttonContainer" id="buttonContainer-2">
+
       </div>
     </div>
   </section>
@@ -161,7 +195,7 @@
         <img src="img/nextArrow.svg" alt="—>" class="nextArrow">
         <div class="AO-Item">
           <div class="AO-Circle"><img src="img/AO-Item-2.svg" alt="" class="AO-Item-Image"></div>
-          <h3>Звонок менеджера</h3>
+          <h3>Звонок</h3>
           <div class="caption">Наш менеджер свяжется с вами и уточнит детали</div>
         </div>
         <img src="img/nextArrow.svg" alt="—>" class="nextArrow">

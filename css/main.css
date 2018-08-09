@@ -59,12 +59,26 @@ nav a {
 }
 
 .navItem {
-  padding-top: 38px;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
 }
 
 .logo {
   height: 75px;
-  margin-top: 10px;
+}
+
+.cart {
+  display: flex;
+  flex-direction: row-reverse;
+  align-items: center;
+  float: left;
+  padding-right: 30px;
+}
+
+.cartIcon {
+  height: 40px;
+  margin-top: -10px;
 }
 
 header p {
@@ -72,6 +86,10 @@ header p {
   text-transform: uppercase;
   margin-left: 50px;
   margin-top: 62px;
+}
+
+header svg {
+  margin-left: 51px;
 }
 
 header h1 {
@@ -192,8 +210,15 @@ h4:first-child {
   background: url(../img/workBlockBG-8.jpg) no-repeat center center / cover;
 }
 
+.cartcount {
+  background: red;
+  border: 0;
+  width: 15px;
+  height: 15px;
+  border-radius: 15px;
+}
+
 .comment {
-  height: 350px;
   width: 100%;
   margin-top: 50px;
   background: url(../img/commentBG.jpg) no-repeat center top / cover;
@@ -223,6 +248,7 @@ h4:first-child {
   color: #FFF;
   text-align: center;
   margin-top: 15px;
+  padding-bottom: 50px;
 }
 
 .constructorSection {
@@ -693,4 +719,126 @@ footer {
   height: 300px;
   width: 100%;
   background: #333D3C;
+}
+
+@media (max-width: 1024px) {
+  .ourWork {
+    width: 90%;
+  }
+  .workBlocks {
+    grid-template-columns: repeat(3, 1fr);
+  }
+}
+
+@media (max-width: 955px) {
+  .aboutOrder {
+    background: url(../img/aboutOrderVerticalBG.jpg) no-repeat center center / cover;
+    height: auto;
+  }
+  .blackLayer {
+    padding-bottom: 50px;
+  }
+  .aboutOrderContent {
+    grid-template-columns: auto;
+    grid-template-rows: repeat(4, auto 1fr) auto;
+  }
+  .nextArrow {
+    margin: 0 auto;
+    margin-top: 40px;
+    margin-bottom: 40px;
+    transform: rotate(90deg);
+  }
+}
+
+@media (max-width: 800px) {
+  .workBlocks {
+    grid-template-columns: repeat(2, 1fr);
+  }
+  .comment h2 {
+    font-size: 30px;
+  }
+  .constructorGrid {
+    grid-template-columns: auto;
+    grid-row-gap: 30px;
+  }
+  .constructorSection {
+    width: 90%;
+    margin: 0 auto;
+  }
+  .CP-Colors {
+    grid-template-columns: repeat(3, 1fr);
+    grid-row-gap: 35px;
+  }
+  .colorPicker.opened {
+    height: 200px;
+  }
+  .constructor {
+    grid-template-rows: auto;
+    height: auto;
+  }
+}
+
+@media (max-width: 750px) {
+  .navItem {
+    display: none;
+  }
+  #logo {
+    display: flex;
+  }
+  nav {
+    grid-template-columns: auto;
+  }
+}
+
+@media (max-width: 640px) {
+  h1 {
+    font-size: 52px;
+  }
+  header h1 {
+    max-width: 90%;
+    text-align: center;
+    margin: 0 auto;
+    margin-top: 15px;
+  }
+  header p {
+    margin-left: 0;
+    text-align: center;
+  }
+  header svg {
+    margin: 0;
+  }
+  .headerLine {
+    width: 145px;
+    margin: 0 auto;
+    margin-top: -9px;
+  }
+  .headerScrollButton {
+    width: 90%;
+    margin: 0 auto;
+    margin-top: 75px;
+  }
+}
+
+@media (max-width: 450px) {
+  .workBlocks {
+    grid-template-columns: auto;
+  }
+}
+
+@media (max-width: 370px) {
+  h1 {
+    font-size: 48px;
+  }
+}
+
+@media (max-width: 342px) {
+  h1 {
+    font-size: 44px;
+  }
+}
+
+@media (max-width: 313px) {
+  h1 {
+    font-size: 40px;
+  }
 }
