@@ -10,9 +10,22 @@ var constructorSection = new Vue({
   },
   methods: {
     pickFont: function(font) {
-      fontFamily: font,
-      currentFont = font,
-      FPisActive = false
+      this.signStyle.fontFamily = font;
+      this.currentFont = font;
+      this.FPisActive = false;
     }
+  }
+});
+
+function addToCart() {
+  cart.sign = constructorSection.sign;
+  cart.font = constructorSection.currentFont;
+}
+
+var cart = new Vue({
+  el: '.cartExpanded',
+  data: {
+    sign: '',
+    font: ''
   }
 })

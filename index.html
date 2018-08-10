@@ -83,13 +83,13 @@
       <div class="caption">Ваши покупки</div>
       <div class="product" id="P1">
         <div class="productInfo">
-          <span>Махровый халат</span><br> Надпись:
-          <more>signInput</more><br> Шрифт:
-          <more>MonAmour</more><br> Цвет:
-          <more>Синий</more><br> Размер:
-          <more>27px</more><br> Рисунок:
-          <more>Корона 1</more><br> Размер халата:
-          <more>XL</more>
+          <span>Махровый халат</span>
+          <div class="productInfoSmall">Надпись: {{ sign }}</div>
+          <div class="productInfoSmall">Шрифт: {{ font }}</div>
+          <div class="productInfoSmall">Цвет: Синий</div>
+          <div class="productInfoSmall">Размер: 27px</div>
+          <div class="productInfoSmall">Рисунок: Корона 1</div>
+          <div class="productInfoSmall">Размер халата: XL</div>
         </div>
         <div class="productPrice">3990₽</div>
       </div>
@@ -130,17 +130,17 @@
           <input type="text" class="signInput" placeholder="Введите вашу надпись" v-model="sign">
 
           <h4>Шрифт</h4>
-          <div class="fontPicker" id="fontPicker" v-bind:class="{ opened: FPisActive }" v-on:click="FPisActive = true">
-            <div class="FP-Placeholder" id="FP-Placeholder" v-bind:class="{ opened: FPisActive }">
+          <div class="fontPicker" id="fontPicker" v-bind:class="{ opened: FPisActive }">
+            <div class="FP-Placeholder" id="FP-Placeholder" v-bind:class="{ opened: FPisActive, picked: currentFont != 'Выберите шрифт надписи' }" @click="FPisActive = true">
               {{ currentFont }}
               <img src="img/expandArrow.svg" alt="" style="float: right; margin-right: 15px;">
             </div>
-            <div class="FP-Item" id="FP-1" v-bind:class="{ opened: FPisActive }" v-on:click="pickFont('Academia')">Academia</div>
-            <div class="FP-Item" id="FP-2" v-bind:class="{ opened: FPisActive }">Campus</div>
-            <div class="FP-Item" id="FP-3" v-bind:class="{ opened: FPisActive }">CyrillicOld</div>
-            <div class="FP-Item" id="FP-4" v-bind:class="{ opened: FPisActive }">Lobster-Regular</div>
-            <div class="FP-Item" id="FP-5" v-bind:class="{ opened: FPisActive }">MonAmour</div>
-            <div class="FP-Item" id="FP-6" v-bind:class="{ opened: FPisActive }">Sladkoeshka</div>
+            <div class="FP-Item" id="FP-1" v-bind:class="{ opened: FPisActive, FPisPicked: currentFont == 'Academia' }" @click="pickFont('Academia')">Academia</div>
+            <div class="FP-Item" id="FP-2" v-bind:class="{ opened: FPisActive, FPisPicked: currentFont == 'Campus' }" @click="pickFont('Campus')">Campus</div>
+            <div class="FP-Item" id="FP-3" v-bind:class="{ opened: FPisActive, FPisPicked: currentFont == 'CyrillicOld' }" @click="pickFont('CyrillicOld')">CyrillicOld</div>
+            <div class="FP-Item" id="FP-4" v-bind:class="{ opened: FPisActive, FPisPicked: currentFont == 'Lobster-Regular' }" @click="pickFont('Lobster-Regular')">Lobster-Regular</div>
+            <div class="FP-Item" id="FP-5" v-bind:class="{ opened: FPisActive, FPisPicked: currentFont == 'MonAmour' }" @click="pickFont('MonAmour')">MonAmour</div>
+            <div class="FP-Item" id="FP-6" v-bind:class="{ opened: FPisActive, FPisPicked: currentFont == 'Sladkoeshka' }" @click="pickFont('Sladkoeshka')">Sladkoeshka</div>
           </div>
 
           <h4>Цвет надписи</h4>
@@ -189,7 +189,7 @@
           </div>
         </div>
         <div class="buttonContainer">
-          <button type="button" name="addToCart" class="addToCart">Добавить в корзину</button>
+          <button type="button" name="addToCart" class="addToCart" onclick="addToCart()">Добавить в корзину</button>
         </div>
       </div>
       <div class="preview">
