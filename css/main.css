@@ -30,6 +30,7 @@ header {
   -webkit-box-sizing: border-box;
   box-sizing: border-box;
   position: relative;
+  z-index: 2;
 }
 
 navigation {
@@ -81,22 +82,35 @@ nav a {
   height: 40px;
   margin-top: -10px;
   cursor: pointer;
+  z-index: 2;
 }
 
 .cartExpanded {
   position: absolute;
   top: 15px;
   right: 15px;
-  width: 100px;
-  height: 100px;
+  width: 300px;
+  height: 400px;
   background: #FFF;
-  border-radius: 20px;
-  -webkit-box-shadow: 0 10px 30px rgba(0, 0, 0, 0.4);
-  box-shadow: 0 10px 30px rgba(0, 0, 0, 0.4);
-  display: none;
+  border-radius: 5px;
+  -webkit-box-shadow: 0 10px 30px rgba(0, 0, 0, 0.15);
+  box-shadow: 0 10px 30px rgba(0, 0, 0, 0.15);
   opacity: 0;
-  padding: 10px 20px 20px 20px;
+  padding: 5px 20px 20px 20px;
   overflow: hidden;
+  z-index: 1;
+}
+
+.cartExpanded .caption {
+  font-weight: 300;
+}
+
+.closeCart {
+  position: absolute;
+  top: 20px;
+  right: 20px;
+  height: 20px;
+  cursor: pointer;
 }
 
 .cartExpanded h4 {
@@ -113,7 +127,7 @@ nav a {
   font-family: "Montserrat", sans-serif;
   font-size: 14px;
   border-radius: 5px;
-  border: 1px solid #C4C4C4;
+  border: 1px solid #E5E5E5;
   transition: all 0.2s ease;
   padding-left: 10px;
   -webkit-box-sizing: border-box;
@@ -338,7 +352,7 @@ h4:first-child {
 
 .signInput {
   height: 50px;
-  border: 1px solid #C4C4C4;
+  border: 1px solid #E5E5E5;
   -webkit-box-sizing: border-box;
   box-sizing: border-box;
   font-size: 14px;
@@ -364,7 +378,7 @@ h4:first-child {
 .fontPicker {
   height: 50px;
   width: 100%;
-  border: 1px solid #C4C4C4;
+  border: 1px solid #E5E5E5;
   cursor: pointer;
   border-radius: 5px;
 }
@@ -437,7 +451,7 @@ h4:first-child {
 .colorPicker {
   height: 50px;
   width: 100%;
-  border: 1px solid #C4C4C4;
+  border: 1px solid #E5E5E5;
   cursor: pointer;
   border-radius: 5px;
   position: relative;
@@ -554,18 +568,18 @@ h4:first-child {
   appearance: none;
   border-radius: 5px;
   height: 50px;
-  border: 1px solid #C4C4C4;
+  border: 1px solid #E5E5E5;
   width: 100%;
   -webkit-box-sizing: border-box;
   box-sizing: border-box;
   margin: 0;
   padding: 0;
   transition: all 0.2s ease;
-  background: -moz-linear-gradient(left, #C4C4C4 50%, #FFFFFF 50%);
-  background: -webkit-gradient(linear, left top, right top, color-stop(0.5, #C4C4C4), color-stop(0.5, #FFFFFF));
-  background: -webkit-linear-gradient(left, #C4C4C4 50%, #FFFFFF 50%);
-  background: -o-linear-gradient(left, #C4C4C4 50%, #FFFFFF 50%);
-  background: -ms-linear-gradient(left, #C4C4C4 50%, #FFFFFF 50%);
+  background: -moz-linear-gradient(left, #E5E5E5 50%, #FFFFFF 50%);
+  background: -webkit-gradient(linear, left top, right top, color-stop(0.5, #E5E5E5), color-stop(0.5, #FFFFFF));
+  background: -webkit-linear-gradient(left, #E5E5E5 50%, #FFFFFF 50%);
+  background: -o-linear-gradient(left, #E5E5E5 50%, #FFFFFF 50%);
+  background: -ms-linear-gradient(left, #E5E5E5 50%, #FFFFFF 50%);
 }
 
 .signSize::-webkit-slider-thumb {
@@ -583,7 +597,7 @@ h4:first-child {
   height: 50px;
   display: grid;
   grid-template-columns: 1fr 1fr 1fr 1fr 1fr 1fr;
-  border: 1px solid #C4C4C4;
+  border: 1px solid #E5E5E5;
   -webkit-user-select: none;
   -moz-user-select: none;
   -ms-user-select: none;
@@ -594,11 +608,11 @@ h4:first-child {
 }
 
 .SP-L {
-  border-right: 1px solid #C4C4C4;
+  border-right: 1px solid #E5E5E5;
 }
 
 .SP-R {
-  border-left: 1px solid #C4C4C4;
+  border-left: 1px solid #E5E5E5;
 }
 
 .SP {
@@ -607,7 +621,7 @@ h4:first-child {
 }
 
 .SP-Active {
-  background: #C4C4C4;
+  background: #E5E5E5;
   color: #FFF;
   font-weight: 900;
 }

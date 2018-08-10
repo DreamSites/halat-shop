@@ -24,23 +24,18 @@ $(document).ready(function() {
   //Корзина
 
 
+  var authorizeState = 'signIn'
+
   $('.cartIcon').click(function() {
     $('.cartExpanded').css({
-      'display': 'block',
-      'opacity': '100',
-      'width': '300px',
-      'height': '278px'
+      'z-index': '3',
+      'opacity': '100'
     });
   });
-  $('.authorize').click(function() {
-    if ($(this).html() == 'Войти') {
-      firebase.auth().signInWithEmailAndPassword($('#userEmail').val(), $('#userPassword').val()).catch(function(error) {
-        // Handle Errors here.
-        var errorCode = error.code;
-        var errorMessage = error.message;
-        console.log(error.message)
-        // ...
-      });
-    }
-  })
+  $('.closeCart').click(function() {
+    $('.cartExpanded').css({
+      'z-index': '1',
+      'opacity': '0'
+    });
+  });
 });

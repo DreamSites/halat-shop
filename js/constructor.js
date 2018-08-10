@@ -68,7 +68,7 @@ $(document).ready(function() {
       'display': 'none',
       'opacity': '0'
     });
-    $('.fontPicker').css('border-color', '#C4C4C4');
+    $('.fontPicker').css('border-color', '#E5E5E5');
   });
 
 
@@ -158,10 +158,10 @@ $(document).ready(function() {
 
   $('#signSize').mouseout(function() {
     $('span').css('transition', 'all 0.2s ease');
-    $(this).css('border-color', '#C4C4C4');
+    $(this).css('border-color', '#E5E5E5');
 
     var val = ($(this).val() - $(this).attr('min')) / ($(this).attr('max') - $(this).attr('min'));
-    $(this).css('background', '-webkit-linear-gradient(left, #C4C4C4 ' + val * 100 + '%, #FFFFFF ' + val * 100 + '%)');
+    $(this).css('background', '-webkit-linear-gradient(left, #E5E5E5 ' + val * 100 + '%, #FFFFFF ' + val * 100 + '%)');
   });
 
 
@@ -196,9 +196,9 @@ $(document).ready(function() {
   });
 
   $('.sizePicker').mouseout(function() {
-    $(this).css('border-color', '#C4C4C4');
-    $('.SP-L').css('border-right-color', '#C4C4C4');
-    $('.SP-R').css('border-left-color', '#C4C4C4');
+    $(this).css('border-color', '#E5E5E5');
+    $('.SP-L').css('border-right-color', '#E5E5E5');
+    $('.SP-R').css('border-left-color', '#E5E5E5');
     $('.SP').removeClass('focus');
 
 
