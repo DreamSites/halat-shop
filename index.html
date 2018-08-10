@@ -41,6 +41,7 @@
     };
     firebase.initializeApp(config);
   </script>
+  <script src="https://cdn.jsdelivr.net/npm/vue/dist/vue.js"></script>
 
   <script type="text/javascript" src="js/jquery-3.3.1.min.js"></script>
   <script type="text/javascript" src="js/wow.min.js"></script>
@@ -48,7 +49,6 @@
   <script type="text/javascript" src="js/loadimg.js"></script>
 
   <script type="text/javascript" src="js/navigation.js"></script>
-  <script type="text/javascript" src="js/constructor.js"></script>
   <script type="text/javascript" src="js/addToCart.js"></script>
 
 
@@ -127,20 +127,20 @@
         <div>
 
           <h4>Надпись</h4>
-          <input type="text" class="signInput" name="signInput" placeholder="Введите вашу надпись" id="signInput">
+          <input type="text" class="signInput" placeholder="Введите вашу надпись" v-model="sign">
 
           <h4>Шрифт</h4>
-          <div class="fontPicker" id="fontPicker">
-            <div class="FP-Placeholder" id="FP-Placeholder">
-              Выберите шрифт надписи
+          <div class="fontPicker" id="fontPicker" v-bind:class="{ opened: FPisActive }" v-on:click="FPisActive = true">
+            <div class="FP-Placeholder" id="FP-Placeholder" v-bind:class="{ opened: FPisActive }">
+              {{ currentFont }}
               <img src="img/expandArrow.svg" alt="" style="float: right; margin-right: 15px;">
             </div>
-            <div class="FP-Item" id="FP-1">Academia</div>
-            <div class="FP-Item" id="FP-2">Campus</div>
-            <div class="FP-Item" id="FP-3">CyrillicOld</div>
-            <div class="FP-Item" id="FP-4">Lobster-Regular</div>
-            <div class="FP-Item" id="FP-5">MonAmour</div>
-            <div class="FP-Item" id="FP-6">Sladkoeshka</div>
+            <div class="FP-Item" id="FP-1" v-bind:class="{ opened: FPisActive }" v-on:click="pickFont('Academia')">Academia</div>
+            <div class="FP-Item" id="FP-2" v-bind:class="{ opened: FPisActive }">Campus</div>
+            <div class="FP-Item" id="FP-3" v-bind:class="{ opened: FPisActive }">CyrillicOld</div>
+            <div class="FP-Item" id="FP-4" v-bind:class="{ opened: FPisActive }">Lobster-Regular</div>
+            <div class="FP-Item" id="FP-5" v-bind:class="{ opened: FPisActive }">MonAmour</div>
+            <div class="FP-Item" id="FP-6" v-bind:class="{ opened: FPisActive }">Sladkoeshka</div>
           </div>
 
           <h4>Цвет надписи</h4>
@@ -190,21 +190,10 @@
         </div>
         <div class="buttonContainer">
           <button type="button" name="addToCart" class="addToCart">Добавить в корзину</button>
-
-          <script type="text/javascript">
-            $(document).ready(function() {
-              $('.addToCart').click(function() {
-                var $input = $('#countcart');
-                $input.val(parseInt($input.val()) + 1);
-                $input.change();
-                return false;
-              });
-            });
-          </script>
         </div>
       </div>
       <div class="preview">
-        <span class="sign" id="sign"></span>
+        <span class="sign" id="sign" v-bind:style="signStyle">{{ sign }}</span>
         <div class="img" id="img-1"></div>
         <div class="img" id="img-2"></div>
         <div class="img" id="img-3"></div>
@@ -257,6 +246,9 @@
   <footer>
 
   </footer>
+
+  <script type="text/javascript" src="js/main.js" charset="utf-8"></script>
+
 </body>
 
 </html>

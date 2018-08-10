@@ -4,9 +4,7 @@ $(document).ready(function() {
   //Надпись
 
 
-  $('#signInput').keyup(function() {
-    $('#sign').html($(this).val());
-  });
+
 
 
   //Выбор шрифта надписи
@@ -22,22 +20,8 @@ $(document).ready(function() {
     $('#FP-Placeholder').css('color', 'black');
     $('#FP-Placeholder').html(font + '<img src = "img/expandArrow.svg" alt = "" style = "float: right; margin-right: 15px;">');
   }
-  $('#fontPicker').click(function() {
-    $(this).css('height', '240px');
-    $('#FP-Placeholder').css({
-      'z-index': '1',
-      'opacity': '0'
-    });
-    $('#FP-1').css('z-index', '10');
-    $('.FP-Item').css({
-      'display': 'block',
-      'opacity': '100'
-    });
-    $(this).css('border-color', '#1EA896');
-  })
-  $('#FP-1').click(function() {
-    setActiveFP(this, 'Academia');
-  })
+
+
   $('#FP-2').click(function() {
     setActiveFP(this, 'Campus');
   })
