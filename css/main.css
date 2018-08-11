@@ -723,6 +723,15 @@ h4:first-child {
   text-align: center;
   padding-top: 80px;
   height: 800px;
+  display: flex;
+  justify-content: center;
+}
+
+.previewContent {
+  border: 1px dotted red;
+  width: 220px;
+  height: 150px;
+  overflow: hidden;
 }
 
 .imgButton {
