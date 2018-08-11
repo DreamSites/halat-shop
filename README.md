@@ -1,2 +1,21 @@
-# Сайт магазина халатов
-[![CodeFactor](https://www.codefactor.io/repository/github/dreamsites/halat-shop/badge)](https://www.codefactor.io/repository/github/dreamsites/halat-shop)
+# halat-shop
+
+## Project setup
+```
+npm install
+```
+
+### Compiles and hot-reloads for development
+```
+npm run serve
+```
+
+### Compiles and minifies for production
+```
+npm run build
+```
+
+### Lints and fixes files
+```
+npm run lint
+```
