@@ -714,7 +714,7 @@ h4:first-child {
 
 .sign {
   font-size: 27.5px;
-  position: relative;
+  position: absolute;
   transition: all 0.2s ease;
 }
 
@@ -732,6 +732,7 @@ h4:first-child {
   width: 220px;
   height: 150px;
   overflow: hidden;
+  position: relative;
 }
 
 .imgButton {
@@ -767,6 +768,7 @@ h4:first-child {
   opacity: 0;
   margin: 0 auto;
   position: relative;
+  display: none;
 }
 
 #img-1 {
