@@ -3,6 +3,7 @@
   <PageTop />
   <OurWork />
   <UserComment />
+  <Constructor />
 </div>
 </template>
 
@@ -10,13 +11,15 @@
 import PageTop from './components/PageTop.vue'
 import OurWork from './components/OurWork.vue'
 import UserComment from './components/UserComment.vue'
+import Constructor from './components/Constructor.vue'
 
 export default {
   name: 'app',
   components: {
     PageTop,
     OurWork,
-    UserComment
+    UserComment,
+    Constructor
   }
 }
 </script>
