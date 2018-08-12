@@ -91,7 +91,7 @@
 <script>
 export default {
   name: 'Constructor',
-  data: function() {
+  data: function () {
     return {
       sign: ''
     }

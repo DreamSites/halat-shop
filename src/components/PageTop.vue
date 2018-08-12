@@ -3,11 +3,11 @@
   <div class="navigation">
     <div></div>
     <nav>
-      <div class="navItem"><a href="header">Главная</a></div>
-      <div class="navItem"><a href=".ourWork">Наши работы</a></div>
+      <div class="navItem"><a v-scroll-to="'header'">Главная</a></div>
+      <div class="navItem"><a v-scroll-to="'.ourWork'">Наши работы</a></div>
       <div class="navItem" id="logo"><img src="../assets/logoWhite.png" alt="" class="logo"></div>
-      <div class="navItem"><a href=".constructorSection">Конструктор</a></div>
-      <div class="navItem"><a href=".aboutUs">О нас</a></div>
+      <div class="navItem"><a v-scroll-to="'.constructorSection'">Конструктор</a></div>
+      <div class="navItem"><a v-scroll-to="'.aboutUs'">О нас</a></div>
     </nav>
     <div class="cart">
       <img src="../assets/cartIcon.svg" alt="Корзина" class="cartIcon">
@@ -18,7 +18,7 @@
       <line y1="-1.5" x2="144.5" y2="-1.5" transform="translate(0.5 3)" stroke="#1EA896" stroke-width="3"/>
     </svg></div>
   <h1>Мы делаем лучшие именные халаты на заказ!</h1>
-  <div class="headerScrollButton" href=".constructorSection">
+  <div class="headerScrollButton" v-scroll-to="'.constructorSection'">
     Создай свой халат сам
   </div>
   <div class="cartExpanded">
@@ -108,6 +108,11 @@ nav {
     display: flex;
     flex-direction: column;
     justify-content: center;
+    cursor: pointer;
+}
+
+#logo {
+  cursor: default;
 }
 
 .logo {
