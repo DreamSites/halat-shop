@@ -1,5 +1,5 @@
 <template>
-<header>
+<header v-on:enlarge-text="CartIsOpened = false">
   <div class="navigation">
     <div></div>
     <nav>
@@ -10,7 +10,7 @@
       <div class="navItem"><a v-scroll-to="'.aboutUs'">О нас</a></div>
     </nav>
     <div class="cart">
-      <img src="../assets/cartIcon.svg" alt="Корзина" class="cartIcon">
+      <img src="../assets/cartIcon.svg" alt="Корзина" class="cartIcon" @click="CartIsOpened = true">
     </div>
   </div>
   <p>Магазин халатов</p>
@@ -21,30 +21,23 @@
   <div class="headerScrollButton" v-scroll-to="'.constructorSection'">
     Создай свой халат сам
   </div>
-  <div class="cartExpanded">
-    <img src="../assets/closeIcon.svg" alt="" class="closeCart">
-    <h3>Корзина</h3>
-    <div class="caption">Ваши покупки</div>
-    <div class="product" id="P1">
-      <div class="productInfo">
-        <span>Махровый халат</span>
-        <div class="productInfoSmall">Надпись: </div>
-        <div class="productInfoSmall">Шрифт: </div>
-        <div class="productInfoSmall">Цвет: Синий</div>
-        <div class="productInfoSmall">Размер: 27px</div>
-        <div class="productInfoSmall">Рисунок: Корона 1</div>
-        <div class="productInfoSmall">Размер халата: XL</div>
-      </div>
-      <div class="productPrice">3990₽</div>
-    </div>
-    <div class="checkout">Оформить заказ</div>
-  </div>
+  <CartExpanded />
 </header>
 </template>
 
 <script>
+import CartExpanded from './CartExpanded.vue'
+
 export default {
-  name: 'PageTop'
+  name: 'PageTop',
+  components: {
+    CartExpanded
+  },
+  data: function () {
+    return {
+      CartIsOpened: false
+    }
+  }
 }
 </script>
 
@@ -112,7 +105,7 @@ nav {
 }
 
 #logo {
-  cursor: default;
+    cursor: default;
 }
 
 .logo {
@@ -137,13 +130,12 @@ nav {
 .cartExpanded {
     position: absolute;
     top: 15px;
-    right: 15px;
+    right: -300px;
     width: 300px;
     background: #FFF;
     border-radius: 5px;
     -webkit-box-shadow: 0 10px 30px rgba(0, 0, 0, 0.15);
     box-shadow: 0 10px 30px rgba(0, 0, 0, 0.15);
-    opacity: 0;
     padding: 5px 15px 15px;
     overflow: hidden;
     z-index: 1;
@@ -175,6 +167,11 @@ nav {
     input::placeholder {
         color: #C4C4C4;
     }
+}
+
+.cartExpanded.opened {
+  right: 15px;
+  display: block;
 }
 
 .closeCart {
