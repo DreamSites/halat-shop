@@ -5,6 +5,7 @@
   <UserComment />
   <Constructor />
   <AboutOrder />
+  <AboutUs />
 </div>
 </template>
 
@@ -14,6 +15,7 @@ import OurWork from './components/OurWork.vue'
 import UserComment from './components/UserComment.vue'
 import Constructor from './components/Constructor.vue'
 import AboutOrder from './components/AboutOrder.vue'
+import AboutUs from './components/AboutUs.vue'
 
 export default {
   name: 'app',
@@ -22,7 +24,8 @@ export default {
     OurWork,
     UserComment,
     Constructor,
-    AboutOrder
+    AboutOrder,
+    AboutUs
   }
 }
 </script>
