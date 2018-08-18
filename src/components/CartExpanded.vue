@@ -1,6 +1,5 @@
 <template>
 <div class="cartExpanded" v-bind:class="{ opened: this.$parent.CartIsOpened }">
-  <img src="../assets/closeIcon.svg" alt="X" v-on:click="$emit('enlarge-text')" class="closeCart">
   <h3>Корзина</h3>
   <div class="caption">Ваши покупки</div>
   <div class="product" id="P1">
@@ -27,5 +26,7 @@ export default {
 
 <!-- Add "scoped" attribute to limit CSS to this component only -->
 <style lang="scss">
-
+.cartExpanded {
+  z-index: 10;
+}
 </style>

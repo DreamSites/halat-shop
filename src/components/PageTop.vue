@@ -10,7 +10,7 @@
       <div class="navItem"><a v-scroll-to="'.aboutUs'">О нас</a></div>
     </nav>
     <div class="cart">
-      <img src="../assets/cartIcon.svg" alt="Корзина" class="cartIcon" @click="CartIsOpened = true">
+      <img src="../assets/cartIcon.svg" alt="Корзина" class="cartIcon" @click="CartIsOpened = true" v-on:closeCart="CartIsOpened = false">
     </div>
   </div>
   <p>Магазин халатов</p>
@@ -21,6 +21,7 @@
   <div class="headerScrollButton" v-scroll-to="'.constructorSection'">
     Создай свой халат сам
   </div>
+  <img src="../assets/closeIcon.svg" alt="X" @click="CartIsOpened = false" class="closeCart" v-bind:class="{ opened: CartIsOpened == true }">
   <CartExpanded />
 </header>
 </template>
@@ -33,7 +34,7 @@ export default {
   components: {
     CartExpanded
   },
-  data: function () {
+  data: function() {
     return {
       CartIsOpened: false
     }
@@ -170,16 +171,23 @@ nav {
 }
 
 .cartExpanded.opened {
-  right: 15px;
-  display: block;
+    right: 15px;
+    display: block;
+}
+
+.closeCart.opened {
+    right: 35px;
+    display: block;
 }
 
 .closeCart {
     position: absolute;
-    top: 20px;
-    right: 15px;
+    top: 35px;
+    right: -335px;
+    z-index: 11;
     height: 20px;
     cursor: pointer;
+    transition: all 0.2s ease;
 }
 
 .product {
