@@ -28,5 +28,6 @@ export default {
 <style lang="scss">
 .cartExpanded {
   z-index: 10;
+  transition: all 0.2s ease;
 }
 </style>

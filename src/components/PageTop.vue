@@ -55,6 +55,7 @@ header {
     box-sizing: border-box;
     position: relative;
     z-index: 2;
+    overflow: hidden;
     p {
         color: #FFFFFF;
         text-transform: uppercase;
@@ -247,6 +248,7 @@ nav {
     flex-direction: row;
     justify-content: center;
     align-items: center;
+    transition: all 0.2s ease;
 }
 
 .checkout:hover {

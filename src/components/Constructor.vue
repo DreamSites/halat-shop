@@ -71,7 +71,7 @@
     </div>
     <div class="preview">
       <div class="previewContent" id="previewContent">
-        <span class="sign" id="sign" v-bind:style="signStyle">{{ sign }}</span>
+        <vue-drag-resize :parentLimitation="true" :isResizable="false"><span class="sign" id="sign" v-bind:style="signStyle" >{{ sign }}</span></vue-drag-resize>
         <div class="../assets" id="../assets-1"></div>
         <div class="../assets" id="../assets-2"></div>
         <div class="../assets" id="../assets-3"></div>
@@ -87,6 +87,7 @@
 
 <script>
 import ClickOutside from 'vue-click-outside'
+import VueDragResize from 'vue-drag-resize'
 
 export default {
   name: 'Constructor',
@@ -99,8 +100,15 @@ export default {
       FPisActive: false,
       currentFont: 'Выберите шрифт надписи',
       CPisActive: false,
-      currentColor: 'Выберите цвет надписи'
+      currentColor: 'Выберите цвет надписи',
+      width: 0,
+      height: 0,
+      top: 0,
+      left: 0
     }
+  },
+  components: {
+    VueDragResize
   },
   methods: {
     pickFont: function (font) {
@@ -118,6 +126,12 @@ export default {
     },
     hideCP () {
       this.CPisActive = false
+    },
+    resize (newRect) {
+      this.width = newRect.width
+      this.height = newRect.height
+      this.top = newRect.top
+      this.left = newRect.left
     }
   },
   directives: {
@@ -176,6 +190,8 @@ export default {
     border: 1px solid #E5E5E5;
     cursor: pointer;
     border-radius: 5px;
+    transition: all 0.2s ease;
+    overflow: hidden;
 }
 
 .fontPicker.opened {
@@ -212,6 +228,7 @@ export default {
     padding-left: 10px;
     height: 40px;
     padding-top: 12px;
+    transition: all 0.2s ease;
 }
 
 .FP-Item.opened {
@@ -275,6 +292,8 @@ export default {
     -moz-user-select: none;
     -ms-user-select: none;
     user-select: none;
+    transition: all 0.2s ease;
+    overflow: hidden;
 }
 
 .colorPicker.opened {
@@ -294,11 +313,12 @@ export default {
     top: 0;
     opacity: 0;
     z-index: 1;
+    transition: all 0.2s ease;
 }
 
 .CP-Colors.opened {
-  opacity: 100;
-  z-index: 2;
+    opacity: 100;
+    z-index: 2;
 }
 
 .CP-Placeholder {
@@ -313,12 +333,12 @@ export default {
 }
 
 .CP-Placeholder.opened {
-  opacity: 0;
-  z-index: 1;
+    opacity: 0;
+    z-index: 1;
 }
 
 .CP-Placeholder.picked {
-  color: black;
+    color: black;
 }
 
 .CP-Item {
@@ -331,7 +351,7 @@ export default {
 }
 
 .CP-Item.opened {
-  height: 60px;
+    height: 60px;
 }
 
 .CP-Item p {
@@ -341,12 +361,12 @@ export default {
 }
 
 .CP-Item p.opened {
-  margin-top: 65px;
-  transition: none;
+    margin-top: 65px;
+    transition: none;
 }
 
 .CP-Item p.CPisPicked {
-  color: #F03434;
+    color: #F03434;
 }
 
 #CP-1 {
@@ -499,6 +519,10 @@ export default {
     font-size: 27.5px;
     position: absolute;
     transition: all 0.2s ease;
+    position: absolute;
+    left: 0;
+    top: 0;
+    cursor: move;
 }
 
 .preview {
