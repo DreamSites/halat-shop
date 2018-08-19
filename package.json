@@ -9,6 +9,7 @@
   },
   "dependencies": {
     "vue": "^2.5.17",
+    "vue-click-outside": "^1.0.7",
     "vue-scrollto": "^2.11.0"
   },
   "devDependencies": {

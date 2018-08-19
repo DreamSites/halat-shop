@@ -10,7 +10,7 @@
         <input type="text" class="signInput" placeholder="Введите вашу надпись" v-model="sign">
 
         <h4>Шрифт</h4>
-        <div class="fontPicker" id="fontPicker" v-bind:class="{ opened: FPisActive }">
+        <div class="fontPicker" id="fontPicker" v-bind:class="{ opened: FPisActive }" v-click-outside="hide">
           <div class="FP-Placeholder" id="FP-Placeholder" v-bind:class="{ opened: FPisActive, picked: currentFont != 'Выберите шрифт надписи' }" @click="FPisActive = true">
             {{ currentFont }}
             <img src="../assets/expandArrow.svg" alt="" style="float: right; margin-right: 15px;">
@@ -86,6 +86,8 @@
 </template>
 
 <script>
+import ClickOutside from 'vue-click-outside'
+
 export default {
   name: 'Constructor',
   data: function () {
@@ -99,11 +101,17 @@ export default {
     }
   },
   methods: {
-    pickFont: function(font) {
-      this.signStyle.fontFamily = font;
-      this.currentFont = font;
-      this.FPisActive = false;
+    pickFont: function (font) {
+      this.signStyle.fontFamily = font
+      this.currentFont = font
+      this.FPisActive = false
+    },
+    hide () {
+      this.FPisActive = false
     }
+  },
+  directives: {
+    ClickOutside
   }
 }
 </script>
