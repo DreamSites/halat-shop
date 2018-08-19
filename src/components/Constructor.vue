@@ -48,9 +48,6 @@
           </div>
         </div>
 
-        <h4>Размер надписи</h4>
-        <input type="range" class="signSize" name="signSize" id="signSize" min="10" max="100" value="55" step="1">
-
         <h4>Рисунок</h4>
         <div>
           <input class="imgButton" type="button" id="imgButton-1">

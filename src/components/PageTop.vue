@@ -10,7 +10,7 @@
       <div class="navItem"><a v-scroll-to="'.aboutUs'">О нас</a></div>
     </nav>
     <div class="cart">
-      <img src="../assets/cartIcon.svg" alt="Корзина" class="cartIcon" @click="CartIsOpened = true" v-on:closeCart="CartIsOpened = false">
+      <img src="../assets/cartIcon.svg" alt="Корзина" class="cartIcon" @click="CartIsOpened = true" v-bind:class="{ opened: CartIsOpened == true }">
     </div>
   </div>
   <p>Магазин халатов</p>
@@ -34,7 +34,7 @@ export default {
   components: {
     CartExpanded
   },
-  data: function() {
+  data: function () {
     return {
       CartIsOpened: false
     }
@@ -126,6 +126,10 @@ nav {
     margin-top: -10px;
     cursor: pointer;
     z-index: 2;
+}
+
+.cartIcon.opened {
+    cursor: default;
 }
 
 .cartExpanded {
