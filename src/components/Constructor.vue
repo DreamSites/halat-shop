@@ -10,7 +10,7 @@
         <input type="text" class="signInput" placeholder="Введите вашу надпись" v-model="sign">
 
         <h4>Шрифт</h4>
-        <div class="fontPicker" id="fontPicker" v-bind:class="{ opened: FPisActive }" v-click-outside="hide">
+        <div class="fontPicker" id="fontPicker" v-bind:class="{ opened: FPisActive }" v-click-outside="hideFP">
           <div class="FP-Placeholder" id="FP-Placeholder" v-bind:class="{ opened: FPisActive, picked: currentFont != 'Выберите шрифт надписи' }" @click="FPisActive = true">
             {{ currentFont }}
             <img src="../assets/expandArrow.svg" alt="" style="float: right; margin-right: 15px;">
@@ -24,26 +24,26 @@
         </div>
 
         <h4>Цвет надписи</h4>
-        <div class="colorPicker" id="colorPicker">
-          <div class="CP-Placeholder" id="CP-Placeholder">
-            Выберите цвет надписи
+        <div class="colorPicker" id="colorPicker" v-bind:class="{ opened: CPisActive }" v-click-outside="hideCP">
+          <div class="CP-Placeholder" id="CP-Placeholder" @click=" CPisActive = true " v-bind:class="{ opened: CPisActive, picked: currentColor != 'Выберите цвет надписи' }">
+            {{ currentColor }}
             <img src="../assets/expandArrow.svg" alt="" style="float: right; margin-right: 15px;">
           </div>
-          <div class="CP-Colors">
-            <div class="CP-Item" id="CP-1">
-              <p>Красный</p>
+          <div class="CP-Colors" v-bind:class="{ opened: CPisActive }">
+            <div class="CP-Item" id="CP-1" v-bind:class="{ opened: CPisActive }" @click="pickColor('Красный', '#F03434')">
+              <p v-bind:class="{ opened: CPisActive, CPisPicked: currentColor == 'Красный' }">Красный</p>
             </div>
-            <div class="CP-Item" id="CP-2">
-              <p>Оранжевый</p>
+            <div class="CP-Item" id="CP-2" v-bind:class="{ opened: CPisActive }" @click="pickColor('Оранжевый', '#FABE58')">
+              <p v-bind:class="{ opened: CPisActive }">Оранжевый</p>
             </div>
-            <div class="CP-Item" id="CP-3">
-              <p>Синий</p>
+            <div class="CP-Item" id="CP-3" v-bind:class="{ opened: CPisActive }" @click="pickColor('Синий', '#446CB3')">
+              <p v-bind:class="{ opened: CPisActive }">Синий</p>
             </div>
-            <div class="CP-Item" id="CP-4">
-              <p>Фиолетовый</p>
+            <div class="CP-Item" id="CP-4" v-bind:class="{ opened: CPisActive }" @click="pickColor('Фиолетовый', '#BF55EC')">
+              <p v-bind:class="{ opened: CPisActive }">Фиолетовый</p>
             </div>
-            <div class="CP-Item" id="CP-5">
-              <p>Золотой</p>
+            <div class="CP-Item" id="CP-5" v-bind:class="{ opened: CPisActive }" @click="pickColor('Золотой', '#F7CA18')">
+              <p v-bind:class="{ opened: CPisActive }">Золотой</p>
             </div>
           </div>
         </div>
@@ -97,7 +97,9 @@ export default {
         fontFamily: 'Montserrat, sans-serif'
       },
       FPisActive: false,
-      currentFont: 'Выберите шрифт надписи'
+      currentFont: 'Выберите шрифт надписи',
+      CPisActive: false,
+      currentColor: 'Выберите цвет надписи'
     }
   },
   methods: {
@@ -106,8 +108,16 @@ export default {
       this.currentFont = font
       this.FPisActive = false
     },
-    hide () {
+    pickColor: function (color, colorHEX) {
+      this.signStyle.color = colorHEX
+      this.currentColor = color
+      this.CPisActive = false
+    },
+    hideFP () {
       this.FPisActive = false
+    },
+    hideCP () {
+      this.CPisActive = false
     }
   },
   directives: {
@@ -286,6 +296,11 @@ export default {
     z-index: 1;
 }
 
+.CP-Colors.opened {
+  opacity: 100;
+  z-index: 2;
+}
+
 .CP-Placeholder {
     padding-top: 15px;
     padding-left: 15px;
@@ -294,6 +309,16 @@ export default {
     width: 100%;
     height: 100%;
     z-index: 2;
+    height: 100%;
+}
+
+.CP-Placeholder.opened {
+  opacity: 0;
+  z-index: 1;
+}
+
+.CP-Placeholder.picked {
+  color: black;
 }
 
 .CP-Item {
@@ -305,10 +330,23 @@ export default {
     transition: all 0.2s ease;
 }
 
+.CP-Item.opened {
+  height: 60px;
+}
+
 .CP-Item p {
     text-align: center;
     margin-top: 10px;
     transition: all 0.2s ease;
+}
+
+.CP-Item p.opened {
+  margin-top: 65px;
+  transition: none;
+}
+
+.CP-Item p.CPisPicked {
+  color: #F03434;
 }
 
 #CP-1 {
