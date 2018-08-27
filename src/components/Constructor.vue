@@ -7,7 +7,7 @@
       <div>
 
         <h4>Надпись</h4>
-        <input type="text" class="signInput" placeholder="Введите вашу надпись" v-model="sign">
+        <input type="text" class="signInput" placeholder="Введите вашу надпись" v-model="sign" @keyup="signSize()">
 
         <h4>Шрифт</h4>
         <div class="fontPicker" id="fontPicker" v-bind:class="{ opened: FPisActive }" v-click-outside="hideFP">
@@ -71,7 +71,7 @@
     </div>
     <div class="preview">
       <div class="previewContent" id="previewContent">
-        <vue-drag-resize :parentLimitation="true" :isResizable="false"><span class="sign" id="sign" v-bind:style="signStyle" >{{ sign }}</span></vue-drag-resize>
+        <vue-drag-resize :parentLimitation="true" :isResizable="false" :h=signHeight :w=signWidth :minh="0" :minw="0"><span class="sign" id="sign" v-bind:style="signStyle">{{ sign }}</span></vue-drag-resize>
         <div class="../assets" id="../assets-1"></div>
         <div class="../assets" id="../assets-2"></div>
         <div class="../assets" id="../assets-3"></div>
@@ -94,6 +94,8 @@ export default {
   data: function () {
     return {
       sign: '',
+      signHeight: 0,
+      signWidth: 0,
       signStyle: {
         fontFamily: 'Montserrat, sans-serif'
       },
@@ -115,6 +117,8 @@ export default {
       this.signStyle.fontFamily = font
       this.currentFont = font
       this.FPisActive = false
+      this.signHeight = document.getElementById('sign').clientHeight
+      this.signWidth = document.getElementById('sign').clientWidth
     },
     pickColor: function (color, colorHEX) {
       this.signStyle.color = colorHEX
@@ -132,6 +136,10 @@ export default {
       this.height = newRect.height
       this.top = newRect.top
       this.left = newRect.left
+    },
+    signSize () {
+      this.signHeight = document.getElementById('sign').clientHeight
+      this.signWidth = document.getElementById('sign').clientWidth
     }
   },
   directives: {
@@ -523,6 +531,10 @@ export default {
     left: 0;
     top: 0;
     cursor: move;
+    -webkit-user-select: none;
+    -moz-user-select: none;
+    -ms-user-select: none;
+    user-select: none;
 }
 
 .preview {
