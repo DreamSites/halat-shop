@@ -103,7 +103,9 @@ nav {
     display: flex;
     flex-direction: column;
     justify-content: center;
-    cursor: pointer;
+    a {
+      cursor: pointer;
+    }
 }
 
 #logo {
