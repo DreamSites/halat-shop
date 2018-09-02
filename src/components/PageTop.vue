@@ -104,7 +104,7 @@ nav {
     flex-direction: column;
     justify-content: center;
     a {
-      cursor: pointer;
+        cursor: pointer;
     }
 }
 
@@ -276,5 +276,63 @@ nav {
     -moz-user-select: none;
     -ms-user-select: none;
     user-select: none;
+}
+
+@media (max-width: 900px) {
+    .navItem {
+        display: none;
+    }
+    #logo {
+        display: flex;
+    }
+    nav {
+        grid-template-columns: auto;
+    }
+}
+
+@media (max-width: 640px) {
+  h1 {
+    font-size: 52px;
+  }
+  header h1 {
+    max-width: 90%;
+    text-align: center;
+    margin: 0 auto;
+    margin-top: 15px;
+  }
+  header p {
+    margin-left: 0;
+    text-align: center;
+  }
+  header svg {
+    margin: 0;
+  }
+  .headerLine {
+    width: 145px;
+    margin: 0 auto;
+    margin-top: -9px;
+  }
+  .headerScrollButton {
+    width: 90%;
+    margin: 0 auto;
+    margin-top: 75px;
+  }
+}
+@media (max-width: 370px) {
+  h1 {
+    font-size: 48px;
+  }
+}
+
+@media (max-width: 342px) {
+  h1 {
+    font-size: 44px;
+  }
+}
+
+@media (max-width: 313px) {
+  h1 {
+    font-size: 40px;
+  }
 }
 </style>
