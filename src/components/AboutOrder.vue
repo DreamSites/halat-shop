@@ -96,4 +96,25 @@ export default {
 .nextArrow {
     margin: 66px 0 0;
 }
+
+@media (max-width: 955px) {
+  .aboutOrder {
+    background: url(../assets/aboutOrderVerticalBG.jpg) no-repeat center center / cover;
+    height: auto;
+  }
+  .blackLayer {
+    padding-bottom: 50px;
+  }
+  .aboutOrderContent {
+    grid-template-columns: auto;
+    grid-template-rows: repeat(4, auto 1fr) auto;
+  }
+  .nextArrow {
+    margin: 0 auto;
+    margin-top: 40px;
+    margin-bottom: 40px;
+    transform: rotate(90deg);
+  }
+}
+
 </style>
