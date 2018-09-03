@@ -56,13 +56,13 @@
           <input class="imgButton" type="button" id="imgButton-4">
         </div>
         <h4>Размер халата</h4>
-        <div class="sizePicker">
-          <div class="SP SP-L" id="SP-1">S</div>
-          <div class="SP SP-L" id="SP-2">M</div>
-          <div class="SP SP-L" id="SP-3">L</div>
-          <div class="SP" id="SP-4">XL</div>
-          <div class="SP SP-R" id="SP-5">XXL</div>
-          <div class="SP SP-R" id="SP-6">XXXL</div>
+        <div class="sizePicker" v-bind:class="{ active: currentSize != '' }">
+          <div class="SP SP-L" id="SP-1" v-bind:class="{ SPisPicked: currentSize == 'S', active: currentSize != '' }" @click="setActiveSP('S')">S</div>
+          <div class="SP SP-L" id="SP-2" v-bind:class="{ SPisPicked: currentSize == 'M', active: currentSize != '' }" @click="setActiveSP('M')">M</div>
+          <div class="SP SP-L" id="SP-3" v-bind:class="{ SPisPicked: currentSize == 'L', active: currentSize != '' }" @click="setActiveSP('L')">L</div>
+          <div class="SP" id="SP-4" v-bind:class="{ SPisPicked: currentSize == 'XL', active: currentSize != '' }" @click="setActiveSP('XL')">XL</div>
+          <div class="SP SP-R" id="SP-5" v-bind:class="{ SPisPicked: currentSize == 'XXL', active: currentSize != '' }" @click="setActiveSP('XXL')">XXL</div>
+          <div class="SP SP-R" id="SP-6" v-bind:class="{ SPisPicked: currentSize == 'XXXL', active: currentSize != '' }" @click="setActiveSP('XXXL')">XXXL</div>
         </div>
       </div>
       <div class="buttonContainer">
@@ -103,6 +103,7 @@ export default {
       currentFont: 'Выберите шрифт надписи',
       CPisActive: false,
       currentColor: 'Выберите цвет надписи',
+      currentSize: '',
       width: 0,
       height: 0,
       top: 0,
@@ -140,6 +141,9 @@ export default {
     signSize () {
       this.signHeight = document.getElementById('sign').clientHeight
       this.signWidth = document.getElementById('sign').clientWidth
+    },
+    setActiveSP (activeSP) {
+      this.currentSize = activeSP
     }
   },
   directives: {
@@ -479,6 +483,10 @@ export default {
     overflow: hidden;
 }
 
+.sizePicker.active {
+    border-color: #1EA896;
+}
+
 .SP-L {
     border-right: 1px solid #E5E5E5;
 }
@@ -490,15 +498,24 @@ export default {
 .SP {
     text-align: center;
     padding-top: 16px;
+    transition: all 0.2s ease;
 }
 
-.SP-Active {
-    background: #E5E5E5;
+.SP:hover {
+  background: #F9F9F9;
+}
+
+.SP.active {
+  border-color: #1EA896;
+}
+
+.SPisPicked {
+    background: #1EA896;
     color: #FFF;
     font-weight: 900;
 }
 
-.SP-Active.focus {
+.SPisPicked:hover {
     background: #1EA896;
 }
 
