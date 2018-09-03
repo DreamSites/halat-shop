@@ -70,4 +70,26 @@ export default {
 #workBlock-8 {
     background: url("../assets/workBlockBG-8.jpg") no-repeat center center / cover;
 }
+
+@media (max-width: 1024px) {
+  .ourWork {
+    width: 90%;
+  }
+  .workBlocks {
+    grid-template-columns: repeat(3, 1fr);
+  }
+}
+
+@media (max-width: 800px) {
+  .workBlocks {
+    grid-template-columns: repeat(2, 1fr);
+  }
+}
+
+@media (max-width: 450px) {
+  .workBlocks {
+    grid-template-columns: auto;
+  }
+}
+
 </style>
