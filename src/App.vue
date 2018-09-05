@@ -29,6 +29,27 @@ export default {
     AboutOrder,
     AboutUs,
     PageBottom
+  },
+  data: function () {
+    return {
+      sign: '',
+      signHeight: 0,
+      signWidth: 0,
+      signStyle: {
+        fontFamily: 'Montserrat, sans-serif'
+      },
+      FPisActive: false,
+      currentFont: 'Выберите шрифт надписи',
+      CPisActive: false,
+      currentColor: 'Выберите цвет надписи',
+      currentSize: '',
+      width: 0,
+      height: 0,
+      top: 0,
+      left: 0,
+      cartWithItem: false,
+      CartIsOpened: false
+    }
   }
 }
 </script>

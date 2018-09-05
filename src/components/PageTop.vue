@@ -10,7 +10,7 @@
       <div class="navItem"><a v-scroll-to="'.aboutUs'">О нас</a></div>
     </nav>
     <div class="cart">
-      <img src="../assets/cartIcon.svg" alt="Корзина" class="cartIcon" @click="CartIsOpened = true" v-bind:class="{ opened: CartIsOpened == true }">
+      <img src="../assets/cartIcon.svg" alt="Корзина" class="cartIcon" @click="$parent.CartIsOpened = true" v-bind:class="{ opened: this.$parent.CartIsOpened == true }">
     </div>
   </div>
   <p>Магазин халатов</p>
@@ -21,7 +21,7 @@
   <div class="headerScrollButton" v-scroll-to="'.constructorSection'">
     Создай свой халат сам
   </div>
-  <img src="../assets/closeIcon.svg" alt="X" @click="CartIsOpened = false" class="closeCart" v-bind:class="{ opened: CartIsOpened == true }">
+  <img src="../assets/closeIcon.svg" alt="X" @click="$parent.CartIsOpened = false" class="closeCart" v-bind:class="{ opened: this.$parent.CartIsOpened == true }">
   <CartExpanded />
 </header>
 </template>
@@ -33,11 +33,6 @@ export default {
   name: 'PageTop',
   components: {
     CartExpanded
-  },
-  data: function () {
-    return {
-      CartIsOpened: false
-    }
   }
 }
 </script>
@@ -175,6 +170,17 @@ nav {
     input::placeholder {
         color: #C4C4C4;
     }
+    .productInfoPlaceholder {
+      font-size: 20px;
+      padding-top: 30px;
+      padding-bottom: 30px;
+      text-align: center;
+      color: #E5E5E5;
+      font-weight: 900;
+    }
+    .productInfoPlaceholder.withItem {
+      display: none;
+    }
 }
 
 .cartExpanded.opened {
@@ -200,8 +206,6 @@ nav {
 .product {
     display: grid;
     grid-template-columns: 1fr auto;
-    border-top: 1px solid #E5E5E5;
-    border-bottom: 1px solid #E5E5E5;
     margin-top: 10px;
     padding-top: 10px;
     padding-bottom: 10px;
@@ -212,10 +216,20 @@ nav {
     }
 }
 
+.product.withItem {
+  border-top: 1px solid #E5E5E5;
+  border-bottom: 1px solid #E5E5E5;
+}
+
 .productInfo {
     color: #828282;
     font-size: 12px;
     font-weight: 300;
+    display: none;
+}
+
+.productInfo.withItem {
+  display: block;
 }
 
 .productInfoSmall {
@@ -230,6 +244,11 @@ nav {
     display: flex;
     flex-direction: row;
     align-items: center;
+    display: none;
+}
+
+.productPrice.withItem {
+  display: flex;
 }
 
 .checkout {
@@ -251,6 +270,11 @@ nav {
     justify-content: center;
     align-items: center;
     transition: all 0.2s ease;
+    display: none;
+}
+
+.checkout.withItem {
+  display: flex;
 }
 
 .checkout:hover {

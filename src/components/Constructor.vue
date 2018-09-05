@@ -7,43 +7,43 @@
       <div>
 
         <h4>Надпись</h4>
-        <input type="text" class="signInput" placeholder="Введите вашу надпись" v-model="sign" @keyup="signSize()">
+        <input type="text" class="signInput" placeholder="Введите вашу надпись" v-model="$parent.sign" @keyup="signSize()">
 
         <h4>Шрифт</h4>
-        <div class="fontPicker" id="fontPicker" v-bind:class="{ opened: FPisActive }" v-click-outside="hideFP">
-          <div class="FP-Placeholder" id="FP-Placeholder" v-bind:class="{ opened: FPisActive, picked: currentFont != 'Выберите шрифт надписи' }" @click="FPisActive = true">
-            {{ currentFont }}
+        <div class="fontPicker" id="fontPicker" v-bind:class="{ opened: this.$parent.FPisActive }" v-click-outside="hideFP">
+          <div class="FP-Placeholder" id="FP-Placeholder" v-bind:class="{ opened: this.$parent.FPisActive, picked: this.$parent.currentFont != 'Выберите шрифт надписи' }" @click="$parent.FPisActive = true">
+            {{ this.$parent.currentFont }}
             <img src="../assets/expandArrow.svg" alt="" style="float: right; margin-right: 15px;">
           </div>
-          <div class="FP-Item" id="FP-1" v-bind:class="{ opened: FPisActive, FPisPicked: currentFont == 'Academia' }" @click="pickFont('Academia')">Academia</div>
-          <div class="FP-Item" id="FP-2" v-bind:class="{ opened: FPisActive, FPisPicked: currentFont == 'Campus' }" @click="pickFont('Campus')">Campus</div>
-          <div class="FP-Item" id="FP-3" v-bind:class="{ opened: FPisActive, FPisPicked: currentFont == 'CyrillicOld' }" @click="pickFont('CyrillicOld')">CyrillicOld</div>
-          <div class="FP-Item" id="FP-4" v-bind:class="{ opened: FPisActive, FPisPicked: currentFont == 'Lobster-Regular' }" @click="pickFont('Lobster-Regular')">Lobster-Regular</div>
-          <div class="FP-Item" id="FP-5" v-bind:class="{ opened: FPisActive, FPisPicked: currentFont == 'MonAmour' }" @click="pickFont('MonAmour')">MonAmour</div>
-          <div class="FP-Item" id="FP-6" v-bind:class="{ opened: FPisActive, FPisPicked: currentFont == 'Sladkoeshka' }" @click="pickFont('Sladkoeshka')">Sladkoeshka</div>
+          <div class="FP-Item" id="FP-1" v-bind:class="{ opened: this.$parent.FPisActive, FPisPicked: this.$parent.currentFont == 'Academia' }" @click="pickFont('Academia')">Academia</div>
+          <div class="FP-Item" id="FP-2" v-bind:class="{ opened: this.$parent.FPisActive, FPisPicked: this.$parent.currentFont == 'Campus' }" @click="pickFont('Campus')">Campus</div>
+          <div class="FP-Item" id="FP-3" v-bind:class="{ opened: this.$parent.FPisActive, FPisPicked: this.$parent.currentFont == 'CyrillicOld' }" @click="pickFont('CyrillicOld')">CyrillicOld</div>
+          <div class="FP-Item" id="FP-4" v-bind:class="{ opened: this.$parent.FPisActive, FPisPicked: this.$parent.currentFont == 'Lobster-Regular' }" @click="pickFont('Lobster-Regular')">Lobster-Regular</div>
+          <div class="FP-Item" id="FP-5" v-bind:class="{ opened: this.$parent.FPisActive, FPisPicked: this.$parent.currentFont == 'MonAmour' }" @click="pickFont('MonAmour')">MonAmour</div>
+          <div class="FP-Item" id="FP-6" v-bind:class="{ opened: this.$parent.FPisActive, FPisPicked: this.$parent.currentFont == 'Sladkoeshka' }" @click="pickFont('Sladkoeshka')">Sladkoeshka</div>
         </div>
 
         <h4>Цвет надписи</h4>
-        <div class="colorPicker" id="colorPicker" v-bind:class="{ opened: CPisActive }" v-click-outside="hideCP">
-          <div class="CP-Placeholder" id="CP-Placeholder" @click=" CPisActive = true " v-bind:class="{ opened: CPisActive, picked: currentColor != 'Выберите цвет надписи' }">
-            {{ currentColor }}
+        <div class="colorPicker" id="colorPicker" v-bind:class="{ opened: this.$parent.CPisActive }" v-click-outside="hideCP">
+          <div class="CP-Placeholder" id="CP-Placeholder" @click=" $parent.CPisActive = true " v-bind:class="{ opened: this.$parent.CPisActive, picked: this.$parent.currentColor != 'Выберите цвет надписи' }">
+            {{ this.$parent.currentColor }}
             <img src="../assets/expandArrow.svg" alt="" style="float: right; margin-right: 15px;">
           </div>
-          <div class="CP-Colors" v-bind:class="{ opened: CPisActive }">
-            <div class="CP-Item" id="CP-1" v-bind:class="{ opened: CPisActive }" @click="pickColor('Красный', '#F03434')">
-              <p v-bind:class="{ opened: CPisActive, CPisPicked: currentColor == 'Красный' }">Красный</p>
+          <div class="CP-Colors" v-bind:class="{ opened: this.$parent.CPisActive }">
+            <div class="CP-Item" id="CP-1" v-bind:class="{ opened: this.$parent.CPisActive }" @click="pickColor('Красный', '#F03434')">
+              <p v-bind:class="{ opened: this.$parent.CPisActive, CPisPicked: this.$parent.currentColor == 'Красный' }">Красный</p>
             </div>
-            <div class="CP-Item" id="CP-2" v-bind:class="{ opened: CPisActive }" @click="pickColor('Оранжевый', '#FABE58')">
-              <p v-bind:class="{ opened: CPisActive }">Оранжевый</p>
+            <div class="CP-Item" id="CP-2" v-bind:class="{ opened: this.$parent.CPisActive }" @click="pickColor('Оранжевый', '#FABE58')">
+              <p v-bind:class="{ opened: this.$parent.CPisActive }">Оранжевый</p>
             </div>
-            <div class="CP-Item" id="CP-3" v-bind:class="{ opened: CPisActive }" @click="pickColor('Синий', '#446CB3')">
-              <p v-bind:class="{ opened: CPisActive }">Синий</p>
+            <div class="CP-Item" id="CP-3" v-bind:class="{ opened: this.$parent.CPisActive }" @click="pickColor('Синий', '#446CB3')">
+              <p v-bind:class="{ opened: this.$parent.CPisActive }">Синий</p>
             </div>
-            <div class="CP-Item" id="CP-4" v-bind:class="{ opened: CPisActive }" @click="pickColor('Фиолетовый', '#BF55EC')">
-              <p v-bind:class="{ opened: CPisActive }">Фиолетовый</p>
+            <div class="CP-Item" id="CP-4" v-bind:class="{ opened: this.$parent.CPisActive }" @click="pickColor('Фиолетовый', '#BF55EC')">
+              <p v-bind:class="{ opened: this.$parent.CPisActive }">Фиолетовый</p>
             </div>
-            <div class="CP-Item" id="CP-5" v-bind:class="{ opened: CPisActive }" @click="pickColor('Золотой', '#F7CA18')">
-              <p v-bind:class="{ opened: CPisActive }">Золотой</p>
+            <div class="CP-Item" id="CP-5" v-bind:class="{ opened: this.$parent.CPisActive }" @click="pickColor('Золотой', '#F7CA18')">
+              <p v-bind:class="{ opened: this.$parent.CPisActive }">Золотой</p>
             </div>
           </div>
         </div>
@@ -56,22 +56,22 @@
           <input class="imgButton" type="button" id="imgButton-4">
         </div>
         <h4>Размер халата</h4>
-        <div class="sizePicker" v-bind:class="{ active: currentSize != '' }">
-          <div class="SP SP-L" id="SP-1" v-bind:class="{ SPisPicked: currentSize == 'S', active: currentSize != '' }" @click="setActiveSP('S')">S</div>
-          <div class="SP SP-L" id="SP-2" v-bind:class="{ SPisPicked: currentSize == 'M', active: currentSize != '' }" @click="setActiveSP('M')">M</div>
-          <div class="SP SP-L" id="SP-3" v-bind:class="{ SPisPicked: currentSize == 'L', active: currentSize != '' }" @click="setActiveSP('L')">L</div>
-          <div class="SP" id="SP-4" v-bind:class="{ SPisPicked: currentSize == 'XL', active: currentSize != '' }" @click="setActiveSP('XL')">XL</div>
-          <div class="SP SP-R" id="SP-5" v-bind:class="{ SPisPicked: currentSize == 'XXL', active: currentSize != '' }" @click="setActiveSP('XXL')">XXL</div>
-          <div class="SP SP-R" id="SP-6" v-bind:class="{ SPisPicked: currentSize == 'XXXL', active: currentSize != '' }" @click="setActiveSP('XXXL')">XXXL</div>
+        <div class="sizePicker" v-bind:class="{ active: this.$parent.currentSize != '' }">
+          <div class="SP SP-L" id="SP-1" v-bind:class="{ SPisPicked: this.$parent.currentSize == 'S', active: this.$parent.currentSize != '' }" @click="setActiveSP('S')">S</div>
+          <div class="SP SP-L" id="SP-2" v-bind:class="{ SPisPicked: this.$parent.currentSize == 'M', active: this.$parent.currentSize != '' }" @click="setActiveSP('M')">M</div>
+          <div class="SP SP-L" id="SP-3" v-bind:class="{ SPisPicked: this.$parent.currentSize == 'L', active: this.$parent.currentSize != '' }" @click="setActiveSP('L')">L</div>
+          <div class="SP" id="SP-4" v-bind:class="{ SPisPicked: this.$parent.currentSize == 'XL', active: this.$parent.currentSize != '' }" @click="setActiveSP('XL')">XL</div>
+          <div class="SP SP-R" id="SP-5" v-bind:class="{ SPisPicked: this.$parent.currentSize == 'XXL', active: this.$parent.currentSize != '' }" @click="setActiveSP('XXL')">XXL</div>
+          <div class="SP SP-R" id="SP-6" v-bind:class="{ SPisPicked: this.$parent.currentSize == 'XXXL', active: this.$parent.currentSize != '' }" @click="setActiveSP('XXXL')">XXXL</div>
         </div>
       </div>
       <div class="buttonContainer">
-        <button type="button" name="addToCart" class="addToCart" onclick="addToCart()">Добавить в корзину</button>
+        <button type="button" name="addToCart" class="addToCart" @click="addToCart()" v-scroll-to="'header'">Добавить в корзину</button>
       </div>
     </div>
     <div class="preview">
       <div class="previewContent" id="previewContent">
-        <vue-drag-resize :parentLimitation="true" :isResizable="false" :h=signHeight :w=signWidth :minh="0" :minw="0"><span class="sign" id="sign" v-bind:style="signStyle">{{ sign }}</span></vue-drag-resize>
+        <vue-drag-resize :parentLimitation="true" :isResizable="false" :h=signHeight :w=signWidth :minh="0" :minw="0"><span class="sign" id="sign" v-bind:style="$parent.signStyle">{{ this.$parent.sign }}</span></vue-drag-resize>
         <div class="../assets" id="../assets-1"></div>
         <div class="../assets" id="../assets-2"></div>
         <div class="../assets" id="../assets-3"></div>
@@ -91,46 +91,27 @@ import VueDragResize from 'vue-drag-resize'
 
 export default {
   name: 'Constructor',
-  data: function () {
-    return {
-      sign: '',
-      signHeight: 0,
-      signWidth: 0,
-      signStyle: {
-        fontFamily: 'Montserrat, sans-serif'
-      },
-      FPisActive: false,
-      currentFont: 'Выберите шрифт надписи',
-      CPisActive: false,
-      currentColor: 'Выберите цвет надписи',
-      currentSize: '',
-      width: 0,
-      height: 0,
-      top: 0,
-      left: 0
-    }
-  },
   components: {
     VueDragResize
   },
   methods: {
     pickFont: function (font) {
-      this.signStyle.fontFamily = font
-      this.currentFont = font
-      this.FPisActive = false
-      this.signHeight = document.getElementById('sign').clientHeight
-      this.signWidth = document.getElementById('sign').clientWidth
+      this.$parent.signStyle.fontFamily = font
+      this.$parent.currentFont = font
+      this.$parent.FPisActive = false
+      this.$parent.signHeight = document.getElementById('sign').clientHeight
+      this.$parent.signWidth = document.getElementById('sign').clientWidth
     },
     pickColor: function (color, colorHEX) {
-      this.signStyle.color = colorHEX
-      this.currentColor = color
-      this.CPisActive = false
+      this.$parent.signStyle.color = colorHEX
+      this.$parent.currentColor = color
+      this.$parent.CPisActive = false
     },
     hideFP () {
-      this.FPisActive = false
+      this.$parent.FPisActive = false
     },
     hideCP () {
-      this.CPisActive = false
+      this.$parent.CPisActive = false
     },
     resize (newRect) {
       this.width = newRect.width
@@ -139,11 +120,15 @@ export default {
       this.left = newRect.left
     },
     signSize () {
-      this.signHeight = document.getElementById('sign').clientHeight
-      this.signWidth = document.getElementById('sign').clientWidth
+      this.$parent.signHeight = document.getElementById('sign').clientHeight
+      this.$parent.signWidth = document.getElementById('sign').clientWidth
     },
     setActiveSP (activeSP) {
-      this.currentSize = activeSP
+      this.$parent.currentSize = activeSP
+    },
+    addToCart () {
+      this.$parent.cartWithItem = true
+      this.$parent.CartIsOpened = true
     }
   },
   directives: {
