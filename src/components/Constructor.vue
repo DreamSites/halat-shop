@@ -49,11 +49,25 @@
         </div>
 
         <h4>Рисунок</h4>
-        <div>
-          <input class="imgButton" type="button" id="imgButton-1">
-          <input class="imgButton" type="button" id="imgButton-2">
-          <input class="imgButton" type="button" id="imgButton-3">
-          <input class="imgButton" type="button" id="imgButton-4">
+        <div class="imgPicker" id="imgPicker" v-bind:class="{ opened: this.$parent.IMGisActive }" v-click-outside="hideIMG">
+          <div class="CP-Placeholder" id="CP-Placeholder" @click=" $parent.IMGisActive = true " v-bind:class="{ opened: this.$parent.IMGisActive, picked: this.$parent.currentImage != 'Выберите рисунок' }">
+            {{ this.$parent.currentImage }}
+            <img src="../assets/expandArrow.svg" alt="" style="float: right; margin-right: 15px;">
+          </div>
+          <div class="IP-Images" v-bind:class="{ opened: this.$parent.IMGisActive }">
+            <div class="IP-Images-Contender">
+              <img src="../assets/IP-Image-1.png" alt="">
+            </div>
+            <div class="IP-Images-Contender">
+              <img src="../assets/IP-Image-2.png" alt="">
+            </div>
+            <div class="IP-Images-Contender">
+              <img src="../assets/IP-Image-3.png" alt="">
+            </div>
+            <div class="IP-Images-Contender">
+              <img src="../assets/IP-Image-4.png" alt="">
+            </div>
+          </div>
         </div>
         <h4>Размер халата</h4>
         <div class="sizePicker" v-bind:class="{ active: this.$parent.currentSize != '' }">
@@ -112,6 +126,9 @@ export default {
     },
     hideCP () {
       this.$parent.CPisActive = false
+    },
+    hideIMG () {
+      this.$parent.IMGisActive = false
     },
     resize (newRect) {
       this.width = newRect.width
@@ -423,34 +440,55 @@ export default {
     transform: scale(1.05);
 }
 
-.signSize {
-    -webkit-appearance: none;
-    -moz-appearance: none;
-    appearance: none;
-    border-radius: 5px;
+.imgPicker {
     height: 50px;
-    border: 1px solid #E5E5E5;
     width: 100%;
-    -webkit-box-sizing: border-box;
-    box-sizing: border-box;
-    margin: 0;
-    padding: 0;
+    border: 1px solid #E5E5E5;
+    cursor: pointer;
+    border-radius: 5px;
+    position: relative;
+    -webkit-user-select: none;
+    -moz-user-select: none;
+    -ms-user-select: none;
+    user-select: none;
     transition: all 0.2s ease;
-    background: -moz-linear-gradient(left, #E5E5E5 50%, #FFFFFF 50%);
-    background: -webkit-gradient(linear, left top, right top, color-stop(0.5, #E5E5E5), color-stop(0.5, #FFFFFF));
-    background: -webkit-linear-gradient(left, #E5E5E5 50%, #FFFFFF 50%);
-    background: -o-linear-gradient(left, #E5E5E5 50%, #FFFFFF 50%);
-    background: -ms-linear-gradient(left, #E5E5E5 50%, #FFFFFF 50%);
+    overflow: hidden;
 }
 
-.signSize::-webkit-slider-thumb {
-    -webkit-appearance: none;
-    -moz-appearance: none;
-    appearance: none;
-    background-color: none;
-    border: none;
-    height: 50px;
-    width: 1px;
+.imgPicker.opened {
+    height: 100px;
+    cursor: default;
+    border-color: #1EA896;
+}
+
+.IP-Images {
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    grid-gap: 15px;
+    width: 100%;
+    margin: 0 auto;
+    position: absolute;
+    top: 0;
+    opacity: 0;
+    z-index: 1;
+    transition: all 0.2s ease;
+}
+
+.IP-Images.opened {
+    opacity: 100;
+    z-index: 2;
+    height: 100%;
+}
+
+.IP-Images-Contender {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+}
+
+.IP-Images img {
+    max-width: 100px;
+    margin: 0 auto;
 }
 
 .sizePicker {
@@ -565,71 +603,5 @@ export default {
     padding-bottom: 2px;
     width: 100px;
     border: 0;
-}
-
-#imgButton-1 {
-    background-size: 100px auto;
-}
-
-#imgButton-2 {
-    background-size: 100px auto;
-}
-
-#imgButton-3 {
-    background-size: 80px auto;
-}
-
-#imgButton-4 {
-    background-size: 100px auto;
-    position: relative;
-    top: 20px;
-}
-
-.img {
-    opacity: 0;
-    margin: 0 auto;
-    position: relative;
-    display: none;
-}
-
-#img-1 {
-    height: 100px;
-    width: 187px;
-    margin-top: -55px;
-}
-
-#img-2 {
-    width: 60px;
-    height: 37px;
-}
-
-#img-3 {
-    height: 60px;
-    width: 92px;
-}
-
-#img-4 {
-    height: 30px;
-    width: 148px;
-}
-
-#img-1,
-#imgButton-1 {
-    background: url("../assets/img.png") no-repeat center top / cover;
-}
-
-#img-2,
-#imgButton-2 {
-    background: url("../assets/img2.png") no-repeat center top / cover;
-}
-
-#img-3,
-#imgButton-3 {
-    background: url("../assets/img3.png") no-repeat center top / cover;
-}
-
-#img-24,
-#imgButton-4 {
-    background: url("../assets/img1.png") no-repeat center top / cover;
 }
 </style>

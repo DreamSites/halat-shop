@@ -42,6 +42,8 @@ export default {
       currentFont: 'Выберите шрифт надписи',
       CPisActive: false,
       currentColor: 'Выберите цвет надписи',
+      IMGisActive: false,
+      currentImage: 'Выберите рисунок',
       currentSize: '',
       width: 0,
       height: 0,
