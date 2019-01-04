@@ -36,6 +36,16 @@ p {
   color: white;
   font-size: 20px;
   font-weight: 500;
+  cursor: pointer;
+  -webkit-user-select: none;
+  -moz-user-select: none;
+  -ms-user-select: none;
+  user-select: none;
+  transition: all 0.2s ease;
+}
+
+.mainButton:hover {
+  box-shadow: 0 0 20px 0 rgba(0, 9, 51, 0.2);
 }
 
 .headerLeftBG {
