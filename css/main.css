@@ -73,14 +73,14 @@ p {
   align-items: center;
   justify-content: center;
   cursor: pointer;
-  box-shadow: 0 0 20px 0 rgba(0, 9, 51, 0.2);
   -webkit-box-shadow: 0 0 20px 0 rgba(0, 9, 51, 0.2);
+  box-shadow: 0 0 20px 0 rgba(0, 9, 51, 0.2);
   transition: all 0.2s ease;
 }
 
 .circleButton:hover {
-  box-shadow: 0 0 50px 0 rgba(0, 9, 51, 0.2);
   -webkit-box-shadow: 0 0 50px 0 rgba(0, 9, 51, 0.2);
+  box-shadow: 0 0 50px 0 rgba(0, 9, 51, 0.2);
   transform: scale(1.06);
 }
 
