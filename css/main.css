@@ -84,6 +84,10 @@ p {
   transform: scale(1.06);
 }
 
+.circleButton.active {
+  background-color: var(--sky-blue);
+}
+
 header {
   width: 100%;
   overflow: hidden;
