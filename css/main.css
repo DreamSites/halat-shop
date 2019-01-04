@@ -33,7 +33,16 @@ h2 {
   color: var(--black);
   margin-bottom: 60px;
 }
-
+h3{
+  font-size: 50px;
+  font-weight: 500;
+  color: var(--black);
+}
+h4{
+  font-size: 26px;
+  font-weight: 500;
+  color: var(--black);
+}
 p {
   font-size: 20px;
   line-height: 1.76;
@@ -226,4 +235,36 @@ header .mainButton {
 
 #work3 {
   background: url(../img/work3.jpg) no-repeat center center / cover;
+}
+.reviews {
+margin-top: 70px;
+
+}
+.reviews h3 {
+  text-align: center;
+}
+.reviews h4 {
+  text-align: center;
+
+}
+.sliderRewiews {
+
+  margin: auto;
+  margin-top: 50px;
+  border-radius: 50%;
+  width: 842px;
+  height: 842px;
+  background-color: #ffffff;
+  -webkit-box-shadow: 0px 0px 20px rgba(0, 9, 51, 0.2);
+  box-shadow: 0px 0px 20px rgba(0, 9, 51, 0.2);
+}
+.sliderRewiews p {
+ margin:0 auto;
+ margin-top: 20px;
+ text-align: center;
+ width: 596px;
+ height: 423px;
+ font-size: 20px;
+ line-height: 1.76;
+ color: var(--greyish-brown);
 }
