@@ -99,7 +99,7 @@ header {
   width: 100%;
   overflow: hidden;
   position: relative;
-  height: 1077px;
+  height: 1100px;
 }
 
 .headerLeftBG {
@@ -187,10 +187,6 @@ header .mainButton {
   margin-top: 5px;
 }
 
-.ourWorks {
-  margin-top: 19px;
-}
-
 .ourWorks h2 {
   text-align: center;
 }
@@ -235,8 +231,52 @@ header .mainButton {
   background: url(../img/work3.jpg) no-repeat center center / cover;
 }
 
+.slider .circleButton {
+  margin-right: -30px;
+  margin-left: -30px;
+  z-index: 2;
+}
+
+.dotsContainer {
+  height: 16px;
+  width: 106px;
+  display: flex;
+  align-items: center;
+  margin: 0 auto;
+  margin-top: 40px;
+}
+
+.dotIndicator {
+  width: 16px;
+  height: 16px;
+  border-radius: 50%;
+  background-color: white;
+  border: 2px solid var(--sky-blue);
+  margin-left: 14px;
+}
+
+.dotIndicator:first-child {
+  margin-left: 0;
+}
+
+.dotIndicator.active {
+  background-color: var(--sky-blue);
+}
+
+.reviewsBG {
+  background-color: var(--pale-grey);
+  position: relative;
+  margin-top: 300px;
+  width: 100%;
+  height: 889px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
 .reviews {
-  margin-top: 70px;
+  position: absolute;
+  top: -178px;
 }
 
 .reviews h2 {
@@ -244,7 +284,6 @@ header .mainButton {
 }
 
 .sliderRewiews {
-  margin: auto;
   margin-top: 50px;
   border-radius: 50%;
   width: 842px;
@@ -252,17 +291,83 @@ header .mainButton {
   background-color: white;
   -webkit-box-shadow: 0px 0px 20px rgba(0, 9, 51, 0.2);
   box-shadow: 0px 0px 20px rgba(0, 9, 51, 0.2);
+  position: relative;
+}
+
+.sliderRewiewsContent {
   display: flex;
   align-items: center;
   flex-direction: column;
 }
 
+.reviewPhoto {
+  width: 100px;
+  height: 100px;
+  border-radius: 50%;
+  background-color: grey;
+  margin-top: 176px;
+  background: url(../img/reviewPhoto.jpg) no-repeat center center / cover;
+}
+
+.sliderRewiews h3 {
+  margin-top: 19px;
+}
+
 .sliderRewiews p {
-  margin-top: 20px;
+  margin-top: 30px;
   text-align: center;
   width: 596px;
-  height: 423px;
+}
+
+.sliderRewiews p.date {
+  font-size: 16px;
+  text-align: center;
+  color: #999999;
+  margin-top: 30px;
+}
+
+.sliderRewiews .dotsContainer {
+  margin-top: 60px;
+}
+
+.smilesCircle {
+  position: absolute;
+  width: 152px;
+  height: 152px;
+  border-radius: 50%;
+  -webkit-box-shadow: 0 0 10px 0 rgba(0, 9, 51, 0.1);
+  box-shadow: 0 0 10px 0 rgba(0, 9, 51, 0.1);
+  background-color: white;
+  top: 21px;
+  left: 74px;
+  display: flex;
+  justify-content: center;
+}
+
+.clientsNumberCircle {
+  position: absolute;
+  width: 250px;
+  height: 250px;
+  border-radius: 50%;
+  -webkit-box-shadow: 0 0 20px 0 rgba(0, 9, 51, 0.1);
+  box-shadow: 0 0 20px 0 rgba(0, 9, 51, 0.1);
+  background-color: white;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  top: 700px;
+  left: 54px;
+}
+
+.numberBig {
+  font-size: 40px;
+  font-weight: 500;
+  color: var(--sky-blue);
+}
+
+.numberSmall {
   font-size: 20px;
-  line-height: 1.76;
-  color: var(--greyish-brown);
+  font-weight: 500;
+  color: var(--sky-blue);
 }
