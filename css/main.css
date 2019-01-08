@@ -381,21 +381,24 @@ header .mainButton {
   font-weight: 500;
   color: var(--sky-blue);
 }
+
 .constructor {
   position: absolute;
-
 }
+
 .constructor h2 {
   margin-top: -550px;
 }
+
 .constructorBG {
   position: relative;
   background-color: var(--pale-grey);
   width: 100%;
   height: 1325px;
 }
+
 .constructorCircle {
-  position:relative;
+  position: relative;
   width: 1151px;
   height: 1151px;
   border-radius: 50%;
@@ -408,6 +411,7 @@ header .mainButton {
   top: 75px;
   left: 550px;
 }
+
 .qualityCircle {
   position: absolute;
   width: 386px;
@@ -423,16 +427,19 @@ header .mainButton {
   top: 1000px;
   left: 600px;
 }
+
 .qualityProcent {
   font-size: 40px;
   font-weight: 500;
   color: var(--sky-blue);
 }
+
 .qualityText {
   font-size: 20px;
   font-weight: 500;
   color: var(--sky-blue);
 }
+
 .heatrInHandCircle {
   position: absolute;
   width: 152px;
@@ -446,113 +453,78 @@ header .mainButton {
   top: 40px;
   left: 1400px;
 }
-.stageOForderBG {
 
+.stageOForderBG {
   width: 100%;
   height: 500px;
   background-color: #ffffff;
-
 }
-.stageOForder {
 
-}
 .stageOForder h2 {
   text-align: center;
-  font-size: 50px;
   margin-top: 150px;
 }
+
 .orderCircles {
   width: 100%;
-  height: 300px;
-}
-.OrderedCircle {
-  position: absolute;
-  width: 270px;
   height: 270px;
-  border-radius: 50%;
-  -webkit-box-shadow: 0 0 10px 0 rgba(0, 9, 51, 0.1);
-  box-shadow: 0 0 10px 0 rgba(0, 9, 51, 0.1);
-  background-color: white;
-  display: inline;
-  left: 1400px;
   display: flex;
   justify-content: center;
 }
-.managerCallCircle {
-  position: absolute;
+
+.orderCircle {
   width: 270px;
   height: 270px;
   border-radius: 50%;
-  -webkit-box-shadow: 0 0 10px 0 rgba(0, 9, 51, 0.1);
-  box-shadow: 0 0 10px 0 rgba(0, 9, 51, 0.1);
+  -webkit-box-shadow: 0 0 30px 0 rgba(0, 9, 51, 0.1);
+  box-shadow: 0 0 30px 0 rgba(0, 9, 51, 0.1);
   background-color: white;
-  display: inline;
-  left: 1100px;
   display: flex;
   justify-content: center;
+  margin-left: 38px;
 }
-.deliveryCircle {
-  position: absolute;
-  width: 270px;
-  height: 270px;
-  border-radius: 50%;
-  -webkit-box-shadow: 0 0 10px 0 rgba(0, 9, 51, 0.1);
-  box-shadow: 0 0 10px 0 rgba(0, 9, 51, 0.1);
-  background-color: white;
-  display: inline;
-  left: 800px;
+
+.orderCircle:first-child {
+  margin-left: 0;
+}
+
+.orderCircle span {
+  font-size: 20px;
+  font-weight: 500;
+  color: var(--black);
+  margin-top: 10px;
+}
+
+.orderCircleContent {
   display: flex;
+  flex-direction: column;
   justify-content: center;
 }
-.paymentCircle {
-  position: absolute;
-  width: 270px;
-  height: 270px;
-  border-radius: 50%;
-  -webkit-box-shadow: 0 0 10px 0 rgba(0, 9, 51, 0.1);
-  box-shadow: 0 0 10px 0 rgba(0, 9, 51, 0.1);
-  background-color: white;
-  display: inline;
-  left: 500px;
-  display: flex;
-  justify-content: center;
-}
-.youGotBathrobeCircle {
-  position: absolute;
-  width: 270px;
-  height: 270px;
-  border-radius: 50%;
-  -webkit-box-shadow: 0 0 10px 0 rgba(0, 9, 51, 0.1);
-  box-shadow: 0 0 10px 0 rgba(0, 9, 51, 0.1);
-  background-color: white;
-  display: inline;
-  left: 200px;
-  display: flex;
-  justify-content: center;
-}
+
 .aboutUsBG {
   width: 100%;
   height: 500px;
   background-color: #ffffff;
+}
 
-}
 .aboutUs {
-margin-top: 200px;
-width: 100%
+  margin-top: 200px;
+  width: 100%
 }
-.aboutUs h2 {
-}
+
 .aboutUsText {
   float: left;
   width: 30%;
   margin-left: 210px;
 }
+
 .aboutUsText p {
   font-size: 20px;
   font-weight: 500;
   color: var(--greyish-brown);
   text-align: left;
 }
+
 .aboutUsImgCircle {
   position: absolute;
   width: 732px;
@@ -566,9 +538,10 @@ width: 100%
   display: flex;
   justify-content: center;
   left: 750px;
-  margin-top:-150px;
-z-index: 1;
+  margin-top: -150px;
+  z-index: 1;
 }
+
 .aboutUsExperienceCircle {
   position: absolute;
   width: 250px;
@@ -587,24 +560,28 @@ z-index: 1;
   margin-top: 100px;
   z-index: 1;
 }
+
 .experienceYears {
   font-size: 40px;
   font-weight: 500;
   color: var(--sky-blue);
 }
+
 .experience {
   font-size: 20px;
   font-weight: 500;
   color: var(--sky-blue);
 }
+
 footer {
   width: 100%;
   overflow: hidden;
   position: relative;
   height: 630px;
   background-color: var(--pale-grey);
-  z-index:0 ;
+  z-index: 0;
 }
+
 .footerCircle {
   position: absolute;
   -webkit-box-shadow: 0 0 30px 0 rgba(0, 9, 51, 0.2);
@@ -617,8 +594,8 @@ footer {
   justify-content: center;
   margin-top: 200px;
   right: 300px;
-
 }
+
 .footerCircle nav {
   height: 71px;
   display: flex;
