@@ -300,6 +300,16 @@ header .mainButton {
   flex-direction: column;
 }
 
+.reviewsButtons {
+  position: absolute;
+  top: calc(50% - 70px);
+  right: -30px;
+}
+
+.reviewsButtons .circleButton:first-child {
+  margin-bottom: 20px;
+}
+
 .reviewPhoto {
   width: 100px;
   height: 100px;
