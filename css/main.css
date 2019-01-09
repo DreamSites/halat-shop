@@ -5,6 +5,9 @@
   font-weight: 400;
   -webkit-box-sizing: border-box;
   box-sizing: border-box;
+  -webkit-appearance: none;
+  -moz-appearance: none;
+  appearance: none;
 }
 
 img {
@@ -14,13 +17,16 @@ img {
   user-select: none;
 }
 
+/* Color palette */
 :root {
   --sky-blue: #66c4ff;
   --black: #262626;
   --pale-grey: #f0f2f5;
   --greyish-brown: #4d4d4d;
+  --brown-grey: #999999;
 }
 
+/* Text styles */
 h1 {
   font-size: 80px;
   font-weight: 500;
@@ -39,6 +45,13 @@ h3 {
   font-weight: 500;
   color: var(--black);
   text-align: center;
+}
+
+h4 {
+  font-size: 20px;
+  font-weight: 400;
+  color: var(--black);
+  margin-bottom: 10px;
 }
 
 p {
@@ -388,18 +401,23 @@ header .mainButton {
 }
 
 .constructor {
-  position: absolute;
-}
-
-.constructor h2 {
-  margin-top: -550px;
+  max-width: 1307px;
+  margin-top: 61px;
+  display: flex;
 }
 
 .constructorBG {
-  position: relative;
   background-color: var(--pale-grey);
   width: 100%;
   height: 1325px;
+  display: flex;
+  justify-content: center;
+}
+
+.preview {
+  height: 1039px;
+  margin-top: 98px;
+  z-index: 2;
 }
 
 .constructorCircle {
@@ -410,11 +428,206 @@ header .mainButton {
   -webkit-box-shadow: 0 0 20px 0 rgba(0, 9, 51, 0.1);
   box-shadow: 0 0 20px 0 rgba(0, 9, 51, 0.1);
   background-color: white;
+  padding-left: 337px;
+  padding-top: 236px;
+  margin-left: -289px;
+}
+
+.constructor h2 {
+  margin-bottom: 50px;
+}
+
+.sizePicker {
+  width: 400px;
+  height: 50px;
+  border-radius: 25px;
+  background-color: var(--pale-grey);
+  display: grid;
+  grid-template-columns: auto 1px auto 1px auto 1px auto 1px auto 1px auto;
+  padding-left: 20px;
+  padding-right: 20px;
+}
+
+.sizePicker>* {
+  margin: auto;
+  color: var(--greyish-brown);
+}
+
+.size a {
+  font-size: 16px;
+  color: var(--sky-blue);
+  text-decoration: none;
+  margin-left: 20px;
+}
+
+.constructorGrid {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  margin-top: 33px;
+  width: 628px;
+  grid-gap: 28px;
+}
+
+.signInput {
+  width: 300px;
+  height: 50px;
+  border-radius: 25px;
+  background-color: var(--pale-grey);
+  outline: none;
+  border: none;
+  padding-left: 20px;
+  font-size: 16px;
+  color: var(--greyish-brown);
+  transition: all 0.2s ease;
+}
+
+.signInput:hover {
+  background-color: #e9eef5;
+}
+
+.signInput:focus {
+  -webkit-box-shadow: 0 0 10px 0 rgba(0, 9, 51, 0.2);
+  box-shadow: 0 0 10px 0 rgba(0, 9, 51, 0.2);
+  background-color: #ffffff;
+}
+
+::placeholder {
+  font-size: 16px;
+  color: var(--brown-grey);
+}
+
+.fontPicker {
+  width: 300px;
+  height: 50px;
+  border-radius: 25px;
+  background-color: var(--pale-grey);
+  outline: none;
+  border: none;
+  padding-left: 20px;
+  font-size: 16px;
+  color: var(--brown-grey);
+  transition: all 0.2s ease;
+}
+
+.fontPicker:hover {
+  background-color: #e9eef5;
+}
+
+.signColor .colorPicker {
   display: flex;
   align-items: center;
   justify-content: center;
-  top: 75px;
-  left: 550px;
+  height: 50px;
+}
+
+.colorPickerItemBG {
+  width: 40px;
+  height: 40px;
+  -webkit-box-shadow: 0 0 10px 0 rgba(0, 9, 51, 0.1);
+  box-shadow: 0 0 10px 0 rgba(0, 9, 51, 0.1);
+  background-color: #ffffff;
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin-left: 25px;
+}
+
+.colorPickerItemBG:first-child {
+  margin-left: 0;
+}
+
+.colorPickerItem {
+  width: 14px;
+  height: 14px;
+  border-radius: 50%;
+}
+
+#colorPickerItem1 {
+  background-color: #ffd400;
+}
+
+#colorPickerItem2 {
+  background-color: #9600ff;
+}
+
+#colorPickerItem3 {
+  background-color: #ff0000;
+}
+
+#colorPickerItem4 {
+  background-color: #4053ff;
+}
+
+#colorPickerItem5 {
+  background-color: #ff6c00;
+}
+
+.bathrobeColor .colorPicker {
+    width: 300px;
+    height: 50px;
+    border-radius: 25px;
+    background-color: var(--pale-grey);
+    outline: none;
+    border: none;
+    padding-left: 20px;
+    font-size: 16px;
+    color: var(--brown-grey);
+    transition: all 0.2s ease;
+}
+
+.bathrobeColor .colorPicker:hover {
+  background-color: #e9eef5;
+}
+
+.imagePicker {
+    width: 300px;
+    height: 50px;
+    border-radius: 25px;
+    background-color: var(--pale-grey);
+    outline: none;
+    border: none;
+    padding-left: 20px;
+    font-size: 16px;
+    color: var(--brown-grey);
+    transition: all 0.2s ease;
+}
+
+.imagePicker:hover {
+  background-color: #e9eef5;
+}
+
+.imageButtons {
+  display: flex;
+  align-items: flex-end;
+}
+
+.imageButtons .circleButton {
+  width: 50px;
+  height: 50px;
+  -webkit-box-shadow: 0 0 10px 0 rgba(0, 9, 51, 0.15);
+  box-shadow: 0 0 10px 0 rgba(0, 9, 51, 0.15);
+}
+
+.imageButtons .circleButton:first-child {
+  margin-right: 15px;
+}
+
+.constructor .mainButton {
+  margin-top: 40px;
+}
+
+.price {
+  margin-top: 40px;
+  height: 60px;
+  display: flex;
+  align-items: center;
+}
+
+.price h4 {
+  font-weight: 500;
+  font-size: 25px;
+  margin-top: 10px;
 }
 
 .qualityCircle {
@@ -429,23 +642,12 @@ header .mainButton {
   flex-direction: column;
   align-items: center;
   justify-content: center;
-  top: 1000px;
-  left: 600px;
+  top: 944px;
+  left: 54px;
+  z-index: 3;
 }
 
-.qualityProcent {
-  font-size: 40px;
-  font-weight: 500;
-  color: var(--sky-blue);
-}
-
-.qualityText {
-  font-size: 20px;
-  font-weight: 500;
-  color: var(--sky-blue);
-}
-
-.heatrInHandCircle {
+.careCircle {
   position: absolute;
   width: 152px;
   height: 152px;
@@ -455,8 +657,19 @@ header .mainButton {
   background-color: white;
   display: flex;
   justify-content: center;
-  top: 40px;
-  left: 1400px;
+  top: 0px;
+  right: 197px;
+}
+
+.grayCircle {
+  position: absolute;
+  width: 246px;
+  height: 246px;
+  background-color: #f5f8fc;
+  border-radius: 50%;
+  left: -104px;
+  bottom: -189px;
+  z-index: 3;
 }
 
 .delivery h2 {
