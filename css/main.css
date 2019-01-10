@@ -564,16 +564,16 @@ header .mainButton {
 }
 
 .bathrobeColor .colorPicker {
-    width: 300px;
-    height: 50px;
-    border-radius: 25px;
-    background-color: var(--pale-grey);
-    outline: none;
-    border: none;
-    padding-left: 20px;
-    font-size: 16px;
-    color: var(--brown-grey);
-    transition: all 0.2s ease;
+  width: 300px;
+  height: 50px;
+  border-radius: 25px;
+  background-color: var(--pale-grey);
+  outline: none;
+  border: none;
+  padding-left: 20px;
+  font-size: 16px;
+  color: var(--brown-grey);
+  transition: all 0.2s ease;
 }
 
 .bathrobeColor .colorPicker:hover {
@@ -581,16 +581,16 @@ header .mainButton {
 }
 
 .imagePicker {
-    width: 300px;
-    height: 50px;
-    border-radius: 25px;
-    background-color: var(--pale-grey);
-    outline: none;
-    border: none;
-    padding-left: 20px;
-    font-size: 16px;
-    color: var(--brown-grey);
-    transition: all 0.2s ease;
+  width: 300px;
+  height: 50px;
+  border-radius: 25px;
+  background-color: var(--pale-grey);
+  outline: none;
+  border: none;
+  padding-left: 20px;
+  font-size: 16px;
+  color: var(--brown-grey);
+  transition: all 0.2s ease;
 }
 
 .imagePicker:hover {
@@ -722,10 +722,6 @@ header .mainButton {
   justify-content: center;
 }
 
-.aboutUsText {
-  float: left;
-}
-
 .aboutUsText h2 {
   margin-bottom: 40px;
 }
@@ -834,6 +830,24 @@ footer nav .circleButton:hover {
   left: calc(50% - 30px);
 }
 
+@media (max-width: 1555px) {
+  .aboutUs {
+    width: 1180px;
+    margin: 0 auto;
+  }
+
+  .aboutUsImgCircle {
+    width: 496px;
+    height: 496px;
+    margin-left: 84px;
+  }
+
+  .aboutUsExperienceCircle {
+    left: calc(50% - 125px);
+    top: 374px;
+  }
+}
+
 @media (max-width: 1550px) {
   .deliveryCircles {
     width: 904px;
@@ -849,7 +863,38 @@ footer nav .circleButton:hover {
   }
 }
 
-@media (max-width: 1550px) {
+@media (max-width: 1200px) {
+  .aboutUs {
+    width: 688px;
+    margin: 0 auto;
+    flex-direction: column-reverse;
+    justify-content: flex-end;
+    height: 1475px;
+  }
+
+  .aboutUsImgCircle {
+    width: 688px;
+    height: 688px;
+    margin: 0;
+    margin-top: 75px;
+  }
+
+  .aboutUsExperienceCircle {
+    left: calc(50% - 125px);
+    top: 1130px;
+  }
+
+  .aboutUsText {
+    text-align: center;
+    margin-top: 70px;
+  }
+
+  .aboutUsText p {
+    width: 630px;
+  }
+}
+
+@media (max-width: 920px) {
   .deliveryCircles {
     width: 596px;
   }
@@ -867,6 +912,50 @@ footer nav .circleButton:hover {
   #deliveryCircle5 {
     margin-left: 0;
     margin-top: 38px;
+  }
+}
+
+@media (max-width: 700px) {
+  .aboutUs {
+    width: 320px;
+    height: 1000px;
+  }
+
+  .aboutUsImgCircle {
+    width: 320px;
+    height: 320px;
+    margin: 0;
+    margin-top: 75px;
+  }
+
+  .aboutUsExperienceCircle {
+    left: calc(50% - 184px/2);
+    top: 700px;
+    width: 184px;
+    height: 184px;
+  }
+
+  .numberBig {
+    font-size: 30px;
+  }
+
+  .numberSmall {
+    font-size: 16px;
+  }
+
+  .aboutUsText {
+    text-align: center;
+    margin-top: 40px;
+  }
+
+  .aboutUsText p {
+    width: 300px;
+    font-size: 14px;
+  }
+
+  .aboutUsText h2 {
+    font-size: 30px;
+    margin-bottom: 20px;
   }
 }
 
