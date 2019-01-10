@@ -863,6 +863,16 @@ footer nav .circleButton:hover {
   }
 }
 
+@media (max-width: 1488px) {
+  .footerCircle {
+    left: -1027px;
+  }
+
+  .infoBlock {
+    margin-left: 30px;
+  }
+}
+
 @media (max-width: 1200px) {
   .aboutUs {
     width: 688px;
