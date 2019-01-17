@@ -1,7 +1,7 @@
 * {
   margin: 0;
   padding: 0;
-  font-family: 'Ubuntu';
+  font-family: 'Ubuntu', sans-serif;
   font-weight: 400;
   -webkit-box-sizing: border-box;
   box-sizing: border-box;
@@ -301,7 +301,7 @@ header .mainButton {
   text-align: center;
 }
 
-.sliderRewiews {
+.sliderReviews {
   margin-top: 50px;
   border-radius: 50%;
   width: 842px;
@@ -312,12 +312,17 @@ header .mainButton {
   position: relative;
 }
 
-.sliderRewiewsContent {
+.sliderReviewsContent {
   display: flex;
   align-items: center;
   flex-direction: column;
   opacity: 0;
   transition: all 1s ease;
+}
+
+.loadingContainer {
+  transition: all 5s linear;
+  transform: rotate(0);
 }
 
 .loading {
@@ -355,24 +360,24 @@ header .mainButton {
   background: url(../img/reviewPhoto.jpg) no-repeat center center / cover;
 }
 
-.sliderRewiews h3 {
+.sliderReviews h3 {
   margin-top: 19px;
 }
 
-.sliderRewiews p {
+.sliderReviews p {
   margin-top: 30px;
   text-align: center;
   width: 596px;
 }
 
-.sliderRewiews p.date {
+.sliderReviews p.date {
   font-size: 16px;
   text-align: center;
   color: #999999;
   margin-top: 30px;
 }
 
-.sliderRewiews .dotsContainer {
+.sliderReviews .dotsContainer {
   margin-top: 60px;
 }
 
