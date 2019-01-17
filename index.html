@@ -12,6 +12,20 @@
 
   <link href="https://fonts.googleapis.com/css?family=Ubuntu:400,500" rel="stylesheet">
 
+  <script src="https://www.gstatic.com/firebasejs/5.7.3/firebase.js"></script>
+  <script>
+    // Initialize Firebase
+    var config = {
+      apiKey: "AIzaSyDJzKsIQ2FoqBK3XdxZMU95oWBXykq7cRo",
+      authDomain: "halat-shop.firebaseapp.com",
+      databaseURL: "https://halat-shop.firebaseio.com",
+      projectId: "halat-shop",
+      storageBucket: "halat-shop.appspot.com",
+      messagingSenderId: "560243577039"
+    };
+    firebase.initializeApp(config);
+  </script>
+
   <script type="text/javascript" src="js/jquery-3.3.1.min.js"></script>
   <script type="text/javascript" src="js/main.js"></script>
 
@@ -65,12 +79,14 @@
     <section class="reviews" id="reviews">
       <h2>Отзывы клиентов</h2>
       <div class="sliderRewiews">
-        <div class="sliderRewiewsContent">
+        <div class="loading">
+          <img src="img/loading.svg" alt="" id="reviewsLoading">
+        </div>
+        <div class="sliderRewiewsContent" id="sliderRewiewsContent">
           <div class="reviewPhoto"></div>
-          <h3>Анастасия</h3>
-          <p>Хотела бы выразить большую благодарность за работу. Вы оказались единственными, кто согласился сделать все оперативно:) была приятно удивлена качеством халата и вышивки, выглядит здорово, ещё и бантиком завязали, как раз ко дню рождения
-            было приятно человеку подарить. И отдельная благодарность суперпунктуальному курьеру оч классный подарок, буду всем советовать</p>
-          <p class="date">06.12.2018</p>
+          <h3 id="reviewName">Имя</h3>
+          <p id="reviewText">Текст</p>
+          <p class="date" id="reviewDate">Дата</p>
           <div class="dotsContainer">
             <div class="dotIndicator active"></div>
             <div class="dotIndicator"></div>
@@ -78,7 +94,7 @@
             <div class="dotIndicator"></div>
           </div>
         </div>
-        <div class="reviewsButtons">
+        <div class="reviewsButtons" id="reviewsButtons">
           <div class="circleButton active"><img src="img/rightArrowActive.svg" alt=""></div>
           <div class="circleButton"><img src="img/leftArrowNotActive.svg" alt=""></div>
         </div>

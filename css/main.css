@@ -316,12 +316,30 @@ header .mainButton {
   display: flex;
   align-items: center;
   flex-direction: column;
+  opacity: 0;
+  transition: all 1s ease;
+}
+
+.loading {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 100%;
+  height: 100%;
+  position: absolute;
+}
+
+.loading img {
+  transition: all 1s ease;
+  transform: rotate(360deg);
 }
 
 .reviewsButtons {
   position: absolute;
   top: calc(50% - 70px);
   right: -30px;
+  opacity: 0;
+  transition: all 1s ease;
 }
 
 .reviewsButtons .circleButton:first-child {
