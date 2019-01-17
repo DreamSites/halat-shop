@@ -1,46 +1,55 @@
-// НАВИГАЦИЯ
-
-$('nav, a').click(function () {
-    var scrollTo = $(this).attr('href');
-    if ($(scrollTo).length !== 0) {
-        $('html, body').animate({
-            scrollTop: $(scrollTo).offset().top
-        }, 500);
-    }
-    return false;
-});
+$(document).ready(function () {
+    $('nav, a').click(function () {
+        var scrollTo = $(this).attr('href');
+        if ($(scrollTo).length !== 0) {
+            $('html, body').animate({
+                scrollTop: $(scrollTo).offset().top
+            }, 500);
+        }
+        return false;
+    });
 
 // Кнопка вниз
 
-$('#scrollDown').click(function () {
-    $('html, body').animate({
-        scrollTop: $(document).height()
-    }, 500);
-    return false;
-});
+    $('#scrollDown').click(function () {
+        $('html, body').animate({
+            scrollTop: $(document).height()
+        }, 500);
+        return false;
+    });
 
 // КНОПКА ВВЕРХ
 
-$('#scrollUp').click(function () {
-    $('html, body').animate({
-        scrollTop: 0
-    }, 500);
-    return false;
-});
+    $('#scrollUp').click(function () {
+        $('html, body').animate({
+            scrollTop: 0
+        }, 500);
+        return false;
+    });
 
-const dataRef = firebase.database().ref("reviews").orderByKey();
-dataRef.once("value").then(function (snapshot) {
-    snapshot.forEach(function (childSnapshot) {
-        const reviewName = childSnapshot.val().name;
-        const reviewText = childSnapshot.val().text;
-        const reviewDate = childSnapshot.val().date;
+    $('#reviewButtonRight').click(function () {
+        reviewID += 1;
+        getReview();
+    });
+});
+var reviewID = 0;
+var dataRef = firebase.database().ref("reviews/" + reviewID);
+
+function getReview() {
+    dataRef.once("value").then(function (snapshot) {
+        const reviewName = snapshot.val().name;
+        const reviewText = snapshot.val().text;
+        const reviewDate = snapshot.val().date;
 
         $('#reviewName').html(reviewName);
         $('#reviewText').html(reviewText);
         $('#reviewDate').html(reviewDate);
-
     });
-});
+}
+
+getReview();
+
+// АНИМАЦИЯ ЗАГРУЗКИ
 
 var i = 0
 while (i < 100) {
