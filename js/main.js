@@ -1,4 +1,7 @@
 $(document).ready(function () {
+    let reviewButtonRight = $('#reviewButtonRight');
+    let reviewButtonLeft = $('#reviewButtonLeft');
+
     $('nav, a').click(function () {
         var scrollTo = $(this).attr('href');
         if ($(scrollTo).length !== 0) {
@@ -27,16 +30,26 @@ $(document).ready(function () {
         return false;
     });
 
-    $('#reviewButtonRight').click(function () {
+    reviewButtonRight.click(function () {
         reviewID += 1;
+        $('#sliderReviewsContent').css({'opacity': '0', 'transition': 'all 0.2s ease'});
+        getReview();
+    });
+
+    reviewButtonLeft.click(function () {
+        reviewID -= 1;
+        $('#sliderReviewsContent').css({'opacity': '0', 'transition': 'all 0.2s ease'});
         getReview();
     });
 });
+
+
 var reviewID = 0;
-var dataRef = firebase.database().ref("reviews/" + reviewID);
 
 function getReview() {
-    dataRef.once("value").then(function (snapshot) {
+    var reviewRef = firebase.database().ref("reviews");
+    const review = reviewRef.child(reviewID);
+    review.once("value").then(function (snapshot) {
         const reviewName = snapshot.val().name;
         const reviewText = snapshot.val().text;
         const reviewDate = snapshot.val().date;
@@ -45,7 +58,16 @@ function getReview() {
         $('#reviewText').html(reviewText);
         $('#reviewDate').html(reviewDate);
     });
-}
+    if (reviewID > 0) {
+        let reviewButtonLeft = $('#reviewButtonLeft');
+        reviewButtonLeft.addClass('active');
+        reviewButtonLeft.html('<img src="img/leftArrowActive.svg" alt="">');
+    } else {
+        let reviewButtonLeft = $('#reviewButtonLeft');
+        reviewButtonLeft.removeClass('active');
+        reviewButtonLeft.html('<img src="img/leftArrowNotActive.svg" alt="">');
+    }
+};
 
 getReview();
 
