@@ -271,6 +271,7 @@ header .mainButton {
   background-color: white;
   border: 2px solid var(--sky-blue);
   margin-left: 14px;
+    transition: all 0.4s ease;
 }
 
 .dotIndicator:first-child {
@@ -320,9 +321,18 @@ header .mainButton {
   transition: all 1s ease;
 }
 
+#reviewsDotsContainer {
+    position: absolute;
+    top: 675px;
+    left: calc(50% - 53px);
+    opacity: 0;
+    transition: all 1s ease;
+}
+
 .loadingContainer {
   transition: all 5s linear;
   transform: rotate(0);
+    z-index: 0;
 }
 
 .loading {

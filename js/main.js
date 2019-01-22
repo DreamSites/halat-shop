@@ -32,12 +32,14 @@ $(document).ready(function () {
 
     reviewButtonRight.click(function () {
         reviewID += 1;
+        reviewsDotIndicatorID += 1;
         $('#sliderReviewsContent').css({'opacity': '0', 'transition': 'all 0.2s ease'});
         getReview();
     });
 
     reviewButtonLeft.click(function () {
         reviewID -= 1;
+        reviewsDotIndicatorID -= 1;
         $('#sliderReviewsContent').css({'opacity': '0', 'transition': 'all 0.2s ease'});
         getReview();
     });
@@ -45,6 +47,14 @@ $(document).ready(function () {
 
 
 var reviewID = 0;
+var reviewsDotIndicatorID = 0;
+
+function updateDotIndicator() {
+    let reviewsDotContainer = $('#reviewsDotsContainer').children();
+    reviewsDotContainer.eq(reviewsDotIndicatorID).addClass('active');
+    reviewsDotContainer.eq(reviewsDotIndicatorID - 1).removeClass('active');
+    reviewsDotContainer.eq(reviewsDotIndicatorID + 1).removeClass('active');
+}
 
 function getReview() {
     var reviewRef = firebase.database().ref("reviews");
@@ -58,16 +68,26 @@ function getReview() {
         $('#reviewText').html(reviewText);
         $('#reviewDate').html(reviewDate);
     });
-    if (reviewID > 0) {
+    if ((reviewsDotIndicatorID > 0) && (reviewsDotIndicatorID < 3)) {
         let reviewButtonLeft = $('#reviewButtonLeft');
+        let reviewButtonRight = $('#reviewButtonRight');
         reviewButtonLeft.addClass('active');
         reviewButtonLeft.html('<img src="img/leftArrowActive.svg" alt="">');
-    } else {
+        reviewButtonRight.addClass('active');
+        reviewButtonRight.html('<img src="img/rightArrowActive.svg" alt="">');
+        updateDotIndicator()
+    } else if (reviewsDotIndicatorID === 0) {
         let reviewButtonLeft = $('#reviewButtonLeft');
         reviewButtonLeft.removeClass('active');
         reviewButtonLeft.html('<img src="img/leftArrowNotActive.svg" alt="">');
+        updateDotIndicator()
+    } else if (reviewsDotIndicatorID === 3) {
+        let reviewButtonRight = $('#reviewButtonRight');
+        reviewButtonRight.removeClass('active');
+        reviewButtonRight.html('<img src="img/rightArrowNotActive.svg" alt="">');
+        updateDotIndicator()
     }
-};
+}
 
 getReview();
 
@@ -84,6 +104,7 @@ while (i < 100) {
                 $('#sliderReviewsContent').css('opacity', '1');
                 $('#reviewsButtons').css('opacity', '1');
                 $('#reviewsLoading').css('opacity', '0');
+                $('#reviewsDotsContainer').css('opacity', '1');
             }
         }, 1000 * i)
     })(i++)
