@@ -7,6 +7,8 @@
   <meta http-equiv="X-UA-Compatible" content="ie=edge">
   <title>Магазин халатов — Главная</title>
 
+  <link rel="stylesheet" type="text/css" href="//cdn.jsdelivr.net/npm/slick-carousel@1.8.1/slick/slick.css"/>
+
   <link rel="stylesheet" type="text/css" href="./slick/slick.css">
   <link rel="stylesheet" type="text/css" href="./slick/slick-theme.css">
 
@@ -14,8 +16,6 @@
   <link rel="stylesheet" href="css/fonts.css">
 
   <link href="https://fonts.googleapis.com/css?family=Ubuntu:400,500" rel="stylesheet">
-
-  <script src="./slick/slick.min.js" type="text/javascript" charset="utf-8"></script>
 
   <script src="https://www.gstatic.com/firebasejs/5.7.3/firebase.js"></script>
   <script>
@@ -32,6 +32,7 @@
   </script>
 
   <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+  <script type="text/javascript" src="//cdn.jsdelivr.net/npm/slick-carousel@1.8.1/slick/slick.min.js"></script>
   <script type="text/javascript" src="js/main.js"></script>
   <script type="text/javascript" src="js/responsive.js"></script>
 
@@ -56,7 +57,7 @@
     <nav>
       <img src="img/phone.svg" alt="">
       <p>+7 (937) 667-98-49</p>
-      <div class="circleButton" href="cart.html">
+      <div class="circleButton" onclick="window.location='cart.html';">
         <img src="img/cart.svg" alt="">
       </div>
     </nav>
@@ -65,37 +66,29 @@
     <img src="img/downArrow.svg" alt="">
   </div>
 </header>
-<section class="center slider">
-  <div>
-    <img src="http://placehold.it/350x300?text=1">
-  </div>
-  <div>
-    <img src="http://placehold.it/350x300?text=2">
-  </div>
-  <div>
-    <img src="http://placehold.it/350x300?text=3">
-  </div>
-  <div>
-    <img src="http://placehold.it/350x300?text=4">
-  </div>
-  <div>
-    <img src="http://placehold.it/350x300?text=5">
-  </div>
-  <div>
-    <img src="http://placehold.it/350x300?text=6">
-  </div>
-  <div>
-    <img src="http://placehold.it/350x300?text=7">
-  </div>
-  <div>
-    <img src="http://placehold.it/350x300?text=8">
-  </div>
-  <div>
-    <img src="http://placehold.it/350x300?text=9">
-  </div>
-</section>
 <section class="ourWorks" id="ourWorks">
   <h2>Наши работы</h2>
+  <section class="center slider">
+    <div>
+      <img src="http://placehold.it/350x300?text=1">
+    </div>
+    <div>
+      <img src="http://placehold.it/350x300?text=2">
+    </div>
+    <div>
+      <img src="http://placehold.it/350x300?text=3">
+    </div>
+    <div>
+      <img src="http://placehold.it/350x300?text=4">
+    </div>
+    <div>
+      <img src="http://placehold.it/350x300?text=5">
+    </div>
+    <div>
+      <img src="http://placehold.it/350x300?text=6">
+    </div>
+
+  </section>
   <!--
     <div class="slider">
       <div class="circleButton"><img src="img/leftArrowNotActive.svg" alt=""></div>
