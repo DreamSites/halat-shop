@@ -23,4 +23,25 @@ body {
     height: 1039px;
     position: absolute;
     top: 326px;
+    left: 790px;
+}
+
+.whiteCircle {
+    width: 386px;
+    height: 386px;
+    -webkit-box-shadow: 0 0 20px 0 rgba(0, 9, 51, 0.1);
+    box-shadow: 0 0 20px 0 rgba(0, 9, 51, 0.1);
+    background-color: white;
+    position: absolute;
+    border-radius: 50%;
+}
+
+#whiteCircle-1 {
+    top: 1079px;
+    left: 725px;
+}
+
+#whiteCircle-2 {
+    top: 1172px;
+    left: 1002px;
 }
