@@ -2,14 +2,6 @@ $(document).ready(function () {
     let reviewButtonRight = $('#reviewButtonRight');
     let reviewButtonLeft = $('#reviewButtonLeft');
 
-    $(".center").slick({
-        dots: true,
-        infinite: true,
-        centerMode: true,
-        slidesToShow: 5,
-        slidesToScroll: 3
-    });
-
     $('nav, a').click(function () {
         var scrollTo = $(this).attr('href');
         if ($(scrollTo).length !== 0) {
