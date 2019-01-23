@@ -45,3 +45,7 @@ body {
     top: 1172px;
     left: 1002px;
 }
+
+#output {
+    margin-left: 60%;
+}

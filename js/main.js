@@ -43,6 +43,13 @@ $(document).ready(function () {
         $('#sliderReviewsContent').css({'opacity': '0', 'transition': 'all 0.2s ease'});
         getReview();
     });
+
+    (function (global) {
+        document.getElementById("order").addEventListener("click", function () {
+            global.localStorage.setItem("signInput", document.getElementById("signInput").value);
+        }, false);
+    }(window));
+
 });
 
 
