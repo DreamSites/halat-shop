@@ -16,14 +16,5 @@ function responsiveNavigation() {
             '</div>' +
             '<img src="img/logo.png" alt="" class="logo">'
         );
-    } else {
-        $('.headerLeftBG nav').html(
-            '<img src="img/logo.png" alt="" class="logo">' +
-            '<a href="#ourWorks">Галерея</a>' +
-            '<a href="#reviews">Отзывы</a>' +
-            '<a href="#constructor">Конструктор</a>' +
-            '<a href="#delivery">Доставка</a>' +
-            '<a href="#aboutUs">О нас</a>'
-        );
     }
 }

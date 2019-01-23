@@ -959,7 +959,7 @@ footer nav .circleButton:hover {
     .headerLeftBG nav {
         flex-direction: row-reverse;
         margin-left: -65px;
-        width: 95vw;
+        width: calc(100vw - 60px);
     }
 
     header {
@@ -1082,18 +1082,66 @@ footer nav .circleButton:hover {
 }
 
 @media (max-width: 675px) {
+    header {
+        height: 1120px;
+    }
+
     header h1 {
-        font-size: 50px;
-        width: 341px;
+        font-size: 48px;
+        width: 320px;
+    }
+
+    .headerLeftBG {
+        padding-top: 306px;
+        padding-left: calc((925px - 100vw) / 2 + 20px);
+        width: 925px;
+        height: 925px;
+        left: calc(50% - 925px / 2);
+        top: -296px;
     }
 
     .headerLeftBG nav {
-        width: 90vw;
+        margin-left: 0;
+        width: calc(100vw - 30px);
     }
 
     .headerLeftBG p {
         font-size: 14px;
         width: 262px;
+    }
+
+    .logo {
+        width: 92px;
+        height: 39px;
+    }
+
+    .circleButton {
+        transform: scale(0.8);
+    }
+
+    .circleButton:hover {
+        transform: scale(0.9);
+    }
+
+    #openNavigation {
+        margin-left: 5px;
+    }
+
+    .mainButton {
+        width: 250px;
+        height: 50px;
+        font-size: 16px;
+    }
+
+    #scrollDown {
+        display: none;
+    }
+
+    .headerRightBG {
+        left: -324px;
+        top: -318px;
+        background-size: 35%;
+        background-position: 250px 924px;
     }
 }
 
