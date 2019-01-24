@@ -948,6 +948,69 @@ footer nav .circleButton:hover {
 }
 
 @media (max-width: 920px) {
+
+    .careCircle {
+      margin-right: 100px;
+      margin-top: -10px;
+    }
+    .preview {
+      height: 860px;
+      width: 347px;
+      margin-left: 200px;
+      margin-bottom: 100px;
+      z-index: 2;
+    }
+    .grayCircle {
+      width: 246px;
+      height: 246px;
+      margin-left: 350px;
+      margin-bottom: 150px;
+    }
+    .qualityCircle {
+      width: 386px;
+      height: 386px;
+      margin-left: 350px;
+      margin-top: 200px;
+    }
+    .circleButton {
+    display: none;
+    }
+    .circleButton active {
+    display: none;
+    }
+    .sliderContent {
+      width: 442px;
+      height: 442px;
+    }
+    .sliderContent active {
+      width: 596px;
+      height: 596px;
+    }
+    .main {
+      overflow: hidden;
+    }
+    .reviewsButtons {
+      display: none;
+    }
+    .sliderReviews {
+      width: 842px;
+      height: 842px;
+    }
+    .constructorBG {
+      height: 1700px;
+    }
+    .constructorCircle {
+      width: 1300px;
+      height: 1471px;
+      margin-left: -600px;
+
+    }
+    .constructor {
+
+    }
+    .delivery {
+      margin-top: 100px;
+    }
     .deliveryCircles {
         width: 596px;
     }
