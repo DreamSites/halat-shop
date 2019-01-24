@@ -34,7 +34,7 @@
 
 <body>
 <header>
-  <div class="headerLeftBG">
+  <div class="headerLeftBG" id="headerLeftBG">
     <nav>
       <img src="img/logo.png" alt="" class="logo">
       <a href="#ourWorks">Галерея</a>
@@ -46,6 +46,35 @@
     <h1>Банный халат вашей мечты!</h1>
     <p>Создайте свой махровый халат с ярким рисунком и именной вышивкой.</p>
     <div class="mainButton">Создать халат</div>
+  </div>
+  <div class="headerLeftBG" id="headerNavigation">
+    <nav>
+      <div class="circleButton" id="closeNavigation">
+        <img src="img/close.svg" alt="">
+      </div>
+      <img src="img/logo.png" alt="" class="logo">
+    </nav>
+    <div class="links">
+      <a href="#ourWorks">Галерея</a>
+      <a href="#reviews">Отзывы</a>
+      <a href="#constructor">Конструктор</a>
+      <a href="#delivery">Доставка</a>
+      <a href="#aboutUs">О нас</a>
+    </div>
+    <div class="contacts">
+      <div class="contactsItem">
+        <img src="img/email.svg" alt="">
+        <p>info@magazinhalatov.ru</p>
+      </div>
+      <div class="contactsItem">
+        <img src="img/phoneBlue.svg" alt="">
+        <p>+7 (937) 667-98-49</p>
+      </div>
+      <div class="contactsItem">
+        <img src="img/clock.svg" alt="">
+        <p>Пн-Сб 9:00-18:00</p>
+      </div>
+    </div>
   </div>
   <div class="headerRightBG">
     <nav>
@@ -62,19 +91,19 @@
 </header>
 <section class="ourWorks" id="ourWorks">
   <h2>Наши работы</h2>
-    <div class="slider">
-      <div class="circleButton"><img src="img/leftArrowNotActive.svg" alt=""></div>
-      <div class="sliderContent" id="work1"></div>
-      <div class="sliderContent active" id="work2"></div>
-      <div class="sliderContent" id="work3"></div>
-      <div class="circleButton active"><img src="img/rightArrowActive.svg" alt=""></div>
-    </div>
-    <div class="dotsContainer">
-      <div class="dotIndicator active"></div>
-      <div class="dotIndicator"></div>
-      <div class="dotIndicator"></div>
-      <div class="dotIndicator"></div>
-    </div>
+  <div class="slider">
+    <div class="circleButton"><img src="img/leftArrowNotActive.svg" alt=""></div>
+    <div class="sliderContent" id="work1"></div>
+    <div class="sliderContent active" id="work2"></div>
+    <div class="sliderContent" id="work3"></div>
+    <div class="circleButton active"><img src="img/rightArrowActive.svg" alt=""></div>
+  </div>
+  <div class="dotsContainer">
+    <div class="dotIndicator active"></div>
+    <div class="dotIndicator"></div>
+    <div class="dotIndicator"></div>
+    <div class="dotIndicator"></div>
+  </div>
 </section>
 <div class="reviewsBG">
   <section class="reviews" id="reviews">

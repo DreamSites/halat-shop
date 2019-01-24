@@ -13,6 +13,17 @@ $(document).ready(function () {
         return false;
     });
 
+    $('.links, a').click(function () {
+        $('#headerNavigation').css({'opacity': 0, 'z-index': 1});
+        var scrollTo = $(this).attr('href');
+        if ($(scrollTo).length !== 0) {
+            $('html, body').animate({
+                scrollTop: $(scrollTo).offset().top
+            }, 500);
+        }
+        return false;
+    });
+
 // Кнопка вниз
 
     $('#scrollDown').click(function () {
@@ -29,6 +40,14 @@ $(document).ready(function () {
             scrollTop: 0
         }, 500);
         return false;
+    });
+
+    $('#openNavigation').click(function () {
+        $('#headerNavigation').css({'opacity': 1, 'z-index': 3});
+    });
+
+    $('#closeNavigation').click(function () {
+        $('#headerNavigation').css({'opacity': 0, 'z-index': 1});
     });
 
     reviewButtonRight.click(function () {
@@ -120,11 +139,11 @@ while (i < 100) {
 
 function responsiveNavigation() {
     if ($(window).width() < 1240) {
-        $('.headerLeftBG nav').html(
+        $('#headerLeftBG nav').html(
             '<div class="circleButton" id="openNavigation">' +
             '   <img src="img/navigation.svg" alt="">' +
             '</div>' +
-            '<div class="circleButton">' +
+            '<div class="circleButton" onclick="window.location=\'cart.html\';">' +
             '   <img src="img/cart.svg" alt="">' +
             '</div>' +
             '<img src="img/logo.png" alt="" class="logo">'

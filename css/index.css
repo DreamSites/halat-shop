@@ -17,6 +17,7 @@ header {
     border-radius: 50%;
     padding-top: 354px;
     padding-left: 532px;
+    z-index: 2;
 }
 
 nav {
@@ -49,6 +50,47 @@ header h1 {
 
 header .mainButton {
     margin-top: 60px;
+}
+
+#headerNavigation {
+    opacity: 0;
+    z-index: 1;
+    transition: all 0.3s ease;
+}
+
+.links {
+    display: flex;
+    flex-direction: column;
+    margin-left: -65px;
+    margin-top: 95px;
+    width: 50%;
+}
+
+.links a {
+    font-size: 20px;
+    line-height: 3.52;
+    color: var(--greyish-brown);
+    text-decoration: none;
+
+}
+
+.contacts {
+    float: right;
+    margin-right: 15px;
+    margin-top: -350px;
+}
+
+.contactsItem {
+    display: flex;
+}
+
+.contactsItem img {
+    margin-right: 10px;
+}
+
+#headerNavigation p {
+    margin-top: 0;
+    line-height: 3.52;
 }
 
 .headerRightBG {
