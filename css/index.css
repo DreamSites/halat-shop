@@ -63,7 +63,7 @@ header .mainButton {
     flex-direction: column;
     margin-left: -65px;
     margin-top: 95px;
-    width: 50%;
+    width: 127px;
 }
 
 .links a {
@@ -75,8 +75,7 @@ header .mainButton {
 }
 
 .contacts {
-    float: right;
-    margin-right: 15px;
+    margin-left: calc(100vw - 400px);
     margin-top: -350px;
 }
 
@@ -1074,6 +1073,24 @@ footer nav .circleButton:hover {
         top: -318px;
         background-size: 35%;
         background-position: 250px 924px;
+    }
+
+    .links {
+        margin-left: 0;
+        margin-top: 20px;
+    }
+
+    .links a {
+        font-size: 16px;
+    }
+
+    .contacts {
+        margin-left: 0;
+        margin-top: 10px;
+    }
+
+    #headerNavigation p {
+        font-size: 16px;
     }
 }
 
