@@ -778,7 +778,6 @@ footer nav .circleButton:hover {
 }
 
 .info p {
-    font-weight: 500;
     margin-left: 9px;
 }
 
@@ -786,6 +785,11 @@ footer nav .circleButton:hover {
     margin-left: 23px;
     font-size: 16px;
     color: #cccccc;
+}
+
+.oneRow {
+    display: flex;
+    margin-left: 30px;
 }
 
 #scrollUp {
@@ -870,7 +874,7 @@ footer nav .circleButton:hover {
         padding-right: 685px;
     }
 
-    nav a:last-of-type {
+    header nav a:last-of-type {
         color: white;
     }
 
@@ -905,7 +909,7 @@ footer nav .circleButton:hover {
         margin-left: 20px;
     }
 
-    .logo {
+    header .logo {
         margin-right: auto;
     }
 
@@ -913,6 +917,46 @@ footer nav .circleButton:hover {
         top: 95px;
         left: -120px;
         background: url(../img/hero.png) no-repeat center 570px #8CD3FF;
+    }
+
+    footer p {
+        font-size: 16px;
+    }
+
+    footer .infoBlock span {
+        font-size: 14px;
+    }
+
+    #scrollUp {
+        display: none;
+    }
+
+    .footerCircle {
+        left: -1453px;
+        padding-left: 1490px;
+        padding-top: 100px;
+    }
+
+    footer .info {
+        flex-direction: column;
+        float: left;
+        align-items: start;
+    }
+
+    #copyright {
+        margin-left: 0;
+    }
+
+    footer .infoBlock span:last-of-type {
+        margin-left: 0;
+    }
+
+    .oneRow {
+        display: flex;
+        align-items: center;
+        margin-top: 30px;
+        margin-bottom: 60px;
+        margin-left: 0;
     }
 }
 
@@ -1154,6 +1198,35 @@ footer nav .circleButton:hover {
 
     #headerNavigation p {
         font-size: 16px;
+    }
+
+    .footerCircle {
+        left: -1657px;
+        bottom: 487px;
+        top: 118px;
+        padding-left: 1677px;
+        padding-top: 72px;
+    }
+
+    footer nav {
+        flex-wrap: wrap;
+        width: 119px;
+
+    }
+
+    footer nav .circleButton {
+        margin-left: -6px;
+        margin-top: 30px;
+    }
+
+    .oneRow {
+        flex-wrap: wrap;
+        width: 197px;
+    }
+
+    .oneRow .infoBlock:last-of-type {
+        margin-top: 30px;
+        margin-left: 0;
     }
 }
 

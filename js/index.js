@@ -148,5 +148,14 @@ function responsiveNavigation() {
             '</div>' +
             '<img src="img/logo.png" alt="" class="logo">'
         );
+        $('footer nav').html(
+            '<img src="img/logo.png" alt="" class="logo">' +
+            '<div class="circleButton" onclick="window.location=\'cart.html\';">' +
+            '   <img src="img/cartBold.svg" alt="">' +
+            '</div>'
+        );
+    }
+    if ($(window).width() < 675) {
+        $('#copyright span').text = 'Copyright 2018 Магазин халатов.';
     }
 }
