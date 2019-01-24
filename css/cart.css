@@ -18,6 +18,12 @@ body {
     padding-top: 245px;
 }
 
+.logo {
+    width: 168px;
+    height: 71px;
+    margin-right: auto;
+}
+
 .leftCircle .preview {
     width: 447px;
     height: 1039px;
@@ -46,6 +52,100 @@ body {
     left: 1002px;
 }
 
-#output {
-    margin-left: 60%;
+nav {
+    display: flex;
+    flex-direction: row-reverse;
+    align-items: center;
+    z-index: 2;
+    position: relative;
+    height: 71px;
+    margin: 47px auto 0;
+    width: 80vw;
+}
+
+.navItem {
+    display: flex;
+    align-items: center;
+    margin-left: 75px;
+    font-size: 16px;
+    color: var(--greyish-brown);
+}
+
+.navItem a {
+    text-decoration: none;
+    color: var(--greyish-brown);
+}
+
+.navItem img {
+    margin-right: 10px;
+}
+
+.orderInfo {
+    margin-left: 58%;
+    margin-top: 80px;
+}
+
+.price {
+    width: 400px;
+    display: flex;
+    align-items: center;
+}
+
+.orderInfo h4 {
+    margin-bottom: 0;
+    font-weight: 500;
+    float: left;
+}
+
+.price a {
+    text-decoration: none;
+    color: var(--sky-blue);
+    margin-left: auto;
+}
+
+.info {
+    margin-top: 20px;
+}
+
+.info span {
+    color: var(--brown-grey);
+    float: left;
+    line-height: 1.76;
+    margin-right: 5px;
+}
+
+.info p {
+    font-size: 16px;
+}
+
+.orderInfoSeparator {
+    margin-top: 40px;
+}
+
+.orderItemsButtons {
+    display: flex;
+    margin-top: 30px;
+    align-items: center;
+}
+
+.orderItemsButtons .circleButton:first-of-type {
+    margin-right: 20px;
+}
+
+.orderItemsButtons p {
+    margin-left: 30px;
+}
+
+.fullPrice {
+    margin-right: 5px;
+    margin-top: 50px;
+}
+
+#fullPrice {
+    float: none;
+}
+
+.orderInfo .mainButton {
+    margin-top: 40px;
+    width: 400px;
 }

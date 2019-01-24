@@ -1,4 +1,5 @@
 $(document).ready(function () {
+    responsiveNavigation();
     let reviewButtonRight = $('#reviewButtonRight');
     let reviewButtonLeft = $('#reviewButtonLeft');
 
@@ -115,4 +116,18 @@ while (i < 100) {
             }
         }, 1000 * i)
     })(i++)
+}
+
+function responsiveNavigation() {
+    if ($(window).width() < 1240) {
+        $('.headerLeftBG nav').html(
+            '<div class="circleButton" id="openNavigation">' +
+            '   <img src="img/navigation.svg" alt="">' +
+            '</div>' +
+            '<div class="circleButton">' +
+            '   <img src="img/cart.svg" alt="">' +
+            '</div>' +
+            '<img src="img/logo.png" alt="" class="logo">'
+        );
+    }
 }
