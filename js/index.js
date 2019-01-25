@@ -1,10 +1,10 @@
 $(document).ready(function () {
     responsiveNavigation();
-    let reviewButtonRight = $('#reviewButtonRight');
-    let reviewButtonLeft = $('#reviewButtonLeft');
+    const reviewButtonRight = $('#reviewButtonRight');
+    const reviewButtonLeft = $('#reviewButtonLeft');
 
     $('nav, a').click(function () {
-        var scrollTo = $(this).attr('href');
+        const scrollTo = $(this).attr('href');
         if ($(scrollTo).length !== 0) {
             $('html, body').animate({
                 scrollTop: $(scrollTo).offset().top
@@ -15,7 +15,7 @@ $(document).ready(function () {
 
     $('.links, a').click(function () {
         $('#headerNavigation').css({'opacity': 0, 'z-index': 1});
-        var scrollTo = $(this).attr('href');
+        const scrollTo = $(this).attr('href');
         if ($(scrollTo).length !== 0) {
             $('html, body').animate({
                 scrollTop: $(scrollTo).offset().top
@@ -73,18 +73,18 @@ $(document).ready(function () {
 });
 
 
-var reviewID = 0;
-var reviewsDotIndicatorID = 0;
+let reviewID = 0;
+let reviewsDotIndicatorID = 0;
 
 function updateDotIndicator() {
-    let reviewsDotContainer = $('#reviewsDotsContainer').children();
+    const reviewsDotContainer = $('#reviewsDotsContainer').children();
     reviewsDotContainer.eq(reviewsDotIndicatorID).addClass('active');
     reviewsDotContainer.eq(reviewsDotIndicatorID - 1).removeClass('active');
     reviewsDotContainer.eq(reviewsDotIndicatorID + 1).removeClass('active');
 }
 
 function getReview() {
-    var reviewRef = firebase.database().ref("reviews");
+    const reviewRef = firebase.database().ref("reviews");
     const review = reviewRef.child(reviewID);
     review.once("value").then(function (snapshot) {
         const reviewName = snapshot.val().name;
@@ -96,20 +96,20 @@ function getReview() {
         $('#reviewDate').html(reviewDate);
     });
     if ((reviewsDotIndicatorID > 0) && (reviewsDotIndicatorID < 3)) {
-        let reviewButtonLeft = $('#reviewButtonLeft');
-        let reviewButtonRight = $('#reviewButtonRight');
+        const reviewButtonLeft = $('#reviewButtonLeft');
+        const reviewButtonRight = $('#reviewButtonRight');
         reviewButtonLeft.addClass('active');
         reviewButtonLeft.html('<img src="img/leftArrowActive.svg" alt="">');
         reviewButtonRight.addClass('active');
         reviewButtonRight.html('<img src="img/rightArrowActive.svg" alt="">');
         updateDotIndicator()
     } else if (reviewsDotIndicatorID === 0) {
-        let reviewButtonLeft = $('#reviewButtonLeft');
+        const reviewButtonLeft = $('#reviewButtonLeft');
         reviewButtonLeft.removeClass('active');
         reviewButtonLeft.html('<img src="img/leftArrowNotActive.svg" alt="">');
         updateDotIndicator()
     } else if (reviewsDotIndicatorID === 3) {
-        let reviewButtonRight = $('#reviewButtonRight');
+        const reviewButtonRight = $('#reviewButtonRight');
         reviewButtonRight.removeClass('active');
         reviewButtonRight.html('<img src="img/rightArrowNotActive.svg" alt="">');
         updateDotIndicator()
@@ -120,7 +120,7 @@ getReview();
 
 // АНИМАЦИЯ ЗАГРУЗКИ
 
-var i = 0
+let i = 0;
 while (i < 100) {
     (function (i) {
         setTimeout(function () {
