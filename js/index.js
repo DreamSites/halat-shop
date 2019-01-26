@@ -70,6 +70,17 @@ $(document).ready(function () {
         }, false);
     }(window));
 
+    $('#selectedFont').click(function () {
+        openFontPicker();
+    });
+
+    $(document).mouseup(function (e) {
+        const fontPicker = $('#fontPicker');
+        if (!fontPicker.is(e.target) && fontPicker.has(e.target).length === 0) {
+            closeFontPicker();
+        }
+    });
+
 });
 
 
@@ -158,4 +169,22 @@ function responsiveNavigation() {
     if ($(window).width() < 675) {
         $('#copyright span').text = 'Copyright 2018 Магазин халатов.';
     }
+}
+
+function openFontPicker() {
+    $('#fontPicker').addClass('active');
+    $('.fontPickerItem').addClass('active')
+}
+
+function closeFontPicker() {
+    $('#fontPicker').removeClass('active');
+    $('.fontPickerItem').removeClass('active')
+}
+
+function pickFont(font) {
+    const selectedFont = $('#selectedFont');
+    const selectedFontName = $('#selectedFontName');
+    selectedFontName.html = font;
+    selectedFontName.css('font-family', font);
+    selectedFont.addClass('picked');
 }

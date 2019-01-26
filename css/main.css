@@ -107,3 +107,21 @@ p {
 .circleButton.active {
     background-color: var(--sky-blue);
 }
+
+@media (max-width: 600px) {
+    h1 {
+        font-size: 48px;
+    }
+
+    h2 {
+        font-size: 30px;
+    }
+
+    h3 {
+        font-size: 20px;
+    }
+
+    p {
+        font-size: 14px;
+    }
+}

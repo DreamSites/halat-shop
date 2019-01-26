@@ -128,8 +128,7 @@ header .mainButton {
 }
 
 #scrollDown {
-    margin: 0 auto;
-    margin-top: 854px;
+    margin: 854px auto 0;
 }
 
 #scrollDown img {
@@ -153,8 +152,8 @@ header .mainButton {
     height: 442px;
     background-color: grey;
     z-index: 1;
-    -webkit-box-shadow: 0px 0px 20px rgba(0, 9, 51, 0.2);
-    box-shadow: 0px 0px 20px rgba(0, 9, 51, 0.2);
+    -webkit-box-shadow: 0 0 20px rgba(0, 9, 51, 0.2);
+    box-shadow: 0 0 20px rgba(0, 9, 51, 0.2);
 }
 
 .sliderContent.active {
@@ -164,8 +163,8 @@ header .mainButton {
     margin-right: -30px;
     background-color: black;
     z-index: 2;
-    -webkit-box-shadow: 0px 0px 30px rgba(0, 9, 51, 0.2);
-    box-shadow: 0px 0px 30px rgba(0, 9, 51, 0.2);
+    -webkit-box-shadow: 0 0 30px rgba(0, 9, 51, 0.2);
+    box-shadow: 0 0 30px rgba(0, 9, 51, 0.2);
 }
 
 #work1 {
@@ -191,8 +190,7 @@ header .mainButton {
     width: 106px;
     display: flex;
     align-items: center;
-    margin: 0 auto;
-    margin-top: 40px;
+    margin: 40px auto 0;
 }
 
 .dotIndicator {
@@ -239,8 +237,8 @@ header .mainButton {
     width: 842px;
     height: 842px;
     background-color: white;
-    -webkit-box-shadow: 0px 0px 20px rgba(0, 9, 51, 0.2);
-    box-shadow: 0px 0px 20px rgba(0, 9, 51, 0.2);
+    -webkit-box-shadow: 0 0 20px rgba(0, 9, 51, 0.2);
+    box-shadow: 0 0 20px rgba(0, 9, 51, 0.2);
     position: relative;
 }
 
@@ -296,7 +294,6 @@ header .mainButton {
     width: 100px;
     height: 100px;
     border-radius: 50%;
-    background-color: grey;
     margin-top: 176px;
     background: url(../img/reviewPhoto.jpg) no-repeat center center / cover;
 }
@@ -460,6 +457,14 @@ header .mainButton {
     color: var(--brown-grey);
 }
 
+.font {
+    z-index: 2;
+}
+
+.fontPickerContainer {
+    height: 50px;
+}
+
 .fontPicker {
     width: 300px;
     height: 50px;
@@ -467,14 +472,88 @@ header .mainButton {
     background-color: var(--pale-grey);
     outline: none;
     border: none;
-    padding-left: 20px;
     font-size: 16px;
     color: var(--brown-grey);
     transition: all 0.2s ease;
+    overflow: hidden;
+    display: grid;
 }
 
 .fontPicker:hover {
     background-color: #e9eef5;
+}
+
+.fontPicker.active {
+    width: 300px;
+    height: 350px;
+    border-radius: 25px;
+    -webkit-box-shadow: 0 0 10px 0 rgba(0, 9, 51, 0.2);
+    box-shadow: 0 0 10px 0 rgba(0, 9, 51, 0.2);
+    background-color: #ffffff;
+    grid-template-rows: repeat(7, 1fr);
+}
+
+.fontPickerItem {
+    display: none;
+    align-items: center;
+    color: var(--greyish-brown);
+    padding-left: 20px;
+    font-size: 20px;
+    cursor: pointer;
+    transition: all 0.2s ease;
+}
+
+.fontPickerItem:hover {
+    background-color: var(--pale-grey);
+}
+
+.fontPickerItem.active {
+    display: flex;
+}
+
+#selectedFont {
+    color: var(--brown-grey);
+    font-size: 16px;
+    cursor: default;
+    display: flex;
+    transition: none;
+}
+
+#selectedFont.active {
+    border-bottom: 1px solid #d9d9d9;
+}
+
+#selectedFont.active:hover {
+    background-color: white;
+}
+
+#selectedFont.picked {
+    font-size: 20px;
+    color: var(--greyish-brown);
+}
+
+#fontPickerItem1 {
+    font-family: Academia, Ubuntu, sans-serif;
+}
+
+#fontPickerItem2 {
+    font-family: Campus, Ubuntu, sans-serif;
+}
+
+#fontPickerItem3 {
+    font-family: CyrillicOld, Ubuntu, sans-serif;
+}
+
+#fontPickerItem4 {
+    font-family: Lobster-Regular, Ubuntu, sans-serif;
+}
+
+#fontPickerItem5 {
+    font-family: MonAmour, Ubuntu, sans-serif;
+}
+
+#fontPickerItem6 {
+    font-family: Sladkoeshka, Ubuntu, sans-serif;
 }
 
 .signColor .colorPicker {
@@ -621,7 +700,7 @@ header .mainButton {
     background-color: white;
     display: flex;
     justify-content: center;
-    top: 0px;
+    top: 0;
     right: 197px;
 }
 
@@ -701,8 +780,8 @@ header .mainButton {
     width: 732px;
     height: 732px;
     border-radius: 50%;
-    -webkit-box-shadow: 0px 0px 30px rgba(0, 9, 51, 0.2);
-    box-shadow: 0px 0px 30px rgba(0, 9, 51, 0.2);
+    -webkit-box-shadow: 0 0 30px rgba(0, 9, 51, 0.2);
+    box-shadow: 0 0 30px rgba(0, 9, 51, 0.2);
     margin-left: 186px;
     z-index: 1;
     position: relative;
@@ -972,8 +1051,7 @@ footer nav .circleButton:hover {
     .aboutUsImgCircle {
         width: 688px;
         height: 688px;
-        margin: 0;
-        margin-top: 75px;
+        margin: 75px 0 0;
     }
 
     .aboutUsExperienceCircle {
@@ -993,68 +1071,93 @@ footer nav .circleButton:hover {
 
 @media (max-width: 920px) {
 
-    .careCircle {
-      margin-right: 100px;
-      margin-top: -10px;
-    }
-    .preview {
-      height: 860px;
-      width: 347px;
-      margin-left: 200px;
-      margin-bottom: 100px;
-      z-index: 2;
-    }
-    .grayCircle {
-      width: 246px;
-      height: 246px;
-      margin-left: 350px;
-      margin-bottom: 150px;
-    }
-    .qualityCircle {
-      width: 386px;
-      height: 386px;
-      margin-left: 350px;
-      margin-top: 200px;
-    }
-    .circleButton {
-    display: none;
-    }
-    .circleButton active {
-    display: none;
-    }
-    .sliderContent {
-      width: 442px;
-      height: 442px;
-    }
-    .sliderContent active {
-      width: 596px;
-      height: 596px;
-    }
-    .main {
-      overflow: hidden;
-    }
-    .reviewsButtons {
-      display: none;
-    }
-    .sliderReviews {
-      width: 842px;
-      height: 842px;
-    }
-    .constructorBG {
-      height: 1700px;
-    }
-    .constructorCircle {
-      width: 1300px;
-      height: 1471px;
-      margin-left: -600px;
+    .smilesCircle {
+        margin-left: 520px;
 
     }
+
+    .careCircle {
+        margin-right: 100px;
+        margin-top: -10px;
+    }
+
+    .preview {
+        height: 860px;
+        width: 347px;
+        margin-left: 200px;
+        margin-top: 100px;
+
+    }
+
+    .grayCircle {
+        width: 246px;
+        height: 246px;
+        margin-left: 350px;
+        margin-bottom: 150px;
+    }
+
+    .qualityCircle {
+        width: 386px;
+        height: 386px;
+        margin-left: 350px;
+        margin-top: 200px;
+    }
+
+    .circleButton {
+        display: none;
+    }
+
+    .circleButton .active {
+        display: none;
+
+    }
+
+    .slider {
+        width: 1420px;
+        margin-left: calc(50% - 1420px / 2);
+    }
+
+    .sliderContent {
+        overflow: hidden;
+
+    }
+
+    .sliderContent .active {
+
+    }
+
+    .main {
+        overflow: hidden;
+    }
+
+    .reviewsButtons {
+        display: none;
+    }
+
+    .sliderReviews {
+        width: 842px;
+        height: 842px;
+    }
+
+    .constructorBG {
+        height: 1700px;
+    }
+
+    .constructorCircle {
+        width: 1300px;
+        height: 1471px;
+        margin-left: -600px;
+
+    }
+
     .constructor {
 
     }
+
     .delivery {
-      margin-top: 100px;
+        margin-top: 100px;
     }
+
     .deliveryCircles {
         width: 596px;
     }
@@ -1084,8 +1187,7 @@ footer nav .circleButton:hover {
     .aboutUsImgCircle {
         width: 320px;
         height: 320px;
-        margin: 0;
-        margin-top: 75px;
+        margin: 75px 0 0;
     }
 
     .aboutUsExperienceCircle {
@@ -1125,7 +1227,6 @@ footer nav .circleButton:hover {
     }
 
     header h1 {
-        font-size: 48px;
         width: 320px;
     }
 
@@ -1144,7 +1245,6 @@ footer nav .circleButton:hover {
     }
 
     .headerLeftBG p {
-        font-size: 14px;
         width: 262px;
     }
 
@@ -1231,6 +1331,60 @@ footer nav .circleButton:hover {
 }
 
 @media (max-width: 600px) {
+    .smilesCircle {
+        display: none;
+    }
+
+    .careCircle {
+        display: none;
+    }
+
+    .qualityCircle {
+        width: 250px;
+        height: 250px;
+    }
+
+    .deliveryCircle {
+        width: 270px;
+        height: 270px;
+    }
+
+    #reviewsDotsContainer {
+        top: inherit;
+        margin-top: 40px;
+    }
+
+    .reviewPhoto {
+        width: 80px;
+        height: 80px;
+        margin-top: 75px;
+    }
+
+    .sliderReviews {
+        height: 673px;
+        width: 673px;
+    }
+
+    .sliderReviews h3 {
+        margin-top: 17px;
+    }
+
+    .sliderReviews p {
+        margin-top: 20px;
+        width: 320px;
+    }
+
+    .clientsNumberCircle {
+        width: 250px;
+        height: 250px;
+        left: calc(50% - 125px);
+        top: 587px;
+    }
+
+    .sliderReviewsContent {
+
+    }
+
     .deliveryCircles {
         width: 270px;
     }
