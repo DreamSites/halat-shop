@@ -28,7 +28,7 @@
   </script>
 
   <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
-  <script src="js/index.js" type="text/javascript"></script>
+
 
 </head>
 
@@ -91,211 +91,221 @@
 </header>
 <section class="ourWorks" id="ourWorks">
   <h2>Наши работы</h2>
-  <div class="slider">
+  <div class="slider" id="ourWorksSlider">
     <div class="circleButton"><img alt="" src="img/leftArrowNotActive.svg"></div>
     <div class="sliderContent" id="work1"></div>
     <div class="sliderContent active" id="work2"></div>
     <div class="sliderContent" id="work3"></div>
+    <div class="sliderContent" id="work4"></div>
+    <div class="sliderContent" id="work5"></div>
+    <div class="sliderContent" id="work6"></div>
+    <div class="sliderContent" id="work7"></div>
+    <div class="sliderContent" id="work8"></div>
     <div class="circleButton active"><img alt="" src="img/rightArrowActive.svg"></div>
   </div>
-  <div class="dotsContainer">
-    <div class="dotIndicator active"></div>
-    <div class="dotIndicator"></div>
-    <div class="dotIndicator"></div>
-    <div class="dotIndicator"></div>
+  <div class="dotsContainer" id="ourWorksDotsContainer">
+    <div class="dotIndicator active" onclick="changePickedWorkID(0)"></div>
+    <div class="dotIndicator" onclick="changePickedWorkID(1)"></div>
+    <div class="dotIndicator" onclick="changePickedWorkID(2)"></div>
+    <div class="dotIndicator" onclick="changePickedWorkID(3)"></div>
+    <div class="dotIndicator" onclick="changePickedWorkID(4)"></div>
+    <div class="dotIndicator" onclick="changePickedWorkID(5)"></div>
+    <div class="dotIndicator" onclick="changePickedWorkID(6)"></div>
+    <div class="dotIndicator" onclick="changePickedWorkID(7)"></div>
   </div>
-  <div class="reviewsBG">
-    <section class="reviews" id="reviews">
-      <h2>Отзывы клиентов</h2>
-      <div class="sliderReviews">
-        <div class="loading">
-          <div class="loadingContainer" id="reviewsLoadingContainer">
-            <img alt="" id="reviewsLoading" src="img/loading.svg">
-          </div>
-        </div>
-        <div class="sliderReviewsContent" id="sliderReviewsContent">
-          <div class="reviewPhoto"></div>
-          <h3 id="reviewName">Имя</h3>
-          <p id="reviewText">Текст</p>
-          <p class="date" id="reviewDate">Дата</p>
-        </div>
-        <div class="dotsContainer" id="reviewsDotsContainer">
-          <div class="dotIndicator active"></div>
-          <div class="dotIndicator"></div>
-          <div class="dotIndicator"></div>
-          <div class="dotIndicator"></div>
-        </div>
-        <div class="reviewsButtons" id="reviewsButtons">
-          <div class="circleButton active" id="reviewButtonRight"><img alt="" src="img/rightArrowActive.svg"></div>
-          <div class="circleButton" id="reviewButtonLeft"><img alt="" src="img/leftArrowNotActive.svg"></div>
-        </div>
-        <div class="smilesCircle">
-          <img alt="" src="img/smile.svg">
-        </div>
-        <div class="clientsNumberCircle">
-          <span class="numberBig">100+</span>
-          <span class="numberSmall">Довольных клиентов</span>
+</section>
+<div class="reviewsBG">
+  <section class="reviews" id="reviews">
+    <h2>Отзывы клиентов</h2>
+    <div class="sliderReviews">
+      <div class="loading">
+        <div class="loadingContainer" id="reviewsLoadingContainer">
+          <img alt="" id="reviewsLoading" src="img/loading.svg">
         </div>
       </div>
-    </section>
-  </div>
-  <div class="constructorBG">
-    <section class="constructor" id="constructor">
-      <img alt="" class="preview" src="img/preview.png">
-      <div class="constructorCircle">
-        <h2>Ваш уникальный халат</h2>
-        <div class="size">
-          <h4>Размер</h4>
-          <div style="display: flex; align-items: center;">
-            <div class="sizePicker">
-              <div>S</div>
-              <img alt="" src="img/separator.svg">
-              <div>M</div>
-              <img alt="" src="img/separator.svg">
-              <div>L</div>
-              <img alt="" src="img/separator.svg">
-              <div>XL</div>
-              <img alt="" src="img/separator.svg">
-              <div>XXL</div>
-              <img alt="" src="img/separator.svg">
-              <div>XXXL</div>
-            </div>
-            <a class="Sizes" href="#">Таблица размеров</a>
-          </div>
-        </div>
-        <div class="constructorGrid">
-          <div class="sign">
-            <h4>Надпись</h4>
-            <input class="signInput" id="signInput" placeholder="Пример надписи" type="text">
-          </div>
-          <div class="font">
-            <h4>Шрифт</h4>
-            <div class="fontPickerContainer">
-              <div class="fontPicker" id="fontPicker">
-                <div class="fontPickerItem" id="selectedFont"><span id="selectedFontName">Выберите шрифт</span></div>
-                <div class="fontPickerItem" id="fontPickerItem1" onclick="pickFont('Academia')">Academia</div>
-                <div class="fontPickerItem" id="fontPickerItem2" onclick="pickFont('Campus')">Campus</div>
-                <div class="fontPickerItem" id="fontPickerItem3" onclick="pickFont('CyrillicOld')">CyrillicOld</div>
-                <div class="fontPickerItem" id="fontPickerItem4" onclick="pickFont('Lobster-Regular')">Lobster-Regular
-                </div>
-                <div class="fontPickerItem" id="fontPickerItem5" onclick="pickFont('MonAmour')">MonAmour</div>
-                <div class="fontPickerItem" id="fontPickerItem6" onclick="pickFont('Sladkoeshka')">Sladkoeshka</div>
-              </div>
-            </div>
-          </div>
-          <div class="signColor">
-            <h4>Цвет шрифта</h4>
-            <div class="colorPicker">
-              <div class="colorPickerItemBG">
-                <div class="colorPickerItem" id="colorPickerItem1"></div>
-              </div>
-              <div class="colorPickerItemBG">
-                <div class="colorPickerItem" id="colorPickerItem2"></div>
-              </div>
-              <div class="colorPickerItemBG">
-                <div class="colorPickerItem" id="colorPickerItem3"></div>
-              </div>
-              <div class="colorPickerItemBG">
-                <div class="colorPickerItem" id="colorPickerItem4"></div>
-              </div>
-              <div class="colorPickerItemBG">
-                <div class="colorPickerItem" id="colorPickerItem5"></div>
-              </div>
-            </div>
-          </div>
-          <div class="bathrobeColor">
-            <h4>Цвет халата</h4>
-            <select class="colorPicker" id="colorPicker" name="">
-              <option>Белый</option>
-              <option>Синий</option>
-              <option>Коричневый</option>
-            </select>
-          </div>
-          <div class="image">
-            <h4>Рисунок</h4>
-            <select class="imagePicker" id="imagePicker" name="">
-              <option value="">Рисунок 1</option>
-              <option value="">Рисунок 2</option>
-              <option value="">Рисунок 3</option>
-              <option value="">Рисунок 4</option>
-              <option value="">Рисунок 5</option>
-            </select>
-          </div>
-          <div class="imageButtons">
-            <div class="circleButton">
-              <img alt="" src="img/leftArrowBlue.svg">
-            </div>
-            <div class="circleButton">
-              <img alt="" src="img/rightArrowBlue.svg">
-            </div>
-          </div>
-          <div class="mainButton" id="order">Заказать халат</div>
-          <div class="price">
-            <h4>1790₽</h4>
-          </div>
-        </div>
-        <div class="grayCircle"></div>
-        <div class="qualityCircle">
-          <span class="numberBig">100%</span>
-          <span class="numberSmall">Натуральное сырье</span>
-        </div>
-        <div class="careCircle">
-          <img alt="" src="img/care.svg">
-        </div>
+      <div class="sliderReviewsContent" id="sliderReviewsContent">
+        <div class="reviewPhoto"></div>
+        <h3 id="reviewName">Имя</h3>
+        <p id="reviewText">Текст</p>
+        <p class="date" id="reviewDate">Дата</p>
       </div>
-    </section>
-  </div>
-  <section class="delivery" id="delivery">
-    <h2>Порядок получения заказа</h2>
-    <div class="deliveryCircles">
-      <div class="deliveryCircle" id="deliveryCircle1">
-        <div class="deliveryCircleContent">
-          <img alt="" src="img/orderStage1.svg">
-          <span>1. Заказ сделан</span>
-        </div>
+      <div class="dotsContainer" id="reviewsDotsContainer">
+        <div class="dotIndicator active"></div>
+        <div class="dotIndicator"></div>
+        <div class="dotIndicator"></div>
+        <div class="dotIndicator"></div>
       </div>
-      <div class="deliveryCircle" id="deliveryCircle2">
-        <div class="deliveryCircleContent">
-          <img alt="" src="img/orderStage2.svg">
-          <span>2. Звонок менеджера</span>
-        </div>
+      <div class="reviewsButtons" id="reviewsButtons">
+        <div class="circleButton active" id="reviewButtonRight"><img alt="" src="img/rightArrowActive.svg"></div>
+        <div class="circleButton" id="reviewButtonLeft"><img alt="" src="img/leftArrowNotActive.svg"></div>
       </div>
-      <div class="deliveryCircle" id="deliveryCircle3">
-        <div class="deliveryCircleContent">
-          <img alt="" src="img/orderStage3.svg">
-          <span>3. Доставка</span>
-        </div>
+      <div class="smilesCircle">
+        <img alt="" src="img/smile.svg">
       </div>
-      <div class="deliveryCircle" id="deliveryCircle4">
-        <div class="deliveryCircleContent">
-          <img alt="" src="img/orderStage4.svg">
-          <span>4. Оплата</span>
-        </div>
-      </div>
-      <div class="deliveryCircle" id="deliveryCircle5">
-        <div class="deliveryCircleContent">
-          <img alt="" src="img/orderStage5.svg">
-          <span>5. Вы получили халат</span>
-        </div>
+      <div class="clientsNumberCircle">
+        <span class="numberBig">100+</span>
+        <span class="numberSmall">Довольных клиентов</span>
       </div>
     </div>
   </section>
-  <section class="aboutUs" id="aboutUs">
-    <div class="aboutUsText">
-      <h2>О нас</h2>
-      <p>Для изготовления наших махровых халатов мы используем только 100%
-        натуральное сырье высочайшего качества. Вышивка производится
-        на профессиональном швейном оборудовании с компьютерным управлением.
-        Для нее мы применяем качественную яркую нить, которая не выцветает со
-        временем, чтобы вы могли как можно дольше наслаждаться вашей покупкой.</p>
-    </div>
-    <div class="aboutUsImgCircle">
-      <div class="aboutUsExperienceCircle">
-        <span class="numberBig">5</span>
-        <span class="numberSmall">Лет опыт работы</span>
+</div>
+<div class="constructorBG">
+  <section class="constructor" id="constructor">
+    <img alt="" class="preview" src="img/preview.png">
+    <div class="constructorCircle">
+      <h2>Ваш уникальный халат</h2>
+      <div class="size">
+        <h4>Размер</h4>
+        <div style="display: flex; align-items: center;">
+          <div class="sizePicker">
+            <div>S</div>
+            <img alt="" src="img/separator.svg">
+            <div>M</div>
+            <img alt="" src="img/separator.svg">
+            <div>L</div>
+            <img alt="" src="img/separator.svg">
+            <div>XL</div>
+            <img alt="" src="img/separator.svg">
+            <div>XXL</div>
+            <img alt="" src="img/separator.svg">
+            <div>XXXL</div>
+          </div>
+          <a class="Sizes" href="#">Таблица размеров</a>
+        </div>
+      </div>
+      <div class="constructorGrid">
+        <div class="sign">
+          <h4>Надпись</h4>
+          <input class="signInput" id="signInput" placeholder="Пример надписи" type="text">
+        </div>
+        <div class="font">
+          <h4>Шрифт</h4>
+          <div class="fontPickerContainer">
+            <div class="fontPicker" id="fontPicker">
+              <div class="fontPickerItem" id="selectedFont"><span id="selectedFontName">Выберите шрифт</span></div>
+              <div class="fontPickerItem" id="fontPickerItem1" onclick="pickFont('Academia')">Academia</div>
+              <div class="fontPickerItem" id="fontPickerItem2" onclick="pickFont('Campus')">Campus</div>
+              <div class="fontPickerItem" id="fontPickerItem3" onclick="pickFont('CyrillicOld')">CyrillicOld</div>
+              <div class="fontPickerItem" id="fontPickerItem4" onclick="pickFont('Lobster-Regular')">Lobster-Regular
+              </div>
+              <div class="fontPickerItem" id="fontPickerItem5" onclick="pickFont('MonAmour')">MonAmour</div>
+              <div class="fontPickerItem" id="fontPickerItem6" onclick="pickFont('Sladkoeshka')">Sladkoeshka</div>
+            </div>
+          </div>
+        </div>
+        <div class="signColor">
+          <h4>Цвет шрифта</h4>
+          <div class="colorPicker">
+            <div class="colorPickerItemBG">
+              <div class="colorPickerItem" id="colorPickerItem1"></div>
+            </div>
+            <div class="colorPickerItemBG">
+              <div class="colorPickerItem" id="colorPickerItem2"></div>
+            </div>
+            <div class="colorPickerItemBG">
+              <div class="colorPickerItem" id="colorPickerItem3"></div>
+            </div>
+            <div class="colorPickerItemBG">
+              <div class="colorPickerItem" id="colorPickerItem4"></div>
+            </div>
+            <div class="colorPickerItemBG">
+              <div class="colorPickerItem" id="colorPickerItem5"></div>
+            </div>
+          </div>
+        </div>
+        <div class="bathrobeColor">
+          <h4>Цвет халата</h4>
+          <select class="colorPicker" id="colorPicker" name="">
+            <option>Белый</option>
+            <option>Синий</option>
+            <option>Коричневый</option>
+          </select>
+        </div>
+        <div class="image">
+          <h4>Рисунок</h4>
+          <select class="imagePicker" id="imagePicker" name="">
+            <option value="">Рисунок 1</option>
+            <option value="">Рисунок 2</option>
+            <option value="">Рисунок 3</option>
+            <option value="">Рисунок 4</option>
+            <option value="">Рисунок 5</option>
+          </select>
+        </div>
+        <div class="imageButtons">
+          <div class="circleButton">
+            <img alt="" src="img/leftArrowBlue.svg">
+          </div>
+          <div class="circleButton">
+            <img alt="" src="img/rightArrowBlue.svg">
+          </div>
+        </div>
+        <div class="mainButton" id="order">Заказать халат</div>
+        <div class="price">
+          <h4>1790₽</h4>
+        </div>
+      </div>
+      <div class="grayCircle"></div>
+      <div class="qualityCircle">
+        <span class="numberBig">100%</span>
+        <span class="numberSmall">Натуральное сырье</span>
+      </div>
+      <div class="careCircle">
+        <img alt="" src="img/care.svg">
       </div>
     </div>
   </section>
+</div>
+<section class="delivery" id="delivery">
+  <h2>Порядок получения заказа</h2>
+  <div class="deliveryCircles">
+    <div class="deliveryCircle" id="deliveryCircle1">
+      <div class="deliveryCircleContent">
+        <img alt="" src="img/orderStage1.svg">
+        <span>1. Заказ сделан</span>
+      </div>
+    </div>
+    <div class="deliveryCircle" id="deliveryCircle2">
+      <div class="deliveryCircleContent">
+        <img alt="" src="img/orderStage2.svg">
+        <span>2. Звонок менеджера</span>
+      </div>
+    </div>
+    <div class="deliveryCircle" id="deliveryCircle3">
+      <div class="deliveryCircleContent">
+        <img alt="" src="img/orderStage3.svg">
+        <span>3. Доставка</span>
+      </div>
+    </div>
+    <div class="deliveryCircle" id="deliveryCircle4">
+      <div class="deliveryCircleContent">
+        <img alt="" src="img/orderStage4.svg">
+        <span>4. Оплата</span>
+      </div>
+    </div>
+    <div class="deliveryCircle" id="deliveryCircle5">
+      <div class="deliveryCircleContent">
+        <img alt="" src="img/orderStage5.svg">
+        <span>5. Вы получили халат</span>
+      </div>
+    </div>
+  </div>
+</section>
+<section class="aboutUs" id="aboutUs">
+  <div class="aboutUsText">
+    <h2>О нас</h2>
+    <p>Для изготовления наших махровых халатов мы используем только 100%
+      натуральное сырье высочайшего качества. Вышивка производится
+      на профессиональном швейном оборудовании с компьютерным управлением.
+      Для нее мы применяем качественную яркую нить, которая не выцветает со
+      временем, чтобы вы могли как можно дольше наслаждаться вашей покупкой.</p>
+  </div>
+  <div class="aboutUsImgCircle">
+    <div class="aboutUsExperienceCircle">
+      <span class="numberBig">5</span>
+      <span class="numberSmall">Лет опыт работы</span>
+    </div>
+  </div>
+</section>
 </section>
 <footer>
   <div class="footerCircle">
@@ -334,6 +344,7 @@
     </div>
   </div>
 </footer>
+<script src="js/index.js" type="text/javascript"></script>
 </body>
 
 </html>

@@ -140,10 +140,10 @@ header .mainButton {
 }
 
 .slider {
-    height: 596px;
     display: flex;
     align-items: center;
     justify-content: center;
+    transition: all 0.4s ease;
 }
 
 .sliderContent {
@@ -154,6 +154,7 @@ header .mainButton {
     z-index: 1;
     -webkit-box-shadow: 0 0 20px rgba(0, 9, 51, 0.2);
     box-shadow: 0 0 20px rgba(0, 9, 51, 0.2);
+    transition: all 0.4s ease;
 }
 
 .sliderContent.active {
@@ -168,15 +169,35 @@ header .mainButton {
 }
 
 #work1 {
-    background: url(../img/work7.jpg) no-repeat center center / cover;
+    background: url(../img/work1.jpg) no-repeat center center / cover;
 }
 
 #work2 {
-    background: url(../img/work6.jpg) no-repeat center center / cover;
+    background: url(../img/work2.jpg) no-repeat center center / cover;
 }
 
 #work3 {
     background: url(../img/work3.jpg) no-repeat center center / cover;
+}
+
+#work4 {
+    background: url(../img/work4.jpg) no-repeat center center / cover;
+}
+
+#work5 {
+    background: url(../img/work5.jpg) no-repeat center center / cover;
+}
+
+#work6 {
+    background: url(../img/work6.jpg) no-repeat center center / cover;
+}
+
+#work7 {
+    background: url(../img/work7.jpg) no-repeat center center / cover;
+}
+
+#work8 {
+    background: url(../img/work8.jpg) no-repeat center center / cover;
 }
 
 .slider .circleButton {
@@ -187,7 +208,7 @@ header .mainButton {
 
 .dotsContainer {
     height: 16px;
-    width: 106px;
+    width: 226px;
     display: flex;
     align-items: center;
     margin: 40px auto 0;
@@ -1415,5 +1436,29 @@ footer nav .circleButton:hover {
 
     #deliveryCircle4 {
         margin-left: 0;
+    }
+
+    .slider {
+        margin-left: 20px;
+        justify-content: left;
+        width: 2120px;
+    }
+
+    .sliderContent {
+        width: 320px;
+        height: 320px;
+        margin-left: -30px;
+        margin-right: -30px;
+    }
+
+    #work1 {
+        margin-left: 0;
+    }
+
+    .sliderContent.active {
+        width: 320px;
+        height: 320px;
+        margin-left: -30px;
+        margin-right: -30px;
     }
 }

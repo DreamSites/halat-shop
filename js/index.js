@@ -87,11 +87,19 @@ $(document).ready(function () {
 let reviewID = 0;
 let reviewsDotIndicatorID = 0;
 
-function updateDotIndicator() {
+function updateReviewDotIndicator() {
     const reviewsDotContainer = $('#reviewsDotsContainer').children();
+    reviewsDotContainer.removeClass('active');
     reviewsDotContainer.eq(reviewsDotIndicatorID).addClass('active');
-    reviewsDotContainer.eq(reviewsDotIndicatorID - 1).removeClass('active');
-    reviewsDotContainer.eq(reviewsDotIndicatorID + 1).removeClass('active');
+}
+
+function updateOurWorks() {
+    const ourWorksDotContainer = $('#ourWorksDotsContainer').children();
+    ourWorksDotContainer.removeClass('active');
+    ourWorksDotContainer.eq(pickedWorkID).addClass('active');
+    const sliderPhotoContainer = $('.sliderContent');
+    sliderPhotoContainer.removeClass('active');
+    sliderPhotoContainer.eq(pickedWorkID).addClass('active');
 }
 
 function getReview() {
@@ -113,17 +121,17 @@ function getReview() {
         reviewButtonLeft.html('<img src="img/leftArrowActive.svg" alt="">');
         reviewButtonRight.addClass('active');
         reviewButtonRight.html('<img src="img/rightArrowActive.svg" alt="">');
-        updateDotIndicator()
+        updateReviewDotIndicator()
     } else if (reviewsDotIndicatorID === 0) {
         const reviewButtonLeft = $('#reviewButtonLeft');
         reviewButtonLeft.removeClass('active');
         reviewButtonLeft.html('<img src="img/leftArrowNotActive.svg" alt="">');
-        updateDotIndicator()
+        updateReviewDotIndicator()
     } else if (reviewsDotIndicatorID === 3) {
         const reviewButtonRight = $('#reviewButtonRight');
         reviewButtonRight.removeClass('active');
         reviewButtonRight.html('<img src="img/rightArrowNotActive.svg" alt="">');
-        updateDotIndicator()
+        updateReviewDotIndicator()
     }
 }
 
@@ -169,6 +177,10 @@ function responsiveNavigation() {
     if ($(window).width() < 675) {
         $('#copyright span').text = 'Copyright 2018 Магазин халатов.';
     }
+    if ($(window).width() < 600) {
+        $('.sliderContent').removeClass('active');
+        $('#work1').addClass('active');
+    }
 }
 
 function openFontPicker() {
@@ -188,3 +200,70 @@ function pickFont(font) {
     selectedFontName.css('font-family', font);
     selectedFont.addClass('picked');
 }
+
+const ourWorksSlider = document.getElementById('ourWorksSlider');
+ourWorksSlider.addEventListener("touchstart", startTouch, false);
+ourWorksSlider.addEventListener("touchmove", moveTouch, false);
+let pickedWorkID = 0;
+
+function updateOurWorksMargin() {
+    let margin = 260 * pickedWorkID - 1;
+    let marginSign = 'calc((50vw - 320px/2) - ' + margin + 'px)';
+    $('#ourWorksSlider').css('margin-left', marginSign);
+}
+
+// Swipe Up / Down / Left / Right
+let initialX = null;
+let initialY = null;
+
+function startTouch(e) {
+    initialX = e.touches[0].clientX;
+    initialY = e.touches[0].clientY;
+}
+
+function moveTouch(e) {
+    if (initialX === null) {
+        return;
+    }
+
+    if (initialY === null) {
+        return;
+    }
+
+    let currentX = e.touches[0].clientX;
+    let currentY = e.touches[0].clientY;
+
+    let diffX = initialX - currentX;
+    let diffY = initialY - currentY;
+
+    if (Math.abs(diffX) > Math.abs(diffY)) {
+        // sliding horizontally
+        if (diffX > 0) {
+            // swiped left
+            if (pickedWorkID < 7) {
+                pickedWorkID += 1;
+                updateOurWorks();
+                updateOurWorksMargin();
+            }
+        } else {
+            // swiped right
+            if (pickedWorkID > 0) {
+                pickedWorkID -= 1;
+                updateOurWorks();
+                updateOurWorksMargin();
+            }
+        }
+    }
+
+    initialX = null;
+    initialY = null;
+
+    e.preventDefault();
+}
+
+function changePickedWorkID(clickedDot) {
+    pickedWorkID = clickedDot;
+    updateOurWorks();
+    updateOurWorksMargin();
+}
+
