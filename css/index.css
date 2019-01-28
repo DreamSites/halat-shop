@@ -144,6 +144,7 @@ header .mainButton {
     align-items: center;
     justify-content: center;
     transition: all 0.4s ease;
+    overflow: hidden;
 }
 
 .sliderContent {
@@ -241,6 +242,7 @@ header .mainButton {
     display: flex;
     flex-direction: column;
     align-items: center;
+    overflow: hidden;
 }
 
 .reviews {
@@ -394,6 +396,7 @@ header .mainButton {
     height: 1325px;
     display: flex;
     justify-content: center;
+    overflow: hidden;
 }
 
 .constructor .preview {
