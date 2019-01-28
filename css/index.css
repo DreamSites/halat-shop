@@ -932,6 +932,18 @@ footer nav .circleButton:hover {
     }
 }
 
+@media (max-width: 1500px) {
+    .sliderContent {
+        width: 334px;
+        height: 334px;
+    }
+
+    .sliderContent.active {
+        margin-left: -70px;
+        margin-right: -70px;
+    }
+}
+
 @media (max-width: 1488px) {
     .footerCircle {
         left: -1027px;
@@ -1040,6 +1052,29 @@ footer nav .circleButton:hover {
 }
 
 @media (max-width: 1200px) {
+    .ourWorks {
+        overflow: hidden;
+    }
+
+    .slider {
+        width: 1420px;
+        margin-left: calc(50% - 1420px / 2);
+    }
+
+    .sliderContent {
+        width: 442px;
+        height: 442px;
+    }
+
+    .sliderContent.active {
+        margin-left: -30px;
+        margin-right: -30px;
+    }
+
+    .slider .circleButton {
+        display: none;
+    }
+
     .aboutUs {
         width: 688px;
         margin: 0 auto;
@@ -1110,24 +1145,6 @@ footer nav .circleButton:hover {
     .circleButton .active {
         display: none;
 
-    }
-
-    .slider {
-        width: 1420px;
-        margin-left: calc(50% - 1420px / 2);
-    }
-
-    .sliderContent {
-        overflow: hidden;
-
-    }
-
-    .sliderContent .active {
-
-    }
-
-    .main {
-        overflow: hidden;
     }
 
     .reviewsButtons {
@@ -1227,6 +1244,7 @@ footer nav .circleButton:hover {
     }
 
     header h1 {
+        font-size: 48px;
         width: 320px;
     }
 
@@ -1246,6 +1264,7 @@ footer nav .circleButton:hover {
 
     .headerLeftBG p {
         width: 262px;
+        font-size: 14px;
     }
 
     .logo {
