@@ -201,7 +201,7 @@ while (i < 100) {
 }
 
 function responsiveNavigation() {
-    if ($(window).width() > 600) {
+    if ($(window).width() > 1200) {
         pickedWorkID = 1;
         updateOurWorks();
         updateOurWorksMargin();
@@ -230,7 +230,7 @@ function responsiveNavigation() {
     if ($(window).width() < 675) {
         $('#copyright span').text = 'Copyright 2018 Магазин халатов.';
     }
-    if ($(window).width() < 600) {
+    if ($(window).width() < 1200) {
         $('.sliderContent').removeClass('active');
         $('#work1').addClass('active');
     }
@@ -264,8 +264,16 @@ function updateOurWorksMargin() {
         let margin = 260 * pickedWorkID - 1;
         let marginSign = 'calc((50vw - 320px/2) - ' + margin + 'px)';
         $('#ourWorksSlider').css('margin-left', marginSign);
-    } else {
+    } else if ($(window).width() > 1500) {
         let margin = -825 * (pickedWorkID - 1);
+        let marginSign = margin + 'px';
+        $('#work1').css('margin-left', marginSign);
+    } else if ($(window).width() > 1200) {
+        let margin = -470 * (pickedWorkID - 1);
+        let marginSign = margin + 'px';
+        $('#work1').css('margin-left', marginSign);
+    } else if ($(window).width() > 600) {
+        let margin = -690 * (pickedWorkID);
         let marginSign = margin + 'px';
         $('#work1').css('margin-left', marginSign);
     }
@@ -321,11 +329,11 @@ function moveTouch(e) {
 }
 
 function changePickedWorkID(clickedDot) {
-    if (clickedDot > 0 && clickedDot < 7 && $(window).width() > 600) {
+    if (clickedDot > 0 && clickedDot < 7 && $(window).width() > 1200) {
         pickedWorkID = clickedDot;
         updateOurWorks();
         updateOurWorksMargin();
-    } else if ($(window).width() < 600) {
+    } else if ($(window).width() <= 1200) {
         pickedWorkID = clickedDot;
         updateOurWorks();
         updateOurWorksMargin();
