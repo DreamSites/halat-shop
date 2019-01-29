@@ -190,7 +190,7 @@ main {
     width: 596px;
     height: 596px;
     background-color: black;
-    z-index: 10;
+    z-index: 2;
     -webkit-box-shadow: 0 0 30px rgba(0, 9, 51, 0.2);
     box-shadow: 0 0 30px rgba(0, 9, 51, 0.2);
     opacity: 1;
@@ -1007,7 +1007,7 @@ footer nav .circleButton:hover {
     }
 
     #ourWorksButtonRight {
-        left: 1088px;
+        left: 1095px;
     }
 }
 
@@ -1124,8 +1124,8 @@ footer nav .circleButton:hover {
     }
 
     .slider {
-        width: 2960px;
-        margin-left: calc(50vw - 298px);
+        width: 1420px;
+        margin-left: calc(50% - 1420px / 2);
     }
 
     .sliderContent {
