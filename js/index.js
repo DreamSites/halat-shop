@@ -103,6 +103,57 @@ $(document).ready(function () {
 let reviewID = 0;
 let reviewsDotIndicatorID = 0;
 
+const sliderReviewsContent = document.getElementById('sliderReviewsContent');
+sliderReviewsContent.addEventListener("touchstart", reviewsStartTouch, false);
+sliderReviewsContent.addEventListener("touchmove", reviewsMoveTouch, false);
+
+function reviewsStartTouch(e) {
+    initialX = e.touches[0].clientX;
+    initialY = e.touches[0].clientY;
+}
+
+function reviewsMoveTouch(e) {
+    if (initialX === null) {
+        return;
+    }
+
+    if (initialY === null) {
+        return;
+    }
+
+    let currentX = e.touches[0].clientX;
+    let currentY = e.touches[0].clientY;
+
+    let diffX = initialX - currentX;
+    let diffY = initialY - currentY;
+
+    if (Math.abs(diffX) > Math.abs(diffY)) {
+        // sliding horizontally
+        if (diffX > 0) {
+            // swiped left
+            if ($(window).width() <= 920) {
+                reviewID += 1;
+                reviewsDotIndicatorID += 1;
+                $('#sliderReviewsContent').css({'opacity': '0', 'transition': 'all 0.2s ease'});
+                getReview();
+            }
+        } else {
+            // swiped right
+            if ($(window).width() <= 920) {
+                reviewID -= 1;
+                reviewsDotIndicatorID -= 1;
+                $('#sliderReviewsContent').css({'opacity': '0', 'transition': 'all 0.2s ease'});
+                getReview();
+            }
+        }
+    }
+
+    initialX = null;
+    initialY = null;
+
+    e.preventDefault();
+}
+
 function updateReviewDotIndicator() {
     const reviewsDotContainer = $('#reviewsDotsContainer').children();
     reviewsDotContainer.removeClass('active');
@@ -193,7 +244,7 @@ while (i < 100) {
             if (nameText !== "Имя") {
                 $('#sliderReviewsContent').css('opacity', '1');
                 $('#reviewsButtons').css('opacity', '1');
-                $('#reviewsLoading').css('opacity', '0');
+                $('.loading').css('display', 'none');
                 $('#reviewsDotsContainer').css('opacity', '1');
             }
         }, 1000 * i)
@@ -255,8 +306,8 @@ function pickFont(font) {
 }
 
 const ourWorksSlider = document.getElementById('ourWorksSlider');
-ourWorksSlider.addEventListener("touchstart", startTouch, false);
-ourWorksSlider.addEventListener("touchmove", moveTouch, false);
+ourWorksSlider.addEventListener("touchstart", ourWorkStartTouch, false);
+ourWorksSlider.addEventListener("touchmove", ourWorkMoveTouch, false);
 let pickedWorkID = 0;
 
 function updateOurWorksMargin() {
@@ -283,12 +334,12 @@ function updateOurWorksMargin() {
 let initialX = null;
 let initialY = null;
 
-function startTouch(e) {
+function ourWorkStartTouch(e) {
     initialX = e.touches[0].clientX;
     initialY = e.touches[0].clientY;
 }
 
-function moveTouch(e) {
+function ourWorkMoveTouch(e) {
     if (initialX === null) {
         return;
     }
