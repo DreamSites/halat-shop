@@ -81,6 +81,22 @@ $(document).ready(function () {
         }
     });
 
+    $('#ourWorksButtonLeft').click(function () {
+        if (pickedWorkID > 1) {
+            pickedWorkID -= 1;
+            updateOurWorks();
+            updateOurWorksMargin();
+        }
+    });
+
+    $('#ourWorksButtonRight').click(function () {
+        if (pickedWorkID < 6) {
+            pickedWorkID += 1;
+            updateOurWorks();
+            updateOurWorksMargin();
+        }
+    });
+
 });
 
 
@@ -99,7 +115,35 @@ function updateOurWorks() {
     ourWorksDotContainer.eq(pickedWorkID).addClass('active');
     const sliderPhotoContainer = $('.sliderContent');
     sliderPhotoContainer.removeClass('active');
+    sliderPhotoContainer.removeClass('leftActive');
+    sliderPhotoContainer.removeClass('rightActive');
     sliderPhotoContainer.eq(pickedWorkID).addClass('active');
+    if ($(window).width() > 600) {
+        sliderPhotoContainer.eq(pickedWorkID + 1).addClass('rightActive');
+        sliderPhotoContainer.eq(pickedWorkID - 1).addClass('leftActive');
+    }
+    if (pickedWorkID === 1) {
+        const ourWorksButtonLeft = $('#ourWorksButtonLeft');
+        const ourWorksButtonRight = $('#ourWorksButtonRight');
+        ourWorksButtonLeft.removeClass('active');
+        ourWorksButtonLeft.html('<img src="img/leftArrowNotActive.svg" alt="">');
+        ourWorksButtonRight.addClass('active');
+        ourWorksButtonRight.html('<img src="img/rightArrowActive.svg" alt="">');
+    } else if (pickedWorkID === 6) {
+        const ourWorksButtonLeft = $('#ourWorksButtonLeft');
+        const ourWorksButtonRight = $('#ourWorksButtonRight');
+        ourWorksButtonLeft.addClass('active');
+        ourWorksButtonLeft.html('<img src="img/leftArrowActive.svg" alt="">');
+        ourWorksButtonRight.removeClass('active');
+        ourWorksButtonRight.html('<img src="img/rightArrowNotActive.svg" alt="">');
+    } else {
+        const ourWorksButtonLeft = $('#ourWorksButtonLeft');
+        const ourWorksButtonRight = $('#ourWorksButtonRight');
+        ourWorksButtonLeft.addClass('active');
+        ourWorksButtonLeft.html('<img src="img/leftArrowActive.svg" alt="">');
+        ourWorksButtonRight.addClass('active');
+        ourWorksButtonRight.html('<img src="img/rightArrowActive.svg" alt="">');
+    }
 }
 
 function getReview() {
@@ -157,6 +201,15 @@ while (i < 100) {
 }
 
 function responsiveNavigation() {
+    if ($(window).width() > 600) {
+        pickedWorkID = 1;
+        updateOurWorks();
+        updateOurWorksMargin();
+    } else {
+        pickedWorkID = 0;
+        updateOurWorks();
+        updateOurWorksMargin();
+    }
     if ($(window).width() < 1240) {
         $('#headerLeftBG nav').html(
             '<div class="circleButton" id="openNavigation">' +
@@ -207,9 +260,15 @@ ourWorksSlider.addEventListener("touchmove", moveTouch, false);
 let pickedWorkID = 0;
 
 function updateOurWorksMargin() {
-    let margin = 260 * pickedWorkID - 1;
-    let marginSign = 'calc((50vw - 320px/2) - ' + margin + 'px)';
-    $('#ourWorksSlider').css('margin-left', marginSign);
+    if ($(window).width() < 600) {
+        let margin = 260 * pickedWorkID - 1;
+        let marginSign = 'calc((50vw - 320px/2) - ' + margin + 'px)';
+        $('#ourWorksSlider').css('margin-left', marginSign);
+    } else {
+        let margin = -825 * (pickedWorkID - 1);
+        let marginSign = margin + 'px';
+        $('#work1').css('margin-left', marginSign);
+    }
 }
 
 // Swipe Up / Down / Left / Right
@@ -262,8 +321,14 @@ function moveTouch(e) {
 }
 
 function changePickedWorkID(clickedDot) {
-    pickedWorkID = clickedDot;
-    updateOurWorks();
-    updateOurWorksMargin();
+    if (clickedDot > 0 && clickedDot < 7 && $(window).width() > 600) {
+        pickedWorkID = clickedDot;
+        updateOurWorks();
+        updateOurWorksMargin();
+    } else if ($(window).width() < 600) {
+        pickedWorkID = clickedDot;
+        updateOurWorks();
+        updateOurWorksMargin();
+    }
 }
 
