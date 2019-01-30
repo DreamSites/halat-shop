@@ -1214,7 +1214,6 @@ footer nav .circleButton:hover {
 
     .circleButton .active {
         display: none;
-
     }
 
     .reviewsButtons {
@@ -1234,10 +1233,6 @@ footer nav .circleButton:hover {
         width: 1300px;
         height: 1471px;
         margin-left: -600px;
-
-    }
-
-    .constructor {
 
     }
 
@@ -1468,10 +1463,6 @@ footer nav .circleButton:hover {
         height: 250px;
         left: calc(50% - 125px);
         top: 587px;
-    }
-
-    .sliderReviewsContent {
-
     }
 
     .deliveryCircles {
