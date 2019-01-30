@@ -365,7 +365,7 @@ main {
     width: 596px;
 }
 
-.sliderReviews p.date {
+.sliderReviews .date {
     font-size: 16px;
     text-align: center;
     color: #999999;
@@ -453,6 +453,11 @@ main {
 
 .constructor h2 {
     margin-bottom: 50px;
+}
+
+.sizePickerContainer {
+    display: flex;
+    align-items: center;
 }
 
 .sizePicker {
@@ -628,11 +633,16 @@ main {
     display: flex;
     align-items: center;
     justify-content: center;
-    margin-left: 25px;
+    margin-left: auto;
+    margin-right: auto;
 }
 
 .colorPickerItemBG:first-child {
     margin-left: 0;
+}
+
+.colorPickerItemBG:last-child {
+    margin-right: 0;
 }
 
 .colorPickerItem {
@@ -1174,47 +1184,139 @@ footer nav .circleButton:hover {
     .aboutUsText p {
         width: 630px;
     }
+
+    .delivery h2 {
+        margin-top: 100px;
+    }
+
+    .constructor {
+        position: relative;
+    }
+
+    .constructorBG {
+        height: 1650px;
+    }
+
+    .constructorCircle {
+        width: 1471px;
+        height: 1471px;
+        position: absolute;
+        left: calc(-1471px / 2);
+        margin-left: 0;
+        padding-left: 747px;
+        padding-top: 150px;
+    }
+
+    .constructor h2 {
+        text-align: center;
+        margin-left: -747px;
+        margin-bottom: 80px;
+    }
+
+    .constructor .preview {
+        position: absolute;
+        left: calc(-50vw);
+        top: 260px;
+        margin-top: 0;
+    }
+
+    .constructorGrid {
+        grid-template-columns: 1fr;
+        width: 350px;
+    }
+
+    .sizePicker {
+        width: 350px;
+        padding-left: 10px;
+        padding-right: 10px;
+    }
+
+    .sizePickerContainer {
+        display: block;
+    }
+
+    .sizePicker {
+        margin-bottom: 20px;
+    }
+
+    .size a {
+        margin-left: 0;
+    }
+
+    .signInput {
+        width: 350px;
+    }
+
+    .fontPicker {
+        width: 350px;
+    }
+
+    .fontPicker.active {
+        width: 350px;
+    }
+
+    .signColor .colorPicker {
+        width: 350px;
+    }
+
+    .bathrobeColor .colorPicker {
+        width: 350px;
+    }
+
+    .imagePicker {
+        width: 350px;
+    }
+
+    .imageButtons {
+        display: none;
+    }
+
+    .constructor .mainButton {
+        width: 350px;
+        margin-top: 35px;
+    }
+
+    .price {
+        justify-content: center;
+        margin-top: -10px;
+    }
+
+    .careCircle {
+        left: 908px;
+        top: -53px;
+    }
+
+    .grayCircle {
+        left: calc(1471px / 2 - 50vw + 40px);
+        bottom: -31px;
+    }
+
+    .qualityCircle {
+        left: calc(1471px / 2 - 50vw + 200px);
+        bottom: -54px;
+        top: initial;
+    }
 }
 
 @media (max-width: 920px) {
 
     .smilesCircle {
         margin-left: 520px;
-
     }
 
-    .careCircle {
-        margin-right: 100px;
-        margin-top: -10px;
-    }
-
-    .preview {
-        height: 860px;
-        width: 347px;
-        margin-left: 200px;
-        margin-top: 100px;
+    .constructor .preview {
+        left: calc(-50vw - 100px);
     }
 
     .grayCircle {
-        width: 246px;
-        height: 246px;
-        margin-left: 350px;
-        margin-bottom: 150px;
+        left: calc(1471px / 2 - 50vw + -40px);
+        bottom: -31px;
     }
 
     .qualityCircle {
-        width: 386px;
-        height: 386px;
-        margin-left: 350px;
-        margin-top: 200px;
-    }
-
-    .circleButton {
-        display: none;
-    }
-
-    .circleButton .active {
-        display: none;
+        left: calc(1471px / 2 - 50vw + 100px);
+        bottom: -54px;
+        top: initial;
     }
 
     .reviewsButtons {
@@ -1224,17 +1326,6 @@ footer nav .circleButton:hover {
     .sliderReviews {
         width: 842px;
         height: 842px;
-    }
-
-    .constructorBG {
-        height: 1700px;
-    }
-
-    .constructorCircle {
-        width: 1300px;
-        height: 1471px;
-        margin-left: -600px;
-
     }
 
     .delivery {
@@ -1259,6 +1350,10 @@ footer nav .circleButton:hover {
         margin-left: 0;
         margin-top: 38px;
     }
+}
+
+@media (max-width: 760px) {
+
 }
 
 @media (max-width: 700px) {
@@ -1418,15 +1513,6 @@ footer nav .circleButton:hover {
 @media (max-width: 600px) {
     .smilesCircle {
         display: none;
-    }
-
-    .careCircle {
-        display: none;
-    }
-
-    .qualityCircle {
-        width: 250px;
-        height: 250px;
     }
 
     .deliveryCircle {
