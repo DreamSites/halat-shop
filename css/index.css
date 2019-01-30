@@ -491,7 +491,6 @@ main {
     height: 50px;
     border-radius: 25px;
     background-color: var(--pale-grey);
-    outline: none;
     border: none;
     padding-left: 20px;
     font-size: 16px;
@@ -507,6 +506,7 @@ main {
     -webkit-box-shadow: 0 0 10px 0 rgba(0, 9, 51, 0.2);
     box-shadow: 0 0 10px 0 rgba(0, 9, 51, 0.2);
     background-color: #ffffff;
+    outline: none;
 }
 
 ::placeholder {
@@ -527,8 +527,6 @@ main {
     height: 50px;
     border-radius: 25px;
     background-color: var(--pale-grey);
-    outline: none;
-    border: none;
     font-size: 16px;
     color: var(--brown-grey);
     transition: all 0.2s ease;
@@ -668,7 +666,6 @@ main {
     height: 50px;
     border-radius: 25px;
     background-color: var(--pale-grey);
-    outline: none;
     border: none;
     padding-left: 20px;
     font-size: 16px;
@@ -680,12 +677,15 @@ main {
     background-color: #e9eef5;
 }
 
+.bathrobeColor .colorPicker:focus {
+    outline: none;
+}
+
 .imagePicker {
     width: 300px;
     height: 50px;
     border-radius: 25px;
     background-color: var(--pale-grey);
-    outline: none;
     border: none;
     padding-left: 20px;
     font-size: 16px;
@@ -695,6 +695,10 @@ main {
 
 .imagePicker:hover {
     background-color: #e9eef5;
+}
+
+.imagePicker:focus {
+    outline: none;
 }
 
 .imageButtons {
