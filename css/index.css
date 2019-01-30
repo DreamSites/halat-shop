@@ -1078,7 +1078,8 @@ footer nav .circleButton:hover {
     .headerRightBG {
         top: 95px;
         left: -120px;
-        background: url(../img/hero.png) no-repeat center 570px #8CD3FF;
+        background-position: center 570px;
+        background-color: #8CD3FF;
     }
 
     footer p {
