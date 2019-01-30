@@ -471,7 +471,7 @@ main {
     padding-right: 20px;
 }
 
-.sizePicker > * {
+.sizePicker > div, img {
     margin: auto;
     color: var(--greyish-brown);
 }
@@ -687,10 +687,6 @@ main {
     background-color: #e9eef5;
 }
 
-.bathrobeColor .colorPicker:focus {
-    outline: none;
-}
-
 .imagePicker {
     width: 300px;
     height: 50px;
@@ -705,10 +701,6 @@ main {
 
 .imagePicker:hover {
     background-color: #e9eef5;
-}
-
-.imagePicker:focus {
-    outline: none;
 }
 
 .imageButtons {
