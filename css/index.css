@@ -365,7 +365,7 @@ main {
     width: 596px;
 }
 
-.date {
+.sliderReviews p.date {
     font-size: 16px;
     text-align: center;
     color: #999999;
@@ -466,7 +466,7 @@ main {
     padding-right: 20px;
 }
 
-.sizePicker:focus > * {
+.sizePicker > * {
     margin: auto;
     color: var(--greyish-brown);
 }
@@ -486,7 +486,7 @@ main {
     grid-gap: 28px;
 }
 
-.signInput:focus {
+.signInput {
     width: 300px;
     height: 50px;
     border-radius: 25px;
@@ -522,7 +522,7 @@ main {
     height: 50px;
 }
 
-.fontPicker:focus {
+.fontPicker {
     width: 300px;
     height: 50px;
     border-radius: 25px;
@@ -620,10 +620,9 @@ main {
     height: 50px;
 }
 
-.colorPickerItemBG:focus {
+.colorPickerItemBG {
     width: 40px;
     height: 40px;
-    -webkit-appearance: none;
     -webkit-box-shadow: 0 0 10px 0 rgba(0, 9, 51, 0.1);
     box-shadow: 0 0 10px 0 rgba(0, 9, 51, 0.1);
     background-color: #ffffff;
@@ -664,7 +663,7 @@ main {
     background-color: #ff6c00;
 }
 
-.bathrobeColor:focus .colorPicker:focus {
+.bathrobeColor .colorPicker {
     width: 300px;
     height: 50px;
     border-radius: 25px;
@@ -681,7 +680,7 @@ main {
     background-color: #e9eef5;
 }
 
-.imagePicker:focus {
+.imagePicker {
     width: 300px;
     height: 50px;
     border-radius: 25px;
@@ -1075,10 +1074,7 @@ footer nav .circleButton:hover {
     .headerRightBG {
         top: 95px;
         left: -120px;
-        background-color: #8CD3FF;
-        background-repeat: no-repeat;
-        background-position-x: center;
-        background-size: 570px;
+        background: url(../img/hero.png) no-repeat center 570px #8CD3FF;
     }
 
     footer p {
@@ -1234,6 +1230,10 @@ footer nav .circleButton:hover {
         width: 1300px;
         height: 1471px;
         margin-left: -600px;
+
+    }
+
+    .constructor {
 
     }
 
@@ -1464,6 +1464,10 @@ footer nav .circleButton:hover {
         height: 250px;
         left: calc(50% - 125px);
         top: 587px;
+    }
+
+    .sliderReviewsContent {
+
     }
 
     .deliveryCircles {
