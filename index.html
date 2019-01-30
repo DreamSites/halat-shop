@@ -155,94 +155,96 @@
       <img alt="" class="preview" src="img/preview.png">
       <div class="constructorCircle">
         <h2>Ваш уникальный халат</h2>
-        <div class="size">
-          <h4>Размер</h4>
-          <div class="sizePickerContainer">
-            <div class="sizePicker">
-              <div>S</div>
-              <img alt="" src="img/separator.svg">
-              <div>M</div>
-              <img alt="" src="img/separator.svg">
-              <div>L</div>
-              <img alt="" src="img/separator.svg">
-              <div>XL</div>
-              <img alt="" src="img/separator.svg">
-              <div>XXL</div>
-              <img alt="" src="img/separator.svg">
-              <div>XXXL</div>
+        <div class="constructorSecondCircle">
+          <div class="size">
+            <h4>Размер</h4>
+            <div class="sizePickerContainer">
+              <div class="sizePicker">
+                <div>S</div>
+                <img alt="" src="img/separator.svg">
+                <div>M</div>
+                <img alt="" src="img/separator.svg">
+                <div>L</div>
+                <img alt="" src="img/separator.svg">
+                <div>XL</div>
+                <img alt="" src="img/separator.svg">
+                <div>XXL</div>
+                <img alt="" src="img/separator.svg">
+                <div>XXXL</div>
+              </div>
+              <a href="#">Таблица размеров</a>
             </div>
-            <a href="#">Таблица размеров</a>
           </div>
-        </div>
-        <div class="constructorGrid">
-          <div class="sign">
-            <h4>Надпись</h4>
-            <input class="signInput" id="signInput" placeholder="Пример надписи" type="text">
-          </div>
-          <div class="font">
-            <h4>Шрифт</h4>
-            <div class="fontPickerContainer">
-              <div class="fontPicker" id="fontPicker">
-                <div class="fontPickerItem" id="selectedFont"><span id="selectedFontName">Выберите шрифт</span></div>
-                <div class="fontPickerItem" id="fontPickerItem1" onclick="pickFont('Academia')">Academia</div>
-                <div class="fontPickerItem" id="fontPickerItem2" onclick="pickFont('Campus')">Campus</div>
-                <div class="fontPickerItem" id="fontPickerItem3" onclick="pickFont('CyrillicOld')">CyrillicOld</div>
-                <div class="fontPickerItem" id="fontPickerItem4" onclick="pickFont('Lobster-Regular')">Lobster-Regular
+          <div class="constructorGrid">
+            <div class="sign">
+              <h4>Надпись</h4>
+              <input class="signInput" id="signInput" placeholder="Пример надписи" type="text">
+            </div>
+            <div class="font">
+              <h4>Шрифт</h4>
+              <div class="fontPickerContainer">
+                <div class="fontPicker" id="fontPicker">
+                  <div class="fontPickerItem" id="selectedFont"><span id="selectedFontName">Выберите шрифт</span></div>
+                  <div class="fontPickerItem" id="fontPickerItem1" onclick="pickFont('Academia')">Academia</div>
+                  <div class="fontPickerItem" id="fontPickerItem2" onclick="pickFont('Campus')">Campus</div>
+                  <div class="fontPickerItem" id="fontPickerItem3" onclick="pickFont('CyrillicOld')">CyrillicOld</div>
+                  <div class="fontPickerItem" id="fontPickerItem4" onclick="pickFont('Lobster-Regular')">Lobster-Regular
+                  </div>
+                  <div class="fontPickerItem" id="fontPickerItem5" onclick="pickFont('MonAmour')">MonAmour</div>
+                  <div class="fontPickerItem" id="fontPickerItem6" onclick="pickFont('Sladkoeshka')">Sladkoeshka</div>
                 </div>
-                <div class="fontPickerItem" id="fontPickerItem5" onclick="pickFont('MonAmour')">MonAmour</div>
-                <div class="fontPickerItem" id="fontPickerItem6" onclick="pickFont('Sladkoeshka')">Sladkoeshka</div>
               </div>
             </div>
-          </div>
-          <div class="signColor">
-            <h4>Цвет шрифта</h4>
-            <div class="colorPicker">
-              <div class="colorPickerItemBG">
-                <div class="colorPickerItem" id="colorPickerItem1"></div>
-              </div>
-              <div class="colorPickerItemBG">
-                <div class="colorPickerItem" id="colorPickerItem2"></div>
-              </div>
-              <div class="colorPickerItemBG">
-                <div class="colorPickerItem" id="colorPickerItem3"></div>
-              </div>
-              <div class="colorPickerItemBG">
-                <div class="colorPickerItem" id="colorPickerItem4"></div>
-              </div>
-              <div class="colorPickerItemBG">
-                <div class="colorPickerItem" id="colorPickerItem5"></div>
+            <div class="signColor">
+              <h4>Цвет шрифта</h4>
+              <div class="colorPicker">
+                <div class="colorPickerItemBG">
+                  <div class="colorPickerItem" id="colorPickerItem1"></div>
+                </div>
+                <div class="colorPickerItemBG">
+                  <div class="colorPickerItem" id="colorPickerItem2"></div>
+                </div>
+                <div class="colorPickerItemBG">
+                  <div class="colorPickerItem" id="colorPickerItem3"></div>
+                </div>
+                <div class="colorPickerItemBG">
+                  <div class="colorPickerItem" id="colorPickerItem4"></div>
+                </div>
+                <div class="colorPickerItemBG">
+                  <div class="colorPickerItem" id="colorPickerItem5"></div>
+                </div>
               </div>
             </div>
-          </div>
-          <div class="bathrobeColor">
-            <h4>Цвет халата</h4>
-            <select class="colorPicker" id="colorPicker" name="">
-              <option>Белый</option>
-              <option>Синий</option>
-              <option>Коричневый</option>
-            </select>
-          </div>
-          <div class="image">
-            <h4>Рисунок</h4>
-            <select class="imagePicker" id="imagePicker" name="">
-              <option value="">Рисунок 1</option>
-              <option value="">Рисунок 2</option>
-              <option value="">Рисунок 3</option>
-              <option value="">Рисунок 4</option>
-              <option value="">Рисунок 5</option>
-            </select>
-          </div>
-          <div class="imageButtons">
-            <div class="circleButton">
-              <img alt="" src="img/leftArrowBlue.svg">
+            <div class="bathrobeColor">
+              <h4>Цвет халата</h4>
+              <select class="colorPicker" id="colorPicker" name="">
+                <option>Белый</option>
+                <option>Синий</option>
+                <option>Коричневый</option>
+              </select>
             </div>
-            <div class="circleButton">
-              <img alt="" src="img/rightArrowBlue.svg">
+            <div class="image">
+              <h4>Рисунок</h4>
+              <select class="imagePicker" id="imagePicker" name="">
+                <option value="">Рисунок 1</option>
+                <option value="">Рисунок 2</option>
+                <option value="">Рисунок 3</option>
+                <option value="">Рисунок 4</option>
+                <option value="">Рисунок 5</option>
+              </select>
             </div>
-          </div>
-          <div class="mainButton" id="order">Заказать халат</div>
-          <div class="price">
-            <h4>1790₽</h4>
+            <div class="imageButtons">
+              <div class="circleButton">
+                <img alt="" src="img/leftArrowBlue.svg">
+              </div>
+              <div class="circleButton">
+                <img alt="" src="img/rightArrowBlue.svg">
+              </div>
+            </div>
+            <div class="mainButton" id="order">Заказать халат</div>
+            <div class="price">
+              <h4>1790₽</h4>
+            </div>
           </div>
         </div>
         <div class="grayCircle"></div>

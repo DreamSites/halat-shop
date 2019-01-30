@@ -278,6 +278,9 @@ function responsiveNavigation() {
             '</div>'
         );
     }
+    if ($(window).width() < 760) {
+        $('.constructor h2').html('Ваш уникальный<br>халат');
+    }
     if ($(window).width() < 675) {
         $('#copyright span').text = 'Copyright 2018 Магазин халатов.';
     }
