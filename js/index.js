@@ -303,22 +303,26 @@ function responsiveNavigation() {
 
 function openFontPicker() {
     $('#fontPicker').addClass('active');
-    $('.fontPickerItem').addClass('active')
+    $('.fontPickerItem').addClass('active');
+    $('#selectedFont img').css('transform', 'rotate(180deg)');
 }
 
 function closeFontPicker() {
     $('#fontPicker').removeClass('active');
-    $('.fontPickerItem').removeClass('active')
+    $('.fontPickerItem').removeClass('active');
+    $('#selectedFont img').css('transform', 'rotate(0)');
 }
 
 function openBathrobeColorPicker() {
     $('#bathrobeColorPicker').addClass('active');
-    $('.bathrobeColor, .colorPickerItem').addClass('active')
+    $('.bathrobeColor, .colorPickerItem').addClass('active');
+    $('#selectedBathrobeColor img').css('transform', 'rotate(180deg)');
 }
 
 function closeBathrobeColorPicker() {
     $('#bathrobeColorPicker').removeClass('active');
-    $('.bathrobeColor, .colorPickerItem').removeClass('active')
+    $('.bathrobeColor, .colorPickerItem').removeClass('active');
+    $('#selectedBathrobeColor img').css('transform', 'rotate(0)');
 }
 
 function pickFont(font) {
