@@ -1,9 +1,13 @@
+let pickedFont = '';
+let pickedBathrobeColor = '';
+let pickedImage = '';
+
 $(document).ready(function () {
     responsiveNavigation();
     const reviewButtonRight = $('#reviewButtonRight');
     const reviewButtonLeft = $('#reviewButtonLeft');
 
-    $('nav, a').click(function () {
+    $('nav a').click(function () {
         const scrollTo = $(this).attr('href');
         if ($(scrollTo).length !== 0) {
             $('html, body').animate({
@@ -13,7 +17,7 @@ $(document).ready(function () {
         return false;
     });
 
-    $('.links, a').click(function () {
+    $('.links a').click(function () {
         $('#headerNavigation').css({'opacity': 0, 'z-index': 1});
         const scrollTo = $(this).attr('href');
         if ($(scrollTo).length !== 0) {
@@ -67,6 +71,9 @@ $(document).ready(function () {
     (function (global) {
         document.getElementById("order").addEventListener("click", function () {
             global.localStorage.setItem("signInput", document.getElementById("signInput").value);
+            global.localStorage.setItem("pickedFont", pickedFont);
+            global.localStorage.setItem("pickedBathrobeColor", pickedBathrobeColor);
+            global.localStorage.setItem("pickedImage", pickedImage);
         }, false);
     }(window));
 
@@ -89,6 +96,17 @@ $(document).ready(function () {
         const bathrobeColorPicker = $('#bathrobeColorPicker');
         if (!bathrobeColorPicker.is(e.target) && bathrobeColorPicker.has(e.target).length === 0) {
             closeBathrobeColorPicker();
+        }
+    });
+
+    $('#selectedImage').click(function () {
+        openImagePicker();
+    });
+
+    $(document).mouseup(function (e) {
+        const imagePicker = $('#imagePicker');
+        if (!imagePicker.is(e.target) && imagePicker.has(e.target).length === 0) {
+            closeImagePicker();
         }
     });
 
@@ -325,12 +343,25 @@ function closeBathrobeColorPicker() {
     $('#selectedBathrobeColor img').css('transform', 'rotate(0)');
 }
 
+function openImagePicker() {
+    $('#imagePicker').addClass('active');
+    $('.image, .imagePickerItem').addClass('active');
+    $('#selectedImage img').css('transform', 'rotate(180deg)');
+}
+
+function closeImagePicker() {
+    $('#imagePicker').removeClass('active');
+    $('.image, .imagePickerItem').removeClass('active');
+    $('#selectedImage img').css('transform', 'rotate(0)');
+}
+
 function pickFont(font) {
     const selectedFontName = document.getElementById('selectedFontName');
     selectedFontName.innerHTML = font;
     selectedFontName.style.fontFamily = font;
     $('#selectedFont').addClass('picked');
     closeFontPicker();
+    pickedFont = font;
 }
 
 function pickBathrobeColor(color) {
@@ -338,6 +369,15 @@ function pickBathrobeColor(color) {
     selectedBathrobeColorName.innerHTML = color;
     $('#selectedBathrobeColor').addClass('picked');
     closeBathrobeColorPicker();
+    pickedBathrobeColor = color;
+}
+
+function pickImage(image) {
+    const selectedImageName = document.getElementById('selectedImageName');
+    selectedImageName.innerHTML = image;
+    $('#selectedImage').addClass('picked');
+    closeImagePicker();
+    pickedImage = image;
 }
 
 const ourWorksSlider = document.getElementById('ourWorksSlider');

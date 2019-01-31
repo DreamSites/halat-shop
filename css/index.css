@@ -542,6 +542,7 @@ main {
     transition: all 0.2s ease;
     overflow: hidden;
     display: grid;
+    position: absolute;
 }
 
 .fontPicker:hover {
@@ -556,6 +557,7 @@ main {
     box-shadow: 0 0 10px 0 rgba(0, 9, 51, 0.2);
     background-color: #ffffff;
     grid-template-rows: repeat(7, 1fr);
+    z-index: 4;
 }
 
 .fontPickerItem {
@@ -711,6 +713,7 @@ main {
     box-shadow: 0 0 10px 0 rgba(0, 9, 51, 0.2);
     background-color: #ffffff;
     grid-template-rows: repeat(4, 1fr);
+    z-index: 4;
 }
 
 .bathrobeColor .colorPickerItem {
@@ -751,20 +754,73 @@ main {
     color: var(--greyish-brown);
 }
 
+.imagePickerContainer {
+    height: 50px;
+}
+
 .imagePicker {
     width: 300px;
     height: 50px;
     border-radius: 25px;
     background-color: var(--pale-grey);
-    border: none;
-    padding-left: 20px;
     font-size: 16px;
     color: var(--brown-grey);
     transition: all 0.2s ease;
+    overflow: hidden;
+    display: grid;
+    position: absolute;
 }
 
 .imagePicker:hover {
     background-color: #e9eef5;
+}
+
+.imagePicker.active {
+    width: 300px;
+    height: 300px;
+    border-radius: 25px;
+    -webkit-box-shadow: 0 0 10px 0 rgba(0, 9, 51, 0.2);
+    box-shadow: 0 0 10px 0 rgba(0, 9, 51, 0.2);
+    background-color: #ffffff;
+    grid-template-rows: repeat(6, 1fr);
+    z-index: 4;
+}
+
+.imagePickerItem {
+    display: none;
+    align-items: center;
+    color: var(--greyish-brown);
+    padding-left: 20px;
+    cursor: pointer;
+    transition: all 0.2s ease;
+}
+
+.imagePickerItem:hover {
+    background-color: var(--pale-grey);
+}
+
+.imagePickerItem.active {
+    display: flex;
+}
+
+#selectedImage {
+    color: var(--brown-grey);
+    font-size: 16px;
+    cursor: default;
+    display: flex;
+    transition: none;
+}
+
+#selectedImage.active {
+    border-bottom: 1px solid #d9d9d9;
+}
+
+#selectedImage.active:hover {
+    background-color: white;
+}
+
+#selectedImage.picked {
+    color: var(--greyish-brown);
 }
 
 .imageButtons {
@@ -1319,7 +1375,15 @@ footer nav .circleButton:hover {
         width: 350px;
     }
 
+    .bathrobeColor .colorPicker.active {
+        width: 350px;
+    }
+
     .imagePicker {
+        width: 350px;
+    }
+
+    .imagePicker.active {
         width: 350px;
     }
 
@@ -1490,6 +1554,11 @@ footer nav .circleButton:hover {
     }
 
     .imagePicker {
+        width: calc(100vw - 40px);
+        max-width: 350px;
+    }
+
+    .imagePicker.active {
         width: calc(100vw - 40px);
         max-width: 350px;
     }

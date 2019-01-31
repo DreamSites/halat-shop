@@ -186,7 +186,7 @@
                 <div class="fontPicker" id="fontPicker">
                   <div class="fontPickerItem" id="selectedFont">
                     <span id="selectedFontName">Выберите шрифт</span>
-                    <img alt="" src="img/selectorOpenArrow.svg" class="selectorArrow">
+                    <img alt="" class="selectorArrow" src="img/selectorOpenArrow.svg">
                   </div>
                   <div class="fontPickerItem" id="fontPickerItem1" onclick="pickFont('Academia')">Academia</div>
                   <div class="fontPickerItem" id="fontPickerItem2" onclick="pickFont('Campus')">Campus</div>
@@ -224,7 +224,7 @@
                 <div class="colorPicker" id="bathrobeColorPicker">
                   <div class="colorPickerItem" id="selectedBathrobeColor">
                     <span id="selectedBathrobeColorName">Выберите шрифт</span>
-                    <img src="img/selectorOpenArrow.svg" alt="" class="selectorArrow">
+                    <img alt="" class="selectorArrow" src="img/selectorOpenArrow.svg">
                   </div>
                   <div class="colorPickerItem" id="bathrobeColorPickerItem1" onclick="pickBathrobeColor('Белый')">
                     Белый
@@ -240,13 +240,19 @@
             </div>
             <div class="image">
               <h4>Рисунок</h4>
-              <select class="imagePicker" id="imagePicker" name="">
-                <option value="">Рисунок 1</option>
-                <option value="">Рисунок 2</option>
-                <option value="">Рисунок 3</option>
-                <option value="">Рисунок 4</option>
-                <option value="">Рисунок 5</option>
-              </select>
+              <div class="imagePickerContainer">
+                <div class="imagePicker" id="imagePicker">
+                  <div class="imagePickerItem" id="selectedImage">
+                    <span id="selectedImageName">Выберите рисунок</span>
+                    <img alt="" class="selectorArrow" src="img/selectorOpenArrow.svg">
+                  </div>
+                  <div class="imagePickerItem" id="imagePickerItem1" onclick="pickImage('Рисунок 1')">Рисунок 1</div>
+                  <div class="imagePickerItem" id="imagePickerItem2" onclick="pickImage('Рисунок 2')">Рисунок 2</div>
+                  <div class="imagePickerItem" id="imagePickerItem3" onclick="pickImage('Рисунок 3')">Рисунок 3</div>
+                  <div class="imagePickerItem" id="imagePickerItem4" onclick="pickImage('Рисунок 4')">Рисунок 4</div>
+                  <div class="imagePickerItem" id="imagePickerItem5" onclick="pickImage('Рисунок 5')">Рисунок 5</div>
+                </div>
+              </div>
             </div>
             <div class="imageButtons">
               <div class="circleButton">
