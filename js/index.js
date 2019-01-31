@@ -81,6 +81,17 @@ $(document).ready(function () {
         }
     });
 
+    $('#selectedBathrobeColor').click(function () {
+        openBathrobeColorPicker();
+    });
+
+    $(document).mouseup(function (e) {
+        const bathrobeColorPicker = $('#bathrobeColorPicker');
+        if (!bathrobeColorPicker.is(e.target) && bathrobeColorPicker.has(e.target).length === 0) {
+            closeBathrobeColorPicker();
+        }
+    });
+
     $('#ourWorksButtonLeft').click(function () {
         if (pickedWorkID > 1) {
             pickedWorkID -= 1;
@@ -300,12 +311,29 @@ function closeFontPicker() {
     $('.fontPickerItem').removeClass('active')
 }
 
+function openBathrobeColorPicker() {
+    $('#bathrobeColorPicker').addClass('active');
+    $('.bathrobeColor, .colorPickerItem').addClass('active')
+}
+
+function closeBathrobeColorPicker() {
+    $('#bathrobeColorPicker').removeClass('active');
+    $('.bathrobeColor, .colorPickerItem').removeClass('active')
+}
+
 function pickFont(font) {
-    const selectedFont = $('#selectedFont');
-    const selectedFontName = $('#selectedFontName');
-    selectedFontName.html = font;
-    selectedFontName.css('font-family', font);
-    selectedFont.addClass('picked');
+    const selectedFontName = document.getElementById('selectedFontName');
+    selectedFontName.innerHTML = font;
+    selectedFontName.style.fontFamily = font;
+    $('#selectedFont').addClass('picked');
+    closeFontPicker();
+}
+
+function pickBathrobeColor(color) {
+    const selectedBathrobeColorName = document.getElementById('selectedBathrobeColorName');
+    selectedBathrobeColorName.innerHTML = color;
+    $('#selectedBathrobeColor').addClass('picked');
+    closeBathrobeColorPicker();
 }
 
 const ourWorksSlider = document.getElementById('ourWorksSlider');

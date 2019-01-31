@@ -217,11 +217,21 @@
             </div>
             <div class="bathrobeColor">
               <h4>Цвет халата</h4>
-              <select class="colorPicker" id="colorPicker" name="">
-                <option>Белый</option>
-                <option>Синий</option>
-                <option>Коричневый</option>
-              </select>
+              <div class="colorPickerContainer">
+                <div class="colorPicker" id="bathrobeColorPicker">
+                  <div class="colorPickerItem" id="selectedBathrobeColor"><span id="selectedBathrobeColorName">Выберите шрифт</span>
+                  </div>
+                  <div class="colorPickerItem" id="bathrobeColorPickerItem1" onclick="pickBathrobeColor('Белый')">
+                    Белый
+                  </div>
+                  <div class="colorPickerItem" id="bathrobeColorPickerItem2" onclick="pickBathrobeColor('Синий')">
+                    Синий
+                  </div>
+                  <div class="colorPickerItem" id="bathrobeColorPickerItem3" onclick="pickBathrobeColor('Коричневый')">
+                    Коричневый
+                  </div>
+                </div>
+              </div>
             </div>
             <div class="image">
               <h4>Рисунок</h4>
