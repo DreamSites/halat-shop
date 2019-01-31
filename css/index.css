@@ -1380,7 +1380,7 @@ footer nav .circleButton:hover {
     }
 
     .constructorBG {
-        height: 1970px;
+        height: 1930px;
     }
 
     .qualityCircle {
@@ -1397,62 +1397,51 @@ footer nav .circleButton:hover {
     .signInput {
         width: calc(100vw - 40px);
         max-width: 350px;
-        font-size: 14px;
     }
 
     .sizePicker {
         width: calc(100vw - 40px);
         max-width: 350px;
-        font-size: 14px;
         grid-template-columns: repeat(6, auto);
     }
 
     .fontPicker {
         width: calc(100vw - 40px);
         max-width: 350px;
-        font-size: 14px;
     }
 
     .fontPicker.active {
         width: calc(100vw - 40px);
         max-width: 350px;
-        font-size: 14px;
     }
 
     .signColor .colorPicker {
         width: calc(100vw - 40px);
         max-width: 350px;
-        font-size: 14px;
     }
 
     .bathrobeColor .colorPicker {
         width: calc(100vw - 40px);
         max-width: 350px;
-        font-size: 14px;
     }
 
     .imagePicker {
         width: calc(100vw - 40px);
         max-width: 350px;
-        font-size: 14px;
+    }
+
+    .constructor .mainButton {
+        width: calc(100vw - 40px);
+        max-width: 350px;
     }
 
     .constructorGrid {
         width: calc(100vw - 40px);
         max-width: 350px;
-        font-size: 14px;
-    }
-
-    ::placeholder {
-        font-size: 14px;
     }
 
     .sizePicker img {
         display: none;
-    }
-
-    #selectedFont {
-        font-size: 14px;
     }
 }
 
