@@ -149,3 +149,94 @@ nav {
     margin-top: 40px;
     width: 400px;
 }
+
+@media (max-width: 1830px) {
+    .leftCircle{
+        margin-left: -100px;
+    }
+
+}
+@media (max-width: 1680px) {
+    .leftCircle{
+        margin-left: -200px;
+    }
+
+}
+@media (max-width: 1600px) {
+    .leftCircle{
+        margin-left: -300px;
+    }
+
+}
+@media (max-width: 1350px) {
+    .leftCircle{
+        margin-left: -400px;
+    }
+
+    #whiteCircle-1 {
+        top: 1079px;
+        left: 800px;
+    }
+
+    #whiteCircle-2 {
+        top: 1172px;
+        left: 1100px;
+    }
+
+    .preview {
+        margin-left: 100px;
+    }
+
+}
+@media (max-width: 1200px) {
+    .leftCircle {
+        margin-left: -500px;
+    }
+
+    .preview {
+        margin-left: 150px;
+    }
+
+}
+@media (max-width: 980px) {
+    .leftCircle {
+        left: 200px;
+        top: 950px;
+        z-index: 2;
+    }
+
+    .women {
+        position: absolute;
+        z-index: 1;
+        left: -700px;
+        top:-1100px;
+    }
+
+    .preview {
+        width: 346px;
+        height: 871px;
+    }
+
+    .whiteCircle {
+        display: none;
+    }
+
+    .order {
+        margin-right: 200px;
+    }
+
+    #checkout {
+        width: 300px;
+    }
+
+    .price a {
+        margin-right: 100px;
+    }
+
+    .orderInfoSeparator {
+        width: 300px;
+    }
+
+}
+
+
