@@ -1,6 +1,6 @@
 body {
     width: 100%;
-    height: 100%;
+    height: 1080px;
     overflow: hidden;
 }
 
@@ -12,10 +12,11 @@ body {
     background-color: white;
     border-radius: 50%;
     position: absolute;
-    left: -444px;
+    left: calc(-1479px + 50vw);
     top: -198px;
     padding-left: 641px;
     padding-top: 245px;
+    z-index: -2;
 }
 
 .logo {
@@ -24,12 +25,22 @@ body {
     margin-right: auto;
 }
 
-.leftCircle .preview {
+.previewContainer {
+    width: 1479px;
+    height: 1479px;
+    position: absolute;
+    left: calc(-1479px + 50vw);
+    top: -198px;
+    z-index: -1;
+}
+
+.preview {
     width: 447px;
     height: 1039px;
     position: absolute;
     top: 326px;
     left: 790px;
+    z-index: 2;
 }
 
 .whiteCircle {
@@ -45,11 +56,13 @@ body {
 #whiteCircle-1 {
     top: 1079px;
     left: 725px;
+    z-index: 3;
 }
 
 #whiteCircle-2 {
     top: 1172px;
     left: 1002px;
+    z-index: 4;
 }
 
 nav {
@@ -150,29 +163,7 @@ nav {
     width: 400px;
 }
 
-@media (max-width: 1830px) {
-    .leftCircle{
-        margin-left: -100px;
-    }
-
-}
-@media (max-width: 1680px) {
-    .leftCircle{
-        margin-left: -200px;
-    }
-
-}
-@media (max-width: 1600px) {
-    .leftCircle{
-        margin-left: -300px;
-    }
-
-}
 @media (max-width: 1350px) {
-    .leftCircle{
-        margin-left: -400px;
-    }
-
     #whiteCircle-1 {
         top: 1079px;
         left: 800px;
@@ -186,57 +177,53 @@ nav {
     .preview {
         margin-left: 100px;
     }
-
 }
+
 @media (max-width: 1200px) {
     .leftCircle {
-        margin-left: -500px;
-    }
-
-    .preview {
-        margin-left: 150px;
-    }
-
-}
-@media (max-width: 980px) {
-    .leftCircle {
-        left: 200px;
-        top: 950px;
+        left: calc(-1479px / 2 + 50vw);
+        top: 900px;
         z-index: 2;
     }
 
-    .women {
-        position: absolute;
-        z-index: 1;
-        left: -700px;
-        top:-1100px;
+    .previewContainer {
+        left: 0;
+        top: 0;
     }
 
     .preview {
-        width: 346px;
-        height: 871px;
+        left: -100px;
+        top: 150px;
+        z-index: 1;
     }
 
-    .whiteCircle {
-        display: none;
-    }
-
-    .order {
-        margin-right: 200px;
-    }
-
-    #checkout {
+    .orderInfo {
+        margin-left: 50%;
         width: 300px;
     }
 
-    .price a {
-        margin-right: 100px;
+    .price {
+        width: 300px;
     }
 
     .orderInfoSeparator {
         width: 300px;
     }
 
+    .orderInfo .mainButton {
+        width: 300px;
+    }
 }
 
+@media (max-width: 950px) {
+    .orderInfo {
+        float: right;
+        margin-right: 75px;
+    }
+}
 
+@media (max-width: 880px) {
+    .preview {
+        left: -200px;
+    }
+}
