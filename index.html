@@ -160,17 +160,18 @@
             <h4>Размер</h4>
             <div class="sizePickerContainer">
               <div class="sizePicker">
-                <div>S</div>
+                <div onclick="pickSize('S', '19px', 0)">S</div>
                 <img alt="" src="img/separator.svg">
-                <div>M</div>
+                <div onclick="pickSize('M', '71px', 1)">M</div>
                 <img alt="" src="img/separator.svg">
-                <div>L</div>
+                <div onclick="pickSize('L', '123px', 2)">L</div>
                 <img alt="" src="img/separator.svg">
-                <div>XL</div>
+                <div onclick="pickSize('XL', '177px', 3)">XL</div>
                 <img alt="" src="img/separator.svg">
-                <div>XXL</div>
+                <div onclick="pickSize('XXL', '240px', 4)">XXL</div>
                 <img alt="" src="img/separator.svg">
-                <div>XXXL</div>
+                <div onclick="pickSize('XXXL', '315px', 5)">XXXL</div>
+                <div class="sizePickerSelector"></div>
               </div>
               <a href="#">Таблица размеров</a>
             </div>
@@ -264,7 +265,7 @@
             </div>
             <div class="mainButton" id="order">Заказать халат</div>
             <div class="price">
-              <h4>1790₽</h4>
+              <h4>3190₽</h4>
             </div>
           </div>
         </div>

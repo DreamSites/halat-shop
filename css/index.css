@@ -71,7 +71,6 @@ header .mainButton {
     line-height: 3.52;
     color: var(--greyish-brown);
     text-decoration: none;
-
 }
 
 .contacts {
@@ -258,6 +257,7 @@ main {
     border: 2px solid var(--sky-blue);
     margin-left: 14px;
     transition: all 0.4s ease;
+    cursor: pointer;
 }
 
 .dotIndicator:first-child {
@@ -469,11 +469,30 @@ main {
     grid-template-columns: auto 1px auto 1px auto 1px auto 1px auto 1px auto;
     padding-left: 20px;
     padding-right: 20px;
+    position: relative;
+}
+
+.sizePicker .sizePickerSelector {
+    position: absolute;
+    width: 50px;
+    height: 50px;
+    border-radius: 50%;
+    background-color: var(--sky-blue);
+    transition: all 0.2s ease;
+    display: none;
+    opacity: 0;
+    z-index: 0;
+}
+
+.sizePickerSelector.active {
+    display: flex;
+    opacity: 1;
 }
 
 .sizePicker div {
     margin: auto;
     color: var(--greyish-brown);
+    z-index: 1;
 }
 
 .sizePicker img {
@@ -581,8 +600,8 @@ main {
 #selectedFont {
     color: var(--brown-grey);
     font-size: 16px;
-    cursor: default;
     display: flex;
+    cursor: pointer;
     transition: none;
 }
 
@@ -594,6 +613,7 @@ main {
 
 #selectedFont.active {
     border-bottom: 1px solid #d9d9d9;
+    cursor: default;
 }
 
 #selectedFont.active:hover {
@@ -706,6 +726,7 @@ main {
 }
 
 .bathrobeColor .colorPicker.active {
+
     width: 300px;
     height: 200px;
     border-radius: 25px;
@@ -1507,10 +1528,7 @@ footer nav .circleButton:hover {
     }
 
     .qualityCircle {
-        left: calc(1471px / 2 - 250px / 2);
-        width: 250px;
-        height: 250px;
-        bottom: -330px;
+        display: none;
     }
 
     .constructor .preview {
@@ -1642,7 +1660,7 @@ footer nav .circleButton:hover {
 
     .headerLeftBG nav {
         margin-left: 0;
-        width: calc(100vw - 30px);
+        width: calc(100vw - 35px);
     }
 
     .headerLeftBG p {
@@ -1730,9 +1748,21 @@ footer nav .circleButton:hover {
         margin-top: 30px;
         margin-left: 0;
     }
+
+    .headerLeftBG .mainButton {
+        margin-top: 25px;
+    }
+
+    .links a {
+        line-height: 3;
+    }
 }
 
 @media (max-width: 600px) {
+    .headerLeftBG .mainButton {
+        margin-top: 60px;
+    }
+
     .smilesCircle {
         display: none;
     }
@@ -1807,5 +1837,14 @@ footer nav .circleButton:hover {
         height: 320px;
         margin-left: -30px;
         margin-right: -30px;
+    }
+
+    .links a {
+        line-height: 3.52;
+    }
+}
+@media (max-width: 320px) {
+    .headerLeftBG .mainButton {
+        width: calc(100vw - 40px);
     }
 }

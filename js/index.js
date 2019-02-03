@@ -1,6 +1,7 @@
 let pickedFont = '';
 let pickedBathrobeColor = '';
 let pickedImage = '';
+let pickedSize = '';
 
 $(document).ready(function () {
     responsiveNavigation();
@@ -464,5 +465,13 @@ function changePickedWorkID(clickedDot) {
         updateOurWorks();
         updateOurWorksMargin();
     }
+}
+
+function pickSize(size, margin, sizeNumber) {
+    const sizePickerSelector = $('.sizePickerSelector');
+    $('.sizePicker div').eq(sizeNumber).css('color', 'white');
+    sizePickerSelector.css('margin-left', margin);
+    sizePickerSelector.addClass('active');
+    pickedSize = size;
 }
 
