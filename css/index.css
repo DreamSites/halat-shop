@@ -581,8 +581,8 @@ main {
 #selectedFont {
     color: var(--brown-grey);
     font-size: 16px;
-    cursor: default;
     display: flex;
+    cursor: pointer;
     transition: none;
 }
 
@@ -594,6 +594,7 @@ main {
 
 #selectedFont.active {
     border-bottom: 1px solid #d9d9d9;
+    cursor: default;
 }
 
 #selectedFont.active:hover {
@@ -1507,10 +1508,7 @@ footer nav .circleButton:hover {
     }
 
     .qualityCircle {
-        left: calc(1471px / 2 - 250px / 2);
-        width: 250px;
-        height: 250px;
-        bottom: -330px;
+        display: none;
     }
 
     .constructor .preview {
@@ -1642,7 +1640,7 @@ footer nav .circleButton:hover {
 
     .headerLeftBG nav {
         margin-left: 0;
-        width: calc(100vw - 30px);
+        width: calc(100vw - 35px);
     }
 
     .headerLeftBG p {
