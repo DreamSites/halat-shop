@@ -565,8 +565,12 @@ main {
     position: absolute;
 }
 
-.fontPicker:hover {
+.fontPicker:hover #selectedFont {
     background-color: #e9eef5;
+}
+
+.fontPicker:hover #selectedFont.active {
+    background-color: white;
 }
 
 .fontPicker.active {
@@ -603,7 +607,7 @@ main {
     font-size: 16px;
     display: flex;
     cursor: pointer;
-    transition: none;
+    transition: background-color 0.2s ease;
 }
 
 .selectorArrow {
@@ -669,6 +673,8 @@ main {
     justify-content: center;
     margin-left: auto;
     margin-right: auto;
+    cursor: pointer;
+    transition: all 0.2s ease;
 }
 
 .signColor .colorPickerItemBG:first-child {
@@ -683,6 +689,24 @@ main {
     width: 14px;
     height: 14px;
     border-radius: 50%;
+    transition: all 0.2s ease;
+}
+
+.signColor .colorPickerItemBG:hover .colorPickerItem {
+    width: 20px;
+    height: 20px;
+}
+
+.signColor .colorPickerItemBG.picked {
+    width: 50px;
+    height: 50px;
+    -webkit-box-shadow: 0 0 20px 0 rgba(0, 9, 51, 0.15);
+    box-shadow: 0 0 20px 0 rgba(0, 9, 51, 0.15);
+}
+
+.signColor .colorPickerItem.picked {
+    width: 20px;
+    height: 20px;
 }
 
 #colorPickerItem1 {
@@ -723,12 +747,15 @@ main {
     position: absolute;
 }
 
-.bathrobeColor .colorPicker:hover {
+.bathrobeColor .colorPicker:hover #selectedBathrobeColor {
     background-color: #e9eef5;
 }
 
-.bathrobeColor .colorPicker.active {
+.bathrobeColor .colorPicker:hover #selectedBathrobeColor.active {
+    background-color: white;
+}
 
+.bathrobeColor .colorPicker.active {
     width: 300px;
     height: 200px;
     border-radius: 25px;
@@ -762,7 +789,7 @@ main {
     font-size: 16px;
     cursor: pointer;
     display: flex;
-    transition: none;
+    transition: background-color 0.2s ease;
 }
 
 #selectedBathrobeColor.active {
@@ -796,8 +823,12 @@ main {
     position: absolute;
 }
 
-.imagePicker:hover {
+.imagePicker:hover #selectedImage {
     background-color: #e9eef5;
+}
+
+.imagePicker:hover #selectedImage.active {
+    background-color: white;
 }
 
 .imagePicker.active {
@@ -833,7 +864,7 @@ main {
     font-size: 16px;
     cursor: pointer;
     display: flex;
-    transition: none;
+    transition: background-color 0.2s ease;
 }
 
 #selectedImage.active {

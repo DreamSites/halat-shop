@@ -475,3 +475,11 @@ function pickSize(size, margin, sizeNumber) {
     pickedSize = size;
 }
 
+function pickColor(color, colorID) {
+    const colorPickerItemBG = $('.signColor .colorPickerItemBG');
+    const colorPickerItem = $('.signColor .colorPickerItem');
+    colorPickerItemBG.removeClass('picked');
+    colorPickerItem.removeClass('picked');
+    colorPickerItemBG.eq(colorID).addClass('picked');
+    colorPickerItem.eq(colorID).addClass('picked');
+}
