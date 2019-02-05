@@ -1,7 +1,8 @@
+let pickedSize = '';
 let pickedFont = '';
+let pickedColor = '';
 let pickedBathrobeColor = '';
 let pickedImage = '';
-let pickedSize = '';
 
 $(document).ready(function () {
     responsiveNavigation();
@@ -71,8 +72,10 @@ $(document).ready(function () {
 
     (function (global) {
         document.getElementById("order").addEventListener("click", function () {
-            global.localStorage.setItem("signInput", document.getElementById("signInput").value);
+            global.localStorage.setItem("pickedSize", pickedSize);
+            global.localStorage.setItem("signInput", $("#signInput").val());
             global.localStorage.setItem("pickedFont", pickedFont);
+            global.localStorage.setItem("pickedColor", pickedColor);
             global.localStorage.setItem("pickedBathrobeColor", pickedBathrobeColor);
             global.localStorage.setItem("pickedImage", pickedImage);
         }, false);
@@ -357,25 +360,24 @@ function closeImagePicker() {
 }
 
 function pickFont(font) {
-    const selectedFontName = document.getElementById('selectedFontName');
-    selectedFontName.innerHTML = font;
-    selectedFontName.style.fontFamily = font;
+    const selectedFontName = $('#selectedFontName');
+    selectedFontName.html(font);
+    selectedFontName.css('font-family', font);
+    $('.previewContainer .sign').css('font-family', font);
     $('#selectedFont').addClass('picked');
     closeFontPicker();
     pickedFont = font;
 }
 
 function pickBathrobeColor(color) {
-    const selectedBathrobeColorName = document.getElementById('selectedBathrobeColorName');
-    selectedBathrobeColorName.innerHTML = color;
+    $('#selectedBathrobeColorName').html(color);
     $('#selectedBathrobeColor').addClass('picked');
     closeBathrobeColorPicker();
     pickedBathrobeColor = color;
 }
 
 function pickImage(image) {
-    const selectedImageName = document.getElementById('selectedImageName');
-    selectedImageName.innerHTML = image;
+    $('#selectedImageName').html(image);
     $('#selectedImage').addClass('picked');
     closeImagePicker();
     pickedImage = image;
@@ -469,21 +471,30 @@ function changePickedWorkID(clickedDot) {
 
 function pickSize(size, sizeID) {
     const sizePickerSelector = $('.sizePickerSelector');
-    const pickedSize = $('.sizePicker div');
+    const pickedSizeBlock = $('.sizePicker div');
     sizePickerSelector.css({
-        'left': pickedSize.eq(sizeID).position().left,
-        'width': pickedSize.eq(sizeID).outerWidth(true)
+        'left': pickedSizeBlock.eq(sizeID).position().left,
+        'width': pickedSizeBlock.eq(sizeID).outerWidth(true)
     });
-    pickedSize.css('color', 'var(--black)');
-    pickedSize.eq(sizeID).css('color', 'white');
+    pickedSizeBlock.css('color', 'var(--black)');
+    pickedSizeBlock.eq(sizeID).css('color', 'white');
     sizePickerSelector.addClass('active');
+    pickedSize = size;
 }
 
-function pickColor(color, colorID) {
+function pickColor(color, colorID, colorName) {
     const colorPickerItemBG = $('.signColor .colorPickerItemBG');
     const colorPickerItem = $('.signColor .colorPickerItem');
     colorPickerItemBG.removeClass('picked');
     colorPickerItem.removeClass('picked');
     colorPickerItemBG.eq(colorID).addClass('picked');
     colorPickerItem.eq(colorID).addClass('picked');
+    $('.previewContainer .sign').css('color', color);
+    pickedColor = colorName;
 }
+
+const signInput = $('#signInput');
+const sign = $('.previewContainer .sign');
+signInput.keyup(function() {
+    sign.html(signInput.val());
+});

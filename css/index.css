@@ -432,10 +432,23 @@ main {
     justify-content: center;
 }
 
-.constructor .preview {
+.constructor .previewContainer {
     height: 1039px;
     margin-top: 98px;
     z-index: 2;
+    position: relative;
+}
+
+.previewContainer .sign {
+    position: absolute;
+    top: 280px;
+    left: calc(50% - 200px / 2);
+    width: 200px;
+    text-align: center;
+    margin-left: 15px;
+    transition: all 0.2s ease;
+    font-size: 30px;
+    line-height: 1;
 }
 
 .constructorCircle {
@@ -1381,7 +1394,7 @@ footer nav .circleButton:hover {
         margin-bottom: 80px;
     }
 
-    .constructor .preview {
+    .constructor .previewContainer {
         position: absolute;
         left: calc(-50vw);
         top: 260px;
@@ -1480,7 +1493,7 @@ footer nav .circleButton:hover {
         margin-left: 520px;
     }
 
-    .constructor .preview {
+    .constructor .previewContainer {
         left: calc(-50vw - 100px);
     }
 
@@ -1566,7 +1579,7 @@ footer nav .circleButton:hover {
         display: none;
     }
 
-    .constructor .preview {
+    .constructor .previewContainer {
         left: calc(-484px / 2);
     }
 

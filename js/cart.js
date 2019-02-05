@@ -1,14 +1,20 @@
 $(document).ready(function () {
+    if (localStorage.getItem("pickedSize") !== '') {
+        $('#size').html(localStorage.getItem("pickedSize"));
+    }
     if (localStorage.getItem("signInput") !== '') {
-        document.getElementById('signInput').innerHTML = localStorage.getItem("signInput");
+        $('#signInput').html(localStorage.getItem("signInput"));
     }
     if (localStorage.getItem("pickedFont") !== '') {
-        document.getElementById('font').innerHTML = localStorage.getItem("pickedFont");
+        $('#font').html(localStorage.getItem("pickedFont"));
+    }
+    if (localStorage.getItem("pickedColor") !== '') {
+        $('#fontColor').html(localStorage.getItem("pickedColor"));
     }
     if (localStorage.getItem("pickedBathrobeColor") !== '') {
-        document.getElementById('bathrobeColor').innerHTML = localStorage.getItem("pickedBathrobeColor");
+        $('#bathrobeColor').html(localStorage.getItem("pickedBathrobeColor"));
     }
     if (localStorage.getItem("pickedImage") !== '') {
-        document.getElementById('pickedImage').innerHTML = localStorage.getItem("pickedImage");
+        $('#pickedImage').html(localStorage.getItem("pickedImage"));
     }
 });

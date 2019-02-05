@@ -152,7 +152,10 @@
   </div>
   <div class="constructorBG">
     <section class="constructor" id="constructor">
-      <img alt="" class="preview" src="img/preview.png">
+      <div class="previewContainer">
+        <img src="img/preview.png" alt="">
+        <p class="sign"></p>
+      </div>
       <div class="constructorCircle">
         <h2>Ваш уникальный халат</h2>
         <div class="constructorSecondCircle">
@@ -160,11 +163,11 @@
             <h4>Размер</h4>
             <div class="sizePickerContainer">
               <div class="sizePicker">
-                <div onclick="pickSize('S', 0)" id="sizeS">S</div>
+                <div onclick="pickSize('S', 0)">S</div>
                 <img alt="" src="img/separator.svg">
-                <div onclick="pickSize('M', 1)" id="sizeM">M</div>
+                <div onclick="pickSize('M', 1)">M</div>
                 <img alt="" src="img/separator.svg">
-                <div onclick="pickSize('L', 2)" id="sizeL">L</div>
+                <div onclick="pickSize('L', 2)">L</div>
                 <img alt="" src="img/separator.svg">
                 <div onclick="pickSize('XL', 3)">XL</div>
                 <img alt="" src="img/separator.svg">
@@ -202,19 +205,19 @@
             <div class="signColor">
               <h4>Цвет шрифта</h4>
               <div class="colorPicker">
-                <div class="colorPickerItemBG" onclick="pickColor('#ffd400', 0)">
+                <div class="colorPickerItemBG" onclick="pickColor('#ffd400', 0, 'Жёлтый')">
                   <div class="colorPickerItem" id="colorPickerItem1"></div>
                 </div>
-                <div class="colorPickerItemBG" onclick="pickColor('#9600ff', 1)">
+                <div class="colorPickerItemBG" onclick="pickColor('#9600ff', 1, 'Фиолетовый')">
                   <div class="colorPickerItem" id="colorPickerItem2"></div>
                 </div>
-                <div class="colorPickerItemBG" onclick="pickColor('#ff0000', 2)">
+                <div class="colorPickerItemBG" onclick="pickColor('#ff0000', 2, 'Красный')">
                   <div class="colorPickerItem" id="colorPickerItem3"></div>
                 </div>
-                <div class="colorPickerItemBG" onclick="pickColor('#4053ff', 3)">
+                <div class="colorPickerItemBG" onclick="pickColor('#4053ff', 3, 'Синий')">
                   <div class="colorPickerItem" id="colorPickerItem4"></div>
                 </div>
-                <div class="colorPickerItemBG" onclick="pickColor('#ff6c00', 4)">
+                <div class="colorPickerItemBG" onclick="pickColor('#ff6c00', 4, 'Оранжевый')">
                   <div class="colorPickerItem" id="colorPickerItem5"></div>
                 </div>
               </div>
