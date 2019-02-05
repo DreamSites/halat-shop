@@ -467,12 +467,16 @@ function changePickedWorkID(clickedDot) {
     }
 }
 
-function pickSize(size, margin, sizeNumber) {
+function pickSize(size, sizeID) {
     const sizePickerSelector = $('.sizePickerSelector');
-    $('.sizePicker div').eq(sizeNumber).css('color', 'white');
-    sizePickerSelector.css('margin-left', margin);
+    const pickedSize = $('.sizePicker div');
+    sizePickerSelector.css({
+        'left': pickedSize.eq(sizeID).position().left,
+        'width': pickedSize.eq(sizeID).outerWidth(true)
+    });
+    pickedSize.css('color', 'var(--black)');
+    pickedSize.eq(sizeID).css('color', 'white');
     sizePickerSelector.addClass('active');
-    pickedSize = size;
 }
 
 function pickColor(color, colorID) {
