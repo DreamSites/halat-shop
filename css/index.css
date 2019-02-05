@@ -561,6 +561,7 @@ main {
     transition: all 0.2s ease;
     overflow: hidden;
     display: grid;
+    grid-template-rows: 50px;
     position: absolute;
 }
 
@@ -575,7 +576,7 @@ main {
     -webkit-box-shadow: 0 0 10px 0 rgba(0, 9, 51, 0.2);
     box-shadow: 0 0 10px 0 rgba(0, 9, 51, 0.2);
     background-color: #ffffff;
-    grid-template-rows: repeat(7, 1fr);
+    grid-template-rows: 50px repeat(6, 1fr);
     z-index: 4;
 }
 
@@ -718,6 +719,7 @@ main {
     transition: all 0.2s ease;
     overflow: hidden;
     display: grid;
+    grid-template-rows: 50px;
     position: absolute;
 }
 
@@ -732,7 +734,7 @@ main {
     -webkit-box-shadow: 0 0 10px 0 rgba(0, 9, 51, 0.2);
     box-shadow: 0 0 10px 0 rgba(0, 9, 51, 0.2);
     background-color: #ffffff;
-    grid-template-rows: repeat(4, 1fr);
+    grid-template-rows: 50px repeat(3, 1fr);
     z-index: 4;
 }
 
@@ -757,13 +759,14 @@ main {
 #selectedBathrobeColor {
     color: var(--brown-grey);
     font-size: 16px;
-    cursor: default;
+    cursor: pointer;
     display: flex;
     transition: none;
 }
 
 #selectedBathrobeColor.active {
     border-bottom: 1px solid #d9d9d9;
+    cursor: default;
 }
 
 #selectedBathrobeColor.active:hover {
@@ -788,6 +791,7 @@ main {
     transition: all 0.2s ease;
     overflow: hidden;
     display: grid;
+    grid-template-rows: 50px;
     position: absolute;
 }
 
@@ -802,7 +806,7 @@ main {
     -webkit-box-shadow: 0 0 10px 0 rgba(0, 9, 51, 0.2);
     box-shadow: 0 0 10px 0 rgba(0, 9, 51, 0.2);
     background-color: #ffffff;
-    grid-template-rows: repeat(6, 1fr);
+    grid-template-rows: 50px repeat(5, 1fr);
     z-index: 4;
 }
 
@@ -826,13 +830,14 @@ main {
 #selectedImage {
     color: var(--brown-grey);
     font-size: 16px;
-    cursor: default;
+    cursor: pointer;
     display: flex;
     transition: none;
 }
 
 #selectedImage.active {
     border-bottom: 1px solid #d9d9d9;
+    cursor: default;
 }
 
 #selectedImage.active:hover {
