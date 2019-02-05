@@ -1,8 +1,10 @@
-let pickedSize = '';
-let pickedFont = '';
-let pickedColor = '';
-let pickedBathrobeColor = '';
-let pickedImage = '';
+let bathrobeID = 0;
+let pickedSign = [];
+let pickedSize = [];
+let pickedFont = [];
+let pickedColor = [];
+let pickedBathrobeColor = [];
+let pickedImage = [];
 
 $(document).ready(function () {
     responsiveNavigation();
@@ -72,12 +74,12 @@ $(document).ready(function () {
 
     (function (global) {
         document.getElementById("order").addEventListener("click", function () {
-            global.localStorage.setItem("pickedSize", pickedSize);
-            global.localStorage.setItem("signInput", $("#signInput").val());
-            global.localStorage.setItem("pickedFont", pickedFont);
-            global.localStorage.setItem("pickedColor", pickedColor);
-            global.localStorage.setItem("pickedBathrobeColor", pickedBathrobeColor);
-            global.localStorage.setItem("pickedImage", pickedImage);
+            global.localStorage.setItem("pickedSize", JSON.stringify(pickedSize));
+            global.localStorage.setItem("signInput", JSON.stringify(pickedSign));
+            global.localStorage.setItem("pickedFont", JSON.stringify(pickedFont));
+            global.localStorage.setItem("pickedColor", JSON.stringify(pickedColor));
+            global.localStorage.setItem("pickedBathrobeColor", JSON.stringify(pickedBathrobeColor));
+            global.localStorage.setItem("pickedImage", JSON.stringify(pickedImage));
         }, false);
     }(window));
 
@@ -128,6 +130,16 @@ $(document).ready(function () {
             updateOurWorks();
             updateOurWorksMargin();
         }
+    });
+
+    $('#order').click(function () {
+        $('.successAlert').addClass('active');
+    });
+
+    $('.successAlert a').click(function () {
+        $('.successAlert').removeClass('active');
+        clearConstructor();
+        bathrobeID += 1;
     });
 
 });
@@ -366,21 +378,21 @@ function pickFont(font) {
     $('.previewContainer .sign').css('font-family', font);
     $('#selectedFont').addClass('picked');
     closeFontPicker();
-    pickedFont = font;
+    pickedFont[bathrobeID] = font;
 }
 
 function pickBathrobeColor(color) {
     $('#selectedBathrobeColorName').html(color);
     $('#selectedBathrobeColor').addClass('picked');
     closeBathrobeColorPicker();
-    pickedBathrobeColor = color;
+    pickedBathrobeColor[bathrobeID] = color;
 }
 
 function pickImage(image) {
     $('#selectedImageName').html(image);
     $('#selectedImage').addClass('picked');
     closeImagePicker();
-    pickedImage = image;
+    pickedImage[bathrobeID] = image;
 }
 
 const ourWorksSlider = document.getElementById('ourWorksSlider');
@@ -479,7 +491,7 @@ function pickSize(size, sizeID) {
     pickedSizeBlock.css('color', 'var(--black)');
     pickedSizeBlock.eq(sizeID).css('color', 'white');
     sizePickerSelector.addClass('active');
-    pickedSize = size;
+    pickedSize[bathrobeID] = size;
 }
 
 function pickColor(color, colorID, colorName) {
@@ -490,11 +502,39 @@ function pickColor(color, colorID, colorName) {
     colorPickerItemBG.eq(colorID).addClass('picked');
     colorPickerItem.eq(colorID).addClass('picked');
     $('.previewContainer .sign').css('color', color);
-    pickedColor = colorName;
+    pickedColor[bathrobeID] = colorName;
 }
 
 const signInput = $('#signInput');
 const sign = $('.previewContainer .sign');
-signInput.keyup(function() {
+signInput.keyup(function () {
     sign.html(signInput.val());
+    pickedSign[bathrobeID] = signInput.val();
 });
+
+function clearConstructor() {
+    const previewSign = $('.previewContainer .sign');
+    $('.sizePicker div').css('color', 'var(--black)');
+    $('.sizePickerSelector').removeClass('active');
+
+    signInput.val('');
+    sign.html('');
+
+    const selectedFontName = $('#selectedFontName');
+    selectedFontName.html('Выберите шрифт');
+    selectedFontName.css('font-family', 'Ubuntu');
+    previewSign.css('font-family', 'Ubuntu');
+    $('#selectedFont').removeClass('picked');
+
+    const colorPickerItemBG = $('.signColor .colorPickerItemBG');
+    const colorPickerItem = $('.signColor .colorPickerItem');
+    colorPickerItemBG.removeClass('picked');
+    colorPickerItem.removeClass('picked');
+    previewSign.css('color', 'var(--black)');
+
+    $('#selectedBathrobeColorName').html('Выберите цвет халата');
+    $('#selectedBathrobeColor').removeClass('picked');
+
+    $('#selectedImageName').html('Выберите рисунок');
+    $('#selectedImage').removeClass('picked');
+}

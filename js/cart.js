@@ -1,20 +1,30 @@
+let bathrobeID = 0;
+let pickedSize = JSON.parse(localStorage.getItem("pickedSize"));
+let signInput = JSON.parse(localStorage.getItem("signInput"));
+let pickedFont = JSON.parse(localStorage.getItem("pickedFont"));
+let pickedColor = JSON.parse(localStorage.getItem("pickedColor"));
+let pickedBathrobeColor = JSON.parse(localStorage.getItem("pickedBathrobeColor"));
+let pickedImage = JSON.parse(localStorage.getItem("pickedImage"));
+
 $(document).ready(function () {
-    if (localStorage.getItem("pickedSize") !== '') {
-        $('#size').html(localStorage.getItem("pickedSize"));
-    }
-    if (localStorage.getItem("signInput") !== '') {
-        $('#signInput').html(localStorage.getItem("signInput"));
-    }
-    if (localStorage.getItem("pickedFont") !== '') {
-        $('#font').html(localStorage.getItem("pickedFont"));
-    }
-    if (localStorage.getItem("pickedColor") !== '') {
-        $('#fontColor').html(localStorage.getItem("pickedColor"));
-    }
-    if (localStorage.getItem("pickedBathrobeColor") !== '') {
-        $('#bathrobeColor').html(localStorage.getItem("pickedBathrobeColor"));
-    }
-    if (localStorage.getItem("pickedImage") !== '') {
-        $('#pickedImage').html(localStorage.getItem("pickedImage"));
-    }
+    getOrderInfo();
+
+    $('#previousBathrobe').click(function () {
+        bathrobeID -= 1;
+        getOrderInfo();
+    });
+
+    $('#nextBathrobe').click(function () {
+        bathrobeID += 1;
+        getOrderInfo();
+    });
 });
+
+function getOrderInfo() {
+    $('#size').html(pickedSize[bathrobeID]);
+    $('#signInput').html(signInput[bathrobeID]);
+    $('#font').html(pickedFont[bathrobeID]);
+    $('#fontColor').html(pickedColor[bathrobeID]);
+    $('#bathrobeColor').html(pickedBathrobeColor[bathrobeID]);
+    $('#pickedImage').html(pickedImage[bathrobeID]);
+}

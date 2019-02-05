@@ -967,6 +967,45 @@ main {
     z-index: 3;
 }
 
+.successAlert {
+    position: absolute;
+    left: 300px;
+    top: 230px;
+    width: 700px;
+    height: 700px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    background-color: white;
+    z-index: -2;
+    transition: all 0.2s ease;
+    opacity: 0;
+}
+
+.successAlert.active {
+    z-index: 10;
+    opacity: 1;
+}
+
+.successAlert h3 {
+    margin-top: 30px;
+}
+
+.successAlert p {
+    text-align: center;
+    width: 533px;
+    margin-top: 30px;
+}
+
+.successAlert a {
+    text-decoration: none;
+    color: var(--sky-blue);
+    font-size: 20px;
+    margin-top: 20px;
+    cursor: pointer;
+}
+
 .delivery h2 {
     text-align: center;
     margin-top: 150px;
