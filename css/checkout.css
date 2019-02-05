@@ -65,3 +65,99 @@ nav {
     left: 1080px;
     top: 480px;
 }
+
+.deliveryInfo {
+    display: flex;
+    flex-direction: column;
+    align-content: space-between;
+    justify-content: space-between;
+    margin-left: 400px;
+    margin-top:250px;
+}
+
+.deliveryWay {
+    margin-left: -100px;
+}
+
+.city {
+    margin-left: -100px;
+}
+.address {
+    margin-left: 250px;
+    margin-top: -85px;
+}
+
+
+.deliveryWay {
+    margin-top: 50px;
+}
+
+.deliveryTime {
+    margin-left: 250px;
+    margin-top: 45px;
+}
+
+.deliveryDate {
+    margin-left: 250px;
+    margin-top: -85px;
+}
+
+.addressInput {
+    width: 300px;
+    height: 50px;
+    border-radius: 25px;
+    background-color: var(--pale-grey);
+    border: none;
+    padding-left: 20px;
+    font-size: 16px;
+    color: var(--greyish-brown);
+    transition: all 0.2s ease;
+}
+
+.deliveryPickerContainer {
+    width: 300px;
+    height: 50px;
+    border-radius: 25px;
+    background-color: var(--pale-grey);
+    border: none;
+    padding-left: 20px;
+    font-size: 16px;
+    color: var(--greyish-brown);
+    transition: all 0.2s ease;
+}
+
+.deliveryTimeContainer {
+    width: 300px;
+    height: 50px;
+    border-radius: 25px;
+    background-color: var(--pale-grey);
+    border: none;
+    padding-left: 20px;
+    font-size: 16px;
+    color: var(--greyish-brown);
+    transition: all 0.2s ease;
+}
+
+.cityPickerContainer {
+    width: 300px;
+    height: 50px;
+    border-radius: 25px;
+    background-color: var(--pale-grey);
+    border: none;
+    padding-left: 20px;
+    font-size: 16px;
+    color: var(--greyish-brown);
+    transition: all 0.2s ease;
+}
+
+.deliveryDateContainer {
+    width: 300px;
+    height: 50px;
+    border-radius: 25px;
+    background-color: var(--pale-grey);
+    border: none;
+    padding-left: 20px;
+    font-size: 16px;
+    color: var(--greyish-brown);
+    transition: all 0.2s ease;
+}
