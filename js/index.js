@@ -3,6 +3,12 @@ let bathrobeAmount = 0;
 if (localStorage.getItem("bathrobeAmount") !== null) {
     bathrobeAmount = parseInt(localStorage.getItem("bathrobeAmount"), 10);
     bathrobeID = bathrobeAmount;
+    if (bathrobeAmount > 0) {
+        $('#headerOpenCartButton span').html(bathrobeAmount);
+        $('#footerOpenCartButton span').html(bathrobeAmount);
+        $('#mobileHeaderOpenCartButton span').html(bathrobeAmount);
+        $('#mobileFooterOpenCartButton span').html(bathrobeAmount);
+    }
 }
 let pickedSign = [];
 let pickedSize = [];
@@ -161,6 +167,12 @@ $(document).ready(function () {
             localStorage.setItem("pickedColorHEX", JSON.stringify(pickedColorHEX));
             localStorage.setItem("pickedBathrobeColor", JSON.stringify(pickedBathrobeColor));
             localStorage.setItem("pickedImage", JSON.stringify(pickedImage));
+            if (bathrobeAmount > 0) {
+                $('#headerOpenCartButton span').html(bathrobeAmount);
+                $('#footerOpenCartButton span').html(bathrobeAmount);
+                $('#mobileHeaderOpenCartButton span').html(bathrobeAmount);
+                $('#mobileFooterOpenCartButton span').html(bathrobeAmount);
+            }
         } else {
             alert('Сначала заполните все поля!');
         }
@@ -351,17 +363,23 @@ function responsiveNavigation() {
             '<div class="circleButton" id="openNavigation">' +
             '   <img src="img/navigation.svg" alt="">' +
             '</div>' +
-            '<div class="circleButton" onclick="window.location=\'cart.html\';">' +
+            '<div class="circleButton" onclick="window.location=\'cart.html\';" id="mobileHeaderOpenCartButton">' +
             '   <img src="img/cart.svg" alt="">' +
+            '   <span></span>' +
             '</div>' +
             '<img src="img/logo.png" alt="" class="logo">'
         );
         $('footer nav').html(
             '<img src="img/logo.png" alt="" class="logo">' +
-            '<div class="circleButton" onclick="window.location=\'cart.html\';">' +
+            '<div class="circleButton" onclick="window.location=\'cart.html\';" id="mobileFooterOpenCartButton">' +
             '   <img src="img/cartBold.svg" alt="">' +
+            '   <span></span>' +
             '</div>'
         );
+        if (bathrobeAmount > 0) {
+            $('#mobileHeaderOpenCartButton span').html(bathrobeAmount);
+            $('#mobileFooterOpenCartButton span').html(bathrobeAmount);
+        }
     }
     if ($(window).width() < 760) {
         $('.constructor h2').html('Ваш уникальный<br>халат');

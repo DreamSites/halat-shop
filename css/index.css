@@ -116,14 +116,26 @@ header .mainButton {
     margin-right: 46px;
 }
 
-.headerRightBG .circleButton {
+#headerOpenCartButton {
     -webkit-box-shadow: none;
     box-shadow: none;
 }
 
-.headerRightBG .circleButton:hover {
+#headerOpenCartButton:hover {
     -webkit-box-shadow: 0 0 20px 0 rgba(0, 9, 51, 0.1);
     box-shadow: 0 0 20px 0 rgba(0, 9, 51, 0.1);
+}
+
+#headerOpenCartButton img {
+    position: absolute;
+}
+
+#headerOpenCartButton span {
+    position: absolute;
+    color: var(--sky-blue);
+    font-size: 14px;
+    font-weight: 500;
+    margin-top: 3px;
 }
 
 #scrollDown {
@@ -1121,15 +1133,25 @@ footer {
     padding-top: 178px;
 }
 
-footer nav .circleButton {
+#footerOpenCartButton {
     margin-left: 59px;
     -webkit-box-shadow: 0 0 10px 0 rgba(0, 9, 51, 0.15);
     box-shadow: 0 0 10px 0 rgba(0, 9, 51, 0.15);
 }
 
-footer nav .circleButton:hover {
+#footerOpenCartButton:hover {
     -webkit-box-shadow: 0 0 20px 0 rgba(0, 9, 51, 0.15);
     box-shadow: 0 0 20px 0 rgba(0, 9, 51, 0.15);
+}
+
+#footerOpenCartButton img {
+    position: absolute;
+}
+
+#footerOpenCartButton span {
+    position: absolute;
+    color: white;
+    margin-top: 3px;
 }
 
 .info {
@@ -1351,6 +1373,26 @@ footer nav .circleButton:hover {
         margin-top: 30px;
         margin-bottom: 60px;
         margin-left: 0;
+    }
+
+    #mobileHeaderOpenCartButton img {
+        position: absolute;
+    }
+
+    #mobileHeaderOpenCartButton span {
+        position: absolute;
+        color: var(--sky-blue);
+        margin-top: 3px;
+    }
+
+    #mobileFooterOpenCartButton img {
+        position: absolute;
+    }
+
+    #mobileFooterOpenCartButton span {
+        position: absolute;
+        color: white;
+        margin-top: 3px;
     }
 }
 
