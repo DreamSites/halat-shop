@@ -5,6 +5,14 @@ main {
     position: relative;
 }
 
+.logo  {
+    margin-left: -70px;
+}
+
+.leftCircle h2 {
+    margin-left: -200px;
+}
+
 .leftCircle {
     width: 1781px;
     height: 1781px;
@@ -14,7 +22,7 @@ main {
     border-radius: 50%;
     position: absolute;
     left: calc(-1479px + 50vw);
-    top: -198px;
+    top: -250px;
     padding-left: 641px;
     padding-top: 245px;
     z-index: -2;
@@ -54,13 +62,46 @@ nav {
     margin-right: 10px;
 }
 
-.orderInfoCircle  span {
+ .orderInfoCircle span {
     font-size: 16px;
     font-weight: 500;
     color: var(--brown-grey);
     margin-top: 20px;
     margin-left: 90px;
 }
+
+ .deliveryInfo span {
+     font-size: 16px;
+     font-weight: 500;
+     color: var(--brown-grey);
+
+
+ }
+
+ .city img {
+     margin-left: 210px;
+     margin-top: 20px;
+ }
+
+ .deliveryWay img {
+     margin-left: 265px;
+     margin-top: 20px;
+ }
+
+ .deliveryDate img {
+     margin-left: 320px;
+     margin-top: 20px;
+ }
+
+ .deliveryTime img {
+     margin-left: 300px;
+     margin-top: 20px;
+ }
+
+ .location img {
+     margin-left: 320px;
+     margin-top: 20px;
+ }
 
 .orderInfoCircleContent {
     display: flex;
@@ -101,7 +142,33 @@ nav {
     align-content: space-between;
     justify-content: space-between;
     margin-left: 200px;
-    margin-top:250px;
+    margin-top: 220px;
+}
+
+.stage a {
+    text-decoration: none;
+    color: var(--brown-grey);
+    padding-right: 15px;
+    padding-left: 15px;
+}
+
+.stage #active {
+    color: var(--greyish-brown);
+
+}
+
+.deliveryInfo span {
+    margin-top: 10px;
+}
+
+.stage img {
+    margin-bottom: -5px;
+}
+
+.stage {
+   position: absolute;
+   z-index: -1;
+   margin-left: -1010px;
 }
 
 .deliveryWay {
