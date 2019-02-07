@@ -1691,6 +1691,11 @@ footer nav .circleButton:hover {
         display: none;
     }
 
+    .successAlert h3 {
+        width: calc(100vw - 40px);
+        max-width: 350px;
+    }
+
     .successAlert p {
         width: calc(100vw - 40px);
         max-width: 350px;
