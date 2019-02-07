@@ -1,8 +1,6 @@
 let bathrobeID = 0;
 let bathrobeAmount = 0;
-if (localStorage.getItem("bathrobeAmount") === null) {
-    bathrobeAmount = 0
-} else {
+if (localStorage.getItem("bathrobeAmount") !== null) {
     bathrobeAmount = parseInt(localStorage.getItem("bathrobeAmount"), 10);
     bathrobeID = bathrobeAmount;
 }
@@ -12,6 +10,25 @@ let pickedFont = [];
 let pickedColor = [];
 let pickedBathrobeColor = [];
 let pickedImage = [];
+
+if (localStorage.getItem("signInput") !== null) {
+    pickedSign = JSON.parse(localStorage.getItem("signInput"));
+}
+if (localStorage.getItem("pickedSize") !== null) {
+    pickedSize = JSON.parse(localStorage.getItem("pickedSize"));
+}
+if (localStorage.getItem("pickedFont") !== null) {
+    pickedFont = JSON.parse(localStorage.getItem("pickedFont"));
+}
+if (localStorage.getItem("pickedColor") !== null) {
+    pickedColor = JSON.parse(localStorage.getItem("pickedColor"));
+}
+if (localStorage.getItem("pickedBathrobeColor") !== null) {
+    pickedBathrobeColor = JSON.parse(localStorage.getItem("pickedBathrobeColor"));
+}
+if (localStorage.getItem("pickedImage") !== null) {
+    pickedImage = JSON.parse(localStorage.getItem("pickedImage"));
+}
 
 $(document).ready(function () {
     responsiveNavigation();
@@ -79,18 +96,6 @@ $(document).ready(function () {
         getReview();
     });
 
-    (function (global) {
-        document.getElementById("order").addEventListener("click", function () {
-            global.localStorage.setItem("bathrobeAmount", bathrobeAmount);
-            global.localStorage.setItem("pickedSize", JSON.stringify(pickedSize));
-            global.localStorage.setItem("signInput", JSON.stringify(pickedSign));
-            global.localStorage.setItem("pickedFont", JSON.stringify(pickedFont));
-            global.localStorage.setItem("pickedColor", JSON.stringify(pickedColor));
-            global.localStorage.setItem("pickedBathrobeColor", JSON.stringify(pickedBathrobeColor));
-            global.localStorage.setItem("pickedImage", JSON.stringify(pickedImage));
-        }, false);
-    }(window));
-
     $('#selectedFont').click(function () {
         openFontPicker();
     });
@@ -142,13 +147,20 @@ $(document).ready(function () {
 
     $('#order').click(function () {
         $('.successAlert').addClass('active');
+        bathrobeAmount += 1;
+        localStorage.setItem("bathrobeAmount", bathrobeAmount);
+        localStorage.setItem("pickedSize", JSON.stringify(pickedSize));
+        localStorage.setItem("signInput", JSON.stringify(pickedSign));
+        localStorage.setItem("pickedFont", JSON.stringify(pickedFont));
+        localStorage.setItem("pickedColor", JSON.stringify(pickedColor));
+        localStorage.setItem("pickedBathrobeColor", JSON.stringify(pickedBathrobeColor));
+        localStorage.setItem("pickedImage", JSON.stringify(pickedImage));
     });
 
     $('.successAlert a').click(function () {
         $('.successAlert').removeClass('active');
         clearConstructor();
         bathrobeID += 1;
-        bathrobeAmount += 1;
     });
 
 });
