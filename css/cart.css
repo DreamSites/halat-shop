@@ -37,13 +37,25 @@ main {
     opacity: 0;
 }
 
-.preview {
+.previewImageContainer {
     width: 447px;
     height: 1039px;
-    position: absolute;
+    position: relative;
     top: 326px;
     left: 790px;
     z-index: 2;
+}
+
+#sign {
+    position: absolute;
+    top: 280px;
+    left: calc(50% - 200px / 2);
+    width: 200px;
+    text-align: center;
+    margin-left: 15px;
+    transition: all 0.2s ease;
+    font-size: 30px;
+    line-height: 1;
 }
 
 .whiteCircle {
@@ -125,6 +137,7 @@ nav {
 
 .info {
     margin-top: 20px;
+    transition: all 0.2s ease;
 }
 
 .info span {
@@ -192,7 +205,7 @@ nav {
         left: 1100px;
     }
 
-    .preview {
+    .previewImageContainer {
         margin-left: 100px;
     }
 }
@@ -241,7 +254,7 @@ nav {
         top: 0;
     }
 
-    .preview {
+    .previewImageContainer {
         left: -100px;
         top: 150px;
         z-index: 1;
@@ -279,7 +292,7 @@ nav {
 }
 
 @media (max-width: 880px) {
-    .preview {
+    .previewImageContainer {
         left: -200px;
     }
 }
@@ -338,7 +351,7 @@ nav {
         transform: scale(0.9);
     }
 
-    .preview {
+    .previewImageContainer {
         left: calc(50vw - 447px / 2 - 19px);
         margin-left: 0;
         top: 167px;

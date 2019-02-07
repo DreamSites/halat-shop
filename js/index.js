@@ -8,6 +8,7 @@ let pickedSign = [];
 let pickedSize = [];
 let pickedFont = [];
 let pickedColor = [];
+let pickedColorHEX = [];
 let pickedBathrobeColor = [];
 let pickedImage = [];
 
@@ -22,6 +23,9 @@ if (localStorage.getItem("pickedFont") !== null) {
 }
 if (localStorage.getItem("pickedColor") !== null) {
     pickedColor = JSON.parse(localStorage.getItem("pickedColor"));
+}
+if (localStorage.getItem("pickedColorHEX") !== null) {
+    pickedColorHEX = JSON.parse(localStorage.getItem("pickedColorHEX"));
 }
 if (localStorage.getItem("pickedBathrobeColor") !== null) {
     pickedBathrobeColor = JSON.parse(localStorage.getItem("pickedBathrobeColor"));
@@ -154,6 +158,7 @@ $(document).ready(function () {
             localStorage.setItem("signInput", JSON.stringify(pickedSign));
             localStorage.setItem("pickedFont", JSON.stringify(pickedFont));
             localStorage.setItem("pickedColor", JSON.stringify(pickedColor));
+            localStorage.setItem("pickedColorHEX", JSON.stringify(pickedColorHEX));
             localStorage.setItem("pickedBathrobeColor", JSON.stringify(pickedBathrobeColor));
             localStorage.setItem("pickedImage", JSON.stringify(pickedImage));
         } else {
@@ -528,6 +533,7 @@ function pickColor(color, colorID, colorName) {
     colorPickerItem.eq(colorID).addClass('picked');
     $('.previewContainer .sign').css('color', color);
     pickedColor[bathrobeID] = colorName;
+    pickedColorHEX[bathrobeID] = color;
 }
 
 const signInput = $('#signInput');

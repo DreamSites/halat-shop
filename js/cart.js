@@ -4,6 +4,7 @@ let pickedSize = JSON.parse(localStorage.getItem("pickedSize"));
 let signInput = JSON.parse(localStorage.getItem("signInput"));
 let pickedFont = JSON.parse(localStorage.getItem("pickedFont"));
 let pickedColor = JSON.parse(localStorage.getItem("pickedColor"));
+let pickedColorHEX = JSON.parse(localStorage.getItem("pickedColorHEX"));
 let pickedBathrobeColor = JSON.parse(localStorage.getItem("pickedBathrobeColor"));
 let pickedImage = JSON.parse(localStorage.getItem("pickedImage"));
 
@@ -30,6 +31,7 @@ $(document).ready(function () {
         signInput.splice(bathrobeID, 1);
         pickedFont.splice(bathrobeID, 1);
         pickedColor.splice(bathrobeID, 1);
+        pickedColorHEX.splice(bathrobeID, 1);
         pickedBathrobeColor.splice(bathrobeID, 1);
         pickedImage.splice(bathrobeID, 1);
         if (bathrobeID + 1 === bathrobeAmount) {
@@ -44,6 +46,7 @@ $(document).ready(function () {
         localStorage.setItem("signInput", JSON.stringify(signInput));
         localStorage.setItem("pickedFont", JSON.stringify(pickedFont));
         localStorage.setItem("pickedColor", JSON.stringify(pickedColor));
+        localStorage.setItem("pickedColorHEX", JSON.stringify(pickedColorHEX));
         localStorage.setItem("pickedBathrobeColor", JSON.stringify(pickedBathrobeColor));
         localStorage.setItem("pickedImage", JSON.stringify(pickedImage));
     });
@@ -58,6 +61,10 @@ function getOrderInfo() {
     $('#pickedImage').html(pickedImage[bathrobeID]);
     updateBathrobeID();
     $('#fullPrice').html(bathrobeAmount * 1790 + '₽');
+
+    const sign = $('#sign');
+    sign.html(signInput[bathrobeID]);
+    sign.css({'font-family': pickedFont[bathrobeID], 'color': pickedColorHEX[bathrobeID]});
 
     if (bathrobeID < bathrobeAmount) {
         $('#nextBathrobe').addClass('active');
