@@ -146,15 +146,19 @@ $(document).ready(function () {
     });
 
     $('#order').click(function () {
-        $('.successAlert').addClass('active');
-        bathrobeAmount += 1;
-        localStorage.setItem("bathrobeAmount", bathrobeAmount);
-        localStorage.setItem("pickedSize", JSON.stringify(pickedSize));
-        localStorage.setItem("signInput", JSON.stringify(pickedSign));
-        localStorage.setItem("pickedFont", JSON.stringify(pickedFont));
-        localStorage.setItem("pickedColor", JSON.stringify(pickedColor));
-        localStorage.setItem("pickedBathrobeColor", JSON.stringify(pickedBathrobeColor));
-        localStorage.setItem("pickedImage", JSON.stringify(pickedImage));
+        if (pickedSize.length > 0 && pickedSign.length > 0 && pickedFont.length > 0 && pickedColor.length > 0 && pickedBathrobeColor.length > 0 && pickedImage.length > 0) {
+            $('.successAlert').addClass('active');
+            bathrobeAmount += 1;
+            localStorage.setItem("bathrobeAmount", bathrobeAmount);
+            localStorage.setItem("pickedSize", JSON.stringify(pickedSize));
+            localStorage.setItem("signInput", JSON.stringify(pickedSign));
+            localStorage.setItem("pickedFont", JSON.stringify(pickedFont));
+            localStorage.setItem("pickedColor", JSON.stringify(pickedColor));
+            localStorage.setItem("pickedBathrobeColor", JSON.stringify(pickedBathrobeColor));
+            localStorage.setItem("pickedImage", JSON.stringify(pickedImage));
+        } else {
+            alert('Сначала заполните все поля!');
+        }
     });
 
     $('.successAlert a').click(function () {
