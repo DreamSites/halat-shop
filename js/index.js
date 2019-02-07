@@ -1,4 +1,11 @@
 let bathrobeID = 0;
+let bathrobeAmount = 0;
+if (localStorage.getItem("bathrobeAmount") === null) {
+    bathrobeAmount = 0
+} else {
+    bathrobeAmount = parseInt(localStorage.getItem("bathrobeAmount"), 10);
+    bathrobeID = bathrobeAmount;
+}
 let pickedSign = [];
 let pickedSize = [];
 let pickedFont = [];
@@ -74,6 +81,7 @@ $(document).ready(function () {
 
     (function (global) {
         document.getElementById("order").addEventListener("click", function () {
+            global.localStorage.setItem("bathrobeAmount", bathrobeAmount);
             global.localStorage.setItem("pickedSize", JSON.stringify(pickedSize));
             global.localStorage.setItem("signInput", JSON.stringify(pickedSign));
             global.localStorage.setItem("pickedFont", JSON.stringify(pickedFont));
@@ -140,6 +148,7 @@ $(document).ready(function () {
         $('.successAlert').removeClass('active');
         clearConstructor();
         bathrobeID += 1;
+        bathrobeAmount += 1;
     });
 
 });

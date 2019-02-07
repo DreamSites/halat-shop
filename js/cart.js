@@ -1,4 +1,5 @@
 let bathrobeID = 0;
+let bathrobeAmount = localStorage.getItem("bathrobeAmount");
 let pickedSize = JSON.parse(localStorage.getItem("pickedSize"));
 let signInput = JSON.parse(localStorage.getItem("signInput"));
 let pickedFont = JSON.parse(localStorage.getItem("pickedFont"));
@@ -8,6 +9,7 @@ let pickedImage = JSON.parse(localStorage.getItem("pickedImage"));
 
 $(document).ready(function () {
     getOrderInfo();
+
 
     $('#previousBathrobe').click(function () {
         bathrobeID -= 1;
@@ -27,4 +29,22 @@ function getOrderInfo() {
     $('#fontColor').html(pickedColor[bathrobeID]);
     $('#bathrobeColor').html(pickedBathrobeColor[bathrobeID]);
     $('#pickedImage').html(pickedImage[bathrobeID]);
+    updateBathrobeID();
+    $('#fullPrice').html((parseInt(bathrobeAmount, 10) + 1) * 1790 + '₽');
+
+    if (bathrobeID === parseInt(bathrobeAmount, 10) && bathrobeID !== 0) {
+        $('#nextBathrobe').removeClass('active');
+        $('#nextBathrobe img').attr('src', 'img/rightArrowNotActive.svg');
+        $('#previousBathrobe').addClass('active');
+        $('#previousBathrobe img').attr('src', 'img/leftArrowActive.svg');
+    } else if (bathrobeID === 0) {
+        $('#previousBathrobe').removeClass('active');
+        $('#previousBathrobe img').attr('src', 'img/leftArrowNotActive.svg');
+        $('#nextBathrobe').addClass('active');
+        $('#nextBathrobe img').attr('src', 'img/rightArrowActive.svg');
+    }
+}
+
+function updateBathrobeID() {
+    $('#bathrobeID').html((bathrobeID + 1) + '/' + (parseInt(bathrobeAmount, 10) + 1));
 }
