@@ -8,6 +8,7 @@ let pickedBathrobeColor = JSON.parse(localStorage.getItem("pickedBathrobeColor")
 let pickedImage = JSON.parse(localStorage.getItem("pickedImage"));
 
 $(document).ready(function () {
+    checkCartEmptiness();
     getOrderInfo();
 
     $('#previousBathrobe').click(function () {
@@ -35,6 +36,7 @@ $(document).ready(function () {
             bathrobeID -= 1;
         }
         bathrobeAmount -= 1;
+        checkCartEmptiness();
         getOrderInfo();
 
         localStorage.setItem("bathrobeAmount", bathrobeAmount);
@@ -77,4 +79,16 @@ function getOrderInfo() {
 
 function updateBathrobeID() {
     $('#bathrobeID').html((bathrobeID + 1) + '/' + bathrobeAmount);
+}
+
+function checkCartEmptiness() {
+    if (bathrobeAmount === 0) {
+        $('.orderInfo').css({'opacity': 0, 'z-index': -1, 'user-select': 'none', 'cursor': 'default'});
+        $('.previewContainer').css('opacity', 0);
+        $('.cartIsEmpty').css({'opacity': 1, 'z-index': 1});
+    } else {
+        $('.cartIsEmpty').css({'opacity': 0, 'z-index': -10});
+        $('.orderInfo').css({'opacity': 1, 'z-index': 'initial'});
+        $('.previewContainer').css('opacity', 1);
+    }
 }
