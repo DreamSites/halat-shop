@@ -172,6 +172,16 @@ $(document).ready(function () {
         bathrobeID += 1;
     });
 
+    $('.headerLeftBG .mainButton').click(function () {
+        const constructor = $('.previewContainer');
+        if (constructor.length !== 0) {
+            $('html, body').animate({
+                scrollTop: constructor.offset().top
+            }, 500);
+        }
+        return false;
+    });
+
 });
 
 
