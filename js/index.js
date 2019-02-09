@@ -243,25 +243,6 @@ function reviewsMoveTouch(e) {
                 getReview();
             }
         }
-    } else {
-        //sliding vertically
-        if (diffY > 0) {
-            // swiped up
-            const constructor = $('.constructor');
-            if (constructor.length !== 0) {
-                $('html, body').animate({
-                    scrollTop: constructor.offset().top
-                }, 500);
-            }
-        } else {
-            // swiped down
-            const ourWorks = $('.ourWorks');
-            if (ourWorks.length !== 0) {
-                $('html, body').animate({
-                    scrollTop: ourWorks.offset().top
-                }, 500);
-            }
-        }
     }
 
     initialX = null;
@@ -536,25 +517,6 @@ function ourWorkMoveTouch(e) {
                 pickedWorkID -= 1;
                 updateOurWorks();
                 updateOurWorksMargin();
-            }
-        }
-    } else {
-        //sliding vertically
-        if (diffY > 0) {
-            // swiped up
-            const reviews = $('.reviews');
-            if (reviews.length !== 0) {
-                $('html, body').animate({
-                    scrollTop: reviews.offset().top
-                }, 500);
-            }
-        } else {
-            // swiped down
-            const header = $('header');
-            if (header.length !== 0) {
-                $('html, body').animate({
-                    scrollTop: header.offset().top
-                }, 500);
             }
         }
     }
