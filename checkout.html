@@ -10,7 +10,6 @@
   <link href="css/fonts.css" rel="stylesheet">
   <link href="css/checkout.css" rel="stylesheet">
 
-
   <link href="https://fonts.googleapis.com/css?family=Ubuntu:400,500" rel="stylesheet">
 
   <script src="https://www.gstatic.com/firebasejs/5.7.3/firebase.js"></script>
@@ -28,50 +27,61 @@
   </script>
 
   <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
-  <script src="js/checkout.js" type="text/javascript"></script>
 
 </head>
 <body>
 <main>
   <div class="leftCircle">
+    <h2>Оформление заказа</h2>
     <div class="deliveryInfo active">
-      <h2>Оформление заказа</h2>
-      <div class="city">
+      <div class="deliveryInfoItem" id="city">
         <h4>Город</h4>
-        <div class="cityPickerContainer">
-          <span id="selectedCity">Выберите город</span>
-          <img alt="" class="selectorArrow" src="img/selectorOpenArrow.svg">
+        <div class="deliveryPickerContainer">
+          <div class="deliveryPicker" id="cityPicker">
+            <div class="deliveryPickerItem selected" id="selectedCity">
+              <span id="selectedCityName">Выберите город</span>
+              <img alt="" class="selectorArrow" src="img/selectorOpenArrow.svg">
+            </div>
+            <div class="deliveryPickerItem" id="cityPickerItem1" onclick="pickCity('Москва')">Москва</div>
+            <div class="deliveryPickerItem" id="cityPickerItem2" onclick="pickCity('Санкт-Петербург')">Санкт-Петербург
+            </div>
+          </div>
         </div>
       </div>
-      <div class="address">
+      <div class="deliveryInfoItem" id="address">
         <h4>Адрес</h4>
         <input class="addressInput" id="addressInput" placeholder="Улица, дом, квартира, этаж" type="text">
       </div>
-      <div class="deliveryWay">
+      <div class="deliveryInfoItem" id="deliveryWay">
         <h4>Способ получения</h4>
         <div class="deliveryPickerContainer">
-          <span id="selectedDelivery">Доставка</span>
-          <img alt="" class="selectorArrow" src="img/selectorOpenArrow.svg">
+          <div class="deliveryPicker" id="deliveryWayPicker">
+            <div class="deliveryPickerItem selected" id="selectedDeliveryWay">
+              <span id="selectedDeliveryWayName">Выберите город</span>
+              <img alt="" class="selectorArrow" src="img/selectorOpenArrow.svg">
+            </div>
+            <div class="deliveryPickerItem" id="deliveryWayPickerItem1" onclick="pickDeliveryWay('Доставка')">Доставка
+            </div>
+            <div class="deliveryPickerItem" id="deliveryWayPickerItem2"
+                 onclick="pickDeliveryWay('Самовывоз из магазина')">Самовывоз из магазина
+            </div>
+            <div class="deliveryPickerItem" id="deliveryWayPickerItem3" onclick="pickDeliveryWay('Пункт BoxBerry')">
+              Пункт BoxBerry
+            </div>
+          </div>
         </div>
       </div>
-      <div class="deliveryDate">
+      <div class="deliveryInfoItem" id="deliveryDate">
         <h4>Дата</h4>
-        <div class="deliveryDateContainer">
+        <div class="deliveryPickerContainer" id="deliveryDatePickerContainer">
           <span id="selectedDeliveryDate">26</span>
           <img alt="" class="selectorArrow" src="img/selectorOpenArrow.svg">
         </div>
       </div>
-      <div class="deliveryTime">
+      <div class="deliveryInfoItem" id="deliveryTime">
         <h4>Время</h4>
-        <div class="deliveryTimeContainer">
+        <div class="deliveryPickerContainer" id="deliveryTimePickerContainer">
           <span id="selectedDeliveryTime">89:89</span>
-          <img alt="" class="selectorArrow" src="img/selectorOpenArrow.svg">
-        </div>
-      </div>
-      <div class="location">
-        <h4>Местоположение</h4>
-        <div class="locationContainer">
-          <span id="selectedLocation">89</span>
           <img alt="" class="selectorArrow" src="img/selectorOpenArrow.svg">
         </div>
       </div>
@@ -104,6 +114,9 @@
       <p class="allPrice"></p>
     </div>
   </div>
+  <div class="checkoutEnd">
+    <img alt="" src="img/orderStage5.svg">
+  </div>
   <nav>
     <div class="navItem">
       <img alt="" src="img/phoneBlue.svg">
@@ -123,5 +136,6 @@
     <img alt="" class="logo" src="img/logo.png">
   </nav>
 </main>
+<script src="js/checkout.js" type="text/javascript"></script>
 </body>
 </html>
