@@ -1,123 +1,127 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-    <meta charset="UTF-8">
-    <meta content="width=device-width, initial-scale=1.0" name="viewport">
-    <meta content="ie=edge" http-equiv="X-UA-Compatible">
-    <title>Магазин халатов — Оформление заказа</title>
+  <meta charset="UTF-8">
+  <meta content="width=device-width, initial-scale=1.0" name="viewport">
+  <meta content="ie=edge" http-equiv="X-UA-Compatible">
+  <title>Магазин халатов — Оформление заказа</title>
 
-    <link href="css/main.css" rel="stylesheet">
-    <link href="css/fonts.css" rel="stylesheet">
-    <link href="css/checkout.css" rel="stylesheet">
-    
+  <link href="css/main.css" rel="stylesheet">
+  <link href="css/fonts.css" rel="stylesheet">
+  <link href="css/checkout.css" rel="stylesheet">
 
-    <link href="https://fonts.googleapis.com/css?family=Ubuntu:400,500" rel="stylesheet">
 
-    <script src="https://www.gstatic.com/firebasejs/5.7.3/firebase.js"></script>
-    <script>
-        // Initialize Firebase
-        const config = {
-            apiKey: "AIzaSyDJzKsIQ2FoqBK3XdxZMU95oWBXykq7cRo",
-            authDomain: "halat-shop.firebaseapp.com",
-            databaseURL: "https://halat-shop.firebaseio.com",
-            projectId: "halat-shop",
-            storageBucket: "halat-shop.appspot.com",
-            messagingSenderId: "560243577039"
-        };
-        firebase.initializeApp(config);
-    </script>
+  <link href="https://fonts.googleapis.com/css?family=Ubuntu:400,500" rel="stylesheet">
 
-    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
-    <script src="js/checkout.js" type="text/javascript"></script>
+  <script src="https://www.gstatic.com/firebasejs/5.7.3/firebase.js"></script>
+  <script>
+      // Initialize Firebase
+      const config = {
+          apiKey: "AIzaSyDJzKsIQ2FoqBK3XdxZMU95oWBXykq7cRo",
+          authDomain: "halat-shop.firebaseapp.com",
+          databaseURL: "https://halat-shop.firebaseio.com",
+          projectId: "halat-shop",
+          storageBucket: "halat-shop.appspot.com",
+          messagingSenderId: "560243577039"
+      };
+      firebase.initializeApp(config);
+  </script>
+
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+  <script src="js/checkout.js" type="text/javascript"></script>
 
 </head>
 <body>
 <main>
-<div class="leftCircle">
-    <div class="deliveryInfo">
-        <h2>Оформление заказа</h2>
-        <div class="city">
-            <h4>Город</h4>
-            <div class="cityPickerContainer">
-                <span id="selectedCity">Выберите город</span>
-                <img alt="" class="selectorArrow" src="img/selectorOpenArrow.svg">
-            </div>
+  <div class="leftCircle">
+    <div class="deliveryInfo active">
+      <h2>Оформление заказа</h2>
+      <div class="city">
+        <h4>Город</h4>
+        <div class="cityPickerContainer">
+          <span id="selectedCity">Выберите город</span>
+          <img alt="" class="selectorArrow" src="img/selectorOpenArrow.svg">
         </div>
-        <div class="address">
-            <h4>Адрес</h4>
-            <input class="addressInput" id="addressInput" placeholder="Улица, дом, квартира, этаж" type="text">
+      </div>
+      <div class="address">
+        <h4>Адрес</h4>
+        <input class="addressInput" id="addressInput" placeholder="Улица, дом, квартира, этаж" type="text">
+      </div>
+      <div class="deliveryWay">
+        <h4>Способ получения</h4>
+        <div class="deliveryPickerContainer">
+          <span id="selectedDelivery">Доставка</span>
+          <img alt="" class="selectorArrow" src="img/selectorOpenArrow.svg">
         </div>
-        <div class="deliveryWay">
-            <h4>Способ получения</h4>
-            <div class="deliveryPickerContainer">
-                        <span id="selectedDelivery">Доставка</span>
-                        <img alt="" class="selectorArrow" src="img/selectorOpenArrow.svg">
-                    </div>
-                </div>
-        <div class="deliveryDate">
-            <h4>Дата</h4>
-            <div class="deliveryDateContainer">
-                <span id="selectedDeliveryDate">26</span>
-                <img alt="" class="selectorArrow" src="img/selectorOpenArrow.svg">
-            </div>
+      </div>
+      <div class="deliveryDate">
+        <h4>Дата</h4>
+        <div class="deliveryDateContainer">
+          <span id="selectedDeliveryDate">26</span>
+          <img alt="" class="selectorArrow" src="img/selectorOpenArrow.svg">
         </div>
-        <div class="deliveryTime">
-            <h4>Время</h4>
-            <div class="deliveryTimeContainer">
-                <span id="selectedDeliveryTime">89:89</span>
-                <img alt="" class="selectorArrow" src="img/selectorOpenArrow.svg">
-            </div>
+      </div>
+      <div class="deliveryTime">
+        <h4>Время</h4>
+        <div class="deliveryTimeContainer">
+          <span id="selectedDeliveryTime">89:89</span>
+          <img alt="" class="selectorArrow" src="img/selectorOpenArrow.svg">
         </div>
-        <div class="location">
-            <h4>Местоположение</h4>
-            <div class="locationContainer">
-                <span id="selectedLocation">89</span>
-                <img alt="" class="selectorArrow" src="img/selectorOpenArrow.svg">
-            </div>
+      </div>
+      <div class="location">
+        <h4>Местоположение</h4>
+        <div class="locationContainer">
+          <span id="selectedLocation">89</span>
+          <img alt="" class="selectorArrow" src="img/selectorOpenArrow.svg">
         </div>
+      </div>
+        <div class="mainButton" id="continue">Продолжить</div>
     </div>
     <div class="clientInfo">
-        <div class="clientName">
-            <h4>Имя и фамилия</h4>
-            <input class="nameInput" id="nameInput" placeholder="Иван Иванов" type="text">
-        </div>
-        <div class="phoneNumber">
-            <h4>Телефон</h4>
-            <input class="phoneNumberInput" id="phoneNumberInput" placeholder="" type="text">
-        </div>
-        <div class="email">
-            <h4>Электронаая почта</h4>
-            <input class="emailInput" id="emailInput" placeholder="ivan@gmail.com" type="text">
-        </div>
+      <div class="clientName">
+        <h4>Имя и фамилия</h4>
+        <input class="nameInput" id="nameInput" placeholder="Иван Иванов" type="text">
+      </div>
+      <div class="phoneNumber">
+        <h4>Телефон</h4>
+        <input class="phoneNumberInput" id="phoneNumberInput" placeholder="" type="text">
+      </div>
+      <div class="email">
+        <h4>Электронаая почта</h4>
+        <input class="emailInput" id="emailInput" placeholder="ivan@gmail.com" type="text">
+      </div>
+        <div class="mainButton" id="checkoutButton">Оформить заказ</div>
     </div>
-    <div class="mainButton" id="continue" >Продолжить</div>
-</div>
-    <div class="orderInfoCircle">
-        <div class="orderInfoCircleContent">
-            <img alt="" src="img/orderStage4.svg">
-            <span>Товары:</span> <p class="goodsPrice"></p>
-            <span>Доставка:</span> <p class="deliveryPrice"></p>
-            <span>Всего:</span> <p class="allPrice"></p>
-        </div>
+  </div>
+  <div class="orderInfoCircle">
+    <div class="orderInfoCircleContent">
+      <img alt="" src="img/orderStage4.svg">
+      <span>Товары:</span>
+      <p class="goodsPrice"></p>
+      <span>Доставка:</span>
+      <p class="deliveryPrice"></p>
+      <span>Всего:</span>
+      <p class="allPrice"></p>
     </div>
-<nav>
+  </div>
+  <nav>
     <div class="navItem">
-        <img alt="" src="img/phoneBlue.svg">
-        +7 (937) 667-98-49
+      <img alt="" src="img/phoneBlue.svg">
+      +7 (937) 667-98-49
     </div>
     <div class="navItem" onclick="window.location='index.html';">
-        <img alt="" src="img/leftArrowBlue.svg">
-        <a href="index.html">Назад на главную</a>
+      <img alt="" src="img/leftArrowBlue.svg">
+      <a href="index.html">Назад на главную</a>
     </div>
     <div class="stage">
-        <a href="" id="active">Доставка</a>
-        <img alt="" src="img/rightArrowBlue.svg">
-        <a href="">Ваши данные</a>
-        <img alt="" src="img/rightArrowBlue.svg">
-        <a href="">Готово</a>
+      <a href="" id="active">Доставка</a>
+      <img alt="" src="img/rightArrowBlue.svg">
+      <a href="">Ваши данные</a>
+      <img alt="" src="img/rightArrowBlue.svg">
+      <a href="">Готово</a>
     </div>
     <img alt="" class="logo" src="img/logo.png">
-</nav>
+  </nav>
 </main>
 </body>
 </html>
