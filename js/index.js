@@ -157,7 +157,7 @@ $(document).ready(function () {
 
     $('#order').click(function () {
         if (pickedSize.length > 0 && pickedSign.length > 0 && pickedFont.length > 0 && pickedColor.length > 0 && pickedBathrobeColor.length > 0 && pickedImage.length > 0) {
-            $('.successAlert').addClass('active');
+            $('#successAlert').addClass('active');
             bathrobeAmount += 1;
             localStorage.setItem("bathrobeAmount", bathrobeAmount);
             localStorage.setItem("pickedSize", JSON.stringify(pickedSize));
@@ -178,8 +178,8 @@ $(document).ready(function () {
         }
     });
 
-    $('.successAlert a').click(function () {
-        $('.successAlert').removeClass('active');
+    $('#successAlert a').click(function () {
+        $('#successAlert').removeClass('active');
         clearConstructor();
         bathrobeID += 1;
     });
@@ -192,6 +192,14 @@ $(document).ready(function () {
             }, 500);
         }
         return false;
+    });
+
+    $('.size a').click(function() {
+        $('#sizeTable').addClass('active');
+    });
+
+    $('#sizeTable .mainButton').click(function() {
+        $('#sizeTable').removeClass('active');
     });
 
 });

@@ -5,7 +5,7 @@
   <meta charset="UTF-8">
   <meta content="width=device-width, initial-scale=1.0" name="viewport">
   <meta content="ie=edge" http-equiv="X-UA-Compatible">
-  <meta name="format-detection" content="telephone=no">
+  <meta content="telephone=no" name="format-detection">
   <title>Магазин халатов — Главная</title>
 
   <link href="css/index.css" rel="stylesheet">
@@ -81,7 +81,7 @@
     <nav>
       <img alt="" src="img/phone.svg">
       <p>+7 (937) 667-98-49</p>
-      <div class="circleButton" onclick="window.location='cart.html';" id="headerOpenCartButton">
+      <div class="circleButton" id="headerOpenCartButton" onclick="window.location='cart.html';">
         <img alt="" src="img/cart.svg">
         <span></span>
       </div>
@@ -155,7 +155,7 @@
   <div class="constructorBG">
     <section class="constructor" id="constructor">
       <div class="previewContainer" id="previewContainer">
-        <img src="img/preview.png" alt="">
+        <img alt="" src="img/preview.png">
         <p class="sign"></p>
       </div>
       <div class="constructorCircle">
@@ -178,7 +178,7 @@
                 <div onclick="pickSize('XXXL', 5)">XXXL</div>
                 <div class="sizePickerSelector"></div>
               </div>
-              <a href="#">Таблица размеров</a>
+              <a>Таблица размеров</a>
             </div>
           </div>
           <div class="constructorGrid">
@@ -273,12 +273,43 @@
               <h4>3190₽</h4>
             </div>
           </div>
-          <div class="successAlert">
-            <img src="img/happiness.svg" alt="">
+          <div class="constructorPopup" id="successAlert">
+            <img alt="" src="img/happiness.svg">
             <h3>Поздравляем, вы создали великолепный халат!</h3>
             <p>Он перемещен в вашу корзину и доступен для доставки в любое время.</p>
             <div class="mainButton" onclick="window.location='cart.html';">Перейти в корзину</div>
             <a>Хочу еще один!</a>
+          </div>
+          <div class="constructorPopup" id="sizeTable">
+            <h3>Таблица размеров</h3>
+            <div class="sizeTableContainer">
+              <div class="sizeNamesContainer">
+                <div>S</div>
+                <div>M</div>
+                <div>L</div>
+                <div>XL</div>
+                <div>XXL</div>
+                <div>XXXL</div>
+              </div>
+              <img alt="" src="img/sizeTableSeparator.svg">
+              <div class="sizeNumbersContainer">
+                <div>46-47</div>
+                <div>48-49</div>
+                <div>50-51</div>
+                <div>52-53</div>
+                <div>54-57</div>
+                <div>58-60</div>
+                <div class="sexSign">Мужские</div>
+                <div>44-45</div>
+                <div>46-47</div>
+                <div>48-49</div>
+                <div>50-51</div>
+                <div>52-53</div>
+                <div>54-56</div>
+                <div class="sexSign">Женские</div>
+              </div>
+            </div>
+            <div class="mainButton">Вернуться к созданию</div>
           </div>
         </div>
         <div class="grayCircle"></div>
@@ -353,7 +384,7 @@
       <a href="#constructor">Конструктор</a>
       <a href="#delivery">Доставка</a>
       <a href="#aboutUs">О нас</a>
-      <div class="circleButton" onclick="window.location='cart.html';" id="footerOpenCartButton">
+      <div class="circleButton" id="footerOpenCartButton" onclick="window.location='cart.html';">
         <img alt="" src="img/cartBold.svg">
         <span></span>
       </div>
