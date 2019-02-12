@@ -229,12 +229,30 @@ input {
 .checkoutEnd {
     opacity: 0;
     position: absolute;
-
+    z-index: -2;
+    display: flex;
+    flex-direction: column;
+    left: 800px;
+    bottom: 900px;
 }
+
+.checkoutEnd img {
+    margin-top: -10px;
+}
+
+.checkoutEnd h3 {
+    padding-bottom: 20px;
+    padding-top: 20px;
+}
+
+#secondRow {
+    margin-left: 40px;
+}
+
 
 .checkoutEnd.active {
     opacity: 1;
-    z-index: 1;
+    z-index: 3;
 }
 
 #continue {
@@ -246,6 +264,13 @@ input {
 #checkoutButton {
     width: 400px;
     margin-top: 58px;
+    position: absolute;
+}
+
+#oneMore {
+    width: 300px;
+    margin-top: 250px;
+    margin-left: 100px;
     position: absolute;
 }
 

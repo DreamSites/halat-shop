@@ -11,6 +11,7 @@ $(document).ready(function () {
         $('.checkoutEnd').addClass('active');
         stage.eq(1).css('color', 'var(--brown-grey)');
         stage.eq(2).css('color', 'var(--black)');
+        $('.leftCircle h2').css({'opacity': 0});
     });
 
     $('#selectedCity').click(function () {
