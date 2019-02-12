@@ -1,3 +1,5 @@
+const bathrobeAmount = parseInt(localStorage.getItem("bathrobeAmount"), 10);
+
 $(document).ready(function () {
     const stage = $('.stage a');
     $('#continue').click(function () {
@@ -89,3 +91,6 @@ const phoneMask = new IMask(
     document.getElementById('phoneNumberInput'), {
         mask: '+{7} (000) 000-00-00'
     });
+
+$('#bathrobePrice').html(3190 * bathrobeAmount + '₽');
+$('#fullPrice').html(3190 * bathrobeAmount + 500 + '₽');

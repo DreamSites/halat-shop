@@ -194,6 +194,12 @@ nav {
     width: 338px;
 }
 
+@media (max-width: 1620px) {
+    nav {
+        width: calc(100vw - 100px);
+    }
+}
+
 @media (max-width: 1350px) {
     #whiteCircle-1 {
         top: 1079px;
