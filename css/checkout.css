@@ -5,10 +5,6 @@ main {
     position: relative;
 }
 
-.logo {
-    margin-left: -70px;
-}
-
 .leftCircle {
     width: 1781px;
     height: 1781px;
@@ -19,14 +15,14 @@ main {
     position: absolute;
     left: -433px;
     top: -349px;
-    padding-left: 549px;
+    padding-left: 633px;
     padding-top: 570px;
 }
 
 .logo {
     width: 168px;
     height: 71px;
-    margin-right: auto;
+    margin-right: 80px;
 }
 
 nav {
@@ -37,7 +33,7 @@ nav {
     position: relative;
     height: 71px;
     margin: 47px auto 0;
-    width: 80vw;
+    width: calc(100vw - 400px);
 }
 
 .navItem {
@@ -283,18 +279,14 @@ nav {
     transition: all 0.5s ease;
 }
 
-.stage #active {
-    color: var(--greyish-brown);
-}
-
-.stage img {
-    margin-bottom: -5px;
-}
-
 .stage {
-    position: absolute;
-    z-index: -1;
-    margin-left: -1010px;
+    display: flex;
+    align-items: center;
+    margin-right: auto;
+}
+
+.stage a:nth-child(1) {
+    color: var(--black);
 }
 
 .clientInfo {
