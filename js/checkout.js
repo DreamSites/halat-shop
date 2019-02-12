@@ -14,60 +14,73 @@ $(document).ready(function () {
     });
 
     $('#selectedCity').click(function () {
-        openCityPicker();
+        openPicker($('#cityPicker'), $('#cityPicker .deliveryPickerItem'), $('#selectedCity img'));
     });
 
     $(document).mouseup(function (e) {
         const cityPicker = $('#cityPicker');
         if (!cityPicker.is(e.target) && cityPicker.has(e.target).length === 0) {
-            closeCityPicker();
+            closePicker(cityPicker, $('#cityPicker .deliveryPickerItem'), $('#selectedCity img'));
         }
     });
 
     $('#selectedDeliveryWay').click(function () {
-        openDeliveryWayPicker();
+        openPicker($('#deliveryWayPicker'), $('#deliveryWayPicker .deliveryPickerItem'), $('#selectedDeliveryWay img'));
     });
 
     $(document).mouseup(function (e) {
         const deliveryWayPicker = $('#deliveryWayPicker');
         if (!deliveryWayPicker.is(e.target) && deliveryWayPicker.has(e.target).length === 0) {
-            closeDeliveryWayPicker();
+            closePicker(deliveryWayPicker, $('#deliveryWayPicker .deliveryPickerItem'), $('#selectedDeliveryWay img'));
+        }
+    });
+
+    $('#selectedDeliveryDay').click(function () {
+        openPicker($('#deliveryDayPicker'), $('#deliveryDayPicker .deliveryPickerItem'), $('#selectedDeliveryDay img'));
+    });
+
+    $(document).mouseup(function (e) {
+        const deliveryDayPicker = $('#deliveryDayPicker');
+        if (!deliveryDayPicker.is(e.target) && deliveryDayPicker.has(e.target).length === 0) {
+            closePicker(deliveryDayPicker, $('#deliveryDayPicker .deliveryPickerItem'), $('#selectedDeliveryDay img'));
+        }
+    });
+
+    $('#selectedDeliveryTime').click(function () {
+        openPicker($('#deliveryTimePicker'), $('#deliveryTimePicker .deliveryPickerItem'), $('#selectedDeliveryTime img'));
+    });
+
+    $(document).mouseup(function (e) {
+        const deliveryTimePicker = $('#deliveryTimePicker');
+        if (!deliveryTimePicker.is(e.target) && deliveryTimePicker.has(e.target).length === 0) {
+            closePicker(deliveryTimePicker, $('#deliveryTimePicker .deliveryPickerItem'), $('#selectedDeliveryTime img'));
         }
     });
 });
 
-function openCityPicker() {
-    $('#cityPicker').addClass('active');
-    $('#cityPicker .deliveryPickerItem').addClass('active');
-    $('#selectedCity img').css('transform', 'rotate(180deg)');
+function openPicker(picker, pickerItem, selected) {
+    picker.addClass('active');
+    pickerItem.addClass('active');
+    selected.css('transform', 'rotate(180deg)');
 }
 
-function closeCityPicker() {
-    $('#cityPicker').removeClass('active');
-    $('#cityPicker .deliveryPickerItem').removeClass('active');
-    $('#selectedCity img').css('transform', 'rotate(0)');
+function closePicker(picker, pickerItem, selected) {
+    picker.removeClass('active');
+    pickerItem.removeClass('active');
+    selected.css('transform', 'rotate(0)');
 }
 
-function pickCity(city) {
-    $('#selectedCityName').html(city);
-    $('#selectedCity').addClass('picked');
-    closeCityPicker();
+function pick(picker, pickerItemText, pickerItem, selected, selectedName, selectedIMG) {
+    selectedName.html(pickerItemText);
+    selected.addClass('picked');
+    closePicker(picker, pickerItem, selectedIMG);
+    checkDeliveryStage();
 }
 
-function openDeliveryWayPicker() {
-    $('#deliveryWayPicker').addClass('active');
-    $('#deliveryWayPicker .deliveryPickerItem').addClass('active');
-    $('#selectedDeliveryWay img').css('transform', 'rotate(180deg)');
-}
-
-function closeDeliveryWayPicker() {
-    $('#deliveryWayPicker').removeClass('active');
-    $('#deliveryWayPicker .deliveryPickerItem').removeClass('active');
-    $('#selectedDeliveryWay img').css('transform', 'rotate(0)');
-}
-
-function pickDeliveryWay(deliveryWay) {
-    $('#selectedDeliveryWayName').html(deliveryWay);
-    $('#selectedDeliveryWay').addClass('picked');
-    closeDeliveryWayPicker();
+function checkDeliveryStage() {
+    if ($('#selectedCityName').html() !== 'Выберите город' && $('#selectedDeliveryWayName').html() !== 'Выберите способ получения') {
+        $('#address').addClass('active');
+        $('#deliveryDay').addClass('active');
+        $('#deliveryTime').addClass('active');
+    }
 }

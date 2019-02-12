@@ -155,8 +155,51 @@ nav {
     grid-template-rows: 50px repeat(3, 1fr);
 }
 
+#deliveryDayPicker.active {
+    height: 200px;
+    grid-template-rows: 50px repeat(3, 1fr);
+}
+
+#deliveryTimePicker.active {
+    height: 200px;
+    grid-template-rows: 50px repeat(3, 1fr);
+}
+
+#deliveryDay {
+    z-index: -1;
+    opacity: 0;
+    transition: all 0.2s ease;
+}
+
+#deliveryDay.active {
+    z-index: 1;
+    opacity: 1;
+}
+
+#deliveryTime {
+    z-index: -1;
+    opacity: 0;
+    transition: all 0.2s ease;
+}
+
+#deliveryTime.active {
+    z-index: 1;
+    opacity: 1;
+}
+
 .addressInput {
     width: 400px;
+}
+
+#address {
+    z-index: -1;
+    opacity: 0;
+    transition: all 0.2s ease;
+}
+
+#address.active {
+    z-index: 1;
+    opacity: 1;
 }
 
 .orderInfoCircleContent {

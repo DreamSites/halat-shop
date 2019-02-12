@@ -42,8 +42,13 @@
               <span id="selectedCityName">Выберите город</span>
               <img alt="" class="selectorArrow" src="img/selectorOpenArrow.svg">
             </div>
-            <div class="deliveryPickerItem" id="cityPickerItem1" onclick="pickCity('Москва')">Москва</div>
-            <div class="deliveryPickerItem" id="cityPickerItem2" onclick="pickCity('Санкт-Петербург')">Санкт-Петербург
+            <div class="deliveryPickerItem"
+                 onclick="pick($('#cityPicker'), 'Москва', $('#cityPicker .deliveryPickerItem'), $('#selectedCity'), $('#selectedCityName'), $('#selectedCity img'))">
+              Москва
+            </div>
+            <div class="deliveryPickerItem"
+                 onclick="pick($('#cityPicker'), 'Санкт-Петербург', $('#cityPicker .deliveryPickerItem'), $('#selectedCity'), $('#selectedCityName'), $('#selectedCity img'))">
+              Санкт-Петербург
             </div>
           </div>
         </div>
@@ -57,35 +62,71 @@
         <div class="deliveryPickerContainer">
           <div class="deliveryPicker" id="deliveryWayPicker">
             <div class="deliveryPickerItem selected" id="selectedDeliveryWay">
-              <span id="selectedDeliveryWayName">Выберите город</span>
+              <span id="selectedDeliveryWayName">Выберите способ получения</span>
               <img alt="" class="selectorArrow" src="img/selectorOpenArrow.svg">
             </div>
-            <div class="deliveryPickerItem" id="deliveryWayPickerItem1" onclick="pickDeliveryWay('Доставка')">Доставка
+            <div class="deliveryPickerItem"
+                 onclick="pick($('#deliveryWayPicker'), 'Доставка', $('#deliveryWayPicker .deliveryPickerItem'), $('#selectedDeliveryWay'), $('#selectedDeliveryWayName'),  $('#selectedDeliveryWay img'))">
+              Доставка
             </div>
-            <div class="deliveryPickerItem" id="deliveryWayPickerItem2"
-                 onclick="pickDeliveryWay('Самовывоз из магазина')">Самовывоз из магазина
+            <div class="deliveryPickerItem"
+                 onclick="pick($('#deliveryWayPicker'), 'Самовывоз из магазина', $('#deliveryWayPicker .deliveryPickerItem'), $('#selectedDeliveryWay'), $('#selectedDeliveryWayName'), $('#selectedDeliveryWay img'))">
+              Самовывоз из магазина
             </div>
-            <div class="deliveryPickerItem" id="deliveryWayPickerItem3" onclick="pickDeliveryWay('Пункт BoxBerry')">
+            <div class="deliveryPickerItem"
+                 onclick="pick($('#deliveryWayPicker'), 'Пункт BoxBerry', $('#deliveryWayPicker .deliveryPickerItem'), $('#selectedDeliveryWay'), $('#selectedDeliveryWayName'), $('#selectedDeliveryWay img'))">
               Пункт BoxBerry
             </div>
           </div>
         </div>
       </div>
-      <div class="deliveryInfoItem" id="deliveryDate">
+      <div class="deliveryInfoItem" id="deliveryDay">
         <h4>Дата</h4>
-        <div class="deliveryPickerContainer" id="deliveryDatePickerContainer">
-          <span id="selectedDeliveryDate">26</span>
-          <img alt="" class="selectorArrow" src="img/selectorOpenArrow.svg">
+        <div class="deliveryPickerContainer">
+          <div class="deliveryPicker" id="deliveryDayPicker">
+            <div class="deliveryPickerItem selected" id="selectedDeliveryDay">
+              <span id="selectedDeliveryDayName">Выберите дату доставки</span>
+              <img alt="" class="selectorArrow" src="img/selectorOpenArrow.svg">
+            </div>
+            <div class="deliveryPickerItem"
+                 onclick="pick($('#deliveryDayPicker'), 'Завтра', $('#deliveryDayPicker .deliveryPickerItem'), $('#selectedDeliveryDay'), $('#selectedDeliveryDayName'), $('#selectedDeliveryDay img'))">
+              Завтра
+            </div>
+            <div class="deliveryPickerItem"
+                 onclick="pick($('#deliveryDayPicker'), 'Послезавтра', $('#deliveryDayPicker .deliveryPickerItem'), $('#selectedDeliveryDay'), $('#selectedDeliveryDayName'), $('#selectedDeliveryDay img'))">
+              Послезавтра
+            </div>
+            <div class="deliveryPickerItem"
+                 onclick="pick($('#deliveryDayPicker'), 'На выходных', $('#deliveryDayPicker .deliveryPickerItem'), $('#selectedDeliveryDay'), $('#selectedDeliveryDayName'), $('#selectedDeliveryDay img'))">
+              На выходных
+            </div>
+          </div>
         </div>
       </div>
       <div class="deliveryInfoItem" id="deliveryTime">
         <h4>Время</h4>
-        <div class="deliveryPickerContainer" id="deliveryTimePickerContainer">
-          <span id="selectedDeliveryTime">89:89</span>
-          <img alt="" class="selectorArrow" src="img/selectorOpenArrow.svg">
+        <div class="deliveryPickerContainer">
+          <div class="deliveryPicker" id="deliveryTimePicker">
+            <div class="deliveryPickerItem selected" id="selectedDeliveryTime">
+              <span id="selectedDeliveryTimeName">Выберите время доставки</span>
+              <img alt="" class="selectorArrow" src="img/selectorOpenArrow.svg">
+            </div>
+            <div class="deliveryPickerItem"
+                 onclick="pick($('#deliveryTimePicker'), '10:00 — 12:00', $('#deliveryTimePicker .deliveryPickerItem'), $('#selectedDeliveryTime'), $('#selectedDeliveryTimeName'), $('#selectedDeliveryTime img'))">
+              10:00 — 12:00
+            </div>
+            <div class="deliveryPickerItem"
+                 onclick="pick($('#deliveryTimePicker'), '12:00 — 18:00', $('#deliveryTimePicker .deliveryPickerItem'), $('#selectedDeliveryTime'), $('#selectedDeliveryTimeName'), $('#selectedDeliveryTime img'))">
+              12:00 — 18:00
+            </div>
+            <div class="deliveryPickerItem"
+                 onclick="pick($('#deliveryTimePicker'), '18:00 — 22:00', $('#deliveryTimePicker .deliveryPickerItem'), $('#selectedDeliveryTime'), $('#selectedDeliveryTimeName'), $('#selectedDeliveryTime img'))">
+              18:00 — 22:00
+            </div>
+          </div>
         </div>
       </div>
-        <div class="mainButton" id="continue">Продолжить</div>
+      <div class="mainButton" id="continue">Продолжить</div>
     </div>
     <div class="clientInfo">
       <div class="clientName">
@@ -100,7 +141,7 @@
         <h4>Электронаая почта</h4>
         <input class="emailInput" id="emailInput" placeholder="ivan@gmail.com" type="text">
       </div>
-        <div class="mainButton" id="checkoutButton">Оформить заказ</div>
+      <div class="mainButton" id="checkoutButton">Оформить заказ</div>
     </div>
   </div>
   <div class="orderInfoCircle">
