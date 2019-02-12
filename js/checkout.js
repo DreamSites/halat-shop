@@ -88,5 +88,5 @@ function checkDeliveryStage() {
 
 const phoneMask = new IMask(
     document.getElementById('phoneNumberInput'), {
-        mask: '+{7}(000)000-00-00'
+        mask: '+{7} (000) 000-00-00'
     });
