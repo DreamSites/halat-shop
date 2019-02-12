@@ -84,3 +84,8 @@ function checkDeliveryStage() {
         $('#deliveryTime').addClass('active');
     }
 }
+
+const phoneMask = new IMask(
+    document.getElementById('phoneNumberInput'), {
+        mask: '+{7}(000)000-00-00'
+    });

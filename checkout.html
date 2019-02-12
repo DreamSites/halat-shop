@@ -27,6 +27,7 @@
   </script>
 
   <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+  <script src="https://unpkg.com/imask"></script>
 
 </head>
 <body>
@@ -129,17 +130,17 @@
       <div class="mainButton" id="continue">Продолжить</div>
     </div>
     <div class="clientInfo">
-      <div class="clientName">
+      <div class="clientInfoItem">
         <h4>Имя и фамилия</h4>
         <input class="nameInput" id="nameInput" placeholder="Иван Иванов" type="text">
       </div>
-      <div class="phoneNumber">
+      <div class="clientInfoItem">
         <h4>Телефон</h4>
-        <input class="phoneNumberInput" id="phoneNumberInput" placeholder="" type="text">
+        <input class="phoneNumberInput" id="phoneNumberInput" placeholder="+7 (937) 667-98-49" type="tel">
       </div>
-      <div class="email">
+      <div class="clientInfoItem">
         <h4>Электронаая почта</h4>
-        <input class="emailInput" id="emailInput" placeholder="ivan@gmail.com" type="text">
+        <input class="emailInput" id="emailInput" placeholder="ivan@gmail.com" type="email">
       </div>
       <div class="mainButton" id="checkoutButton">Оформить заказ</div>
     </div>
