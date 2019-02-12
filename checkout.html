@@ -4,6 +4,7 @@
   <meta charset="UTF-8">
   <meta content="width=device-width, initial-scale=1.0" name="viewport">
   <meta content="ie=edge" http-equiv="X-UA-Compatible">
+  <meta content="telephone=no" name="format-detection">
   <title>Магазин халатов — Оформление заказа</title>
 
   <link href="css/main.css" rel="stylesheet">
@@ -33,138 +34,140 @@
 <body>
 <main>
   <div class="leftCircle">
-    <h2>Оформление заказа</h2>
-    <div class="deliveryInfo active">
-      <div class="deliveryInfoItem" id="city">
-        <h4>Город</h4>
-        <div class="deliveryPickerContainer">
-          <div class="deliveryPicker" id="cityPicker">
-            <div class="deliveryPickerItem selected" id="selectedCity">
-              <span id="selectedCityName">Выберите город</span>
-              <img alt="" class="selectorArrow" src="img/selectorOpenArrow.svg">
-            </div>
-            <div class="deliveryPickerItem"
-                 onclick="pick($('#cityPicker'), 'Москва', $('#cityPicker .deliveryPickerItem'), $('#selectedCity'), $('#selectedCityName'), $('#selectedCity img'))">
-              Москва
-            </div>
-            <div class="deliveryPickerItem"
-                 onclick="pick($('#cityPicker'), 'Санкт-Петербург', $('#cityPicker .deliveryPickerItem'), $('#selectedCity'), $('#selectedCityName'), $('#selectedCity img'))">
-              Санкт-Петербург
-            </div>
-          </div>
-        </div>
-      </div>
-      <div class="deliveryInfoItem" id="address">
-        <h4>Адрес</h4>
-        <input class="addressInput" id="addressInput" placeholder="Улица, дом, квартира, этаж" type="text">
-      </div>
-      <div class="deliveryInfoItem" id="deliveryWay">
-        <h4>Способ получения</h4>
-        <div class="deliveryPickerContainer">
-          <div class="deliveryPicker" id="deliveryWayPicker">
-            <div class="deliveryPickerItem selected" id="selectedDeliveryWay">
-              <span id="selectedDeliveryWayName">Выберите способ получения</span>
-              <img alt="" class="selectorArrow" src="img/selectorOpenArrow.svg">
-            </div>
-            <div class="deliveryPickerItem"
-                 onclick="pick($('#deliveryWayPicker'), 'Доставка', $('#deliveryWayPicker .deliveryPickerItem'), $('#selectedDeliveryWay'), $('#selectedDeliveryWayName'),  $('#selectedDeliveryWay img'))">
-              Доставка
-            </div>
-            <div class="deliveryPickerItem"
-                 onclick="pick($('#deliveryWayPicker'), 'Самовывоз из магазина', $('#deliveryWayPicker .deliveryPickerItem'), $('#selectedDeliveryWay'), $('#selectedDeliveryWayName'), $('#selectedDeliveryWay img'))">
-              Самовывоз из магазина
-            </div>
-            <div class="deliveryPickerItem"
-                 onclick="pick($('#deliveryWayPicker'), 'Пункт BoxBerry', $('#deliveryWayPicker .deliveryPickerItem'), $('#selectedDeliveryWay'), $('#selectedDeliveryWayName'), $('#selectedDeliveryWay img'))">
-              Пункт BoxBerry
+    <div class="leftCircleContent">
+      <h2>Оформление заказа</h2>
+      <div class="deliveryInfo active">
+        <div class="deliveryInfoItem" id="city">
+          <h4>Город</h4>
+          <div class="deliveryPickerContainer">
+            <div class="deliveryPicker" id="cityPicker">
+              <div class="deliveryPickerItem selected" id="selectedCity">
+                <span id="selectedCityName">Выберите город</span>
+                <img alt="" class="selectorArrow" src="img/selectorOpenArrow.svg">
+              </div>
+              <div class="deliveryPickerItem"
+                   onclick="pick($('#cityPicker'), 'Москва', $('#cityPicker .deliveryPickerItem'), $('#selectedCity'), $('#selectedCityName'), $('#selectedCity img'))">
+                Москва
+              </div>
+              <div class="deliveryPickerItem"
+                   onclick="pick($('#cityPicker'), 'Санкт-Петербург', $('#cityPicker .deliveryPickerItem'), $('#selectedCity'), $('#selectedCityName'), $('#selectedCity img'))">
+                Санкт-Петербург
+              </div>
             </div>
           </div>
         </div>
-      </div>
-      <div class="deliveryInfoItem" id="deliveryDay">
-        <h4>Дата</h4>
-        <div class="deliveryPickerContainer">
-          <div class="deliveryPicker" id="deliveryDayPicker">
-            <div class="deliveryPickerItem selected" id="selectedDeliveryDay">
-              <span id="selectedDeliveryDayName">Выберите дату доставки</span>
-              <img alt="" class="selectorArrow" src="img/selectorOpenArrow.svg">
-            </div>
-            <div class="deliveryPickerItem"
-                 onclick="pick($('#deliveryDayPicker'), 'Завтра', $('#deliveryDayPicker .deliveryPickerItem'), $('#selectedDeliveryDay'), $('#selectedDeliveryDayName'), $('#selectedDeliveryDay img'))">
-              Завтра
-            </div>
-            <div class="deliveryPickerItem"
-                 onclick="pick($('#deliveryDayPicker'), 'Послезавтра', $('#deliveryDayPicker .deliveryPickerItem'), $('#selectedDeliveryDay'), $('#selectedDeliveryDayName'), $('#selectedDeliveryDay img'))">
-              Послезавтра
-            </div>
-            <div class="deliveryPickerItem"
-                 onclick="pick($('#deliveryDayPicker'), 'На выходных', $('#deliveryDayPicker .deliveryPickerItem'), $('#selectedDeliveryDay'), $('#selectedDeliveryDayName'), $('#selectedDeliveryDay img'))">
-              На выходных
-            </div>
-          </div>
-        </div>
-      </div>
-      <div class="deliveryInfoItem" id="deliveryTime">
-        <h4>Время</h4>
-        <div class="deliveryPickerContainer">
-          <div class="deliveryPicker" id="deliveryTimePicker">
-            <div class="deliveryPickerItem selected" id="selectedDeliveryTime">
-              <span id="selectedDeliveryTimeName">Выберите время доставки</span>
-              <img alt="" class="selectorArrow" src="img/selectorOpenArrow.svg">
-            </div>
-            <div class="deliveryPickerItem"
-                 onclick="pick($('#deliveryTimePicker'), '10:00 — 12:00', $('#deliveryTimePicker .deliveryPickerItem'), $('#selectedDeliveryTime'), $('#selectedDeliveryTimeName'), $('#selectedDeliveryTime img'))">
-              10:00 — 12:00
-            </div>
-            <div class="deliveryPickerItem"
-                 onclick="pick($('#deliveryTimePicker'), '12:00 — 18:00', $('#deliveryTimePicker .deliveryPickerItem'), $('#selectedDeliveryTime'), $('#selectedDeliveryTimeName'), $('#selectedDeliveryTime img'))">
-              12:00 — 18:00
-            </div>
-            <div class="deliveryPickerItem"
-                 onclick="pick($('#deliveryTimePicker'), '18:00 — 22:00', $('#deliveryTimePicker .deliveryPickerItem'), $('#selectedDeliveryTime'), $('#selectedDeliveryTimeName'), $('#selectedDeliveryTime img'))">
-              18:00 — 22:00
+        <div class="deliveryInfoItem" id="deliveryWay">
+          <h4>Способ получения</h4>
+          <div class="deliveryPickerContainer">
+            <div class="deliveryPicker" id="deliveryWayPicker">
+              <div class="deliveryPickerItem selected" id="selectedDeliveryWay">
+                <span id="selectedDeliveryWayName">Выберите способ получения</span>
+                <img alt="" class="selectorArrow" src="img/selectorOpenArrow.svg">
+              </div>
+              <div class="deliveryPickerItem"
+                   onclick="pick($('#deliveryWayPicker'), 'Доставка', $('#deliveryWayPicker .deliveryPickerItem'), $('#selectedDeliveryWay'), $('#selectedDeliveryWayName'),  $('#selectedDeliveryWay img'))">
+                Доставка
+              </div>
+              <div class="deliveryPickerItem"
+                   onclick="pick($('#deliveryWayPicker'), 'Самовывоз из магазина', $('#deliveryWayPicker .deliveryPickerItem'), $('#selectedDeliveryWay'), $('#selectedDeliveryWayName'), $('#selectedDeliveryWay img'))">
+                Самовывоз из магазина
+              </div>
+              <div class="deliveryPickerItem"
+                   onclick="pick($('#deliveryWayPicker'), 'Пункт BoxBerry', $('#deliveryWayPicker .deliveryPickerItem'), $('#selectedDeliveryWay'), $('#selectedDeliveryWayName'), $('#selectedDeliveryWay img'))">
+                Пункт BoxBerry
+              </div>
             </div>
           </div>
         </div>
+        <div class="deliveryInfoItem" id="address">
+          <h4>Адрес</h4>
+          <input class="addressInput" id="addressInput" placeholder="Улица, дом, квартира, этаж" type="text">
+        </div>
+        <div class="deliveryInfoItem" id="deliveryDay">
+          <h4>Дата</h4>
+          <div class="deliveryPickerContainer">
+            <div class="deliveryPicker" id="deliveryDayPicker">
+              <div class="deliveryPickerItem selected" id="selectedDeliveryDay">
+                <span id="selectedDeliveryDayName">Выберите дату доставки</span>
+                <img alt="" class="selectorArrow" src="img/selectorOpenArrow.svg">
+              </div>
+              <div class="deliveryPickerItem"
+                   onclick="pick($('#deliveryDayPicker'), 'Завтра', $('#deliveryDayPicker .deliveryPickerItem'), $('#selectedDeliveryDay'), $('#selectedDeliveryDayName'), $('#selectedDeliveryDay img'))">
+                Завтра
+              </div>
+              <div class="deliveryPickerItem"
+                   onclick="pick($('#deliveryDayPicker'), 'Послезавтра', $('#deliveryDayPicker .deliveryPickerItem'), $('#selectedDeliveryDay'), $('#selectedDeliveryDayName'), $('#selectedDeliveryDay img'))">
+                Послезавтра
+              </div>
+              <div class="deliveryPickerItem"
+                   onclick="pick($('#deliveryDayPicker'), 'На выходных', $('#deliveryDayPicker .deliveryPickerItem'), $('#selectedDeliveryDay'), $('#selectedDeliveryDayName'), $('#selectedDeliveryDay img'))">
+                На выходных
+              </div>
+            </div>
+          </div>
+        </div>
+        <div class="deliveryInfoItem" id="deliveryTime">
+          <h4>Время</h4>
+          <div class="deliveryPickerContainer">
+            <div class="deliveryPicker" id="deliveryTimePicker">
+              <div class="deliveryPickerItem selected" id="selectedDeliveryTime">
+                <span id="selectedDeliveryTimeName">Выберите время доставки</span>
+                <img alt="" class="selectorArrow" src="img/selectorOpenArrow.svg">
+              </div>
+              <div class="deliveryPickerItem"
+                   onclick="pick($('#deliveryTimePicker'), '10:00 — 12:00', $('#deliveryTimePicker .deliveryPickerItem'), $('#selectedDeliveryTime'), $('#selectedDeliveryTimeName'), $('#selectedDeliveryTime img'))">
+                10:00 — 12:00
+              </div>
+              <div class="deliveryPickerItem"
+                   onclick="pick($('#deliveryTimePicker'), '12:00 — 18:00', $('#deliveryTimePicker .deliveryPickerItem'), $('#selectedDeliveryTime'), $('#selectedDeliveryTimeName'), $('#selectedDeliveryTime img'))">
+                12:00 — 18:00
+              </div>
+              <div class="deliveryPickerItem"
+                   onclick="pick($('#deliveryTimePicker'), '18:00 — 22:00', $('#deliveryTimePicker .deliveryPickerItem'), $('#selectedDeliveryTime'), $('#selectedDeliveryTimeName'), $('#selectedDeliveryTime img'))">
+                18:00 — 22:00
+              </div>
+            </div>
+          </div>
+        </div>
+        <div class="mainButton" id="continue">Продолжить</div>
       </div>
-      <div class="mainButton" id="continue">Продолжить</div>
-    </div>
-    <div class="clientInfo">
-      <div class="clientInfoItem">
-        <h4>Имя и фамилия</h4>
-        <input class="nameInput" id="nameInput" placeholder="Иван Иванов" type="text">
+      <div class="clientInfo">
+        <div class="clientInfoItem">
+          <h4>Имя и фамилия</h4>
+          <input class="nameInput" id="nameInput" placeholder="Иван Иванов" type="text">
+        </div>
+        <div class="clientInfoItem">
+          <h4>Телефон</h4>
+          <input class="phoneNumberInput" id="phoneNumberInput" placeholder="+7 (937) 667-98-49" type="tel">
+        </div>
+        <div class="clientInfoItem">
+          <h4>Электронаая почта</h4>
+          <input class="emailInput" id="emailInput" placeholder="ivan@gmail.com" type="email">
+        </div>
+        <div class="mainButton" id="checkoutButton">Оформить заказ</div>
+        <p>Нажимая на кнопку, вы соглашаетесь на обработку
+          своих персональных данных.</p>
       </div>
-      <div class="clientInfoItem">
-        <h4>Телефон</h4>
-        <input class="phoneNumberInput" id="phoneNumberInput" placeholder="+7 (937) 667-98-49" type="tel">
-      </div>
-      <div class="clientInfoItem">
-        <h4>Электронаая почта</h4>
-        <input class="emailInput" id="emailInput" placeholder="ivan@gmail.com" type="email">
-      </div>
-      <div class="mainButton" id="checkoutButton">Оформить заказ</div>
-      <p>Нажимая на кнопку, вы соглашаетесь на обработку
-        своих персональных данных.</p>
-    </div>
-    <div class="checkoutEnd">
-      <img alt="" src="img/orderStage5.svg">
-      <h3>Ваш заказ принят</h3>
-      <p>В ближайшее время по указанным контактам придет</p>
+      <div class="checkoutEnd">
+        <img alt="" src="img/orderStage5.svg">
+        <h3>Ваш заказ принят</h3>
+        <p>В ближайшее время по указанным контактам придет</p>
         <p id="secondRow"> сообщение с дополнительной информацией.</p>
-      <div class="mainButton" id="oneMore" onclick="window.location='index.html';">Хочу еще один</div>
+        <div class="mainButton" id="oneMore" onclick="window.location='index.html';">Хочу еще один</div>
+      </div>
     </div>
-  </div>
-  <div class="orderInfoCircle">
-    <div class="orderInfoCircleContent">
-      <img alt="" src="img/orderStage4.svg">
-      <div>
-        Товары: <span id="bathrobePrice"></span>
-      </div>
-      <div>
-        Доставка: <span id="deliveryPrice">500₽</span>
-      </div>
-      <div>
-        Всего: <span id="fullPrice"></span>
+    <div class="orderInfoCircle">
+      <div class="orderInfoCircleContent">
+        <img alt="" src="img/orderStage4.svg">
+        <div>
+          Товары: <span id="bathrobePrice"></span>
+        </div>
+        <div>
+          Доставка: <span id="deliveryPrice">500₽</span>
+        </div>
+        <div>
+          Всего: <span id="fullPrice"></span>
+        </div>
       </div>
     </div>
   </div>
@@ -175,14 +178,14 @@
     </div>
     <div class="navItem" id="home" onclick="window.location='index.html';">
       <img alt="" src="img/leftArrowBlue.svg">
-      <a href="index.html">Назад на главную</a>
+      <a href="cart.html">Назад в корзину</a>
     </div>
     <div class="stage">
-      <a class="deliveryStage">Доставка</a>
+      <a id="deliveryStage">Доставка</a>
       <img alt="" src="img/rightArrowBlue.svg">
-      <a class="yourInfoStage">Ваши данные</a>
+      <a id="yourInfoStage">Ваши данные</a>
       <img alt="" src="img/rightArrowBlue.svg">
-      <a class="doneStage">Готово</a>
+      <a id="doneStage">Готово</a>
     </div>
     <img alt="" class="logo" src="img/logo.png">
   </nav>
