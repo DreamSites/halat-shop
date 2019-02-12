@@ -55,10 +55,8 @@ nav {
 
 .orderInfoCircle span {
     font-size: 16px;
-    font-weight: 500;
     color: var(--brown-grey);
     margin-top: 20px;
-    margin-left: 90px;
 }
 
 .deliveryPickerContainer {
@@ -202,7 +200,6 @@ input {
     display: flex;
     flex-direction: column;
     justify-content: center;
-    margin-top: 70px;
 }
 
 .orderInfoCircle {
@@ -214,22 +211,16 @@ input {
     position: absolute;
     border-radius: 50%;
     left: 1180px;
-    top: 350px;
-}
-
-.orderInfoCircleImg {
-    margin-left: 120px;
-    margin-top: 20px;
-}
-
-.orderInfoCircleText {
-    margin-left: 50px;
+    top: calc(1781px / 2 - 320px / 2 - 349px);
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
 }
 
 .checkoutEnd {
     opacity: 0;
     position: absolute;
-
 }
 
 .checkoutEnd.active {
@@ -246,7 +237,6 @@ input {
 #checkoutButton {
     width: 400px;
     margin-top: 58px;
-    position: absolute;
 }
 
 .deliveryInfo {
@@ -293,6 +283,10 @@ input {
     opacity: 0;
     z-index: -1;
     transition: all 0.5s ease;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    width: 400px;
 }
 
 .clientInfo.active {
@@ -302,4 +296,27 @@ input {
 
 .clientInfoItem {
     margin-bottom: 30px;
+}
+
+.clientInfo p {
+    margin-top: 30px;
+    font-size: 14px;
+    color: #CCCCCC;
+    width: 350px;
+    text-align: center;
+}
+
+@media (max-width: 1620px) {
+    nav {
+        width: calc(100vw - 100px);
+    }
+
+    .leftCircle {
+        left: -641px;
+        padding-left: 691px;
+    }
+
+    .orderInfoCircle {
+        left: 970px;
+    }
 }
