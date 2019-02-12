@@ -194,11 +194,11 @@ $(document).ready(function () {
         return false;
     });
 
-    $('.size a').click(function() {
+    $('.size a').click(function () {
         $('#sizeTable').addClass('active');
     });
 
-    $('#sizeTable .mainButton').click(function() {
+    $('#sizeTable .mainButton').click(function () {
         $('#sizeTable').removeClass('active');
     });
 
@@ -376,6 +376,28 @@ while (i < 100) {
 }
 
 function responsiveNavigation() {
+    if ($(window).width() > 1240) {
+        $('#headerLeftBG nav').html(
+            '<img alt="" class="logo" src="img/logo.png">' +
+            '<a href="#ourWorks">Галерея</a>' +
+            '<a href="#reviews">Отзывы</a>' +
+            '<a href="#previewContainer">Конструктор</a>' +
+            '<a href="#delivery">Доставка</a>' +
+            '<a href="#aboutUs">О нас</a>'
+        );
+        $('footer nav').html(
+            '<img alt="" class="logo" src="img/logo.png">' +
+            '<a href="#ourWorks">Галерея</a>' +
+            '<a href="#reviews">Отзывы</a>' +
+            '<a href="#constructor">Конструктор</a>' +
+            '<a href="#delivery">Доставка</a>' +
+            '<a href="#aboutUs">О нас</a>' +
+            '<div class="circleButton" id="footerOpenCartButton" onclick="window.location=\'cart.html\';">' +
+            '<img alt="" src="img/cartBold.svg">' +
+            '<span></span>' +
+            '</div>'
+        );
+    }
     if ($(window).width() > 1200) {
         pickedWorkID = 1;
         updateOurWorks();
@@ -643,3 +665,7 @@ function clearConstructor() {
     $('#selectedImageName').html('Выберите рисунок');
     $('#selectedImage').removeClass('picked');
 }
+
+$(window).resize(function () {
+    responsiveNavigation();
+});

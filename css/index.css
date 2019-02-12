@@ -1084,7 +1084,7 @@ main {
 
 .aboutUs {
     margin-top: 124px;
-    height: 732px;
+    height: 782px;
     display: flex;
     align-items: center;
     justify-content: center;
@@ -1152,6 +1152,10 @@ footer {
     left: -877px;
     padding-left: 1074px;
     padding-top: 178px;
+}
+
+.footerCircle nav div {
+    margin-left: 50px;
 }
 
 #footerOpenCartButton {
@@ -1527,8 +1531,9 @@ footer {
         margin-left: 0;
     }
 
-    input {
+    #signInput {
         width: 350px;
+        max-width: 350px;
     }
 
     .fontPicker {
@@ -1694,7 +1699,7 @@ footer {
         left: calc(-484px / 2);
     }
 
-    input {
+    #signInput {
         width: calc(100vw - 40px);
         max-width: 350px;
     }

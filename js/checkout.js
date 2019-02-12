@@ -7,6 +7,10 @@ $(document).ready(function () {
         $('.clientInfo').addClass('active');
         stage.eq(0).css('color', 'var(--brown-grey)');
         stage.eq(1).css('color', 'var(--black)');
+        $('html, body').animate({
+            scrollTop: 0
+        }, 500);
+        return false;
     });
     $('#checkoutButton').click(function () {
         $('.clientInfo').removeClass('active');
@@ -23,7 +27,6 @@ $(document).ready(function () {
         $(this).css('color', 'var(--black)');
         $('#yourInfoStage').css('color', 'var(--brown-grey)');
         $('#doneStage').css('color', 'var(--brown-grey)');
-        $('.leftCircle h2').css('opacity', 1);
     });
 
     $('#yourInfoStage').click(function () {
@@ -35,7 +38,6 @@ $(document).ready(function () {
         $(this).css('color', 'var(--black)');
         $('#deliveryStage').css('color', 'var(--brown-grey)');
         $('#doneStage').css('color', 'var(--brown-grey)');
-        $('.leftCircle h2').css('opacity', 1);
     });
 
 
@@ -82,6 +84,8 @@ $(document).ready(function () {
             closePicker(deliveryTimePicker, $('#deliveryTimePicker .deliveryPickerItem'), $('#selectedDeliveryTime img'));
         }
     });
+
+    responsiveNavigation();
 });
 
 function openPicker(picker, pickerItem, selected) {
@@ -118,3 +122,44 @@ const phoneMask = new IMask(
 
 $('#bathrobePrice').html(3190 * bathrobeAmount + '₽');
 $('#fullPrice').html(3190 * bathrobeAmount + 500 + '₽');
+
+$(window).resize(function () {
+    responsiveNavigation();
+});
+
+function responsiveNavigation() {
+    if ($(window).width() > 1270) {
+        $('main nav').html(
+            '<div class="navItem" id="phone">' +
+            '      <img alt="" src="img/phoneBlue.svg">' +
+            '      +7 (937) 667-98-49' +
+            '    </div>' +
+            '    <div class="navItem">' +
+            '      <img alt="" src="img/leftArrowBlue.svg">' +
+            '      <a href="cart.html">Назад в корзину</a>' +
+            '    </div>' +
+            '    <div class="stage">' +
+            '      <a id="deliveryStage">Доставка</a>' +
+            '      <img alt="" src="img/rightArrowBlue.svg">' +
+            '      <a id="yourInfoStage">Ваши данные</a>' +
+            '      <img alt="" src="img/rightArrowBlue.svg">' +
+            '      <a id="doneStage">Готово</a>' +
+            '    </div>' +
+            '    <img alt="" class="logo" src="img/logo.png">');
+    }
+    if ($(window).width() < 1270) {
+        console.log('Less');
+        $('main nav').html(
+            '<div class="circleButton" id="home" onclick="window.location=\'cart.html\';">' +
+            '      <img alt="" src="img/leftArrowBlue.svg">' +
+            '    </div>' +
+            '    <div class="stage">' +
+            '      <a id="deliveryStage">Доставка</a>' +
+            '      <img alt="" src="img/rightArrowBlue.svg">' +
+            '      <a id="yourInfoStage">Ваши данные</a>' +
+            '      <img alt="" src="img/rightArrowBlue.svg">' +
+            '      <a id="doneStage">Готово</a>' +
+            '    </div>' +
+            '    <img alt="" class="logo" src="img/logo.png">');
+    }
+}

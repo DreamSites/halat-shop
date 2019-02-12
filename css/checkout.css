@@ -67,7 +67,8 @@ nav {
 }
 
 .deliveryPicker {
-    width: 400px;
+    max-width: 400px;
+    width: calc(100vw - 40px);
     height: 50px;
     border-radius: 25px;
     background-color: var(--pale-grey);
@@ -89,7 +90,6 @@ nav {
 }
 
 .deliveryPicker.active {
-    width: 400px;
     border-radius: 25px;
     -webkit-box-shadow: 0 0 10px 0 rgba(0, 9, 51, 0.2);
     box-shadow: 0 0 10px 0 rgba(0, 9, 51, 0.2);
@@ -161,41 +161,9 @@ nav {
     grid-template-rows: 50px repeat(3, 1fr);
 }
 
-#deliveryDay {
-    z-index: -1;
-    opacity: 0;
-    transition: all 0.2s ease;
-}
-
-#deliveryDay.active {
-    z-index: 1;
-    opacity: 1;
-}
-
-#deliveryTime {
-    z-index: -1;
-    opacity: 0;
-    transition: all 0.2s ease;
-}
-
-#deliveryTime.active {
-    z-index: 1;
-    opacity: 1;
-}
-
 input {
-    width: 400px;
-}
-
-#address {
-    z-index: -1;
-    opacity: 0;
-    transition: all 0.2s ease;
-}
-
-#address.active {
-    z-index: 1;
-    opacity: 1;
+    max-width: 400px;
+    width: calc(100vw - 40px);
 }
 
 .orderInfoCircleContent {
@@ -251,14 +219,17 @@ input {
     z-index: 3;
 }
 
+.mainButton {
+    max-width: 400px;
+    width: calc(100vw - 40px);
+}
+
 #continue {
-    width: 400px;
     margin-top: 400px;
     position: absolute;
 }
 
 #checkoutButton {
-    width: 400px;
     margin-top: 58px;
 }
 
@@ -351,10 +322,6 @@ input {
         padding-left: 691px;
     }
 
-    .orderInfoCircle {
-        left: 970px;
-    }
-
     .deliveryInfo {
         max-width: 850px;
     }
@@ -412,5 +379,40 @@ input {
     .orderInfoCircle {
         left: calc(50% - 320px / 2);
         top: -160px;
+    }
+}
+
+@media (max-width: 800px) {
+    .stage {
+        display: none;
+    }
+
+    .logo {
+        width: 92px;
+        height: 39px;
+        margin-right: auto;
+    }
+
+    nav {
+        width: calc(100vw - 40px);
+        margin: 20px auto 0;
+        height: 50px;
+    }
+
+    #home {
+        width: 50px;
+        height: 50px;
+    }
+
+    .leftCircleContent {
+        margin-top: -1059px;
+    }
+
+    main {
+        height: 1380px;
+    }
+
+    .leftCircle {
+        top: 1149px;
     }
 }
