@@ -139,6 +139,18 @@ input:focus {
     background-color: var(--sky-blue);
 }
 
+.errorMessage {
+    opacity: 0;
+    -webkit-user-select: none;
+    -moz-user-select: none;
+    -ms-user-select: none;
+    user-select: none;
+    color: #ff6666;
+    font-size: 14px;
+    cursor: default;
+    transition: all 0.2s ease;
+}
+
 @media (max-width: 600px) {
     h1 {
         font-size: 48px;

@@ -3,21 +3,79 @@ const bathrobeAmount = parseInt(localStorage.getItem("bathrobeAmount"), 10);
 $(document).ready(function () {
     const stage = $('.stage a');
     $('#continue').click(function () {
-        $('.deliveryInfo').removeClass('active');
-        $('.clientInfo').addClass('active');
-        stage.eq(0).css('color', 'var(--brown-grey)');
-        stage.eq(1).css('color', 'var(--black)');
-        $('html, body').animate({
-            scrollTop: 0
-        }, 500);
-        return false;
+
+        const cityName = $('#selectedCityName').html();
+        const deliveryWayName = $('#selectedDeliveryWayName').html();
+        const deliveryDayName = $('#selectedDeliveryDayName').html();
+        const deliveryTimeName = $('#selectedDeliveryTimeName').html();
+        const address = $('#addressInput').val();
+
+        if (cityName !== "Выберите город" && deliveryWayName !== "Выберите способ получения" && deliveryDayName !== "Выберите дату доставки" && deliveryTimeName !== "Выберите время доставки" && address !== "") {
+            $('.deliveryInfo').removeClass('active');
+            $('.clientInfo').addClass('active');
+            stage.eq(0).css('color', 'var(--brown-grey)');
+            stage.eq(1).css('color', 'var(--black)');
+            $('html, body').animate({
+                scrollTop: 0
+            }, 500);
+            return false;
+        }
+        if (cityName === "Выберите город") {
+            $('#cityError').css('opacity', 1);
+        } else {
+            $('#cityError').css('opacity', 0);
+        }
+        if (deliveryWayName === "Выберите способ получения") {
+            $('#deliveryWayError').css('opacity', 1);
+        } else {
+            $('#deliveryWayError').css('opacity', 0);
+        }
+        if (deliveryDayName === "Выберите дату доставки") {
+            $('#deliveryDateError').css('opacity', 1);
+        } else {
+            $('#deliveryDateError').css('opacity', 0);
+        }
+        if (deliveryTimeName === "Выберите время доставки") {
+            $('#deliveryTimeError').css('opacity', 1);
+        } else {
+            $('#deliveryTimeError').css('opacity', 0);
+        }
+        if (address === "") {
+            $('#addressError').css('opacity', 1);
+        } else {
+            $('#addressError').css('opacity', 0);
+        }
+
     });
     $('#checkoutButton').click(function () {
-        $('.clientInfo').removeClass('active');
-        $('.checkoutEnd').addClass('active');
-        stage.eq(1).css('color', 'var(--brown-grey)');
-        stage.eq(2).css('color', 'var(--black)');
-        $('.leftCircle h2').css({'opacity': 0});
+        const nameInput = $('#nameInput').val();
+        const phoneNumberInput = $('#phoneNumberInput').val();
+        const emailInput = $('#emailInput').val();
+
+        if (nameInput !== '' && emailInput !== '' && phoneNumberInput.length === 18) {
+            $('.clientInfo').removeClass('active');
+            $('.checkoutEnd').addClass('active');
+            stage.eq(1).css('color', 'var(--brown-grey)');
+            stage.eq(2).css('color', 'var(--black)');
+            $('.leftCircle h2').css({'opacity': 0});
+
+        }
+        if (nameInput === '') {
+            $('#nameError').css('opacity', 1);
+        } else {
+            $('#nameError').css('opacity', 0);
+        }
+        if (phoneNumberInput.length !== 18) {
+            $('#phoneError').css('opacity', 1);
+        } else {
+            $('#phoneError').css('opacity', 0);
+        }
+        if (emailInput === '') {
+            $('#emailError').css('opacity', 1);
+        } else {
+            $('#emailError').css('opacity', 0);
+        }
+
     });
 
     $('#deliveryStage').click(function () {
@@ -129,7 +187,7 @@ $(window).resize(function () {
 
 function responsiveNavigation() {
     if ($(window).width() > 1270) {
-        $('main nav').html(
+        $('#rightNav').html(
             '<div class="navItem" id="phone">' +
             '      <img alt="" src="img/phoneBlue.svg">' +
             '      +7 (937) 667-98-49' +
@@ -137,29 +195,13 @@ function responsiveNavigation() {
             '    <div class="navItem">' +
             '      <img alt="" src="img/leftArrowBlue.svg">' +
             '      <a href="cart.html">Назад в корзину</a>' +
-            '    </div>' +
-            '    <div class="stage">' +
-            '      <a id="deliveryStage">Доставка</a>' +
-            '      <img alt="" src="img/rightArrowBlue.svg">' +
-            '      <a id="yourInfoStage">Ваши данные</a>' +
-            '      <img alt="" src="img/rightArrowBlue.svg">' +
-            '      <a id="doneStage">Готово</a>' +
-            '    </div>' +
-            '    <img alt="" class="logo" src="img/logo.png">');
+            '    </div>')
     }
     if ($(window).width() < 1270) {
-        console.log('Less');
-        $('main nav').html(
+        $('#rightNav').html(
             '<div class="circleButton" id="home" onclick="window.location=\'cart.html\';">' +
             '      <img alt="" src="img/leftArrowBlue.svg">' +
             '    </div>' +
-            '    <div class="stage">' +
-            '      <a id="deliveryStage">Доставка</a>' +
-            '      <img alt="" src="img/rightArrowBlue.svg">' +
-            '      <a id="yourInfoStage">Ваши данные</a>' +
-            '      <img alt="" src="img/rightArrowBlue.svg">' +
-            '      <a id="doneStage">Готово</a>' +
-            '    </div>' +
-            '    <img alt="" class="logo" src="img/logo.png">');
+            '    <div class="stage">')
     }
 }

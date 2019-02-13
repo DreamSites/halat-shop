@@ -488,6 +488,8 @@ function pickFont(font) {
     pickedFont[bathrobeID] = font;
 }
 
+
+
 function pickBathrobeColor(color) {
     $('#selectedBathrobeColorName').html(color);
     $('#selectedBathrobeColor').addClass('picked');

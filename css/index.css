@@ -2022,6 +2022,7 @@ footer {
         line-height: 3.52;
     }
 }
+
 @media (max-width: 320px) {
     .headerLeftBG .mainButton {
         width: calc(100vw - 40px);

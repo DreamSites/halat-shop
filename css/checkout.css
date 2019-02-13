@@ -196,23 +196,20 @@ input {
     z-index: -2;
     display: flex;
     flex-direction: column;
+    align-items: center;
     left: 800px;
-    bottom: 900px;
+    bottom: 800px;
 }
 
-.checkoutEnd img {
-    margin-top: -10px;
+.checkoutEnd p {
+    text-align: center;
+    width: 504px;
 }
 
 .checkoutEnd h3 {
-    padding-bottom: 20px;
-    padding-top: 20px;
+    margin-bottom: 20px;
+    margin-top: 20px;
 }
-
-#secondRow {
-    margin-left: 40px;
-}
-
 
 .checkoutEnd.active {
     opacity: 1;
@@ -234,10 +231,7 @@ input {
 }
 
 #oneMore {
-    width: 300px;
-    margin-top: 250px;
-    margin-left: 100px;
-    position: absolute;
+    margin-top: 30px;
 }
 
 .deliveryInfo {
@@ -260,6 +254,7 @@ input {
 
 .deliveryInfoItem {
     margin-bottom: 30px;
+    max-height: 84px;
 }
 
 .stage a {
@@ -302,6 +297,7 @@ input {
 
 .clientInfoItem {
     margin-bottom: 30px;
+    max-height: 84px;
 }
 
 .clientInfo p {
@@ -310,6 +306,11 @@ input {
     color: #CCCCCC;
     width: 350px;
     text-align: center;
+}
+
+#rightNav {
+    display: flex;
+    flex-direction: row-reverse;
 }
 
 @media (max-width: 1620px) {
@@ -324,6 +325,10 @@ input {
 
     .deliveryInfo {
         max-width: 850px;
+    }
+
+    .checkoutEnd {
+        left: 900px;
     }
 }
 
@@ -380,6 +385,11 @@ input {
         left: calc(50% - 320px / 2);
         top: -160px;
     }
+
+    .checkoutEnd {
+        bottom: 2500px;
+        left: calc(50% - 252px);
+    }
 }
 
 @media (max-width: 800px) {
@@ -414,5 +424,17 @@ input {
 
     .leftCircle {
         top: 1149px;
+    }
+
+    .checkoutEnd {
+        left: calc(50% - (100vw - 40px) / 2);
+    }
+
+    .checkoutEnd p {
+        width: calc(100vw - 40px);
+    }
+
+    #oneMore {
+
     }
 }

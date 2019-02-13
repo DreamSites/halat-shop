@@ -41,6 +41,7 @@
               </div>
             </div>
           </div>
+          <div class="errorMessage" id="cityError">Сначала заполните это поле</div>
         </div>
         <div class="deliveryInfoItem" id="deliveryWay">
           <h4>Способ получения</h4>
@@ -64,10 +65,12 @@
               </div>
             </div>
           </div>
+          <div class="errorMessage" id="deliveryWayError">Сначала заполните это поле</div>
         </div>
         <div class="deliveryInfoItem" id="address">
           <h4>Адрес</h4>
           <input class="addressInput" id="addressInput" placeholder="Улица, дом, квартира, этаж" type="text">
+          <div class="errorMessage" id="addressError">Сначала заполните это поле</div>
         </div>
         <div class="deliveryInfoItem" id="deliveryDay">
           <h4>Дата</h4>
@@ -91,6 +94,7 @@
               </div>
             </div>
           </div>
+          <div class="errorMessage" id="deliveryDateError">Сначала заполните это поле</div>
         </div>
         <div class="deliveryInfoItem" id="deliveryTime">
           <h4>Время</h4>
@@ -114,6 +118,7 @@
               </div>
             </div>
           </div>
+          <div class="errorMessage" id="deliveryTimeError">Сначала заполните это поле</div>
         </div>
         <div class="mainButton" id="continue">Продолжить</div>
       </div>
@@ -121,14 +126,17 @@
         <div class="clientInfoItem">
           <h4>Имя и фамилия</h4>
           <input class="nameInput" id="nameInput" placeholder="Иван Иванов" type="text">
+          <div class="errorMessage" id="nameError">Сначала заполните это поле</div>
         </div>
         <div class="clientInfoItem">
           <h4>Телефон</h4>
           <input class="phoneNumberInput" id="phoneNumberInput" placeholder="+7 (937) 667-98-49" type="tel">
+          <div class="errorMessage" id="phoneError">Некорректный номер</div>
         </div>
         <div class="clientInfoItem">
           <h4>Электронная почта</h4>
           <input class="emailInput" id="emailInput" placeholder="ivan@gmail.com" type="email">
+          <div class="errorMessage" id="emailError">Сначала заполните это поле</div>
         </div>
         <div class="mainButton" id="checkoutButton">Оформить заказ</div>
         <p>Нажимая на кнопку, вы соглашаетесь на обработку
@@ -137,9 +145,8 @@
       <div class="checkoutEnd">
         <img alt="" src="img/orderStage5.svg">
         <h3>Ваш заказ принят</h3>
-        <p>В ближайшее время по указанным контактам придет</p>
-        <p id="secondRow"> сообщение с дополнительной информацией.</p>
-        <div class="mainButton" id="oneMore" onclick="window.location='index.html';">Хочу еще один</div>
+        <p>В ближайшее время по указанным контактам придет сообщение с дополнительной информацией.</p>
+        <div class="mainButton" id="oneMore" onclick="window.location='index.html';">Хочу еще один!</div>
       </div>
     </div>
     <div class="orderInfoCircle">
@@ -158,13 +165,15 @@
     </div>
   </div>
   <nav>
-    <div class="navItem" id="phone">
-      <img alt="" src="img/phoneBlue.svg">
-      +7 (937) 667-98-49
-    </div>
-    <div class="navItem">
-      <img alt="" src="img/leftArrowBlue.svg">
-      <a href="cart.html">Назад в корзину</a>
+    <div id="rightNav">
+      <div class="navItem" id="phone">
+        <img alt="" src="img/phoneBlue.svg">
+        +7 (937) 667-98-49
+      </div>
+      <div class="navItem">
+        <img alt="" src="img/leftArrowBlue.svg">
+        <a href="cart.html">Назад в корзину</a>
+      </div>
     </div>
     <div class="stage">
       <a id="deliveryStage">Доставка</a>
