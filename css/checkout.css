@@ -23,6 +23,7 @@ main {
     width: 168px;
     height: 71px;
     margin-right: 80px;
+    cursor: pointer;
 }
 
 nav {

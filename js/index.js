@@ -432,6 +432,21 @@ function responsiveNavigation() {
     }
     if ($(window).width() < 760) {
         $('.constructor h2').html('Ваш уникальный<br>халат');
+        $('.sizeNumbersContainer').html(
+            '<div class="sexSign">Мужские</div>' +
+            '<div class="sexSign">Женские</div>' +
+            '<div>46-47</div>' +
+            '<div>44-45</div>' +
+            '<div>48-49</div>' +
+            '<div>46-47</div>' +
+            '<div>50-51</div>' +
+            '<div>48-49</div>' +
+            '<div>52-53</div>' +
+            '<div>54-57</div>' +
+            '<div>50-51</div>' +
+            '<div>58-60</div>' +
+            '<div>54-56</div>' +
+            '<div>52-53</div>');
     }
     if ($(window).width() < 675) {
         $('#copyright span').text = 'Copyright 2018 Магазин халатов.';
@@ -487,7 +502,6 @@ function pickFont(font) {
     closeFontPicker();
     pickedFont[bathrobeID] = font;
 }
-
 
 
 function pickBathrobeColor(color) {

@@ -36,6 +36,7 @@ nav a {
 .logo {
     width: 168px;
     height: 71px;
+    cursor: pointer;
 }
 
 header h1 {
@@ -1000,8 +1001,12 @@ main {
     margin-bottom: 15px;
 }
 
-#sizeTable img {
+#horizontalSeparator {
     width: 615px;
+}
+
+#verticalSeparator {
+    display: none;
 }
 
 .sizeNamesContainer {
@@ -1772,6 +1777,47 @@ footer {
     .constructorPopup .mainButton {
         width: calc(100vw - 40px);
         max-width: 350px;
+    }
+
+    #sizeTable {
+        justify-content: flex-start;
+        padding-top: 100px;
+    }
+
+    .sizeTableContainer {
+        display: flex;
+    }
+
+    .sizeNamesContainer {
+        width: 70px;
+        height: initial;
+        grid-template-columns: initial;
+        grid-template-rows: repeat(6, 50px);
+        margin-right: 20px;
+        padding-top: 50px;
+    }
+
+    .sizeNamesContainer div {
+        font-size: 14px;
+    }
+
+    #horizontalSeparator {
+        display: none;
+    }
+
+    #verticalSeparator {
+        display: block;
+    }
+
+    .sizeNumbersContainer {
+        margin-top: 0;
+        grid-template-columns: 1fr 1fr;
+        grid-template-rows: repeat(7, 50px);
+        width: 250px;
+    }
+
+    .sizeNumbersContainer div {
+        font-size: 14px;
     }
 }
 
