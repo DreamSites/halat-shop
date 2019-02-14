@@ -147,8 +147,8 @@ $(document).ready(function () {
 });
 
 function openPicker(picker, pickerItem, selected) {
-    picker.addClass('active');
-    pickerItem.addClass('active');
+    picker.toggleClass('active');
+    pickerItem.toggleClass('active');
     selected.css('transform', 'rotate(180deg)');
 }
 
@@ -167,6 +167,7 @@ function pick(picker, pickerItemText, pickerItem, selected, selectedName, select
 
 function checkDeliveryStage() {
     if ($('#selectedCityName').html() !== 'Выберите город' && $('#selectedDeliveryWayName').html() !== 'Выберите способ получения') {
+        $('#address').addClass('active');
         $('#address').addClass('active');
         $('#deliveryDay').addClass('active');
         $('#deliveryTime').addClass('active');

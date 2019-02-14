@@ -458,39 +458,33 @@ function responsiveNavigation() {
 }
 
 function openFontPicker() {
-    $('#fontPicker').addClass('active');
-    $('.fontPickerItem').addClass('active');
-    $('#selectedFont img').css('transform', 'rotate(180deg)');
+    $('#fontPicker').toggleClass('active');
+    $('.fontPickerItem').toggleClass('active');
 }
 
 function closeFontPicker() {
     $('#fontPicker').removeClass('active');
     $('.fontPickerItem').removeClass('active');
-    $('#selectedFont img').css('transform', 'rotate(0)');
 }
 
 function openBathrobeColorPicker() {
-    $('#bathrobeColorPicker').addClass('active');
-    $('.bathrobeColor, .colorPickerItem').addClass('active');
-    $('#selectedBathrobeColor img').css('transform', 'rotate(180deg)');
+    $('#bathrobeColorPicker').toggleClass('active');
+    $('.bathrobeColor, .colorPickerItem').toggleClass('active');
 }
 
 function closeBathrobeColorPicker() {
     $('#bathrobeColorPicker').removeClass('active');
     $('.bathrobeColor, .colorPickerItem').removeClass('active');
-    $('#selectedBathrobeColor img').css('transform', 'rotate(0)');
 }
 
 function openImagePicker() {
-    $('#imagePicker').addClass('active');
-    $('.image, .imagePickerItem').addClass('active');
-    $('#selectedImage img').css('transform', 'rotate(180deg)');
+    $('#imagePicker').toggleClass('active');
+    $('.image, .imagePickerItem').toggleClass('active');
 }
 
 function closeImagePicker() {
     $('#imagePicker').removeClass('active');
     $('.image, .imagePickerItem').removeClass('active');
-    $('#selectedImage img').css('transform', 'rotate(0)');
 }
 
 function pickFont(font) {
