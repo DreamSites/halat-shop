@@ -460,6 +460,7 @@ function responsiveNavigation() {
 function openFontPicker() {
     $('#fontPicker').toggleClass('active');
     $('.fontPickerItem').toggleClass('active');
+    $('#arrowFont').toggleClass('flip');
 }
 
 function closeFontPicker() {
@@ -470,6 +471,7 @@ function closeFontPicker() {
 function openBathrobeColorPicker() {
     $('#bathrobeColorPicker').toggleClass('active');
     $('.bathrobeColor, .colorPickerItem').toggleClass('active');
+    $('#arrowBathColor').toggleClass('flip');
 }
 
 function closeBathrobeColorPicker() {
@@ -480,6 +482,7 @@ function closeBathrobeColorPicker() {
 function openImagePicker() {
     $('#imagePicker').toggleClass('active');
     $('.image, .imagePickerItem').toggleClass('active');
+    $('#arrowImage').toggleClass('flip');
 }
 
 function closeImagePicker() {

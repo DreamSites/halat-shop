@@ -29,7 +29,7 @@
             <div class="deliveryPicker" id="cityPicker">
               <div class="deliveryPickerItem selected" id="selectedCity">
                 <span id="selectedCityName">Выберите город</span>
-                <img alt="" class="selectorArrow" src="img/selectorOpenArrow.svg">
+                <img alt="" class="selectorArrow" id="arrowCity" src="img/selectorOpenArrow.svg">
               </div>
               <div class="deliveryPickerItem"
                    onclick="pick($('#cityPicker'), 'Москва', $('#cityPicker .deliveryPickerItem'), $('#selectedCity'), $('#selectedCityName'), $('#selectedCity img'))">
@@ -49,7 +49,7 @@
             <div class="deliveryPicker" id="deliveryWayPicker">
               <div class="deliveryPickerItem selected" id="selectedDeliveryWay">
                 <span id="selectedDeliveryWayName">Выберите способ получения</span>
-                <img alt="" class="selectorArrow" src="img/selectorOpenArrow.svg">
+                <img alt="" class="selectorArrow" id="arrowDekiveryWay" src="img/selectorOpenArrow.svg">
               </div>
               <div class="deliveryPickerItem"
                    onclick="pick($('#deliveryWayPicker'), 'Доставка', $('#deliveryWayPicker .deliveryPickerItem'), $('#selectedDeliveryWay'), $('#selectedDeliveryWayName'),  $('#selectedDeliveryWay img'))">
@@ -78,7 +78,7 @@
             <div class="deliveryPicker" id="deliveryDayPicker">
               <div class="deliveryPickerItem selected" id="selectedDeliveryDay">
                 <span id="selectedDeliveryDayName">Выберите дату доставки</span>
-                <img alt="" class="selectorArrow" src="img/selectorOpenArrow.svg">
+                <img alt="" class="selectorArrow" id="arrowDate" src="img/selectorOpenArrow.svg">
               </div>
               <div class="deliveryPickerItem"
                    onclick="pick($('#deliveryDayPicker'), 'Завтра', $('#deliveryDayPicker .deliveryPickerItem'), $('#selectedDeliveryDay'), $('#selectedDeliveryDayName'), $('#selectedDeliveryDay img'))">
@@ -102,7 +102,7 @@
             <div class="deliveryPicker" id="deliveryTimePicker">
               <div class="deliveryPickerItem selected" id="selectedDeliveryTime">
                 <span id="selectedDeliveryTimeName">Выберите время доставки</span>
-                <img alt="" class="selectorArrow" src="img/selectorOpenArrow.svg">
+                <img alt="" class="selectorArrow" id="arrowTime" src="img/selectorOpenArrow.svg">
               </div>
               <div class="deliveryPickerItem"
                    onclick="pick($('#deliveryTimePicker'), '10:00 — 12:00', $('#deliveryTimePicker .deliveryPickerItem'), $('#selectedDeliveryTime'), $('#selectedDeliveryTimeName'), $('#selectedDeliveryTime img'))">

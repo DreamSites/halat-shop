@@ -281,6 +281,10 @@ input {
     color: var(--black);
 }
 
+.flip {
+    transform: rotate(180deg);
+}
+
 .clientInfo {
     opacity: 0;
     z-index: -1;
