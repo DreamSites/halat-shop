@@ -99,8 +99,10 @@ $(document).ready(function () {
     });
 
 
+
     $('#selectedCity').click(function () {
         openPicker($('#cityPicker'), $('#cityPicker .deliveryPickerItem'), $('#selectedCity img'));
+        $('#arrowCity').toggleClass('flip');
     });
 
     $(document).mouseup(function (e) {
@@ -112,6 +114,7 @@ $(document).ready(function () {
 
     $('#selectedDeliveryWay').click(function () {
         openPicker($('#deliveryWayPicker'), $('#deliveryWayPicker .deliveryPickerItem'), $('#selectedDeliveryWay img'));
+        $('#arrowDeliveryWay').toggleClass('flip');
     });
 
     $(document).mouseup(function (e) {
@@ -123,6 +126,7 @@ $(document).ready(function () {
 
     $('#selectedDeliveryDay').click(function () {
         openPicker($('#deliveryDayPicker'), $('#deliveryDayPicker .deliveryPickerItem'), $('#selectedDeliveryDay img'));
+        $('#arrowDate').toggleClass('flip');
     });
 
     $(document).mouseup(function (e) {
@@ -134,6 +138,7 @@ $(document).ready(function () {
 
     $('#selectedDeliveryTime').click(function () {
         openPicker($('#deliveryTimePicker'), $('#deliveryTimePicker .deliveryPickerItem'), $('#selectedDeliveryTime img'));
+        $('#arrowTime').toggleClass('flip');
     });
 
     $(document).mouseup(function (e) {
@@ -149,13 +154,11 @@ $(document).ready(function () {
 function openPicker(picker, pickerItem, selected) {
     picker.toggleClass('active');
     pickerItem.toggleClass('active');
-    selected.css('transform', 'rotate(180deg)');
 }
 
 function closePicker(picker, pickerItem, selected) {
     picker.removeClass('active');
     pickerItem.removeClass('active');
-    selected.css('transform', 'rotate(0)');
 }
 
 function pick(picker, pickerItemText, pickerItem, selected, selectedName, selectedIMG) {
