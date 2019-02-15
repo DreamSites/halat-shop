@@ -614,10 +614,6 @@ main {
     transition: all 0.2s ease;
 }
 
-.flip {
-transform: rotate(180deg);
-}
-
 #selectedFont.active {
     border-bottom: 1px solid #d9d9d9;
     cursor: default;

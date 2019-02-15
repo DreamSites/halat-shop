@@ -102,7 +102,6 @@ $(document).ready(function () {
 
     $('#selectedCity').click(function () {
         openPicker($('#cityPicker'), $('#cityPicker .deliveryPickerItem'), $('#selectedCity img'));
-        $('#arrowCity').toggleClass('flip');
     });
 
     $(document).mouseup(function (e) {
@@ -114,7 +113,6 @@ $(document).ready(function () {
 
     $('#selectedDeliveryWay').click(function () {
         openPicker($('#deliveryWayPicker'), $('#deliveryWayPicker .deliveryPickerItem'), $('#selectedDeliveryWay img'));
-        $('#arrowDeliveryWay').toggleClass('flip');
     });
 
     $(document).mouseup(function (e) {
@@ -126,7 +124,6 @@ $(document).ready(function () {
 
     $('#selectedDeliveryDay').click(function () {
         openPicker($('#deliveryDayPicker'), $('#deliveryDayPicker .deliveryPickerItem'), $('#selectedDeliveryDay img'));
-        $('#arrowDate').toggleClass('flip');
     });
 
     $(document).mouseup(function (e) {
@@ -138,7 +135,6 @@ $(document).ready(function () {
 
     $('#selectedDeliveryTime').click(function () {
         openPicker($('#deliveryTimePicker'), $('#deliveryTimePicker .deliveryPickerItem'), $('#selectedDeliveryTime img'));
-        $('#arrowTime').toggleClass('flip');
     });
 
     $(document).mouseup(function (e) {
@@ -154,27 +150,19 @@ $(document).ready(function () {
 function openPicker(picker, pickerItem, selected) {
     picker.toggleClass('active');
     pickerItem.toggleClass('active');
+    selected.toggleClass('flip');
 }
 
 function closePicker(picker, pickerItem, selected) {
     picker.removeClass('active');
     pickerItem.removeClass('active');
+    selected.removeClass('flip');
 }
 
 function pick(picker, pickerItemText, pickerItem, selected, selectedName, selectedIMG) {
     selectedName.html(pickerItemText);
     selected.addClass('picked');
     closePicker(picker, pickerItem, selectedIMG);
-    checkDeliveryStage();
-}
-
-function checkDeliveryStage() {
-    if ($('#selectedCityName').html() !== 'Выберите город' && $('#selectedDeliveryWayName').html() !== 'Выберите способ получения') {
-        $('#address').addClass('active');
-        $('#address').addClass('active');
-        $('#deliveryDay').addClass('active');
-        $('#deliveryTime').addClass('active');
-    }
 }
 
 const phoneMask = new IMask(
