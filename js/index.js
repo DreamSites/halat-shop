@@ -442,11 +442,11 @@ function responsiveNavigation() {
             '<div>50-51</div>' +
             '<div>48-49</div>' +
             '<div>52-53</div>' +
-            '<div>54-57</div>' +
             '<div>50-51</div>' +
+            '<div>54-57</div>' +
+            '<div>52-53</div>' +
             '<div>58-60</div>' +
-            '<div>54-56</div>' +
-            '<div>52-53</div>');
+            '<div>54-56</div>');
     }
     if ($(window).width() < 675) {
         $('#copyright span').text = 'Copyright 2018 Магазин халатов.';
