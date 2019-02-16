@@ -1,8 +1,7 @@
 let bathrobeID = 0;
+let bathrobeAmount = 0;
 if (localStorage.getItem("bathrobeAmount")) {
-  let bathrobeAmount = parseInt(localStorage.getItem("bathrobeAmount"), 10);
-} else {
-  bathrobeAmount = 0;
+  bathrobeAmount = parseInt(localStorage.getItem("bathrobeAmount"), 10);
 }
 let pickedSize = JSON.parse(localStorage.getItem("pickedSize"));
 let signInput = JSON.parse(localStorage.getItem("signInput"));
