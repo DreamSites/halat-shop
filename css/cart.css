@@ -1,432 +1,432 @@
 main {
-    width: 100%;
-    height: 1080px;
-    overflow: hidden;
-    position: relative;
+  width: 100%;
+  height: 1080px;
+  overflow: hidden;
+  position: relative;
 }
 
 .leftCircle {
-    width: 1479px;
-    height: 1479px;
-    -webkit-box-shadow: 0 0 30px 0 rgba(0, 9, 51, 0.2);
-    box-shadow: 0 0 30px 0 rgba(0, 9, 51, 0.2);
-    background-color: white;
-    border-radius: 50%;
-    position: absolute;
-    left: calc(-1479px + 50vw);
-    top: -198px;
-    padding-left: 641px;
-    padding-top: 245px;
-    z-index: -2;
+  width: 1479px;
+  height: 1479px;
+  -webkit-box-shadow: 0 0 30px 0 rgba(0, 9, 51, 0.2);
+  box-shadow: 0 0 30px 0 rgba(0, 9, 51, 0.2);
+  background-color: white;
+  border-radius: 50%;
+  position: absolute;
+  left: calc(-1479px + 50vw);
+  top: -198px;
+  padding-left: 641px;
+  padding-top: 245px;
+  z-index: -2;
 }
 
 .logo {
-    width: 168px;
-    height: 71px;
-    margin-right: auto;
-    cursor: pointer;
+  width: 168px;
+  height: 71px;
+  margin-right: auto;
+  cursor: pointer;
 }
 
 .previewContainer {
-    width: 1479px;
-    height: 1479px;
-    position: absolute;
-    left: calc(-1479px + 50vw);
-    top: -198px;
-    z-index: -1;
-    transition: all 0.2s ease;
-    opacity: 0;
+  width: 1479px;
+  height: 1479px;
+  position: absolute;
+  left: calc(-1479px + 50vw);
+  top: -198px;
+  z-index: -1;
+  transition: all 0.2s ease;
+  opacity: 0;
 }
 
 .previewImageContainer {
-    width: 447px;
-    height: 1039px;
-    position: relative;
-    top: 326px;
-    left: 790px;
-    z-index: 2;
+  width: 447px;
+  height: 1039px;
+  position: relative;
+  top: 326px;
+  left: 790px;
+  z-index: 2;
 }
 
 #sign {
-    position: absolute;
-    top: 280px;
-    left: calc(50% - 200px / 2);
-    width: 200px;
-    text-align: center;
-    margin-left: 15px;
-    transition: all 0.2s ease;
-    font-size: 30px;
-    line-height: 1;
+  position: absolute;
+  top: 280px;
+  left: calc(50% - 200px / 2);
+  width: 200px;
+  text-align: center;
+  margin-left: 15px;
+  transition: all 0.2s ease;
+  font-size: 30px;
+  line-height: 1;
 }
 
 .whiteCircle {
-    width: 386px;
-    height: 386px;
-    -webkit-box-shadow: 0 0 20px 0 rgba(0, 9, 51, 0.1);
-    box-shadow: 0 0 20px 0 rgba(0, 9, 51, 0.1);
-    background-color: white;
-    position: absolute;
-    border-radius: 50%;
+  width: 386px;
+  height: 386px;
+  -webkit-box-shadow: 0 0 20px 0 rgba(0, 9, 51, 0.1);
+  box-shadow: 0 0 20px 0 rgba(0, 9, 51, 0.1);
+  background-color: white;
+  position: absolute;
+  border-radius: 50%;
 }
 
 #whiteCircle-1 {
-    top: 1079px;
-    left: 725px;
-    z-index: 3;
+  top: 1079px;
+  left: 725px;
+  z-index: 3;
 }
 
 #whiteCircle-2 {
-    top: 1172px;
-    left: 1002px;
-    z-index: 4;
+  top: 1172px;
+  left: 1002px;
+  z-index: 4;
 }
 
 nav {
-    display: flex;
-    flex-direction: row-reverse;
-    align-items: center;
-    z-index: 2;
-    position: relative;
-    height: 71px;
-    margin: 47px auto 0;
-    width: calc(100vw - 400px);
+  display: flex;
+  flex-direction: row-reverse;
+  align-items: center;
+  z-index: 2;
+  position: relative;
+  height: 71px;
+  margin: 47px auto 0;
+  width: calc(100vw - 400px);
 }
 
 .navItem {
-    display: flex;
-    align-items: center;
-    margin-left: 75px;
-    font-size: 16px;
-    color: var(--greyish-brown);
+  display: flex;
+  align-items: center;
+  margin-left: 75px;
+  font-size: 16px;
+  color: var(--greyish-brown);
 }
 
 .navItem a {
-    text-decoration: none;
-    color: var(--greyish-brown);
+  text-decoration: none;
+  color: var(--greyish-brown);
 }
 
 .navItem img {
-    margin-right: 10px;
+  margin-right: 10px;
 }
 
 .orderInfo {
-    margin-left: 58%;
-    margin-top: 80px;
-    transition: all 0.2s ease;
-    opacity: 0;
-    z-index: -1;
+  margin-left: 58%;
+  margin-top: 80px;
+  transition: all 0.2s ease;
+  opacity: 0;
+  z-index: -1;
 }
 
 .price {
-    width: 400px;
-    display: flex;
-    align-items: center;
+  width: 400px;
+  display: flex;
+  align-items: center;
 }
 
 .orderInfo h4 {
-    margin-bottom: 0;
-    font-weight: 500;
-    float: left;
+  margin-bottom: 0;
+  font-weight: 500;
+  float: left;
 }
 
 .price a {
-    text-decoration: none;
-    color: var(--sky-blue);
-    margin-left: auto;
-    cursor: pointer;
+  text-decoration: none;
+  color: var(--sky-blue);
+  margin-left: auto;
+  cursor: pointer;
 }
 
 .info {
-    margin-top: 20px;
-    transition: all 0.2s ease;
+  margin-top: 20px;
+  transition: all 0.2s ease;
 }
 
 .info span {
-    color: var(--brown-grey);
-    float: left;
-    line-height: 1.76;
-    margin-right: 5px;
+  color: var(--brown-grey);
+  float: left;
+  line-height: 1.76;
+  margin-right: 5px;
 }
 
 .info p {
-    font-size: 16px;
+  font-size: 16px;
 }
 
 .orderInfoSeparator {
-    margin-top: 40px;
+  margin-top: 40px;
 }
 
 .orderItemsButtons {
-    display: flex;
-    margin-top: 30px;
-    align-items: center;
+  display: flex;
+  margin-top: 30px;
+  align-items: center;
 }
 
 .orderItemsButtons .circleButton:first-of-type {
-    margin-right: 20px;
+  margin-right: 20px;
 }
 
 .orderItemsButtons p {
-    margin-left: 30px;
+  margin-left: 30px;
 }
 
 .fullPrice {
-    margin-right: 5px;
-    margin-top: 50px;
+  margin-right: 5px;
+  margin-top: 50px;
 }
 
 #fullPrice {
-    float: none;
+  float: none;
 }
 
 .orderInfo .mainButton {
-    margin-top: 40px;
-    width: 400px;
+  margin-top: 40px;
+  width: 400px;
 }
 
 .cartIsEmpty {
-    position: absolute;
-    left: 10%;
-    top: 200px;
-    z-index: 1;
+  position: absolute;
+  left: 10%;
+  top: 200px;
+  z-index: 1;
 }
 
 .cartIsEmpty h2 {
-    width: 338px;
+  width: 338px;
 }
 
 @media (max-width: 1620px) {
-    nav {
-        width: calc(100vw - 100px);
-    }
+  nav {
+    width: calc(100vw - 100px);
+  }
 }
 
 @media (max-width: 1350px) {
-    #whiteCircle-1 {
-        top: 1079px;
-        left: 800px;
-    }
+  #whiteCircle-1 {
+    top: 1079px;
+    left: 800px;
+  }
 
-    #whiteCircle-2 {
-        top: 1172px;
-        left: 1100px;
-    }
+  #whiteCircle-2 {
+    top: 1172px;
+    left: 1100px;
+  }
 
-    .previewImageContainer {
-        margin-left: 100px;
-    }
+  .previewImageContainer {
+    margin-left: 100px;
+  }
 }
 
 @media (max-width: 1240px) {
-    nav {
-        margin: 30px auto 0;
-        height: 71px;
-        width: calc(100vw - 60px);
-    }
+  nav {
+    margin: 30px auto 0;
+    height: 71px;
+    width: calc(100vw - 60px);
+  }
 
-    #home {
-        width: 60px;
-        height: 60px;
-        display: flex;
-        justify-content: center;
-        border-radius: 50%;
-        cursor: pointer;
-        -webkit-box-shadow: 0 0 20px 0 rgba(0, 9, 51, 0.2);
-        box-shadow: 0 0 20px 0 rgba(0, 9, 51, 0.2);
-        transition: all 0.2s ease;
-    }
+  #home {
+    width: 60px;
+    height: 60px;
+    display: flex;
+    justify-content: center;
+    border-radius: 50%;
+    cursor: pointer;
+    -webkit-box-shadow: 0 0 20px 0 rgba(0, 9, 51, 0.2);
+    box-shadow: 0 0 20px 0 rgba(0, 9, 51, 0.2);
+    transition: all 0.2s ease;
+  }
 
-    #home a {
-        display: none;
-    }
+  #home a {
+    display: none;
+  }
 
-    .navItem img {
-        margin-right: 3px;
-    }
+  .navItem img {
+    margin-right: 3px;
+  }
 
-    #phone {
-        display: none;
-    }
+  #phone {
+    display: none;
+  }
 }
 
 @media (max-width: 1200px) {
-    .leftCircle {
-        left: calc(-1479px / 2 + 50vw);
-        top: 900px;
-        z-index: 2;
-    }
+  .leftCircle {
+    left: calc(-1479px / 2 + 50vw);
+    top: 900px;
+    z-index: 2;
+  }
 
-    .previewContainer {
-        left: 0;
-        top: 0;
-    }
+  .previewContainer {
+    left: 0;
+    top: 0;
+  }
 
-    .previewImageContainer {
-        left: -100px;
-        top: 150px;
-        z-index: 1;
-    }
+  .previewImageContainer {
+    left: -100px;
+    top: 150px;
+    z-index: 1;
+  }
 
-    .orderInfo {
-        float: right;
-        margin-right: 75px;
-        width: 300px;
-    }
+  .orderInfo {
+    float: right;
+    margin-right: 75px;
+    width: 300px;
+  }
 
-    .price {
-        width: 300px;
-    }
+  .price {
+    width: 300px;
+  }
 
-    .orderInfoSeparator {
-        width: 300px;
-    }
+  .orderInfoSeparator {
+    width: 300px;
+  }
 
-    .orderInfo .mainButton {
-        width: 300px;
-    }
+  .orderInfo .mainButton {
+    width: 300px;
+  }
 
-    .cartIsEmpty {
-        left: calc(50% - 338px / 2);
-    }
+  .cartIsEmpty {
+    left: calc(50% - 338px / 2);
+  }
 
-    .cartIsEmpty h2 {
-        text-align: center;
-    }
+  .cartIsEmpty h2 {
+    text-align: center;
+  }
 
-    .cartIsEmpty .mainButton {
-        width: 338px;
-    }
+  .cartIsEmpty .mainButton {
+    width: 338px;
+  }
 }
 
 @media (max-width: 880px) {
-    .previewImageContainer {
-        left: -200px;
-    }
+  .previewImageContainer {
+    left: -200px;
+  }
 }
 
 @media (max-width: 740px) {
-    main {
-        height: 1130px;
-    }
+  main {
+    height: 1130px;
+  }
 
-    nav {
-        margin: 20px auto 0;
-        height: 50px;
-        width: calc(100vw - 40px);
-    }
+  nav {
+    margin: 20px auto 0;
+    height: 50px;
+    width: calc(100vw - 40px);
+  }
 
-    h2 {
-        font-size: 30px;
-        text-align: center;
-    }
+  h2 {
+    font-size: 30px;
+    text-align: center;
+  }
 
-    h3 {
-        font-size: 20px;
-    }
+  h3 {
+    font-size: 20px;
+  }
 
-    p {
-        font-size: 14px;
-    }
+  p {
+    font-size: 14px;
+  }
 
-    .logo {
-        width: 92px;
-        height: 39px;
-    }
+  .logo {
+    width: 92px;
+    height: 39px;
+  }
 
-    #home {
-        width: 50px;
-        height: 50px;
-    }
+  #home {
+    width: 50px;
+    height: 50px;
+  }
 
-    .circleButton {
-        transform: scale(0.8);
-    }
+  .circleButton {
+    transform: scale(0.8);
+  }
 
-    .orderInfo {
-        float: left;
-        margin-right: 0;
-        margin-left: 0;
-        width: 100%;
-        margin-top: 55px;
-    }
+  .orderInfo {
+    float: left;
+    margin-right: 0;
+    margin-left: 0;
+    width: 100%;
+    margin-top: 55px;
+  }
 
-    .orderInfo h2 {
-        margin-bottom: 510px;
-    }
+  .orderInfo h2 {
+    margin-bottom: 510px;
+  }
 
-    .circleButton:hover {
-        transform: scale(0.9);
-    }
+  .circleButton:hover {
+    transform: scale(0.9);
+  }
 
-    .previewImageContainer {
-        left: calc(50vw - 447px / 2 - 19px);
-        margin-left: 0;
-        top: 167px;
-    }
+  .previewImageContainer {
+    left: calc(50vw - 447px / 2 - 19px);
+    margin-left: 0;
+    top: 167px;
+  }
 
-    .orderInfoContainer {
-        margin-left: 20px;
-    }
+  .orderInfoContainer {
+    margin-left: 20px;
+  }
 
-    .price {
-        width: calc(100vw - 40px);
-    }
+  .price {
+    width: calc(100vw - 40px);
+  }
 
-    .info {
-        width: calc(100vw - 40px);
-    }
+  .info {
+    width: calc(100vw - 40px);
+  }
 
-    .orderInfoSeparator {
-        width: calc(100vw - 40px);
-        margin-top: 20px;
-    }
+  .orderInfoSeparator {
+    width: calc(100vw - 40px);
+    margin-top: 20px;
+  }
 
-    #checkout {
-        width: calc(100vw - 40px);
-    }
+  #checkout {
+    width: calc(100vw - 40px);
+  }
 
-    .leftCircle {
-        top: 580px;
-        z-index: -1;
-    }
+  .leftCircle {
+    top: 580px;
+    z-index: -1;
+  }
 
-    .orderItemsButtons {
-        margin-top: 20px;
-        height: 50px;
-    }
+  .orderItemsButtons {
+    margin-top: 20px;
+    height: 50px;
+  }
 
-    .fullPrice {
-        margin-top: 25px;
-    }
+  .fullPrice {
+    margin-top: 25px;
+  }
 
-    .orderInfo .mainButton {
-        margin-top: 20px;
-    }
+  .orderInfo .mainButton {
+    margin-top: 20px;
+  }
 
-    .orderItemsButtons .circleButton:first-of-type {
-        margin-right: 0;
-    }
+  .orderItemsButtons .circleButton:first-of-type {
+    margin-right: 0;
+  }
 
-    .orderItemsButtons p {
-        margin-left: auto;
-        margin-right: 20px;
-    }
+  .orderItemsButtons p {
+    margin-left: auto;
+    margin-right: 20px;
+  }
 
-    .cartIsEmpty {
-        left: calc(50% - (100vw - 40px) / 2);
-    }
+  .cartIsEmpty {
+    left: calc(50% - (100vw - 40px) / 2);
+  }
 
-    .cartIsEmpty .mainButton {
-        width: calc(100vw - 40px);
-    }
+  .cartIsEmpty .mainButton {
+    width: calc(100vw - 40px);
+  }
 
-    .cartIsEmpty h2 {
-        width: calc(100vw - 40px);
-    }
+  .cartIsEmpty h2 {
+    width: calc(100vw - 40px);
+  }
 }
 
 @media (max-width: 489px) {
-    .leftCircle {
-        top: 619px;
-    }
+  .leftCircle {
+    top: 619px;
+  }
 }
