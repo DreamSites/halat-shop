@@ -18,6 +18,7 @@ let pickedFont = [];
 let pickedColor = [];
 let pickedColorHEX = [];
 let pickedBathrobeColor = [];
+let pickedBathrobeColorIMG = [];
 let pickedImage = [];
 
 if (localStorage.getItem("signInput") !== null) {
@@ -43,6 +44,9 @@ if (localStorage.getItem("pickedColorHEX") !== null) {
 }
 if (localStorage.getItem("pickedBathrobeColor") !== null) {
   pickedBathrobeColor = JSON.parse(localStorage.getItem("pickedBathrobeColor"));
+}
+if (localStorage.getItem("pickedBathrobeColorIMG") !== null) {
+  pickedBathrobeColorIMG = JSON.parse(localStorage.getItem("pickedBathrobeColorIMG"));
 }
 if (localStorage.getItem("pickedImage") !== null) {
   pickedImage = JSON.parse(localStorage.getItem("pickedImage"));
@@ -190,6 +194,7 @@ $(document).ready(function() {
       pickedFont.length > 0 &&
       pickedColor.length > 0 &&
       pickedBathrobeColor.length > 0 &&
+      pickedBathrobeColorIMG.length > 0 &&
       pickedImage.length > 0
     ) {
       $("#successAlert").addClass("active");
@@ -203,6 +208,7 @@ $(document).ready(function() {
       localStorage.setItem("pickedColor", JSON.stringify(pickedColor));
       localStorage.setItem("pickedColorHEX", JSON.stringify(pickedColorHEX));
       localStorage.setItem("pickedBathrobeColor", JSON.stringify(pickedBathrobeColor));
+      localStorage.setItem("pickedBathrobeColorIMG", JSON.stringify(pickedBathrobeColorIMG));
       localStorage.setItem("pickedImage", JSON.stringify(pickedImage));
       if (bathrobeAmount > 0) {
         $("#headerOpenCartButton span").html(bathrobeAmount);
@@ -523,16 +529,16 @@ function closeFontPicker() {
 function openBathrobeColorPicker() {
   $("#bathrobeColorPicker").toggleClass("active");
   $(".bathrobeColor, .colorPickerItem").toggleClass("active");
-  if (pickedSexID[bathrobeID] === 0) {
-    $("#bathrobeColorPicker").toggleClass("male");
-    $("#bathrobeColorPickerItem2").css("display", "flex");
-    $("#bathrobeColorPickerItem3").css("display", "none");
-    $("#bathrobeColorPickerItem4").css("display", "flex");
-  } else {
+  if (pickedSexID[bathrobeID] === 1) {
     $("#bathrobeColorPicker").toggleClass("female");
     $("#bathrobeColorPickerItem2").css("display", "none");
     $("#bathrobeColorPickerItem3").css("display", "flex");
     $("#bathrobeColorPickerItem4").css("display", "none");
+  } else {
+    $("#bathrobeColorPicker").toggleClass("male");
+    $("#bathrobeColorPickerItem2").css("display", "flex");
+    $("#bathrobeColorPickerItem3").css("display", "none");
+    $("#bathrobeColorPickerItem4").css("display", "flex");
   }
   $("#selectedBathrobeColor img").toggleClass("flip");
 }
@@ -576,6 +582,7 @@ function pickBathrobeColor(color, colorLink) {
   $("#previewContainer img").attr("src", colorLink);
   closeBathrobeColorPicker();
   pickedBathrobeColor[bathrobeID] = color;
+  pickedBathrobeColorIMG[bathrobeID] = colorLink;
 }
 
 function pickImage(image) {
@@ -747,6 +754,8 @@ signInput.keyup(function() {
 
 function clearConstructor() {
   const previewSign = $(".previewContainer .sign");
+  $(".sexPicker div").css("color", "var(--black)");
+  $(".sexPickerSelector").removeClass("active");
   $(".sizePicker div").css("color", "var(--black)");
   $(".sizePickerSelector").removeClass("active");
 

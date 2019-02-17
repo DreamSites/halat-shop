@@ -812,12 +812,12 @@ main {
 
 .bathrobeColor .colorPicker.active.male {
   height: 200px;
-  grid-template-rows: repeat(4, 1fr);
+  grid-template-rows: 50px repeat(3, 1fr);
 }
 
 .bathrobeColor .colorPicker.active.female {
   height: 150px;
-  grid-template-rows: repeat(3, 1fr);
+  grid-template-rows: 50px repeat(2, 1fr);
 }
 
 .bathrobeColor .colorPickerItem {

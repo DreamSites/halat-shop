@@ -10,6 +10,7 @@ let pickedFont = JSON.parse(localStorage.getItem("pickedFont"));
 let pickedColor = JSON.parse(localStorage.getItem("pickedColor"));
 let pickedColorHEX = JSON.parse(localStorage.getItem("pickedColorHEX"));
 let pickedBathrobeColor = JSON.parse(localStorage.getItem("pickedBathrobeColor"));
+let pickedBathrobeColorIMG = JSON.parse(localStorage.getItem("pickedBathrobeColorIMG"));
 let pickedImage = JSON.parse(localStorage.getItem("pickedImage"));
 
 $(document).ready(function() {
@@ -38,6 +39,7 @@ $(document).ready(function() {
     pickedColor.splice(bathrobeID, 1);
     pickedColorHEX.splice(bathrobeID, 1);
     pickedBathrobeColor.splice(bathrobeID, 1);
+    pickedBathrobeColorIMG.splice(bathrobeID, 1);
     pickedImage.splice(bathrobeID, 1);
     if (bathrobeID + 1 === bathrobeAmount) {
       bathrobeID -= 1;
@@ -54,6 +56,7 @@ $(document).ready(function() {
     localStorage.setItem("pickedColor", JSON.stringify(pickedColor));
     localStorage.setItem("pickedColorHEX", JSON.stringify(pickedColorHEX));
     localStorage.setItem("pickedBathrobeColor", JSON.stringify(pickedBathrobeColor));
+    localStorage.setItem("pickedBathrobeColorIMG", JSON.stringify(pickedBathrobeColorIMG));
     localStorage.setItem("pickedImage", JSON.stringify(pickedImage));
   });
 });
@@ -65,6 +68,7 @@ function getOrderInfo() {
   $("#font").html(pickedFont[bathrobeID]);
   $("#fontColor").html(pickedColor[bathrobeID]);
   $("#bathrobeColor").html(pickedBathrobeColor[bathrobeID]);
+  $(".preview").attr("src", pickedBathrobeColorIMG[bathrobeID]);
   $("#pickedImage").html(pickedImage[bathrobeID]);
   updateBathrobeID();
   $("#fullPrice").html(bathrobeAmount * 1790 + "₽");
