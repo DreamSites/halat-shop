@@ -12,6 +12,7 @@ if (localStorage.getItem("bathrobeAmount") !== null) {
 }
 let pickedSign = [];
 let pickedSex = [];
+let pickedSexID = [];
 let pickedSize = [];
 let pickedFont = [];
 let pickedColor = [];
@@ -24,6 +25,9 @@ if (localStorage.getItem("signInput") !== null) {
 }
 if (localStorage.getItem("pickedSex") !== null) {
   pickedSex = JSON.parse(localStorage.getItem("pickedSex"));
+}
+if (localStorage.getItem("pickedSexID") !== null) {
+  pickedSexID = JSON.parse(localStorage.getItem("pickedSexID"));
 }
 if (localStorage.getItem("pickedSize") !== null) {
   pickedSize = JSON.parse(localStorage.getItem("pickedSize"));
@@ -178,11 +182,21 @@ $(document).ready(function() {
   });
 
   $("#order").click(function() {
-    if (pickedSize.length > 0 && pickedSex.length > 0 && pickedSign.length > 0 && pickedFont.length > 0 && pickedColor.length > 0 && pickedBathrobeColor.length > 0 && pickedImage.length > 0) {
+    if (
+      pickedSize.length > 0 &&
+      pickedSex.length > 0 &&
+      pickedSexID.length > 0 &&
+      pickedSign.length > 0 &&
+      pickedFont.length > 0 &&
+      pickedColor.length > 0 &&
+      pickedBathrobeColor.length > 0 &&
+      pickedImage.length > 0
+    ) {
       $("#successAlert").addClass("active");
       bathrobeAmount += 1;
       localStorage.setItem("bathrobeAmount", bathrobeAmount);
       localStorage.setItem("pickedSex", JSON.stringify(pickedSex));
+      localStorage.setItem("pickedSexID", JSON.stringify(pickedSexID));
       localStorage.setItem("pickedSize", JSON.stringify(pickedSize));
       localStorage.setItem("signInput", JSON.stringify(pickedSign));
       localStorage.setItem("pickedFont", JSON.stringify(pickedFont));
@@ -509,12 +523,28 @@ function closeFontPicker() {
 function openBathrobeColorPicker() {
   $("#bathrobeColorPicker").toggleClass("active");
   $(".bathrobeColor, .colorPickerItem").toggleClass("active");
+  if (pickedSexID[bathrobeID] === 0) {
+    $("#bathrobeColorPicker").toggleClass("male");
+    $("#bathrobeColorPickerItem2").css("display", "flex");
+    $("#bathrobeColorPickerItem3").css("display", "none");
+    $("#bathrobeColorPickerItem4").css("display", "flex");
+  } else {
+    $("#bathrobeColorPicker").toggleClass("female");
+    $("#bathrobeColorPickerItem2").css("display", "none");
+    $("#bathrobeColorPickerItem3").css("display", "flex");
+    $("#bathrobeColorPickerItem4").css("display", "none");
+  }
   $("#selectedBathrobeColor img").toggleClass("flip");
 }
 
 function closeBathrobeColorPicker() {
   $("#bathrobeColorPicker").removeClass("active");
   $(".bathrobeColor, .colorPickerItem").removeClass("active");
+  $("#bathrobeColorPicker").removeClass("male");
+  $("#bathrobeColorPicker").removeClass("female");
+  $("#bathrobeColorPickerItem2").css("display", "none");
+  $("#bathrobeColorPickerItem3").css("display", "none");
+  $("#bathrobeColorPickerItem4").css("display", "none");
   $("#selectedBathrobeColor img").removeClass("flip");
 }
 
@@ -690,6 +720,10 @@ function pickSex(sex, sexID) {
   pickedSexBlock.eq(sexID).css("color", "white");
   sexPickerSelector.addClass("active");
   pickedSex[bathrobeID] = sex;
+  pickedSexID[bathrobeID] = sexID;
+  $("#selectedBathrobeColorName").html("Выберите цвет халата");
+  $("#selectedBathrobeColor").removeClass("picked");
+  $("#previewContainer img").attr("src", "img/previewWhite.png");
 }
 
 function pickColor(color, colorID, colorName) {

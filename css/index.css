@@ -803,13 +803,21 @@ main {
 
 .bathrobeColor .colorPicker.active {
   width: 300px;
-  height: 250px;
   border-radius: 25px;
   -webkit-box-shadow: 0 0 10px 0 rgba(0, 9, 51, 0.2);
   box-shadow: 0 0 10px 0 rgba(0, 9, 51, 0.2);
   background-color: #ffffff;
-  grid-template-rows: 50px repeat(4, 1fr);
   z-index: 4;
+}
+
+.bathrobeColor .colorPicker.active.male {
+  height: 200px;
+  grid-template-rows: repeat(4, 1fr);
+}
+
+.bathrobeColor .colorPicker.active.female {
+  height: 150px;
+  grid-template-rows: repeat(3, 1fr);
 }
 
 .bathrobeColor .colorPickerItem {
