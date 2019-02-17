@@ -3,6 +3,7 @@ let bathrobeAmount = 0;
 if (localStorage.getItem("bathrobeAmount")) {
   bathrobeAmount = parseInt(localStorage.getItem("bathrobeAmount"), 10);
 }
+let pickedSex = JSON.parse(localStorage.getItem("pickedSex"));
 let pickedSize = JSON.parse(localStorage.getItem("pickedSize"));
 let signInput = JSON.parse(localStorage.getItem("signInput"));
 let pickedFont = JSON.parse(localStorage.getItem("pickedFont"));
@@ -30,6 +31,7 @@ $(document).ready(function() {
   });
 
   $(".price a").click(function() {
+    pickedSex.splice(bathrobeID, 1);
     pickedSize.splice(bathrobeID, 1);
     signInput.splice(bathrobeID, 1);
     pickedFont.splice(bathrobeID, 1);
@@ -45,6 +47,7 @@ $(document).ready(function() {
     getOrderInfo();
 
     localStorage.setItem("bathrobeAmount", bathrobeAmount);
+    localStorage.setItem("pickedSex", JSON.stringify(pickedSex));
     localStorage.setItem("pickedSize", JSON.stringify(pickedSize));
     localStorage.setItem("signInput", JSON.stringify(signInput));
     localStorage.setItem("pickedFont", JSON.stringify(pickedFont));
@@ -56,6 +59,7 @@ $(document).ready(function() {
 });
 
 function getOrderInfo() {
+  $("#sex").html(pickedSex[bathrobeID]);
   $("#size").html(pickedSize[bathrobeID]);
   $("#signInput").html(signInput[bathrobeID]);
   $("#font").html(pickedFont[bathrobeID]);

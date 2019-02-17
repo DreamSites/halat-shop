@@ -11,6 +11,7 @@ if($_POST){
     $address = $_POST['address'];
 
     $pickedSize = $_POST['pickedSize'];
+    $pickedSex = $_POST['pickedSex'];
     $signInput = $_POST['signInput'];
     $pickedFont = $_POST['pickedFont'];
     $pickedColor = $_POST['pickedColor'];
@@ -31,6 +32,7 @@ if($_POST){
     Адрес: $address
 
     Информация о халатах
+    Пол: $pickedSex
     Размер халата: $pickedSize
     Надпись: $signInput
     Шрифт: $pickedFont

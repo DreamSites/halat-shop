@@ -75,6 +75,7 @@ $(document).ready(function() {
         deliveryTime: $("#selectedDeliveryTimeName").html(),
         address: $("#addressInput").val(),
 
+        pickedSex: localStorage.getItem("pickedSex"),
         pickedSize: localStorage.getItem("pickedSize"),
         signInput: localStorage.getItem("signInput"),
         pickedFont: localStorage.getItem("pickedFont"),

@@ -11,6 +11,7 @@ if (localStorage.getItem("bathrobeAmount") !== null) {
   }
 }
 let pickedSign = [];
+let pickedSex = [];
 let pickedSize = [];
 let pickedFont = [];
 let pickedColor = [];
@@ -20,6 +21,9 @@ let pickedImage = [];
 
 if (localStorage.getItem("signInput") !== null) {
   pickedSign = JSON.parse(localStorage.getItem("signInput"));
+}
+if (localStorage.getItem("pickedSex") !== null) {
+  pickedSex = JSON.parse(localStorage.getItem("pickedSex"));
 }
 if (localStorage.getItem("pickedSize") !== null) {
   pickedSize = JSON.parse(localStorage.getItem("pickedSize"));
@@ -174,10 +178,11 @@ $(document).ready(function() {
   });
 
   $("#order").click(function() {
-    if (pickedSize.length > 0 && pickedSign.length > 0 && pickedFont.length > 0 && pickedColor.length > 0 && pickedBathrobeColor.length > 0 && pickedImage.length > 0) {
+    if (pickedSize.length > 0 && pickedSex.length > 0 && pickedSign.length > 0 && pickedFont.length > 0 && pickedColor.length > 0 && pickedBathrobeColor.length > 0 && pickedImage.length > 0) {
       $("#successAlert").addClass("active");
       bathrobeAmount += 1;
       localStorage.setItem("bathrobeAmount", bathrobeAmount);
+      localStorage.setItem("pickedSex", JSON.stringify(pickedSex));
       localStorage.setItem("pickedSize", JSON.stringify(pickedSize));
       localStorage.setItem("signInput", JSON.stringify(pickedSign));
       localStorage.setItem("pickedFont", JSON.stringify(pickedFont));
@@ -672,6 +677,19 @@ function pickSize(size, sizeID) {
   pickedSizeBlock.eq(sizeID).css("color", "white");
   sizePickerSelector.addClass("active");
   pickedSize[bathrobeID] = size;
+}
+
+function pickSex(sex, sexID) {
+  const sexPickerSelector = $(".sexPickerSelector");
+  const pickedSexBlock = $(".sexPicker div");
+  sexPickerSelector.css({
+    left: pickedSexBlock.eq(sexID).position().left,
+    width: pickedSexBlock.eq(sexID).outerWidth(true)
+  });
+  pickedSexBlock.css("color", "var(--black)");
+  pickedSexBlock.eq(sexID).css("color", "white");
+  sexPickerSelector.addClass("active");
+  pickedSex[bathrobeID] = sex;
 }
 
 function pickColor(color, colorID, colorName) {

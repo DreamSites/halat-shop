@@ -473,12 +473,60 @@ main {
   box-shadow: 0 0 20px 0 rgba(0, 9, 51, 0.1);
   background-color: white;
   padding-left: 337px;
-  padding-top: 236px;
+  padding-top: 200px;
   margin-left: -289px;
 }
 
 .constructor h2 {
-  margin-bottom: 50px;
+  margin-bottom: 30px;
+}
+
+.sex {
+  margin-bottom: 25px;
+}
+
+.sexPickerContainer {
+  display: flex;
+  align-items: center;
+}
+
+.sexPicker {
+  width: 400px;
+  height: 50px;
+  border-radius: 25px;
+  background-color: var(--pale-grey);
+  display: grid;
+  grid-template-columns: auto 1px auto;
+  padding-left: 20px;
+  padding-right: 20px;
+  position: relative;
+}
+
+.sexPicker .sexPickerSelector {
+  position: absolute;
+  width: 150px;
+  height: 50px;
+  border-radius: 25px;
+  background-color: var(--sky-blue);
+  transition: all 0.2s ease;
+  opacity: 0;
+  z-index: 0;
+}
+
+.sexPickerSelector.active {
+  opacity: 1;
+}
+
+.sexPicker div {
+  margin: auto;
+  color: var(--greyish-brown);
+  z-index: 1;
+  cursor: pointer;
+}
+
+.sexPicker img {
+  margin: auto;
+  color: var(--greyish-brown);
 }
 
 .sizePickerContainer {
@@ -957,9 +1005,9 @@ main {
 .constructorPopup {
   position: absolute;
   left: 300px;
-  top: 230px;
+  top: 190px;
   width: 700px;
-  height: 700px;
+  height: 760px;
   display: flex;
   flex-direction: column;
   align-items: center;
@@ -1497,7 +1545,7 @@ footer {
     left: calc(-1471px / 2);
     margin-left: 0;
     padding-left: 747px;
-    padding-top: 150px;
+    padding-top: 120px;
   }
 
   .constructor h2 {
@@ -1518,18 +1566,26 @@ footer {
     width: 350px;
   }
 
-  .sizePicker {
+  .sexPicker {
     width: 350px;
     padding-left: 10px;
     padding-right: 10px;
+    margin-bottom: 20px;
   }
 
-  .sizePickerContainer {
+  .sexPickerContainer {
     display: block;
   }
 
   .sizePicker {
+    width: 350px;
+    padding-left: 10px;
+    padding-right: 10px;
     margin-bottom: 20px;
+  }
+
+  .sizePickerContainer {
+    display: block;
   }
 
   .size a {
@@ -1668,10 +1724,10 @@ footer {
 
   .constructorSecondCircle {
     position: absolute;
-    width: 1049px;
-    height: 1049px;
+    width: 1100px;
+    height: 1100px;
     border-radius: 50%;
-    left: calc(50% - 1049px / 2);
+    left: calc(50% - 1100px / 2);
     top: 650px;
     background: #ffffff;
     -webkit-box-shadow: 0 0 20px rgba(0, 9, 51, 0.1);
