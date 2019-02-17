@@ -535,9 +535,10 @@ function pickFont(font) {
   pickedFont[bathrobeID] = font;
 }
 
-function pickBathrobeColor(color) {
+function pickBathrobeColor(color, colorLink) {
   $("#selectedBathrobeColorName").html(color);
   $("#selectedBathrobeColor").addClass("picked");
+  $("#previewContainer img").attr("src", colorLink);
   closeBathrobeColorPicker();
   pickedBathrobeColor[bathrobeID] = color;
 }
