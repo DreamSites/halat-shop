@@ -1,6 +1,8 @@
 let bathrobeAmount = 0;
 if (localStorage.getItem("bathrobeAmount")) {
   bathrobeAmount = parseInt(localStorage.getItem("bathrobeAmount"), 10);
+} else {
+  window.location = "index.html";
 }
 
 $(document).ready(function() {
