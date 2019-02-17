@@ -40,6 +40,6 @@ if($_POST){
     ";
 
 //send email
-    mail("exer7um@gmail.com", "Новый заказ от " .$email, $message);
+    mail("exer7um@gmail.com", "Новый заказ от " .$email, $message, iconv ('utf-8', 'windows-1251'));
 }
 ?>
