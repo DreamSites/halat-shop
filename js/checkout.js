@@ -1,4 +1,7 @@
-const bathrobeAmount = parseInt(localStorage.getItem("bathrobeAmount"), 10);
+let bathrobeAmount = 0;
+if (localStorage.getItem("bathrobeAmount")) {
+  bathrobeAmount = parseInt(localStorage.getItem("bathrobeAmount"), 10);
+}
 
 $(document).ready(function() {
   const stage = $(".stage a");
@@ -60,11 +63,39 @@ $(document).ready(function() {
     const emailInput = $("#emailInput").val();
 
     if (nameInput !== "" && emailInput !== "" && phoneNumberInput.length === 18) {
-      $(".clientInfo").removeClass("active");
-      $(".checkoutEnd").addClass("active");
-      stage.eq(1).css("color", "var(--brown-grey)");
-      stage.eq(2).css("color", "var(--black)");
-      $(".leftCircle h2").css({ opacity: 0 });
+      // ОТПРАВКА ПИСЬМА НА ПОЧТУ
+      var emailData = {
+        name: $("#nameInput").val(),
+        phone: $("#phoneNumberInput").val(),
+        email: $("#emailInput").val(),
+
+        city: $("#selectedCityName").html(),
+        deliveryWay: $("#selectedDeliveryWayName").html(),
+        deliveryDay: $("#selectedDeliveryDayName").html(),
+        deliveryTime: $("#selectedDeliveryTimeName").html(),
+        address: $("#addressInput").val(),
+
+        pickedSize: localStorage.getItem("pickedSize"),
+        signInput: localStorage.getItem("signInput"),
+        pickedFont: localStorage.getItem("pickedFont"),
+        pickedColor: localStorage.getItem("pickedColor"),
+        pickedBathrobeColor: localStorage.getItem("pickedBathrobeColor"),
+        pickedImage: localStorage.getItem("pickedImage")
+      };
+
+      $.ajax({
+        type: "POST",
+        url: "mail.php",
+        data: emailData,
+        success: function() {
+          $(".clientInfo").removeClass("active");
+          $(".checkoutEnd").addClass("active");
+          stage.eq(1).css("color", "var(--brown-grey)");
+          stage.eq(2).css("color", "var(--black)");
+          $(".leftCircle h2").css({ opacity: 0 });
+          localStorage.clear();
+        }
+      });
     }
     if (nameInput === "") {
       $("#nameError").css("opacity", 1);
