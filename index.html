@@ -179,7 +179,7 @@
         <section class="constructor" id="constructor">
           <div class="previewContainer" id="previewContainer">
             <img alt="" src="img/previewWhite.png" />
-            <p class="sign"></p>
+            <p class="sign" id="sign"></p>
           </div>
           <div class="constructorCircle">
             <h2>Ваш уникальный халат</h2>
@@ -218,7 +218,7 @@
               <div class="constructorGrid">
                 <div class="sign">
                   <h4>Надпись</h4>
-                  <input id="signInput" placeholder="Пример надписи" type="text" />
+                  <input id="signInput" placeholder="Пример надписи" type="text" maxlength="25" />
                 </div>
                 <div class="font">
                   <h4>Шрифт</h4>
@@ -249,26 +249,6 @@
                     </div>
                   </div>
                 </div>
-                <div class="signColor">
-                  <h4>Цвет шрифта</h4>
-                  <div class="colorPicker">
-                    <div class="colorPickerItemBG" onclick="pickColor('#ffd400', 0, 'Жёлтый')">
-                      <div class="colorPickerItem" id="colorPickerItem1"></div>
-                    </div>
-                    <div class="colorPickerItemBG" onclick="pickColor('#9600ff', 1, 'Фиолетовый')">
-                      <div class="colorPickerItem" id="colorPickerItem2"></div>
-                    </div>
-                    <div class="colorPickerItemBG" onclick="pickColor('#ff0000', 2, 'Красный')">
-                      <div class="colorPickerItem" id="colorPickerItem3"></div>
-                    </div>
-                    <div class="colorPickerItemBG" onclick="pickColor('#4053ff', 3, 'Синий')">
-                      <div class="colorPickerItem" id="colorPickerItem4"></div>
-                    </div>
-                    <div class="colorPickerItemBG" onclick="pickColor('#ff6c00', 4, 'Оранжевый')">
-                      <div class="colorPickerItem" id="colorPickerItem5"></div>
-                    </div>
-                  </div>
-                </div>
                 <div class="bathrobeColor">
                   <h4>Цвет халата</h4>
                   <div class="colorPickerContainer">
@@ -277,16 +257,16 @@
                         <span id="selectedBathrobeColorName">Выберите цвет халата</span>
                         <img alt="" class="selectorArrow" src="img/selectorOpenArrow.svg" />
                       </div>
-                      <div class="colorPickerItem" id="bathrobeColorPickerItem1" onclick="pickBathrobeColor('Белый', 'img/previewWhite.png')">
+                      <div class="colorPickerItem" id="bathrobeColorPickerItem1" onclick="pickBathrobeColor('Белый', 'img/previewWhite.png', '#ffd400')">
                         Белый
                       </div>
-                      <div class="colorPickerItem" id="bathrobeColorPickerItem2" onclick="pickBathrobeColor('Синий', 'img/previewBlue.png')">
+                      <div class="colorPickerItem" id="bathrobeColorPickerItem2" onclick="pickBathrobeColor('Синий', 'img/previewBlue.png', '#ffd400')">
                         Синий
                       </div>
-                      <div class="colorPickerItem" id="bathrobeColorPickerItem3" onclick="pickBathrobeColor('Персиковый', 'img/previewPeach.png')">
+                      <div class="colorPickerItem" id="bathrobeColorPickerItem3" onclick="pickBathrobeColor('Персиковый', 'img/previewPeach.png', '#4053ff')">
                         Персиковый
                       </div>
-                      <div class="colorPickerItem" id="bathrobeColorPickerItem4" onclick="pickBathrobeColor('Коричневый', 'img/previewBrown.png')">
+                      <div class="colorPickerItem" id="bathrobeColorPickerItem4" onclick="pickBathrobeColor('Коричневый', 'img/previewBrown.png', '#ffd400')">
                         Коричневый
                       </div>
                     </div>
@@ -316,14 +296,6 @@
                         Рисунок 5
                       </div>
                     </div>
-                  </div>
-                </div>
-                <div class="imageButtons">
-                  <div class="circleButton">
-                    <img alt="" src="img/leftArrowBlue.svg" />
-                  </div>
-                  <div class="circleButton">
-                    <img alt="" src="img/rightArrowBlue.svg" />
                   </div>
                 </div>
                 <div class="mainButton" id="order">Заказать халат</div>

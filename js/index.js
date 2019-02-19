@@ -15,8 +15,6 @@ let pickedSex = [];
 let pickedSexID = [];
 let pickedSize = [];
 let pickedFont = [];
-let pickedColor = [];
-let pickedColorHEX = [];
 let pickedBathrobeColor = [];
 let pickedBathrobeColorIMG = [];
 let pickedImage = [];
@@ -35,12 +33,6 @@ if (localStorage.getItem("pickedSize") !== null) {
 }
 if (localStorage.getItem("pickedFont") !== null) {
   pickedFont = JSON.parse(localStorage.getItem("pickedFont"));
-}
-if (localStorage.getItem("pickedColor") !== null) {
-  pickedColor = JSON.parse(localStorage.getItem("pickedColor"));
-}
-if (localStorage.getItem("pickedColorHEX") !== null) {
-  pickedColorHEX = JSON.parse(localStorage.getItem("pickedColorHEX"));
 }
 if (localStorage.getItem("pickedBathrobeColor") !== null) {
   pickedBathrobeColor = JSON.parse(localStorage.getItem("pickedBathrobeColor"));
@@ -192,7 +184,6 @@ $(document).ready(function() {
       pickedSexID.length > 0 &&
       pickedSign.length > 0 &&
       pickedFont.length > 0 &&
-      pickedColor.length > 0 &&
       pickedBathrobeColor.length > 0 &&
       pickedBathrobeColorIMG.length > 0 &&
       pickedImage.length > 0
@@ -205,8 +196,6 @@ $(document).ready(function() {
       localStorage.setItem("pickedSize", JSON.stringify(pickedSize));
       localStorage.setItem("signInput", JSON.stringify(pickedSign));
       localStorage.setItem("pickedFont", JSON.stringify(pickedFont));
-      localStorage.setItem("pickedColor", JSON.stringify(pickedColor));
-      localStorage.setItem("pickedColorHEX", JSON.stringify(pickedColorHEX));
       localStorage.setItem("pickedBathrobeColor", JSON.stringify(pickedBathrobeColor));
       localStorage.setItem("pickedBathrobeColorIMG", JSON.stringify(pickedBathrobeColorIMG));
       localStorage.setItem("pickedImage", JSON.stringify(pickedImage));
@@ -576,13 +565,14 @@ function pickFont(font) {
   pickedFont[bathrobeID] = font;
 }
 
-function pickBathrobeColor(color, colorLink) {
+function pickBathrobeColor(color, colorLink, signColor) {
   $("#selectedBathrobeColorName").html(color);
   $("#selectedBathrobeColor").addClass("picked");
   $("#previewContainer img").attr("src", colorLink);
   closeBathrobeColorPicker();
   pickedBathrobeColor[bathrobeID] = color;
   pickedBathrobeColorIMG[bathrobeID] = colorLink;
+  $("#sign").css("color", signColor);
 }
 
 function pickImage(image) {
@@ -733,18 +723,6 @@ function pickSex(sex, sexID) {
   $("#previewContainer img").attr("src", "img/previewWhite.png");
 }
 
-function pickColor(color, colorID, colorName) {
-  const colorPickerItemBG = $(".signColor .colorPickerItemBG");
-  const colorPickerItem = $(".signColor .colorPickerItem");
-  colorPickerItemBG.removeClass("picked");
-  colorPickerItem.removeClass("picked");
-  colorPickerItemBG.eq(colorID).addClass("picked");
-  colorPickerItem.eq(colorID).addClass("picked");
-  $(".previewContainer .sign").css("color", color);
-  pickedColor[bathrobeID] = colorName;
-  pickedColorHEX[bathrobeID] = color;
-}
-
 const signInput = $("#signInput");
 const sign = $(".previewContainer .sign");
 signInput.keyup(function() {
@@ -768,11 +746,7 @@ function clearConstructor() {
   previewSign.css("font-family", "Ubuntu");
   $("#selectedFont").removeClass("picked");
 
-  const colorPickerItemBG = $(".signColor .colorPickerItemBG");
-  const colorPickerItem = $(".signColor .colorPickerItem");
-  colorPickerItemBG.removeClass("picked");
-  colorPickerItem.removeClass("picked");
-  previewSign.css("color", "var(--black)");
+  previewSign.css("color", "#ffd400");
 
   $("#selectedBathrobeColorName").html("Выберите цвет халата");
   $("#selectedBathrobeColor").removeClass("picked");

@@ -452,16 +452,19 @@ main {
   position: relative;
 }
 
-.previewContainer .sign {
+#sign {
   position: absolute;
   top: 280px;
   left: calc(50% - 200px / 2);
   width: 200px;
+  height: 62px;
   text-align: center;
   margin-left: 15px;
-  transition: all 0.2s ease;
-  font-size: 30px;
+  font-size: 25px;
   line-height: 1;
+  word-wrap: break-word;
+  overflow: hidden;
+  color: #ffd400;
 }
 
 .constructorCircle {
@@ -473,12 +476,12 @@ main {
   box-shadow: 0 0 20px 0 rgba(0, 9, 51, 0.1);
   background-color: white;
   padding-left: 337px;
-  padding-top: 200px;
+  padding-top: 236px;
   margin-left: -289px;
 }
 
 .constructor h2 {
-  margin-bottom: 30px;
+  margin-bottom: 50px;
 }
 
 .sex {
@@ -698,81 +701,6 @@ main {
 
 #fontPickerItem6 {
   font-family: Sladkoeshka, Ubuntu, sans-serif;
-}
-
-.signColor .colorPicker {
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  height: 50px;
-}
-
-.signColor .colorPickerItemBG {
-  width: 40px;
-  height: 40px;
-  -webkit-box-shadow: 0 0 10px 0 rgba(0, 9, 51, 0.1);
-  box-shadow: 0 0 10px 0 rgba(0, 9, 51, 0.1);
-  background-color: #ffffff;
-  border-radius: 50%;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  margin-left: auto;
-  margin-right: auto;
-  cursor: pointer;
-  transition: all 0.2s ease;
-}
-
-.signColor .colorPickerItemBG:first-child {
-  margin-left: 0;
-}
-
-.signColor .colorPickerItemBG:last-child {
-  margin-right: 0;
-}
-
-.signColor .colorPickerItem {
-  width: 14px;
-  height: 14px;
-  border-radius: 50%;
-  transition: all 0.2s ease;
-}
-
-.signColor .colorPickerItemBG:hover .colorPickerItem {
-  width: 20px;
-  height: 20px;
-}
-
-.signColor .colorPickerItemBG.picked {
-  width: 50px;
-  height: 50px;
-  -webkit-box-shadow: 0 0 20px 0 rgba(0, 9, 51, 0.15);
-  box-shadow: 0 0 20px 0 rgba(0, 9, 51, 0.15);
-}
-
-.signColor .colorPickerItem.picked {
-  width: 20px;
-  height: 20px;
-}
-
-#colorPickerItem1 {
-  background-color: #ffd400;
-}
-
-#colorPickerItem2 {
-  background-color: #9600ff;
-}
-
-#colorPickerItem3 {
-  background-color: #ff0000;
-}
-
-#colorPickerItem4 {
-  background-color: #4053ff;
-}
-
-#colorPickerItem5 {
-  background-color: #ff6c00;
 }
 
 .bathrobeColor .colorPickerContainer {
@@ -1013,9 +941,9 @@ main {
 .constructorPopup {
   position: absolute;
   left: 300px;
-  top: 190px;
+  top: 230px;
   width: 700px;
-  height: 760px;
+  height: 700px;
   display: flex;
   flex-direction: column;
   align-items: center;
@@ -1553,7 +1481,7 @@ footer {
     left: calc(-1471px / 2);
     margin-left: 0;
     padding-left: 747px;
-    padding-top: 120px;
+    padding-top: 150px;
   }
 
   .constructor h2 {
@@ -1610,10 +1538,6 @@ footer {
   }
 
   .fontPicker.active {
-    width: 350px;
-  }
-
-  .signColor .colorPicker {
     width: 350px;
   }
 
@@ -1732,8 +1656,8 @@ footer {
 
   .constructorSecondCircle {
     position: absolute;
-    width: 1100px;
-    height: 1100px;
+    width: 1049px;
+    height: 1049px;
     border-radius: 50%;
     left: calc(50% - 1100px / 2);
     top: 650px;
@@ -1784,11 +1708,6 @@ footer {
   }
 
   .fontPicker.active {
-    width: calc(100vw - 40px);
-    max-width: 350px;
-  }
-
-  .signColor .colorPicker {
     width: calc(100vw - 40px);
     max-width: 350px;
   }
