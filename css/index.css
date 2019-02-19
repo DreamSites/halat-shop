@@ -1874,6 +1874,10 @@ footer {
     font-size: 30px;
     margin-bottom: 20px;
   }
+
+  .constructorCircle {
+    margin-left: 25px;
+    }
 }
 
 @media (max-width: 675px) {
