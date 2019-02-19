@@ -1689,7 +1689,7 @@ footer {
     width: 1049px;
     height: 1049px;
     border-radius: 50%;
-    left: calc(50% - 1100px / 2);
+    left: calc(50% - 1049px / 2);
     top: 650px;
     background: #ffffff;
     -webkit-box-shadow: 0 0 20px rgba(0, 9, 51, 0.1);
@@ -1874,10 +1874,6 @@ footer {
     font-size: 30px;
     margin-bottom: 20px;
   }
-
-  .constructorCircle {
-    margin-left: 25px;
-    }
 }
 
 @media (max-width: 675px) {
