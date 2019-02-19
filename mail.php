@@ -14,7 +14,6 @@ if($_POST){
     $pickedSex = $_POST['pickedSex'];
     $signInput = $_POST['signInput'];
     $pickedFont = $_POST['pickedFont'];
-    $pickedColor = $_POST['pickedColor'];
     $pickedBathrobeColor = $_POST['pickedBathrobeColor'];
     $pickedImage = $_POST['pickedImage'];
 
@@ -36,7 +35,6 @@ if($_POST){
     Размер халата: $pickedSize
     Надпись: $signInput
     Шрифт: $pickedFont
-    Цвет надписи: $pickedColor
     Цвет халата: $pickedBathrobeColor
     Рисунок: $pickedImage
     ";

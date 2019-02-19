@@ -7,11 +7,10 @@ let pickedSex = JSON.parse(localStorage.getItem("pickedSex"));
 let pickedSize = JSON.parse(localStorage.getItem("pickedSize"));
 let signInput = JSON.parse(localStorage.getItem("signInput"));
 let pickedFont = JSON.parse(localStorage.getItem("pickedFont"));
-let pickedColor = JSON.parse(localStorage.getItem("pickedColor"));
-let pickedColorHEX = JSON.parse(localStorage.getItem("pickedColorHEX"));
 let pickedBathrobeColor = JSON.parse(localStorage.getItem("pickedBathrobeColor"));
 let pickedBathrobeColorIMG = JSON.parse(localStorage.getItem("pickedBathrobeColorIMG"));
 let pickedImage = JSON.parse(localStorage.getItem("pickedImage"));
+let pickedImageID = JSON.parse(localStorage.getItem("pickedImageID"));
 
 $(document).ready(function() {
   checkCartEmptiness();
@@ -36,11 +35,10 @@ $(document).ready(function() {
     pickedSize.splice(bathrobeID, 1);
     signInput.splice(bathrobeID, 1);
     pickedFont.splice(bathrobeID, 1);
-    pickedColor.splice(bathrobeID, 1);
-    pickedColorHEX.splice(bathrobeID, 1);
     pickedBathrobeColor.splice(bathrobeID, 1);
     pickedBathrobeColorIMG.splice(bathrobeID, 1);
     pickedImage.splice(bathrobeID, 1);
+    pickedImageID.splice(bathrobeID, 1);
     if (bathrobeID + 1 === bathrobeAmount) {
       bathrobeID -= 1;
     }
@@ -53,11 +51,10 @@ $(document).ready(function() {
     localStorage.setItem("pickedSize", JSON.stringify(pickedSize));
     localStorage.setItem("signInput", JSON.stringify(signInput));
     localStorage.setItem("pickedFont", JSON.stringify(pickedFont));
-    localStorage.setItem("pickedColor", JSON.stringify(pickedColor));
-    localStorage.setItem("pickedColorHEX", JSON.stringify(pickedColorHEX));
     localStorage.setItem("pickedBathrobeColor", JSON.stringify(pickedBathrobeColor));
     localStorage.setItem("pickedBathrobeColorIMG", JSON.stringify(pickedBathrobeColorIMG));
     localStorage.setItem("pickedImage", JSON.stringify(pickedImage));
+    localStorage.setItem("pickedImageID", JSON.stringify(pickedImageID));
   });
 });
 
@@ -66,18 +63,34 @@ function getOrderInfo() {
   $("#size").html(pickedSize[bathrobeID]);
   $("#signInput").html(signInput[bathrobeID]);
   $("#font").html(pickedFont[bathrobeID]);
-  $("#fontColor").html(pickedColor[bathrobeID]);
   $("#bathrobeColor").html(pickedBathrobeColor[bathrobeID]);
   $(".preview").attr("src", pickedBathrobeColorIMG[bathrobeID]);
   $("#pickedImage").html(pickedImage[bathrobeID]);
+  $(".picture").css("display", "none");
+  $(".previewImageContainer img")
+    .eq(pickedImageID[bathrobeID])
+    .css("display", "block");
   updateBathrobeID();
   $("#fullPrice").html(bathrobeAmount * 1790 + "₽");
+
+  if (pickedBathrobeColor[bathrobeID] === "Персиковый") {
+    $("#wreathsWithCrown").attr("src", "img/wreathsWithCrownBlue.png");
+    $("#curls").attr("src", "img/curlsBlue.png");
+    $("#crown").attr("src", "img/crownBlue.png");
+    $("#diadem").attr("src", "img/diademBlue.png");
+    $("#sign").css("color", "#4053ff");
+  } else {
+    $("#wreathsWithCrown").attr("src", "img/wreathsWithCrownGold.png");
+    $("#curls").attr("src", "img/curlsGold.png");
+    $("#crown").attr("src", "img/crownGold.png");
+    $("#diadem").attr("src", "img/diademGold.png");
+    $("#sign").css("color", "#ffd400");
+  }
 
   const sign = $("#sign");
   sign.html(signInput[bathrobeID]);
   sign.css({
-    "font-family": pickedFont[bathrobeID],
-    color: pickedColorHEX[bathrobeID]
+    "font-family": pickedFont[bathrobeID]
   });
 
   if (bathrobeID < bathrobeAmount) {

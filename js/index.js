@@ -18,6 +18,7 @@ let pickedFont = [];
 let pickedBathrobeColor = [];
 let pickedBathrobeColorIMG = [];
 let pickedImage = [];
+let pickedImageID = [];
 
 if (localStorage.getItem("signInput") !== null) {
   pickedSign = JSON.parse(localStorage.getItem("signInput"));
@@ -42,6 +43,9 @@ if (localStorage.getItem("pickedBathrobeColorIMG") !== null) {
 }
 if (localStorage.getItem("pickedImage") !== null) {
   pickedImage = JSON.parse(localStorage.getItem("pickedImage"));
+}
+if (localStorage.getItem("pickedImageID") !== null) {
+  pickedImageID = JSON.parse(localStorage.getItem("pickedImageID"));
 }
 
 $(document).ready(function() {
@@ -186,7 +190,8 @@ $(document).ready(function() {
       pickedFont.length > 0 &&
       pickedBathrobeColor.length > 0 &&
       pickedBathrobeColorIMG.length > 0 &&
-      pickedImage.length > 0
+      pickedImage.length > 0 &&
+      pickedImageID.length > 0
     ) {
       $("#successAlert").addClass("active");
       bathrobeAmount += 1;
@@ -199,6 +204,7 @@ $(document).ready(function() {
       localStorage.setItem("pickedBathrobeColor", JSON.stringify(pickedBathrobeColor));
       localStorage.setItem("pickedBathrobeColorIMG", JSON.stringify(pickedBathrobeColorIMG));
       localStorage.setItem("pickedImage", JSON.stringify(pickedImage));
+      localStorage.setItem("pickedImageID", JSON.stringify(pickedImageID));
       if (bathrobeAmount > 0) {
         $("#headerOpenCartButton span").html(bathrobeAmount);
         $("#footerOpenCartButton span").html(bathrobeAmount);
@@ -565,21 +571,44 @@ function pickFont(font) {
   pickedFont[bathrobeID] = font;
 }
 
-function pickBathrobeColor(color, colorLink, signColor) {
+function pickBathrobeColor(color, colorLink) {
   $("#selectedBathrobeColorName").html(color);
   $("#selectedBathrobeColor").addClass("picked");
-  $("#previewContainer img").attr("src", colorLink);
+  $("#previewContainer img")
+    .eq(0)
+    .attr("src", colorLink);
+  if (color === "Персиковый") {
+    $("#wreathsWithCrown").attr("src", "img/wreathsWithCrownBlue.png");
+    $("#curls").attr("src", "img/curlsBlue.png");
+    $("#crown").attr("src", "img/crownBlue.png");
+    $("#diadem").attr("src", "img/diademBlue.png");
+    $("#sign").css("color", "#4053ff");
+  } else {
+    $("#wreathsWithCrown").attr("src", "img/wreathsWithCrownGold.png");
+    $("#curls").attr("src", "img/curlsGold.png");
+    $("#crown").attr("src", "img/crownGold.png");
+    $("#diadem").attr("src", "img/diademGold.png");
+    $("#sign").css("color", "#ffd400");
+  }
   closeBathrobeColorPicker();
   pickedBathrobeColor[bathrobeID] = color;
   pickedBathrobeColorIMG[bathrobeID] = colorLink;
-  $("#sign").css("color", signColor);
 }
 
-function pickImage(image) {
+function pickImage(image, imageID) {
   $("#selectedImageName").html(image);
   $("#selectedImage").addClass("picked");
+  $(".picture").css("display", "none");
+  if (imageID) {
+    $("#previewContainer img")
+      .eq(imageID)
+      .css("display", "block");
+  } else {
+    $(".picture").css("display", "none");
+  }
   closeImagePicker();
   pickedImage[bathrobeID] = image;
+  pickedImageID[bathrobeID] = imageID;
 }
 
 const ourWorksSlider = document.getElementById("ourWorksSlider");
@@ -720,7 +749,9 @@ function pickSex(sex, sexID) {
   pickedSexID[bathrobeID] = sexID;
   $("#selectedBathrobeColorName").html("Выберите цвет халата");
   $("#selectedBathrobeColor").removeClass("picked");
-  $("#previewContainer img").attr("src", "img/previewWhite.png");
+  $("#previewContainer img")
+    .eq(0)
+    .attr("src", "img/previewWhite.png");
 }
 
 const signInput = $("#signInput");

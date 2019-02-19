@@ -50,13 +50,46 @@ main {
 #sign {
   position: absolute;
   top: 280px;
-  left: calc(50% - 200px / 2);
-  width: 200px;
+  left: calc(50% - 180px / 2);
+  width: 180px;
+  height: 52px;
   text-align: center;
-  margin-left: 15px;
-  transition: all 0.2s ease;
-  font-size: 30px;
+  margin-left: 20px;
+  font-size: 25px;
   line-height: 1;
+  word-wrap: break-word;
+  overflow: hidden;
+  color: #ffd400;
+}
+
+.picture {
+  position: absolute;
+  margin-left: 20px;
+  display: none;
+}
+
+#wreathsWithCrown {
+  width: 220px;
+  top: 245px;
+  left: calc(50% - 110px);
+}
+
+#curls {
+  width: 150px;
+  top: 345px;
+  left: calc(50% - 75px);
+}
+
+#crown {
+  width: 50px;
+  top: 245px;
+  left: calc(50% - 25px);
+}
+
+#diadem {
+  width: 50px;
+  top: 245px;
+  left: calc(50% - 25px);
 }
 
 .whiteCircle {
