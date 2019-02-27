@@ -28,7 +28,7 @@ img {
 }
 
 /* Text styles */
-h1 {
+.h1 {
   font-size: 80px;
   font-weight: 500;
   color: var(--black);
@@ -156,7 +156,7 @@ input:focus {
 }
 
 @media (max-width: 600px) {
-  h1 {
+  .h1 {
     font-size: 48px;
   }
 
