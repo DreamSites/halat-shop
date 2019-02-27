@@ -1097,6 +1097,7 @@ main {
   font-weight: 500;
   color: var(--black);
   margin-top: 10px;
+  text-align: center;
 }
 
 .deliveryCircleContent {
