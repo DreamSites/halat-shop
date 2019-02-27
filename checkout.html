@@ -32,7 +32,11 @@
     <link href="https://fonts.googleapis.com/css?family=Ubuntu:400,500" rel="stylesheet" />
 
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+    <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/jquery-ajaxtransport-xdomainrequest/1.0.1/jquery.xdomainrequest.min.js"></script>
     <script src="https://unpkg.com/imask"></script>
+
+    <link href="https://cdn.jsdelivr.net/npm/suggestions-jquery@18.11.1/dist/css/suggestions.min.css" type="text/css" rel="stylesheet" />
+    <script type="text/javascript" src="https://cdn.jsdelivr.net/npm/suggestions-jquery@18.11.1/dist/js/jquery.suggestions.min.js"></script>
   </head>
   <body>
     <main>
@@ -42,23 +46,7 @@
           <div class="deliveryInfo active">
             <div class="deliveryInfoItem" id="city">
               <h4>Город</h4>
-              <div class="deliveryPickerContainer">
-                <div class="deliveryPicker" id="cityPicker">
-                  <div class="deliveryPickerItem selected" id="selectedCity">
-                    <span id="selectedCityName">Выберите город</span>
-                    <img alt="" class="selectorArrow" id="arrowCity" src="img/selectorOpenArrow.svg" />
-                  </div>
-                  <div class="deliveryPickerItem" onclick="pick($('#cityPicker'), 'Москва', $('#cityPicker .deliveryPickerItem'), $('#selectedCity'), $('#selectedCityName'), $('#selectedCity img'))">
-                    Москва
-                  </div>
-                  <div
-                    class="deliveryPickerItem"
-                    onclick="pick($('#cityPicker'), 'Санкт-Петербург', $('#cityPicker .deliveryPickerItem'), $('#selectedCity'), $('#selectedCityName'), $('#selectedCity img'))"
-                  >
-                    Санкт-Петербург
-                  </div>
-                </div>
-              </div>
+              <input id="cityInput" placeholder="Введите ваш город" type="text" />
               <div class="errorMessage" id="cityError">
                 Сначала заполните это поле
               </div>
@@ -71,22 +59,13 @@
                     <span id="selectedDeliveryWayName">Выберите способ получения</span>
                     <img alt="" class="selectorArrow" id="arrowDeliveryWay" src="img/selectorOpenArrow.svg" />
                   </div>
-                  <div
-                    class="deliveryPickerItem"
-                    onclick="pick($('#deliveryWayPicker'), 'Доставка', $('#deliveryWayPicker .deliveryPickerItem'), $('#selectedDeliveryWay'), $('#selectedDeliveryWayName'),  $('#selectedDeliveryWay img'))"
-                  >
+                  <div class="deliveryPickerItem" onclick="pick($('#deliveryWayPicker'), 'Доставка', $('#deliveryWayPicker .deliveryPickerItem'), $('#selectedDeliveryWay'), $('#selectedDeliveryWayName'),  $('#selectedDeliveryWay img'))">
                     Доставка
                   </div>
-                  <div
-                    class="deliveryPickerItem"
-                    onclick="pick($('#deliveryWayPicker'), 'Самовывоз из магазина', $('#deliveryWayPicker .deliveryPickerItem'), $('#selectedDeliveryWay'), $('#selectedDeliveryWayName'), $('#selectedDeliveryWay img'))"
-                  >
+                  <div class="deliveryPickerItem" onclick="pick($('#deliveryWayPicker'), 'Самовывоз из магазина', $('#deliveryWayPicker .deliveryPickerItem'), $('#selectedDeliveryWay'), $('#selectedDeliveryWayName'), $('#selectedDeliveryWay img'))">
                     Самовывоз из магазина
                   </div>
-                  <div
-                    class="deliveryPickerItem"
-                    onclick="pick($('#deliveryWayPicker'), 'Пункт BoxBerry', $('#deliveryWayPicker .deliveryPickerItem'), $('#selectedDeliveryWay'), $('#selectedDeliveryWayName'), $('#selectedDeliveryWay img'))"
-                  >
+                  <div class="deliveryPickerItem" onclick="pick($('#deliveryWayPicker'), 'Пункт BoxBerry', $('#deliveryWayPicker .deliveryPickerItem'), $('#selectedDeliveryWay'), $('#selectedDeliveryWayName'), $('#selectedDeliveryWay img'))">
                     Пункт BoxBerry
                   </div>
                 </div>
@@ -97,7 +76,7 @@
             </div>
             <div class="deliveryInfoItem" id="address">
               <h4>Адрес</h4>
-              <input class="addressInput" id="addressInput" placeholder="Улица, дом, квартира, этаж" type="text" />
+              <input id="addressInput" placeholder="Улица, дом, квартира, этаж" type="text" />
               <div class="errorMessage" id="addressError">
                 Сначала заполните это поле
               </div>
@@ -110,22 +89,13 @@
                     <span id="selectedDeliveryDayName">Выберите дату доставки</span>
                     <img alt="" class="selectorArrow" id="arrowDate" src="img/selectorOpenArrow.svg" />
                   </div>
-                  <div
-                    class="deliveryPickerItem"
-                    onclick="pick($('#deliveryDayPicker'), 'Завтра', $('#deliveryDayPicker .deliveryPickerItem'), $('#selectedDeliveryDay'), $('#selectedDeliveryDayName'), $('#selectedDeliveryDay img'))"
-                  >
+                  <div class="deliveryPickerItem" onclick="pick($('#deliveryDayPicker'), 'Завтра', $('#deliveryDayPicker .deliveryPickerItem'), $('#selectedDeliveryDay'), $('#selectedDeliveryDayName'), $('#selectedDeliveryDay img'))">
                     Завтра
                   </div>
-                  <div
-                    class="deliveryPickerItem"
-                    onclick="pick($('#deliveryDayPicker'), 'Послезавтра', $('#deliveryDayPicker .deliveryPickerItem'), $('#selectedDeliveryDay'), $('#selectedDeliveryDayName'), $('#selectedDeliveryDay img'))"
-                  >
+                  <div class="deliveryPickerItem" onclick="pick($('#deliveryDayPicker'), 'Послезавтра', $('#deliveryDayPicker .deliveryPickerItem'), $('#selectedDeliveryDay'), $('#selectedDeliveryDayName'), $('#selectedDeliveryDay img'))">
                     Послезавтра
                   </div>
-                  <div
-                    class="deliveryPickerItem"
-                    onclick="pick($('#deliveryDayPicker'), 'На выходных', $('#deliveryDayPicker .deliveryPickerItem'), $('#selectedDeliveryDay'), $('#selectedDeliveryDayName'), $('#selectedDeliveryDay img'))"
-                  >
+                  <div class="deliveryPickerItem" onclick="pick($('#deliveryDayPicker'), 'На выходных', $('#deliveryDayPicker .deliveryPickerItem'), $('#selectedDeliveryDay'), $('#selectedDeliveryDayName'), $('#selectedDeliveryDay img'))">
                     На выходных
                   </div>
                 </div>
@@ -142,22 +112,13 @@
                     <span id="selectedDeliveryTimeName">Выберите время доставки</span>
                     <img alt="" class="selectorArrow" id="arrowTime" src="img/selectorOpenArrow.svg" />
                   </div>
-                  <div
-                    class="deliveryPickerItem"
-                    onclick="pick($('#deliveryTimePicker'), '10:00 — 12:00', $('#deliveryTimePicker .deliveryPickerItem'), $('#selectedDeliveryTime'), $('#selectedDeliveryTimeName'), $('#selectedDeliveryTime img'))"
-                  >
+                  <div class="deliveryPickerItem" onclick="pick($('#deliveryTimePicker'), '10:00 — 12:00', $('#deliveryTimePicker .deliveryPickerItem'), $('#selectedDeliveryTime'), $('#selectedDeliveryTimeName'), $('#selectedDeliveryTime img'))">
                     10:00 — 12:00
                   </div>
-                  <div
-                    class="deliveryPickerItem"
-                    onclick="pick($('#deliveryTimePicker'), '12:00 — 18:00', $('#deliveryTimePicker .deliveryPickerItem'), $('#selectedDeliveryTime'), $('#selectedDeliveryTimeName'), $('#selectedDeliveryTime img'))"
-                  >
+                  <div class="deliveryPickerItem" onclick="pick($('#deliveryTimePicker'), '12:00 — 18:00', $('#deliveryTimePicker .deliveryPickerItem'), $('#selectedDeliveryTime'), $('#selectedDeliveryTimeName'), $('#selectedDeliveryTime img'))">
                     12:00 — 18:00
                   </div>
-                  <div
-                    class="deliveryPickerItem"
-                    onclick="pick($('#deliveryTimePicker'), '18:00 — 22:00', $('#deliveryTimePicker .deliveryPickerItem'), $('#selectedDeliveryTime'), $('#selectedDeliveryTimeName'), $('#selectedDeliveryTime img'))"
-                  >
+                  <div class="deliveryPickerItem" onclick="pick($('#deliveryTimePicker'), '18:00 — 22:00', $('#deliveryTimePicker .deliveryPickerItem'), $('#selectedDeliveryTime'), $('#selectedDeliveryTimeName'), $('#selectedDeliveryTime img'))">
                     18:00 — 22:00
                   </div>
                 </div>

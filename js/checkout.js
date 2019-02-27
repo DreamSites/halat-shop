@@ -8,19 +8,13 @@ if (localStorage.getItem("bathrobeAmount")) {
 $(document).ready(function() {
   const stage = $(".stage a");
   $("#continue").click(function() {
-    const cityName = $("#selectedCityName").html();
+    const cityName = $("#cityInput").val();
     const deliveryWayName = $("#selectedDeliveryWayName").html();
     const deliveryDayName = $("#selectedDeliveryDayName").html();
     const deliveryTimeName = $("#selectedDeliveryTimeName").html();
     const address = $("#addressInput").val();
 
-    if (
-      cityName !== "Выберите город" &&
-      deliveryWayName !== "Выберите способ получения" &&
-      deliveryDayName !== "Выберите дату доставки" &&
-      deliveryTimeName !== "Выберите время доставки" &&
-      address !== ""
-    ) {
+    if (cityName !== "Введите ваш город" && deliveryWayName !== "Выберите способ получения" && deliveryDayName !== "Выберите дату доставки" && deliveryTimeName !== "Выберите время доставки" && address !== "") {
       $(".deliveryInfo").removeClass("active");
       $(".clientInfo").addClass("active");
       stage.eq(0).css("color", "var(--brown-grey)");
@@ -33,7 +27,7 @@ $(document).ready(function() {
       );
       return false;
     }
-    if (cityName === "Выберите город") {
+    if (cityName === "") {
       $("#cityError").css("opacity", 1);
     } else {
       $("#cityError").css("opacity", 0);
@@ -71,7 +65,7 @@ $(document).ready(function() {
         phone: $("#phoneNumberInput").val(),
         email: $("#emailInput").val(),
 
-        city: $("#selectedCityName").html(),
+        city: $("#cityInput").val(),
         deliveryWay: $("#selectedDeliveryWayName").html(),
         deliveryDay: $("#selectedDeliveryDayName").html(),
         deliveryTime: $("#selectedDeliveryTimeName").html(),
@@ -114,17 +108,6 @@ $(document).ready(function() {
       $("#emailError").css("opacity", 1);
     } else {
       $("#emailError").css("opacity", 0);
-    }
-  });
-
-  $("#selectedCity").click(function() {
-    openPicker($("#cityPicker"), $("#cityPicker .deliveryPickerItem"), $("#selectedCity img"));
-  });
-
-  $(document).mouseup(function(e) {
-    const cityPicker = $("#cityPicker");
-    if (!cityPicker.is(e.target) && cityPicker.has(e.target).length === 0) {
-      closePicker(cityPicker, $("#cityPicker .deliveryPickerItem"), $("#selectedCity img"));
     }
   });
 
@@ -195,18 +178,39 @@ $(window).resize(function() {
 
 function responsiveNavigation() {
   if ($(window).width() > 1270) {
-    $("#rightNav").html(
-      '<div class="navItem" id="phone">' +
-        '      <img alt="" src="img/phoneBlue.svg">' +
-        "      +7 (937) 667-98-49" +
-        "    </div>" +
-        '    <div class="navItem">' +
-        '      <img alt="" src="img/leftArrowBlue.svg">' +
-        '      <a href="cart.html">Назад в корзину</a>' +
-        "    </div>"
-    );
+    $("#rightNav").html('<div class="navItem" id="phone">' + '      <img alt="" src="img/phoneBlue.svg">' + "      +7 (937) 667-98-49" + "    </div>" + '    <div class="navItem">' + '      <img alt="" src="img/leftArrowBlue.svg">' + '      <a href="cart.html">Назад в корзину</a>' + "    </div>");
   }
   if ($(window).width() < 1270) {
     $("#rightNav").html('<div class="circleButton" id="home" onclick="window.location=\'cart.html\';">' + '      <img alt="" src="img/leftArrowBlue.svg">' + "    </div>" + '    <div class="stage">');
   }
 }
+
+var token = "ff3fbb891db61fb3390e11167fef0e6462e67595",
+  type = "ADDRESS",
+  $city = $("#cityInput"),
+  $street = $("#addressInput");
+
+$city.suggestions({
+  token: token,
+  type: "ADDRESS",
+  hint: false,
+  bounds: "city",
+  count: 3,
+  /* Вызывается, когда пользователь выбирает одну из подсказок */
+  onSelect: function(suggestion) {
+    console.log(suggestion);
+  }
+});
+
+$street.suggestions({
+  token: token,
+  type: "ADDRESS",
+  hint: false,
+  bounds: "street-house",
+  count: 3,
+  constraints: $city,
+  /* Вызывается, когда пользователь выбирает одну из подсказок */
+  onSelect: function(suggestion) {
+    console.log(suggestion);
+  }
+});
