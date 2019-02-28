@@ -8,13 +8,14 @@ if (localStorage.getItem("bathrobeAmount")) {
 $(document).ready(function() {
   const stage = $(".stage a");
   $("#continue").click(function() {
+    const deliveryTypeName = $("#selectedDeliveryTypeName").html();
     const cityName = $("#cityInput").val();
     const deliveryWayName = $("#selectedDeliveryWayName").html();
     const deliveryDayName = $("#selectedDeliveryDayName").html();
     const deliveryTimeName = $("#selectedDeliveryTimeName").html();
     const address = $("#addressInput").val();
 
-    if (cityName !== "Введите ваш город" && deliveryWayName !== "Выберите способ получения" && deliveryDayName !== "Выберите дату доставки" && deliveryTimeName !== "Выберите время доставки" && address !== "") {
+    if (deliveryTypeName !== "Выберите тип доставки" && cityName !== "Введите ваш город" && deliveryWayName !== "Выберите способ получения" && deliveryDayName !== "Выберите дату доставки" && deliveryTimeName !== "Выберите время доставки" && address !== "") {
       $(".deliveryInfo").removeClass("active");
       $(".clientInfo").addClass("active");
       stage.eq(0).css("color", "var(--brown-grey)");
@@ -26,6 +27,11 @@ $(document).ready(function() {
         500
       );
       return false;
+    }
+    if (deliveryTypeName === "Выберите тип доставки") {
+      $("#deliveryTypeError").css("opacity", 1);
+    } else {
+      $("#deliveryTypeError").css("opacity", 0);
     }
     if (cityName === "") {
       $("#cityError").css("opacity", 1);
