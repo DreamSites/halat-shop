@@ -62,6 +62,9 @@ $(document).ready(function() {
   $("#addressInput").keyup(function(){
      $("#addressError").css("opacity", 0);
   })
+  $("#cityInput").keyup(function(){
+    $("#cityError").css("opacity", 0);
+ })
   $("#checkoutButton").click(function() {
     const nameInput = $("#nameInput").val();
     const phoneNumberInput = $("#phoneNumberInput").val();
@@ -131,6 +134,7 @@ $(document).ready(function() {
 
   $("#selectedDeliveryWay").click(function() {
     openPicker($("#deliveryWayPicker"), $("#deliveryWayPicker .deliveryPickerItem"), $("#selectedDeliveryWay img"));
+    $("#deliveryWayError").css("opacity", 0);
   });
 
   $(document).mouseup(function(e) {
