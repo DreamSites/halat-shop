@@ -142,10 +142,9 @@ nav {
   transition: all 0.2s ease;
 }
 
-#deliveryType,
-#address,
-#deliveryDay,
-#deliveryTime {
+#type-delivery,
+#type-boxberry,
+#deliveryType {
   display: none;
 }
 
@@ -252,7 +251,29 @@ input {
   transition: all 0.5s ease;
   max-width: 900px;
   width: calc(100vw - 40px);
+}
+
+.deliveryInfo.type-delivery {
   height: 342px;
+}
+
+.deliveryInfo.type-boxberry {
+  height: 228px;
+}
+
+#pickOnMap {
+  display: flex;
+  align-items: center;
+  margin-top: 20px;
+  color: var(--greyish-brown);
+}
+
+#pickOnMap .circleButton {
+  height: 50px;
+  width: 50px;
+  margin-right: 10px;
+  -webkit-box-shadow: 0px 0px 10px rgba(0, 9, 51, 0.15);
+  box-shadow: 0px 0px 10px rgba(0, 9, 51, 0.15);
 }
 
 .deliveryInfo.active {

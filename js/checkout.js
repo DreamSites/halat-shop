@@ -236,9 +236,28 @@ $street.suggestions({
 
 function deliverySecondStage() {
   if ($("#cityInput").val() !== "" && $("#selectedDeliveryWayName").html() === "Доставка") {
+    $("#type-delivery").show();
+    $("#type-boxberry").hide();
     $("#deliveryType").show();
-    $("#address").show();
-    $("#deliveryDay").show();
-    $("#deliveryTime").show();
+    $(".deliveryInfo").addClass("type-delivery");
+  } else if ($("#cityInput").val() !== "" && $("#selectedDeliveryWayName").html() === "Пункт BoxBerry") {
+    $("#type-delivery").hide();
+    $("#type-boxberry").show();
+    $(".deliveryInfo").addClass("type-boxberry");
+    $("#continue").css("margin-top", "286px");
+  }
+}
+
+// Выбрать пункт BoxBerry
+function callback_function(result) {
+  console.log(result);
+  if (result.price !== "") {
+    $("#deliveryPrice").html(result.price);
+  } else {
+    $("#deliveryPrice").html("300₽");
+  }
+  $("#boxberryAddressInput").val(result.address);
+  if (result.prepaid == "1") {
+    alert("Отделение работает только по предоплате!");
   }
 }

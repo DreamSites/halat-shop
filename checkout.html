@@ -100,56 +100,71 @@
                 Сначала заполните это поле
               </div>
             </div>
-            <div class="deliveryInfoItem" id="address">
+            <div id="type-delivery">
+              <div class="deliveryInfoItem" id="address">
+                <h4>Адрес</h4>
+                <input id="addressInput" placeholder="Улица, дом, квартира, этаж" type="text" />
+                <div class="errorMessage" id="addressError">
+                  Сначала заполните это поле
+                </div>
+              </div>
+              <div class="deliveryInfoItem" id="deliveryDay">
+                <h4>Дата</h4>
+                <div class="deliveryPickerContainer">
+                  <div class="deliveryPicker" id="deliveryDayPicker">
+                    <div class="deliveryPickerItem selected" id="selectedDeliveryDay">
+                      <span id="selectedDeliveryDayName">Выберите дату доставки</span>
+                      <img alt="" class="selectorArrow" id="arrowDate" src="img/selectorOpenArrow.svg" />
+                    </div>
+                    <div class="deliveryPickerItem" onclick="pick($('#deliveryDayPicker'), 'Завтра', $('#deliveryDayPicker .deliveryPickerItem'), $('#selectedDeliveryDay'), $('#selectedDeliveryDayName'), $('#selectedDeliveryDay img'))">
+                      Завтра
+                    </div>
+                    <div class="deliveryPickerItem" onclick="pick($('#deliveryDayPicker'), 'Послезавтра', $('#deliveryDayPicker .deliveryPickerItem'), $('#selectedDeliveryDay'), $('#selectedDeliveryDayName'), $('#selectedDeliveryDay img'))">
+                      Послезавтра
+                    </div>
+                    <div class="deliveryPickerItem" onclick="pick($('#deliveryDayPicker'), 'На выходных', $('#deliveryDayPicker .deliveryPickerItem'), $('#selectedDeliveryDay'), $('#selectedDeliveryDayName'), $('#selectedDeliveryDay img'))">
+                      На выходных
+                    </div>
+                  </div>
+                </div>
+                <div class="errorMessage" id="deliveryDateError">
+                  Сначала заполните это поле
+                </div>
+              </div>
+              <div class="deliveryInfoItem" id="deliveryTime">
+                <h4>Время</h4>
+                <div class="deliveryPickerContainer">
+                  <div class="deliveryPicker" id="deliveryTimePicker">
+                    <div class="deliveryPickerItem selected" id="selectedDeliveryTime">
+                      <span id="selectedDeliveryTimeName">Выберите время доставки</span>
+                      <img alt="" class="selectorArrow" id="arrowTime" src="img/selectorOpenArrow.svg" />
+                    </div>
+                    <div class="deliveryPickerItem" onclick="pick($('#deliveryTimePicker'), '10:00 — 12:00', $('#deliveryTimePicker .deliveryPickerItem'), $('#selectedDeliveryTime'), $('#selectedDeliveryTimeName'), $('#selectedDeliveryTime img'))">
+                      10:00 — 12:00
+                    </div>
+                    <div class="deliveryPickerItem" onclick="pick($('#deliveryTimePicker'), '12:00 — 18:00', $('#deliveryTimePicker .deliveryPickerItem'), $('#selectedDeliveryTime'), $('#selectedDeliveryTimeName'), $('#selectedDeliveryTime img'))">
+                      12:00 — 18:00
+                    </div>
+                    <div class="deliveryPickerItem" onclick="pick($('#deliveryTimePicker'), '18:00 — 22:00', $('#deliveryTimePicker .deliveryPickerItem'), $('#selectedDeliveryTime'), $('#selectedDeliveryTimeName'), $('#selectedDeliveryTime img'))">
+                      18:00 — 22:00
+                    </div>
+                  </div>
+                </div>
+                <div class="errorMessage" id="deliveryTimeError">
+                  Сначала заполните это поле
+                </div>
+              </div>
+            </div>
+            <div id="type-boxberry">
               <h4>Адрес</h4>
-              <input id="addressInput" placeholder="Улица, дом, квартира, этаж" type="text" />
-              <div class="errorMessage" id="addressError">
-                Сначала заполните это поле
-              </div>
-            </div>
-            <div class="deliveryInfoItem" id="deliveryDay">
-              <h4>Дата</h4>
-              <div class="deliveryPickerContainer">
-                <div class="deliveryPicker" id="deliveryDayPicker">
-                  <div class="deliveryPickerItem selected" id="selectedDeliveryDay">
-                    <span id="selectedDeliveryDayName">Выберите дату доставки</span>
-                    <img alt="" class="selectorArrow" id="arrowDate" src="img/selectorOpenArrow.svg" />
-                  </div>
-                  <div class="deliveryPickerItem" onclick="pick($('#deliveryDayPicker'), 'Завтра', $('#deliveryDayPicker .deliveryPickerItem'), $('#selectedDeliveryDay'), $('#selectedDeliveryDayName'), $('#selectedDeliveryDay img'))">
-                    Завтра
-                  </div>
-                  <div class="deliveryPickerItem" onclick="pick($('#deliveryDayPicker'), 'Послезавтра', $('#deliveryDayPicker .deliveryPickerItem'), $('#selectedDeliveryDay'), $('#selectedDeliveryDayName'), $('#selectedDeliveryDay img'))">
-                    Послезавтра
-                  </div>
-                  <div class="deliveryPickerItem" onclick="pick($('#deliveryDayPicker'), 'На выходных', $('#deliveryDayPicker .deliveryPickerItem'), $('#selectedDeliveryDay'), $('#selectedDeliveryDayName'), $('#selectedDeliveryDay img'))">
-                    На выходных
-                  </div>
+              <input id="boxberryAddressInput" placeholder="Улица, дом" type="text" />
+              <div id="pickOnMap">
+                <div class="circleButton" onclick="boxberry.open(callback_function); return false;">
+                  <img src="img/pickOnMap.svg" alt="" />
                 </div>
+                Выбрать на карте
               </div>
-              <div class="errorMessage" id="deliveryDateError">
-                Сначала заполните это поле
-              </div>
-            </div>
-            <div class="deliveryInfoItem" id="deliveryTime">
-              <h4>Время</h4>
-              <div class="deliveryPickerContainer">
-                <div class="deliveryPicker" id="deliveryTimePicker">
-                  <div class="deliveryPickerItem selected" id="selectedDeliveryTime">
-                    <span id="selectedDeliveryTimeName">Выберите время доставки</span>
-                    <img alt="" class="selectorArrow" id="arrowTime" src="img/selectorOpenArrow.svg" />
-                  </div>
-                  <div class="deliveryPickerItem" onclick="pick($('#deliveryTimePicker'), '10:00 — 12:00', $('#deliveryTimePicker .deliveryPickerItem'), $('#selectedDeliveryTime'), $('#selectedDeliveryTimeName'), $('#selectedDeliveryTime img'))">
-                    10:00 — 12:00
-                  </div>
-                  <div class="deliveryPickerItem" onclick="pick($('#deliveryTimePicker'), '12:00 — 18:00', $('#deliveryTimePicker .deliveryPickerItem'), $('#selectedDeliveryTime'), $('#selectedDeliveryTimeName'), $('#selectedDeliveryTime img'))">
-                    12:00 — 18:00
-                  </div>
-                  <div class="deliveryPickerItem" onclick="pick($('#deliveryTimePicker'), '18:00 — 22:00', $('#deliveryTimePicker .deliveryPickerItem'), $('#selectedDeliveryTime'), $('#selectedDeliveryTimeName'), $('#selectedDeliveryTime img'))">
-                    18:00 — 22:00
-                  </div>
-                </div>
-              </div>
-              <div class="errorMessage" id="deliveryTimeError">
+              <div class="errorMessage" id="boxberryAddressError">
                 Сначала заполните это поле
               </div>
             </div>
@@ -221,6 +236,7 @@
         <img alt="" class="logo" src="img/logo.png" onclick="window.location='index.html';" />
       </nav>
     </main>
+    <script type="text/javascript" src="https://points.boxberry.ru/js/boxberry.js"></script>
     <script src="js/checkout.js" type="text/javascript"></script>
   </body>
 </html>
