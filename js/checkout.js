@@ -8,6 +8,8 @@ if (localStorage.getItem("bathrobeAmount")) {
 $(document).ready(function() {
   const stage = $(".stage a");
   $("#continue").click(function() {
+    boxberryAddressInput
+    const boxberryAddress = $("#boxberryAddressInput").val();
     const deliveryTypeName = $("#selectedDeliveryTypeName").html();
     const cityName = $("#cityInput").val();
     const deliveryWayName = $("#selectedDeliveryWayName").html();
@@ -15,7 +17,7 @@ $(document).ready(function() {
     const deliveryTimeName = $("#selectedDeliveryTimeName").html();
     const address = $("#addressInput").val();
 
-    if (deliveryTypeName !== "Выберите тип доставки" && cityName !== "Введите ваш город" && deliveryWayName !== "Выберите способ получения" && deliveryDayName !== "Выберите дату доставки" && deliveryTimeName !== "Выберите время доставки" && address !== "") {
+    if (deliveryTypeName !== "Выберите тип доставки" && cityName !== "Введите ваш город" && deliveryWayName !== "Выберите способ получения" && deliveryDayName !== "Выберите дату доставки" && deliveryTimeName !== "Выберите время доставки" && address !== "" && boxberryAddress !== "") {
       $(".deliveryInfo").removeClass("active");
       $(".clientInfo").addClass("active");
       stage.eq(0).css("color", "var(--brown-grey)");
@@ -58,10 +60,18 @@ $(document).ready(function() {
     } else {
       $("#addressError").css("opacity", 0);
     }
+    if (boxberryAddress === "") {
+      $("#boxberryAddressError").css("opacity", 1);
+    } else {
+      $("#boxberryAddressError").css("opacity", 0);
+    }
   });
   $("#addressInput").keyup(function(){
      $("#addressError").css("opacity", 0);
   })
+  $("#boxberryAddressInput").keyup(function(){
+    $("#boxberryAddressError").css("opacity", 0);
+ })
   $("#cityInput").keyup(function(){
     $("#cityError").css("opacity", 0);
  })

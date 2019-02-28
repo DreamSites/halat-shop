@@ -158,14 +158,14 @@
             <div id="type-boxberry">
               <h4>Адрес</h4>
               <input id="boxberryAddressInput" placeholder="Улица, дом" type="text" />
+              <div class="errorMessage" id="boxberryAddressError">
+                  Сначала заполните это поле
+                </div>
               <div id="pickOnMap">
                 <div class="circleButton" onclick="boxberry.open(callback_function); return false;">
                   <img src="img/pickOnMap.svg" alt="" />
                 </div>
                 Выбрать на карте
-              </div>
-              <div class="errorMessage" id="boxberryAddressError">
-                Сначала заполните это поле
               </div>
             </div>
             <div class="mainButton" id="continue">Продолжить</div>
