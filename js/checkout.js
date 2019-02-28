@@ -109,6 +109,11 @@ $(document).ready(function() {
     } else {
       $("#emailError").css("opacity", 0);
     }
+    if (cityInput === "") {
+      $("#emailError").css("opacity", 1);
+    } else {
+      $("#emailError").css("opacity", 0);
+    }
   });
 
   $("#cityInput").keyup(function() {
@@ -239,11 +244,22 @@ function deliverySecondStage() {
     $("#type-delivery").show();
     $("#type-boxberry").hide();
     $("#deliveryType").show();
+    $(".deliveryInfo").removeClass("type-boxberry");
     $(".deliveryInfo").addClass("type-delivery");
+    $("#continue").css("margin-top", "450px");
   } else if ($("#cityInput").val() !== "" && $("#selectedDeliveryWayName").html() === "Пункт BoxBerry") {
     $("#type-delivery").hide();
     $("#type-boxberry").show();
+    $("#deliveryType").hide();
+    $(".deliveryInfo").removeClass("type-delivery");
     $(".deliveryInfo").addClass("type-boxberry");
+    $("#continue").css("margin-top", "286px");
+  }else if ($("#cityInput").val() !== "" && $("#selectedDeliveryWayName").html() === "Самовывоз из магазина") {
+    $("#type-delivery").hide();
+    $("#type-boxberry").hide();
+    $("#deliveryType").hide();
+    $(".deliveryInfo").removeClass("type-boxberry");
+    $(".deliveryInfo").removeClass("type-delivery");
     $("#continue").css("margin-top", "286px");
   }
 }
