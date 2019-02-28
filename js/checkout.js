@@ -111,6 +111,10 @@ $(document).ready(function() {
     }
   });
 
+  $("#cityInput").keyup(function() {
+    deliverySecondStage();
+  });
+
   $("#selectedDeliveryWay").click(function() {
     openPicker($("#deliveryWayPicker"), $("#deliveryWayPicker .deliveryPickerItem"), $("#selectedDeliveryWay img"));
   });
@@ -142,6 +146,21 @@ $(document).ready(function() {
     if (!deliveryTimePicker.is(e.target) && deliveryTimePicker.has(e.target).length === 0) {
       closePicker(deliveryTimePicker, $("#deliveryTimePicker .deliveryPickerItem"), $("#selectedDeliveryTime img"));
     }
+  });
+
+  $("#selectedDeliveryType").click(function() {
+    openPicker($("#deliveryTypePicker"), $("#deliveryTypePicker .deliveryPickerItem"), $("#selectedDeliveryType img"));
+  });
+
+  $(document).mouseup(function(e) {
+    const deliveryTypePicker = $("#deliveryTypePicker");
+    if (!deliveryTypePicker.is(e.target) && deliveryTypePicker.has(e.target).length === 0) {
+      closePicker(deliveryTypePicker, $("#deliveryTypePicker .deliveryPickerItem"), $("#selectedDeliveryType img"));
+    }
+  });
+
+  $("#deliveryWay .deliveryPickerItem").click(function() {
+    deliverySecondStage();
   });
 
   responsiveNavigation();
@@ -194,7 +213,7 @@ $city.suggestions({
   token: token,
   type: "ADDRESS",
   hint: false,
-  bounds: "city",
+  bounds: "region-area",
   count: 3,
   /* Вызывается, когда пользователь выбирает одну из подсказок */
   onSelect: function(suggestion) {
@@ -214,3 +233,12 @@ $street.suggestions({
     console.log(suggestion);
   }
 });
+
+function deliverySecondStage() {
+  if ($("#cityInput").val() !== "" && $("#selectedDeliveryWayName").html() === "Доставка") {
+    $("#deliveryType").show();
+    $("#address").show();
+    $("#deliveryDay").show();
+    $("#deliveryTime").show();
+  }
+}

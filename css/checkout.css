@@ -142,9 +142,21 @@ nav {
   transition: all 0.2s ease;
 }
 
+#deliveryType,
+#address,
+#deliveryDay,
+#deliveryTime {
+  display: none;
+}
+
 #deliveryWayPicker.active {
   height: 200px;
   grid-template-rows: 50px repeat(3, 1fr);
+}
+
+.deliveryPicker.MSK.active {
+  height: 250px;
+  grid-template-rows: 50px repeat(4, 1fr);
 }
 
 #deliveryDayPicker.active {
