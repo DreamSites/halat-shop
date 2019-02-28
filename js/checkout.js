@@ -59,6 +59,9 @@ $(document).ready(function() {
       $("#addressError").css("opacity", 0);
     }
   });
+  $("#addressInput").keyup(function(){
+     $("#addressError").css("opacity", 0);
+  })
   $("#checkoutButton").click(function() {
     const nameInput = $("#nameInput").val();
     const phoneNumberInput = $("#phoneNumberInput").val();
@@ -139,6 +142,7 @@ $(document).ready(function() {
 
   $("#selectedDeliveryDay").click(function() {
     openPicker($("#deliveryDayPicker"), $("#deliveryDayPicker .deliveryPickerItem"), $("#selectedDeliveryDay img"));
+    $("#deliveryDateError").css("opacity", 0);
   });
 
   $(document).mouseup(function(e) {
@@ -150,6 +154,7 @@ $(document).ready(function() {
 
   $("#selectedDeliveryTime").click(function() {
     openPicker($("#deliveryTimePicker"), $("#deliveryTimePicker .deliveryPickerItem"), $("#selectedDeliveryTime img"));
+    $("#deliveryTimeError").css("opacity", 0);
   });
 
   $(document).mouseup(function(e) {
@@ -161,6 +166,7 @@ $(document).ready(function() {
 
   $("#selectedDeliveryType").click(function() {
     openPicker($("#deliveryTypePicker"), $("#deliveryTypePicker .deliveryPickerItem"), $("#selectedDeliveryType img"));
+    $("#deliveryTypeError").css("opacity", 0);
   });
 
   $(document).mouseup(function(e) {

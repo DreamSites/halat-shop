@@ -82,7 +82,7 @@
                     <span id="selectedDeliveryTypeName">Выберите тип доставки</span>
                     <img alt="" class="selectorArrow" id="arrowDeliveryType" src="img/selectorOpenArrow.svg" />
                   </div>
-                  <div class="deliveryPickerItem MSK" onclick="pick($('#deliveryTypePicker'), 'В пределах МКАД', $('#deliveryTypePicker .deliveryPickerItem'), $('#selectedDeliveryType'), $('#selectedDeliveryTypeName'),  $('#selectedDeliveryType img'))">
+                  <div class="deliveryPickerItem MSK"  onclick="pick($('#deliveryTypePicker'), 'В пределах МКАД', $('#deliveryTypePicker .deliveryPickerItem'), $('#selectedDeliveryType'), $('#selectedDeliveryTypeName'),  $('#selectedDeliveryType img'))">
                     В пределах МКАД
                   </div>
                   <div class="deliveryPickerItem MSK" onclick="pick($('#deliveryTypePicker'), 'До 10 км. от МКАД', $('#deliveryTypePicker .deliveryPickerItem'), $('#selectedDeliveryType'), $('#selectedDeliveryTypeName'), $('#selectedDeliveryType img'))">
@@ -103,7 +103,7 @@
             <div id="type-delivery">
               <div class="deliveryInfoItem" id="address">
                 <h4>Адрес</h4>
-                <input id="addressInput" placeholder="Улица, дом, квартира, этаж" type="text" />
+                <input id="addressInput" keyup="error()" placeholder="Улица, дом, квартира, этаж" type="text" />
                 <div class="errorMessage" id="addressError">
                   Сначала заполните это поле
                 </div>
