@@ -8,7 +8,6 @@ if (localStorage.getItem("bathrobeAmount")) {
 $(document).ready(function() {
   const stage = $(".stage a");
   $("#continue").click(function() {
-    boxberryAddressInput
     const boxberryAddress = $("#boxberryAddressInput").val();
     const deliveryTypeName = $("#selectedDeliveryTypeName").html();
     const cityName = $("#cityInput").val();
@@ -17,7 +16,7 @@ $(document).ready(function() {
     const deliveryTimeName = $("#selectedDeliveryTimeName").html();
     const address = $("#addressInput").val();
 
-    if (deliveryTypeName !== "Выберите тип доставки" && cityName !== "Введите ваш город" && deliveryWayName !== "Выберите способ получения" && deliveryDayName !== "Выберите дату доставки" && deliveryTimeName !== "Выберите время доставки" && address !== "" && boxberryAddress !== "") {
+    if ((deliveryTypeName !== "Выберите тип доставки" && cityName !== "Введите ваш город" && deliveryWayName === "Доставка" && deliveryDayName !== "Выберите дату доставки" && deliveryTimeName !== "Выберите время доставки" && address !== "") || (deliveryWayName === "Пункт BoxBerry" && boxberryAddress !== "")) {
       $(".deliveryInfo").removeClass("active");
       $(".clientInfo").addClass("active");
       stage.eq(0).css("color", "var(--brown-grey)");
@@ -30,51 +29,23 @@ $(document).ready(function() {
       );
       return false;
     }
-    if (deliveryTypeName === "Выберите тип доставки") {
-      $("#deliveryTypeError").css("opacity", 1);
-    } else {
-      $("#deliveryTypeError").css("opacity", 0);
-    }
-    if (cityName === "") {
-      $("#cityError").css("opacity", 1);
-    } else {
-      $("#cityError").css("opacity", 0);
-    }
-    if (deliveryWayName === "Выберите способ получения") {
-      $("#deliveryWayError").css("opacity", 1);
-    } else {
-      $("#deliveryWayError").css("opacity", 0);
-    }
-    if (deliveryDayName === "Выберите дату доставки") {
-      $("#deliveryDateError").css("opacity", 1);
-    } else {
-      $("#deliveryDateError").css("opacity", 0);
-    }
-    if (deliveryTimeName === "Выберите время доставки") {
-      $("#deliveryTimeError").css("opacity", 1);
-    } else {
-      $("#deliveryTimeError").css("opacity", 0);
-    }
-    if (address === "") {
-      $("#addressError").css("opacity", 1);
-    } else {
-      $("#addressError").css("opacity", 0);
-    }
-    if (boxberryAddress === "") {
-      $("#boxberryAddressError").css("opacity", 1);
-    } else {
-      $("#boxberryAddressError").css("opacity", 0);
-    }
+    checkEmptiness(cityName, "", $("#cityError"));
+    checkEmptiness(deliveryWayName, "Выберите способ получения", $("#deliveryWayError"));
+    checkEmptiness(deliveryTypeName, "Выберите тип доставки", $("#deliveryTypeError"));
+    checkEmptiness(deliveryDayName, "Выберите дату доставки", $("#deliveryDayError"));
+    checkEmptiness(deliveryTimeName, "Выберите время доставки", $("#deliveryTimeError"));
+    checkEmptiness(address, "", $("#addressError"));
+    checkEmptiness(boxberryAddress, "", $("#boxberryAddress"));
   });
-  $("#addressInput").keyup(function(){
-     $("#addressError").css("opacity", 0);
-  })
-  $("#boxberryAddressInput").keyup(function(){
+  $("#addressInput").keyup(function() {
+    $("#addressError").css("opacity", 0);
+  });
+  $("#boxberryAddressInput").keyup(function() {
     $("#boxberryAddressError").css("opacity", 0);
- })
-  $("#cityInput").keyup(function(){
+  });
+  $("#cityInput").keyup(function() {
     $("#cityError").css("opacity", 0);
- })
+  });
   $("#checkoutButton").click(function() {
     const nameInput = $("#nameInput").val();
     const phoneNumberInput = $("#phoneNumberInput").val();
@@ -131,11 +102,6 @@ $(document).ready(function() {
     } else {
       $("#emailError").css("opacity", 0);
     }
-    if (cityInput === "") {
-      $("#emailError").css("opacity", 1);
-    } else {
-      $("#emailError").css("opacity", 0);
-    }
   });
 
   $("#cityInput").keyup(function() {
@@ -181,6 +147,7 @@ $(document).ready(function() {
   $("#selectedDeliveryType").click(function() {
     openPicker($("#deliveryTypePicker"), $("#deliveryTypePicker .deliveryPickerItem"), $("#selectedDeliveryType img"));
     $("#deliveryTypeError").css("opacity", 0);
+    getDate();
   });
 
   $(document).mouseup(function(e) {
@@ -272,21 +239,18 @@ function deliverySecondStage() {
     $("#deliveryType").show();
     $(".deliveryInfo").removeClass("type-boxberry");
     $(".deliveryInfo").addClass("type-delivery");
-    $("#continue").css("margin-top", "450px");
   } else if ($("#cityInput").val() !== "" && $("#selectedDeliveryWayName").html() === "Пункт BoxBerry") {
     $("#type-delivery").hide();
     $("#type-boxberry").show();
     $("#deliveryType").hide();
     $(".deliveryInfo").removeClass("type-delivery");
     $(".deliveryInfo").addClass("type-boxberry");
-    $("#continue").css("margin-top", "286px");
-  }else if ($("#cityInput").val() !== "" && $("#selectedDeliveryWayName").html() === "Самовывоз из магазина") {
+  } else if ($("#cityInput").val() !== "" && $("#selectedDeliveryWayName").html() === "Самовывоз из магазина") {
     $("#type-delivery").hide();
     $("#type-boxberry").hide();
     $("#deliveryType").hide();
     $(".deliveryInfo").removeClass("type-boxberry");
     $(".deliveryInfo").removeClass("type-delivery");
-    $("#continue").css("margin-top", "286px");
   }
 }
 
@@ -301,5 +265,26 @@ function callback_function(result) {
   $("#boxberryAddressInput").val(result.address);
   if (result.prepaid == "1") {
     alert("Отделение работает только по предоплате!");
+  }
+}
+
+function checkEmptiness(field, defaultState, error) {
+  if (field === defaultState) {
+    error.css("opacity", 1);
+  } else {
+    error.css("opacity", 0);
+  }
+}
+
+function getDate() {
+  if ($("#selectedDeliveryType").html() !== "Выберите тип доставки") {
+    const today = new Date();
+    const monthNames = ["Января", "Февраля", "Марта", "Апреля", "Мая", "Июня", "Июля", "Августа", "Сентября", "Октября", "Ноября", "Декабря"];
+    let dd = today.getDate();
+    const mm = today.getMonth();
+    if (dd < 10) {
+      dd = "0" + dd;
+    }
+    $(".deliveryPrice span").html("С " + dd + " " + monthNames[mm]);
   }
 }
