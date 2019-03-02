@@ -153,9 +153,19 @@ nav {
   grid-template-rows: 50px repeat(3, 1fr);
 }
 
-.deliveryPicker.MSK.active {
+.deliveryPickerItem.MSK,
+.deliveryPickerItem.SPB {
+  display: none;
+}
+
+#deliveryTypePicker.MSK.active {
   height: 250px;
   grid-template-rows: 50px repeat(4, 1fr);
+}
+
+#deliveryTypePicker.SPB.active {
+  height: 200px;
+  grid-template-rows: 50px repeat(3, 1fr);
 }
 
 #deliveryDayPicker.active {
@@ -241,6 +251,10 @@ input {
 .deliveryPrice span {
   font-size: 20px;
   color: var(--brown-grey);
+}
+
+.deliveryPrice h4 {
+  margin-bottom: 0;
 }
 
 #checkoutButton {

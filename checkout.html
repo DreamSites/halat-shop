@@ -78,22 +78,31 @@
               <div class="deliveryInfoItem" id="deliveryType">
                 <h4>Тип доставки</h4>
                 <div class="deliveryPickerContainer">
-                  <div class="deliveryPicker MSK" id="deliveryTypePicker">
+                  <div class="deliveryPicker" id="deliveryTypePicker">
                     <div class="deliveryPickerItem selected" id="selectedDeliveryType">
                       <span id="selectedDeliveryTypeName">Выберите тип доставки</span>
                       <img alt="" class="selectorArrow" id="arrowDeliveryType" src="img/selectorOpenArrow.svg" />
                     </div>
-                    <div class="deliveryPickerItem MSK" onclick="pick($('#deliveryTypePicker'), 'В пределах МКАД', $('#deliveryTypePicker .deliveryPickerItem'), $('#selectedDeliveryType'), $('#selectedDeliveryTypeName'),  $('#selectedDeliveryType img'))">
+                    <div class="deliveryPickerItem MSK" onclick="pick($('#deliveryTypePicker'), 'В пределах МКАД', $('#deliveryTypePicker .deliveryPickerItem'), $('#selectedDeliveryType'), $('#selectedDeliveryTypeName'),  $('#selectedDeliveryType img'));closeDeliveryTypePicker()">
                       В пределах МКАД
                     </div>
-                    <div class="deliveryPickerItem MSK" onclick="pick($('#deliveryTypePicker'), 'До 10 км. от МКАД', $('#deliveryTypePicker .deliveryPickerItem'), $('#selectedDeliveryType'), $('#selectedDeliveryTypeName'), $('#selectedDeliveryType img'))">
+                    <div class="deliveryPickerItem MSK" onclick="pick($('#deliveryTypePicker'), 'До 10 км. от МКАД', $('#deliveryTypePicker .deliveryPickerItem'), $('#selectedDeliveryType'), $('#selectedDeliveryTypeName'), $('#selectedDeliveryType img'));closeDeliveryTypePicker()">
                       До 10 км. от МКАД
                     </div>
-                    <div class="deliveryPickerItem MSK" onclick="pick($('#deliveryTypePicker'), 'От 10 до 25 км. от МКАД', $('#deliveryTypePicker .deliveryPickerItem'), $('#selectedDeliveryType'), $('#selectedDeliveryTypeName'), $('#selectedDeliveryType img'))">
+                    <div class="deliveryPickerItem MSK" onclick="pick($('#deliveryTypePicker'), 'От 10 до 25 км. от МКАД', $('#deliveryTypePicker .deliveryPickerItem'), $('#selectedDeliveryType'), $('#selectedDeliveryTypeName'), $('#selectedDeliveryType img'));closeDeliveryTypePicker()">
                       От 10 до 25 км. от МКАД
                     </div>
-                    <div class="deliveryPickerItem MSK" onclick="pick($('#deliveryTypePicker'), 'Срочная доставка в пределах МКАД', $('#deliveryTypePicker .deliveryPickerItem'), $('#selectedDeliveryType'), $('#selectedDeliveryTypeName'), $('#selectedDeliveryType img'))">
+                    <div class="deliveryPickerItem MSK" onclick="pick($('#deliveryTypePicker'), 'Срочная доставка в пределах МКАД', $('#deliveryTypePicker .deliveryPickerItem'), $('#selectedDeliveryType'), $('#selectedDeliveryTypeName'), $('#selectedDeliveryType img'));closeDeliveryTypePicker()">
                       Срочная доставка в пределах МКАД
+                    </div>
+                    <div class="deliveryPickerItem SPB" onclick="pick($('#deliveryTypePicker'), 'В пределах КАД', $('#deliveryTypePicker .deliveryPickerItem'), $('#selectedDeliveryType'), $('#selectedDeliveryTypeName'), $('#selectedDeliveryType img'));closeDeliveryTypePicker()">
+                      В пределах КАД
+                    </div>
+                    <div class="deliveryPickerItem SPB" onclick="pick($('#deliveryTypePicker'), 'До 10 км. от КАД', $('#deliveryTypePicker .deliveryPickerItem'), $('#selectedDeliveryType'), $('#selectedDeliveryTypeName'), $('#selectedDeliveryType img'));closeDeliveryTypePicker()">
+                      До 10 км. от КАД
+                    </div>
+                    <div class="deliveryPickerItem SPB" onclick="pick($('#deliveryTypePicker'), 'От 10 до 30 км. от КАД', $('#deliveryTypePicker .deliveryPickerItem'), $('#selectedDeliveryType'), $('#selectedDeliveryTypeName'), $('#selectedDeliveryType img'));closeDeliveryTypePicker()">
+                      От 10 до 30 км. от КАД
                     </div>
                   </div>
                 </div>

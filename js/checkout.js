@@ -147,18 +147,35 @@ $(document).ready(function() {
   $("#selectedDeliveryType").click(function() {
     openPicker($("#deliveryTypePicker"), $("#deliveryTypePicker .deliveryPickerItem"), $("#selectedDeliveryType img"));
     $("#deliveryTypeError").css("opacity", 0);
-    getDate();
+    const deliveryPicker = $("#deliveryTypePicker");
+    const MSK = new RegExp("Москва|Московская обл|Московская область");
+    const SPB = new RegExp("Санкт-Петербург|Ленинградская обл|Ленинградская область");
+    if (MSK.test($("#cityInput").val())) {
+      deliveryPicker.addClass("MSK");
+      $(".deliveryPickerItem.MSK").css("display", "flex");
+    } else if (SPB.test($("#cityInput").val())) {
+      deliveryPicker.addClass("SPB");
+      $(".deliveryPickerItem.SPB").css("display", "flex");
+    }
   });
 
   $(document).mouseup(function(e) {
     const deliveryTypePicker = $("#deliveryTypePicker");
     if (!deliveryTypePicker.is(e.target) && deliveryTypePicker.has(e.target).length === 0) {
       closePicker(deliveryTypePicker, $("#deliveryTypePicker .deliveryPickerItem"), $("#selectedDeliveryType img"));
+      closeDeliveryTypePicker();
     }
   });
 
   $("#deliveryWay .deliveryPickerItem").click(function() {
     deliverySecondStage();
+  });
+
+  $("#deliveryType .deliveryPickerItem").click(function() {
+    if ($("#deliveryType .deliveryPickerItem").html() !== "Выберите тип доставки") {
+      getDate();
+      getDeliveryPrice();
+    }
   });
 
   responsiveNavigation();
@@ -180,6 +197,11 @@ function pick(picker, pickerItemText, pickerItem, selected, selectedName, select
   selectedName.html(pickerItemText);
   selected.addClass("picked");
   closePicker(picker, pickerItem, selectedIMG);
+}
+
+function closeDeliveryTypePicker() {
+  $(".deliveryPickerItem.MSK").css("display", "none");
+  $(".deliveryPickerItem.SPB").css("display", "none");
 }
 
 const phoneMask = new IMask(document.getElementById("phoneNumberInput"), {
@@ -277,14 +299,30 @@ function checkEmptiness(field, defaultState, error) {
 }
 
 function getDate() {
-  if ($("#selectedDeliveryType").html() !== "Выберите тип доставки") {
+  const selectedDeliveryType = $("#selectedDeliveryType").html();
+  const deliveryDay = $(".deliveryPrice span");
+  if (selectedDeliveryType !== "Выберите тип доставки") {
     const today = new Date();
     const monthNames = ["Января", "Февраля", "Марта", "Апреля", "Мая", "Июня", "Июля", "Августа", "Сентября", "Октября", "Ноября", "Декабря"];
-    let dd = today.getDate();
+    let dd = today.getDate() + 2;
     const mm = today.getMonth();
     if (dd < 10) {
       dd = "0" + dd;
     }
-    $(".deliveryPrice span").html("С " + dd + " " + monthNames[mm]);
+    deliveryDay.html("С " + dd + " " + monthNames[mm]);
+  }
+}
+
+function getDeliveryPrice() {
+  const deliveryType = $("#selectedDeliveryTypeName").html();
+  const deliveryPrice = $(".deliveryPrice h4");
+  if (deliveryType === "В пределах МКАД" || deliveryType === "В пределах КАД") {
+    deliveryPrice.html("280₽");
+  } else if (deliveryType === "До 10 км. от МКАД" || deliveryType === "До 10 км. от КАД") {
+    deliveryPrice.html("350₽");
+  } else if (deliveryType === "От 10 до 25 км. от МКАД" || deliveryType === "От 10 до 30 км. от КАД") {
+    deliveryPrice.html("500₽");
+  } else if (deliveryType === "Срочная доставка в пределах МКАД") {
+    deliveryPrice.html("500₽");
   }
 }
