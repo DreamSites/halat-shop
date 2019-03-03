@@ -156,6 +156,9 @@ $(document).ready(function() {
     } else if (SPB.test($("#cityInput").val())) {
       deliveryPicker.addClass("SPB");
       $(".deliveryPickerItem.SPB").css("display", "flex");
+    } else {
+      deliveryPicker.addClass("RUS");
+      $(".deliveryPickerItem.RUS").css("display", "flex");
     }
   });
 
@@ -202,6 +205,7 @@ function pick(picker, pickerItemText, pickerItem, selected, selectedName, select
 function closeDeliveryTypePicker() {
   $(".deliveryPickerItem.MSK").css("display", "none");
   $(".deliveryPickerItem.SPB").css("display", "none");
+  $(".deliveryPickerItem.RUS").css("display", "none");
 }
 
 const phoneMask = new IMask(document.getElementById("phoneNumberInput"), {
@@ -324,5 +328,13 @@ function getDeliveryPrice() {
     deliveryPrice.html("500₽");
   } else if (deliveryType === "Срочная доставка в пределах МКАД") {
     deliveryPrice.html("500₽");
+  } else if (deliveryType === "Почта России") {
+    var getDeliveryPriceRequest = new XMLHttpRequest();
+    getDeliveryPriceRequest.open("GET", "http://api.postcalc.ru/?f=101000&t=190000&w=1000", true);
+    getDeliveryPriceRequest.send();
+    getDeliveryPriceRequest.onreadystatechange = function() {
+      console.log(getDeliveryPriceRequest.response);
+    };
+    console.log(getDeliveryPriceRequest.response);
   }
 }

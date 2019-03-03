@@ -154,7 +154,8 @@ nav {
 }
 
 .deliveryPickerItem.MSK,
-.deliveryPickerItem.SPB {
+.deliveryPickerItem.SPB,
+.deliveryPickerItem.RUS {
   display: none;
 }
 
@@ -164,6 +165,11 @@ nav {
 }
 
 #deliveryTypePicker.SPB.active {
+  height: 200px;
+  grid-template-rows: 50px repeat(3, 1fr);
+}
+
+#deliveryTypePicker.RUS.active {
   height: 200px;
   grid-template-rows: 50px repeat(3, 1fr);
 }
