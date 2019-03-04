@@ -177,7 +177,6 @@ $(document).ready(function() {
 
   $("#deliveryType .deliveryPickerItem").click(function() {
     if ($("#deliveryType .deliveryPickerItem").html() !== "Выберите тип доставки") {
-      getDate();
       getDeliveryPrice();
     }
   });
@@ -304,13 +303,13 @@ function checkEmptiness(field, defaultState, error) {
   }
 }
 
-function getDate() {
+function getDate(additionalDays) {
   const selectedDeliveryType = $("#selectedDeliveryType").html();
   const deliveryDay = $(".deliveryPrice span");
   if (selectedDeliveryType !== "Выберите тип доставки") {
     const today = new Date();
     const monthNames = ["Января", "Февраля", "Марта", "Апреля", "Мая", "Июня", "Июля", "Августа", "Сентября", "Октября", "Ноября", "Декабря"];
-    let dd = today.getDate() + 2;
+    let dd = today.getDate() + additionalDays;
     const mm = today.getMonth();
     if (dd < 10) {
       dd = "0" + dd;
@@ -322,26 +321,27 @@ function getDate() {
 function getDeliveryPrice() {
   const deliveryType = $("#selectedDeliveryTypeName").html();
   const deliveryPrice = $(".deliveryPrice h4");
-  if (deliveryType === "В пределах МКАД" || deliveryType === "В пределах КАД") {
-    deliveryPrice.html("280₽");
-  } else if (deliveryType === "До 10 км. от МКАД" || deliveryType === "До 10 км. от КАД") {
-    deliveryPrice.html("350₽");
-  } else if (deliveryType === "От 10 до 25 км. от МКАД" || deliveryType === "От 10 до 30 км. от КАД") {
-    deliveryPrice.html("500₽");
-  } else if (deliveryType === "Срочная доставка в пределах МКАД") {
-    deliveryPrice.html("500₽");
-  } else if (deliveryType === "Почта России") {
-    let getDeliveryPriceRequest = new XMLHttpRequest();
-    const requestLink = "https://tariff.pochta.ru/tariff/v1/calculate?json&object=27030&from=101000&to=" + postalCode + "&weight=1000&pack=10&date=20190304";
-    getDeliveryPriceRequest.open("GET", requestLink, true);
+  switch (deliveryType) {
+    case "В пределах МКАД" || "В пределах КАД":
+      deliveryPrice.html("280₽");
+    case "До 10 км. от МКАД" || "До 10 км. от КАД":
+      deliveryPrice.html("350₽");
+    case "От 10 до 25 км. от МКАД" || "От 10 до 30 км. от КАД":
+      deliveryPrice.html("500₽");
+    case "Срочная доставка в пределах МКАД":
+      deliveryPrice.html("500₽");
+    case "Почта России":
+      let getDeliveryPriceRequest = new XMLHttpRequest();
+      const requestLink = "https://tariff.pochta.ru/tariff/v1/calculate?json&object=27030&from=101000&to=" + postalCode + "&weight=1000&pack=10&date=20190304";
+      getDeliveryPriceRequest.open("GET", requestLink, true);
 
-    getDeliveryPriceRequest.send();
-    getDeliveryPriceRequest.onreadystatechange = function() {
-      const response = getDeliveryPriceRequest.response;
-      let price = JSON.parse(response).paynds;
-      price = price.toString();
-      console.log(price);
-      deliveryPrice.html(price.slice(0, price.length - 2) + "₽");
-    };
+      getDeliveryPriceRequest.send();
+      getDeliveryPriceRequest.onreadystatechange = function() {
+        const response = getDeliveryPriceRequest.response;
+        let price = JSON.parse(response).paynds;
+        price = price.toString();
+        console.log(price);
+        deliveryPrice.html(price.slice(0, price.length - 2) + "₽");
+      };
   }
 }

@@ -520,36 +520,25 @@ main {
 
 .fontSizeChanger {
   display: flex;
-  flex-direction: row; 
+  flex-direction: row;
   width: 180px;
   height: 50px;
   border-radius: 25px;
   background-color: var(--pale-grey);
 }
 
-#plus {
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  float: left;
+.fontSizeChanger .circleButton {
   width: 50px;
   height: 50px;
-  box-shadow: 0 0 20px 0 rgba(0, 9, 51, 0.15);
-  background-color: #ffffff;
-  border-radius: 50%;
-
+  box-shadow: 0 0 10px 0 rgba(0, 9, 51, 0.15);
 }
 
-#minus {
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  float: right;
-  width: 50px;
-  height: 50px;
+.fontSizeChanger .circleButton:hover {
   box-shadow: 0 0 20px 0 rgba(0, 9, 51, 0.15);
-  background-color: #ffffff;
-  border-radius: 50%;
+}
+
+#currentFontSize {
+  margin: auto;
 }
 
 #currentFontSize {
@@ -558,10 +547,6 @@ main {
   justify-content: center;
   width: 50px;
   height: 50px;
-}
-
-.sex {
-  margin-bottom: 25px;
 }
 
 .sexPickerContainer {
