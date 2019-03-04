@@ -1,4 +1,5 @@
 let bathrobeAmount = 0;
+let postalCode = "";
 if (localStorage.getItem("bathrobeAmount")) {
   bathrobeAmount = parseInt(localStorage.getItem("bathrobeAmount"), 10);
 } else {
@@ -237,11 +238,12 @@ $city.suggestions({
   token: token,
   type: "ADDRESS",
   hint: false,
-  bounds: "region-area",
+  bounds: "city",
   count: 3,
   /* Вызывается, когда пользователь выбирает одну из подсказок */
   onSelect: function(suggestion) {
     console.log(suggestion);
+    postalCode = suggestion.data.postal_code;
   }
 });
 
@@ -329,12 +331,17 @@ function getDeliveryPrice() {
   } else if (deliveryType === "Срочная доставка в пределах МКАД") {
     deliveryPrice.html("500₽");
   } else if (deliveryType === "Почта России") {
-    var getDeliveryPriceRequest = new XMLHttpRequest();
-    getDeliveryPriceRequest.open("GET", "http://test.postcalc.ru/?f=101000&t=190000&w=1000", true);
+    let getDeliveryPriceRequest = new XMLHttpRequest();
+    const requestLink = "https://tariff.pochta.ru/tariff/v1/calculate?json&object=27030&from=101000&to=" + postalCode + "&weight=1000&pack=10&date=20190304";
+    getDeliveryPriceRequest.open("GET", requestLink, true);
 
     getDeliveryPriceRequest.send();
     getDeliveryPriceRequest.onreadystatechange = function() {
-      console.log(getDeliveryPriceRequest.response);
+      const response = getDeliveryPriceRequest.response;
+      let price = JSON.parse(response).paynds;
+      price = price.toString();
+      console.log(price);
+      deliveryPrice.html(price.slice(0, price.length - 2) + "₽");
     };
   }
 }
