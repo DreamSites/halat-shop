@@ -330,11 +330,11 @@ function getDeliveryPrice() {
     deliveryPrice.html("500₽");
   } else if (deliveryType === "Почта России") {
     var getDeliveryPriceRequest = new XMLHttpRequest();
-    getDeliveryPriceRequest.open("GET", "http://api.postcalc.ru/?f=101000&t=190000&w=1000", true);
+    getDeliveryPriceRequest.open("GET", "http://test.postcalc.ru/?f=101000&t=190000&w=1000", true);
+
     getDeliveryPriceRequest.send();
     getDeliveryPriceRequest.onreadystatechange = function() {
       console.log(getDeliveryPriceRequest.response);
     };
-    console.log(getDeliveryPriceRequest.response);
   }
 }
