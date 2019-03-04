@@ -509,6 +509,23 @@ function responsiveNavigation() {
   }
 }
 
+function fontSizePlus(){
+  let currentSize = parseInt($(".sign").css("font-size"));
+  currentSize = currentSize + 4;
+  $(".sign").css({'font-size':currentSize});
+  $("#currentFontSize").html(currentSize);
+
+     
+}
+
+function fontSizeMinus(){
+  let currentSize = parseInt($(".sign").css("font-size"));
+  currentSize = currentSize - 4;
+  $(".sign").css({'font-size':currentSize});
+  $("#currentFontSize").html(currentSize);
+
+  }
+
 function openFontPicker() {
   $("#fontPicker").toggleClass("active");
   $(".fontPickerItem").toggleClass("active");

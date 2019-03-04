@@ -253,16 +253,16 @@
                       <div class="fontPickerItem" id="fontPickerItem6" onclick="pickFont('Sladkoeshka')">
                         Sladkoeshka
                       </div>
-                    </div>
+                    </div>x
                   </div>
                 </div>
                 <div class="fontSize">
                   <h4>Размер надписи</h4>
                   <div class="fontSizeChangerContainer">
                     <div class="fontSizeChanger">
-                      <div class="circleButton"><img src="img/minusBlue.svg" /></div>
-                      <div id="currentFontSize">16</div>
-                      <div class="circleButton"><img src="img/plusBlue.svg" /></div>
+                      <div class="circleButton" id="minus" onclick="fontSizeMinus()"><img src="img/minusBlue.svg" /></div>
+                      <p id="currentFontSize">25</p>
+                      <div class="circleButton" id="plus" onclick="fontSizePlus()"><img src="img/plusBlue.svg" /></div>
                     </div>
                   </div>
                 </div>
