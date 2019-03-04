@@ -191,17 +191,6 @@
           <div class="constructorCircle">
             <h2>Ваш уникальный халат</h2>
             <div class="constructorSecondCircle">
-              <div class="sex">
-                <h4>Пол</h4>
-                <div class="sexPickerContainer">
-                  <div class="sexPicker">
-                    <div onclick="pickSex('Мужской', 0)">Мужской</div>
-                    <img alt="" src="img/separator.svg" />
-                    <div onclick="pickSex('Женский', 1)">Женский</div>
-                    <div class="sexPickerSelector"></div>
-                  </div>
-                </div>
-              </div>
               <div class="size">
                 <h4>Размер</h4>
                 <div class="sizePickerContainer">
@@ -223,6 +212,27 @@
                 </div>
               </div>
               <div class="constructorGrid">
+                  <div class="sex">
+                      <h4>Пол</h4>
+                      <div class="sexPickerContainer">
+                        <div class="sexPicker">
+                          <div onclick="pickSex('Мужской', 0)">Мужской</div>
+                          <img alt="" src="img/separator.svg" />
+                          <div onclick="pickSex('Женский', 1)">Женский</div>
+                          <div class="sexPickerSelector"></div>
+                        </div>
+                      </div>
+                    </div>
+                    <div class="fontSize">
+                        <h4>Размер надписи</h4>
+                        <div class="fontSizeChangerContainer">
+                          <div class="fontSizeChanger">
+                             <div id="plus"><img src="img/leftArrowBlue.svg"></div>
+                            <div id="currentFontSize">16</div>
+                            <div id="minus"><img src="img/rightArrowBlue.svg"></div>
+                          </div>
+                        </div>
+                      </div>
                 <div class="sign">
                   <h4>Надпись</h4>
                   <input id="signInput" placeholder="Пример надписи" type="text" maxlength="25" />

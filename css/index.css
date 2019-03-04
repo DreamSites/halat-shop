@@ -518,6 +518,48 @@ main {
   margin-bottom: 50px;
 }
 
+.fontSizeChanger {
+  display: flex;
+  flex-direction: row; 
+  width: 180px;
+  height: 50px;
+  border-radius: 25px;
+  background-color: var(--pale-grey);
+}
+
+#plus {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  float: left;
+  width: 50px;
+  height: 50px;
+  box-shadow: 0 0 20px 0 rgba(0, 9, 51, 0.15);
+  background-color: #ffffff;
+  border-radius: 50%;
+
+}
+
+#minus {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  float: right;
+  width: 50px;
+  height: 50px;
+  box-shadow: 0 0 20px 0 rgba(0, 9, 51, 0.15);
+  background-color: #ffffff;
+  border-radius: 50%;
+}
+
+#currentFontSize {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 50px;
+  height: 50px;
+}
+
 .sex {
   margin-bottom: 25px;
 }
@@ -528,7 +570,7 @@ main {
 }
 
 .sexPicker {
-  width: 400px;
+  width: 300px;
   height: 50px;
   border-radius: 25px;
   background-color: var(--pale-grey);
