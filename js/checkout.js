@@ -46,6 +46,8 @@ $(document).ready(function() {
   });
   $("#cityInput").keyup(function() {
     $("#cityError").css("opacity", 0);
+    clearDeliveryType();
+    $(".deliveryPrice").css("opacity", 0);
   });
   $("#checkoutButton").click(function() {
     const nameInput = $("#nameInput").val();
@@ -320,16 +322,28 @@ function getDate(additionalDays) {
 
 function getDeliveryPrice() {
   const deliveryType = $("#selectedDeliveryTypeName").html();
-  const deliveryPrice = $(".deliveryPrice h4");
   switch (deliveryType) {
-    case "В пределах МКАД" || "В пределах КАД":
-      deliveryPrice.html("280₽");
-    case "До 10 км. от МКАД" || "До 10 км. от КАД":
-      deliveryPrice.html("350₽");
-    case "От 10 до 25 км. от МКАД" || "От 10 до 30 км. от КАД":
-      deliveryPrice.html("500₽");
+    case "В пределах МКАД":
+      setPrice("280₽", 2);
+      break;
+    case "В пределах КАД":
+      setPrice("280₽", 3);
+      break;
+    case "До 10 км. от МКАД":
+      setPrice("350₽", 2);
+      break;
+    case "До 10 км. от КАД":
+      setPrice("350₽", 3);
+      break;
+    case "От 10 до 25 км. от МКАД":
+      setPrice("500₽", 2);
+      break;
+    case "От 10 до 30 км. от КАД":
+      setPrice("500₽", 3);
+      break;
     case "Срочная доставка в пределах МКАД":
-      deliveryPrice.html("500₽");
+      setPrice("500₽", 1);
+      break;
     case "Почта России":
       let getDeliveryPriceRequest = new XMLHttpRequest();
       const requestLink = "https://tariff.pochta.ru/tariff/v1/calculate?json&object=27030&from=101000&to=" + postalCode + "&weight=1000&pack=10&date=20190304";
@@ -341,7 +355,20 @@ function getDeliveryPrice() {
         let price = JSON.parse(response).paynds;
         price = price.toString();
         console.log(price);
-        deliveryPrice.html(price.slice(0, price.length - 2) + "₽");
+        setPrice(price.slice(0, price.length - 2) + "₽", 10);
       };
+      break;
   }
+}
+
+function setPrice(price, additionalDays) {
+  const deliveryPrice = $(".deliveryPrice h4");
+  deliveryPrice.html(price);
+  getDate(additionalDays);
+  $(".deliveryPrice").css("opacity", 1);
+}
+
+function clearDeliveryType() {
+  $("#selectedDeliveryTypeName").html("Выберите тип доставки");
+  $("#selectedDeliveryType").removeClass("picked");
 }
