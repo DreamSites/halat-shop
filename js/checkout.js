@@ -345,17 +345,63 @@ function getDeliveryPrice() {
       setPrice("500₽", 1);
       break;
     case "Почта России":
-      let getDeliveryPriceRequest = new XMLHttpRequest();
-      const requestLink = "https://tariff.pochta.ru/tariff/v1/calculate?json&object=27030&from=101000&to=" + postalCode + "&weight=1000&pack=10&date=20190304";
-      getDeliveryPriceRequest.open("GET", requestLink, true);
+      let getDeliveryPriceRequestPR = new XMLHttpRequest();
+      const requestLinkPR = "https://tariff.pochta.ru/tariff/v1/calculate?json&object=27030&from=101000&to=" + postalCode + "&weight=1000&pack=10&date=20190304";
+      getDeliveryPriceRequestPR.open("GET", requestLinkPR, true);
 
-      getDeliveryPriceRequest.send();
-      getDeliveryPriceRequest.onreadystatechange = function() {
-        const response = getDeliveryPriceRequest.response;
+      getDeliveryPriceRequestPR.send();
+      getDeliveryPriceRequestPR.onreadystatechange = function() {
+        const response = getDeliveryPriceRequestPR.response;
         let price = JSON.parse(response).paynds;
         price = price.toString();
         console.log(price);
         setPrice(price.slice(0, price.length - 2) + "₽", 10);
+      };
+      break;
+    case "CDEK":
+      let getDeliveryPriceRequestCDEK = new XMLHttpRequest();
+      const requestLinkCDEK = "http://api.cdek.ru/calculator/calculate_price_by_json.php";
+      getDeliveryPriceRequestCDEK.open("GET", requestLinkCDEK, true);
+
+      const today = new Date();
+      let dd = today.getDate() + 5;
+      let mm = today.getMonth();
+      const yyyy = today.getFullYear();
+      if (dd < 10) {
+        dd = "0" + dd;
+      }
+      if (mm < 10) {
+        mm = "0" + mm;
+      }
+      const dataExecute = yyyy + "-" + mm + "-" + dd;
+      console.log(dataExecute);
+      const body = {
+        version: "1.0",
+        dateExecute: dataExecute,
+        senderCityId: "270",
+        receiverCityId: "44",
+        tariffId: "137",
+        goods: [
+          {
+            weight: "0.3",
+            length: "10",
+            width: "7",
+            height: "5"
+          },
+          {
+            weight: "0.1",
+            volume: "0.1"
+          }
+        ],
+        services: [
+          {
+            id: 2,
+            param: 2000
+          },
+          {
+            id: 30
+          }
+        ]
       };
       break;
   }
