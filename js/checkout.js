@@ -362,6 +362,8 @@ function getDeliveryPrice() {
       };
       break;
     case "CDEK":
+      requestLink = "http://api.cdek.ru/calculator/calculate_price_by_json.php";
+      getDeliveryPriceRequest.open("GET", requestLink, true);
       const today = new Date();
       let dd = today.getDate() + 5;
       let mm = today.getMonth();
@@ -402,14 +404,11 @@ function getDeliveryPrice() {
           }
         ]
       };
-      $.ajax({
-        type: "GET",
-        url: "http://api.cdek.ru/calculator/calculate_price_by_json.php",
-        data: JSON.stringify(body),
-        success: function() {
-          console.log("Woooho!");
-        }
-      });
+      getDeliveryPriceRequest.send(JSON.stringify(body));
+      getDeliveryPriceRequest.onreadystatechange = function() {
+        const response = getDeliveryPriceRequest.response;
+        console.log(response);
+      };
       break;
   }
 }
