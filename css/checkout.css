@@ -174,8 +174,18 @@ nav {
   grid-template-rows: 50px repeat(3, 1fr);
 }
 
+.datepicker-here {
+  margin-top: -100px;
+  opacity: 0;
+  z-index: -1;
+}
+
+.selectedDeliveryDayAactive{
+opacity: 0;
+}
+
 #deliveryDayPicker.active {
-  height: 200px;
+  height: 270px;
   grid-template-rows: 50px repeat(3, 1fr);
 }
 

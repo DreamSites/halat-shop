@@ -126,6 +126,8 @@ $(document).ready(function() {
   $("#selectedDeliveryDay").click(function() {
     openPicker($("#deliveryDayPicker"), $("#deliveryDayPicker .deliveryPickerItem"), $("#selectedDeliveryDay img"));
     $("#deliveryDateError").css("opacity", 0);
+    $(".datepicker-here").css("opacity", 1);
+    $(this).toggleClass("selectedDeliveryDayAactive");
   });
 
   $(document).mouseup(function(e) {
