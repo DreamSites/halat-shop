@@ -324,6 +324,8 @@ function getDate(additionalDays) {
 
 function getDeliveryPrice() {
   const deliveryType = $("#selectedDeliveryTypeName").html();
+  let getDeliveryPriceRequest = new XMLHttpRequest();
+  let requestLink = "";
   switch (deliveryType) {
     case "В пределах МКАД":
       setPrice("280₽", 2);
@@ -347,13 +349,12 @@ function getDeliveryPrice() {
       setPrice("500₽", 1);
       break;
     case "Почта России":
-      let getDeliveryPriceRequestPR = new XMLHttpRequest();
-      const requestLinkPR = "https://tariff.pochta.ru/tariff/v1/calculate?json&object=27030&from=101000&to=" + postalCode + "&weight=1000&pack=10&date=20190304";
-      getDeliveryPriceRequestPR.open("GET", requestLinkPR, true);
+      requestLink = "https://tariff.pochta.ru/tariff/v1/calculate?json&object=27030&from=101000&to=" + postalCode + "&weight=1000&pack=10&date=20190304";
+      getDeliveryPriceRequest.open("GET", requestLink, true);
 
-      getDeliveryPriceRequestPR.send();
-      getDeliveryPriceRequestPR.onreadystatechange = function() {
-        const response = getDeliveryPriceRequestPR.response;
+      getDeliveryPriceRequest.send();
+      getDeliveryPriceRequest.onreadystatechange = function() {
+        const response = getDeliveryPriceRequest.response;
         let price = JSON.parse(response).paynds;
         price = price.toString();
         console.log(price);
@@ -361,10 +362,6 @@ function getDeliveryPrice() {
       };
       break;
     case "CDEK":
-      let getDeliveryPriceRequestCDEK = new XMLHttpRequest();
-      const requestLinkCDEK = "http://api.cdek.ru/calculator/calculate_price_by_json.php";
-      getDeliveryPriceRequestCDEK.open("GET", requestLinkCDEK, true);
-
       const today = new Date();
       let dd = today.getDate() + 5;
       let mm = today.getMonth();
@@ -405,6 +402,14 @@ function getDeliveryPrice() {
           }
         ]
       };
+      $.ajax({
+        type: "GET",
+        url: "http://api.cdek.ru/calculator/calculate_price_by_json.php",
+        data: JSON.stringify(body),
+        success: function() {
+          console.log("Woooho!");
+        }
+      });
       break;
   }
 }
