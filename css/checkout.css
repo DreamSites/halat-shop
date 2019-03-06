@@ -180,8 +180,8 @@ nav {
   z-index: -1;
 }
 
-.selectedDeliveryDayAactive{
-opacity: 0;
+.selectedDeliveryDayAactive {
+  opacity: 0;
 }
 
 #deliveryDayPicker.active {
@@ -422,7 +422,8 @@ input {
     text-align: center;
   }
 
-  .deliveryInfo {
+  .deliveryInfo.type-delivery,
+  .deliveryInfo.type-boxberry {
     width: 100vw;
     max-width: 100vw;
     height: auto;
@@ -454,6 +455,12 @@ input {
   .checkoutEnd {
     bottom: 2500px;
     left: calc(50% - 252px);
+  }
+
+  #continue,
+  .deliveryPrice {
+    margin-left: auto;
+    margin-right: auto;
   }
 }
 

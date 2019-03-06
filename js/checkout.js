@@ -313,7 +313,8 @@ function getDate(additionalDays) {
   if (selectedDeliveryType !== "Выберите тип доставки") {
     const today = new Date();
     const monthNames = ["Января", "Февраля", "Марта", "Апреля", "Мая", "Июня", "Июля", "Августа", "Сентября", "Октября", "Ноября", "Декабря"];
-    let dd = today.getDate() + additionalDays;
+    today.setDate(today.getDate() + additionalDays);
+    let dd = today.getDate();
     const mm = today.getMonth();
     if (dd < 10) {
       dd = "0" + dd;
@@ -359,7 +360,7 @@ function getDeliveryPrice() {
         console.log(price);
         price += 20000;
         price = price.toString();
-        setPrice(price.slice(0, price.length - 2) + "₽", 10);
+        setPrice(price.slice(0, price.length - 2) + "₽", 25);
       };
       break;
     case "CDEK":
@@ -369,7 +370,7 @@ function getDeliveryPrice() {
         console.log(price);
         price = price * 3 + 20000;
         price = price.toString();
-        setPrice(price.slice(0, price.length - 2) + "₽", 7);
+        setPrice(price.slice(0, price.length - 2) + "₽", 11);
       };
       break;
     case "DPD":
@@ -377,9 +378,9 @@ function getDeliveryPrice() {
         response = getDeliveryPriceRequest.response;
         price = JSON.parse(response).paynds;
         console.log(price);
-        price = price * 3;
+        price = price * 3 - 5000;
         price = price.toString();
-        setPrice(price.slice(0, price.length - 2) + "₽", 7);
+        setPrice(price.slice(0, price.length - 2) + "₽", 16);
       };
       break;
   }
