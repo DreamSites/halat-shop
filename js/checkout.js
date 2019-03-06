@@ -63,9 +63,11 @@ $(document).ready(function() {
 
         city: $("#cityInput").val(),
         deliveryWay: $("#selectedDeliveryWayName").html(),
+        deliveryType: $("#selectedDeliveryTypeName").html(),
         deliveryDay: $("#selectedDeliveryDayName").html(),
         deliveryTime: $("#selectedDeliveryTimeName").html(),
         address: $("#addressInput").val(),
+        boxberryAddress: $("#boxberryAddressInput").val(),
 
         pickedSex: localStorage.getItem("pickedSex"),
         pickedSize: localStorage.getItem("pickedSize"),

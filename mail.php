@@ -6,9 +6,11 @@ if($_POST){
 
     $city = $_POST['city'];
     $deliveryWay = $_POST['deliveryWay'];
+    $deliveryType = $_POST['deliveryType'];
     $deliveryDay = $_POST['deliveryDay'];
     $deliveryTime = $_POST['deliveryTime'];
     $address = $_POST['address'];
+    $boxberryAddress = $_POST['boxberryAddress'];
 
     $pickedSize = $_POST['pickedSize'];
     $pickedSex = $_POST['pickedSex'];
@@ -26,9 +28,11 @@ if($_POST){
     Информация о доставке
     Город: $city
     Способ получения: $deliveryWay
+    Тип доставки: $deliveryType
     Дата: $deliveryDay
     Время: $deliveryTime
     Адрес: $address
+    Адрес BoxBerry: $boxberryAddress
 
     Информация о халатах
     Пол: $pickedSex
