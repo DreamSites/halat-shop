@@ -325,7 +325,11 @@ function getDate(additionalDays) {
 function getDeliveryPrice() {
   const deliveryType = $("#selectedDeliveryTypeName").html();
   let getDeliveryPriceRequest = new XMLHttpRequest();
-  let requestLink = "";
+  let requestLink = "https://tariff.pochta.ru/tariff/v1/calculate?json&object=27030&from=101000&to=" + postalCode + "&weight=1000&pack=10&date=20190304";
+  let price, response;
+  getDeliveryPriceRequest.open("GET", requestLink, true);
+
+  getDeliveryPriceRequest.send();
   switch (deliveryType) {
     case "В пределах МКАД":
       setPrice("280₽", 2);
@@ -349,65 +353,33 @@ function getDeliveryPrice() {
       setPrice("500₽", 1);
       break;
     case "Почта России":
-      requestLink = "https://tariff.pochta.ru/tariff/v1/calculate?json&object=27030&from=101000&to=" + postalCode + "&weight=1000&pack=10&date=20190304";
-      getDeliveryPriceRequest.open("GET", requestLink, true);
-
-      getDeliveryPriceRequest.send();
       getDeliveryPriceRequest.onreadystatechange = function() {
-        const response = getDeliveryPriceRequest.response;
-        let price = JSON.parse(response).paynds;
-        price = price.toString();
+        response = getDeliveryPriceRequest.response;
+        price = JSON.parse(response).paynds;
         console.log(price);
+        price += 20000;
+        price = price.toString();
         setPrice(price.slice(0, price.length - 2) + "₽", 10);
       };
       break;
     case "CDEK":
-      requestLink = "http://api.cdek.ru/calculator/calculate_price_by_json.php";
-      getDeliveryPriceRequest.open("GET", requestLink, true);
-      const today = new Date();
-      let dd = today.getDate() + 5;
-      let mm = today.getMonth();
-      const yyyy = today.getFullYear();
-      if (dd < 10) {
-        dd = "0" + dd;
-      }
-      if (mm < 10) {
-        mm = "0" + mm;
-      }
-      const dataExecute = yyyy + "-" + mm + "-" + dd;
-      console.log(dataExecute);
-      const body = {
-        version: "1.0",
-        dateExecute: dataExecute,
-        senderCityId: "270",
-        receiverCityId: "44",
-        tariffId: "137",
-        goods: [
-          {
-            weight: "0.3",
-            length: "10",
-            width: "7",
-            height: "5"
-          },
-          {
-            weight: "0.1",
-            volume: "0.1"
-          }
-        ],
-        services: [
-          {
-            id: 2,
-            param: 2000
-          },
-          {
-            id: 30
-          }
-        ]
-      };
-      getDeliveryPriceRequest.send(JSON.stringify(body));
       getDeliveryPriceRequest.onreadystatechange = function() {
-        const response = getDeliveryPriceRequest.response;
-        console.log(response);
+        response = getDeliveryPriceRequest.response;
+        price = JSON.parse(response).paynds;
+        console.log(price);
+        price = price * 3 + 20000;
+        price = price.toString();
+        setPrice(price.slice(0, price.length - 2) + "₽", 7);
+      };
+      break;
+    case "DPD":
+      getDeliveryPriceRequest.onreadystatechange = function() {
+        response = getDeliveryPriceRequest.response;
+        price = JSON.parse(response).paynds;
+        console.log(price);
+        price = price * 3;
+        price = price.toString();
+        setPrice(price.slice(0, price.length - 2) + "₽", 7);
       };
       break;
   }
