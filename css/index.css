@@ -469,6 +469,7 @@ main {
   word-wrap: break-word;
   overflow: hidden;
   color: #ffd400;
+  transition: font-size 0.2s ease;
 }
 
 .picture {
@@ -536,7 +537,6 @@ main {
 .fontSizeChanger .circleButton:hover {
   box-shadow: 0 0 20px 0 rgba(0, 9, 51, 0.15);
 }
-
 
 #currentFontSize {
   display: flex;

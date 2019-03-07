@@ -182,17 +182,7 @@ $(document).ready(function() {
   });
 
   $("#order").click(function() {
-    if (
-      pickedSize.length > 0 &&
-      pickedSex.length > 0 &&
-      pickedSexID.length > 0 &&
-      pickedSign.length > 0 &&
-      pickedFont.length > 0 &&
-      pickedBathrobeColor.length > 0 &&
-      pickedBathrobeColorIMG.length > 0 &&
-      pickedImage.length > 0 &&
-      pickedImageID.length > 0
-    ) {
+    if (pickedSize.length > 0 && pickedSex.length > 0 && pickedSexID.length > 0 && pickedSign.length > 0 && pickedFont.length > 0 && pickedBathrobeColor.length > 0 && pickedBathrobeColorIMG.length > 0 && pickedImage.length > 0 && pickedImageID.length > 0) {
       $("#successAlert").addClass("active");
       bathrobeAmount += 1;
       localStorage.setItem("bathrobeAmount", bathrobeAmount);
@@ -428,26 +418,8 @@ while (i < 100) {
 
 function responsiveNavigation() {
   if ($(window).width() > 1240) {
-    $("#headerLeftBG nav").html(
-      '<img alt="" class="logo" src="img/logo.png">' +
-        '<a href="#ourWorks">Галерея</a>' +
-        '<a href="#reviews">Отзывы</a>' +
-        '<a href="#previewContainer">Конструктор</a>' +
-        '<a href="#delivery">Доставка</a>' +
-        '<a href="#aboutUs">О нас</a>'
-    );
-    $("footer nav").html(
-      '<img alt="" class="logo" src="img/logo.png">' +
-        '<a href="#ourWorks">Галерея</a>' +
-        '<a href="#reviews">Отзывы</a>' +
-        '<a href="#constructor">Конструктор</a>' +
-        '<a href="#delivery">Доставка</a>' +
-        '<a href="#aboutUs">О нас</a>' +
-        '<div class="circleButton" id="footerOpenCartButton" onclick="window.location=\'cart.html\';">' +
-        '<img alt="" src="img/cartBold.svg">' +
-        "<span></span>" +
-        "</div>"
-    );
+    $("#headerLeftBG nav").html('<img alt="" class="logo" src="img/logo.png">' + '<a href="#ourWorks">Галерея</a>' + '<a href="#reviews">Отзывы</a>' + '<a href="#previewContainer">Конструктор</a>' + '<a href="#delivery">Доставка</a>' + '<a href="#aboutUs">О нас</a>');
+    $("footer nav").html('<img alt="" class="logo" src="img/logo.png">' + '<a href="#ourWorks">Галерея</a>' + '<a href="#reviews">Отзывы</a>' + '<a href="#constructor">Конструктор</a>' + '<a href="#delivery">Доставка</a>' + '<a href="#aboutUs">О нас</a>' + '<div class="circleButton" id="footerOpenCartButton" onclick="window.location=\'cart.html\';">' + '<img alt="" src="img/cartBold.svg">' + "<span></span>" + "</div>");
   }
   if ($(window).width() > 1200) {
     pickedWorkID = 1;
@@ -459,23 +431,8 @@ function responsiveNavigation() {
     updateOurWorksMargin();
   }
   if ($(window).width() < 1240) {
-    $("#headerLeftBG nav").html(
-      '<div class="circleButton" id="openNavigation">' +
-        '   <img src="img/navigation.svg" alt="">' +
-        "</div>" +
-        '<div class="circleButton" onclick="window.location=\'cart.html\';" id="mobileHeaderOpenCartButton">' +
-        '   <img src="img/cart.svg" alt="">' +
-        "   <span></span>" +
-        "</div>" +
-        '<img src="img/logo.png" alt="" class="logo">'
-    );
-    $("footer nav").html(
-      '<img src="img/logo.png" alt="" class="logo">' +
-        '<div class="circleButton" onclick="window.location=\'cart.html\';" id="mobileFooterOpenCartButton">' +
-        '   <img src="img/cartBold.svg" alt="">' +
-        "   <span></span>" +
-        "</div>"
-    );
+    $("#headerLeftBG nav").html('<div class="circleButton" id="openNavigation">' + '   <img src="img/navigation.svg" alt="">' + "</div>" + '<div class="circleButton" onclick="window.location=\'cart.html\';" id="mobileHeaderOpenCartButton">' + '   <img src="img/cart.svg" alt="">' + "   <span></span>" + "</div>" + '<img src="img/logo.png" alt="" class="logo">');
+    $("footer nav").html('<img src="img/logo.png" alt="" class="logo">' + '<div class="circleButton" onclick="window.location=\'cart.html\';" id="mobileFooterOpenCartButton">' + '   <img src="img/cartBold.svg" alt="">' + "   <span></span>" + "</div>");
     if (bathrobeAmount > 0) {
       $("#mobileHeaderOpenCartButton span").html(bathrobeAmount);
       $("#mobileFooterOpenCartButton span").html(bathrobeAmount);
@@ -483,22 +440,7 @@ function responsiveNavigation() {
   }
   if ($(window).width() < 760) {
     $(".constructor h2").html("Ваш уникальный<br>халат");
-    $(".sizeNumbersContainer").html(
-      '<div class="sexSign">Мужские</div>' +
-        '<div class="sexSign">Женские</div>' +
-        "<div>46-47</div>" +
-        "<div>44-45</div>" +
-        "<div>48-49</div>" +
-        "<div>46-47</div>" +
-        "<div>50-51</div>" +
-        "<div>48-49</div>" +
-        "<div>52-53</div>" +
-        "<div>50-51</div>" +
-        "<div>54-57</div>" +
-        "<div>52-53</div>" +
-        "<div>58-60</div>" +
-        "<div>54-56</div>"
-    );
+    $(".sizeNumbersContainer").html('<div class="sexSign">Мужские</div>' + '<div class="sexSign">Женские</div>' + "<div>46-47</div>" + "<div>44-45</div>" + "<div>48-49</div>" + "<div>46-47</div>" + "<div>50-51</div>" + "<div>48-49</div>" + "<div>52-53</div>" + "<div>50-51</div>" + "<div>54-57</div>" + "<div>52-53</div>" + "<div>58-60</div>" + "<div>54-56</div>");
   }
   if ($(window).width() < 675) {
     $("#copyright span").text = "Copyright 2018 Магазин халатов.";
@@ -509,22 +451,19 @@ function responsiveNavigation() {
   }
 }
 
-function fontSizePlus(){
-  let currentSize = parseInt($(".sign").css("font-size"));
+function fontSizePlus() {
+  let currentSize = parseInt($("#sign").css("font-size"));
   currentSize = currentSize + 4;
-  $(".sign").css({'font-size':currentSize});
+  $("#sign").css({ "font-size": currentSize });
   $("#currentFontSize").html(currentSize);
-
-     
 }
 
-function fontSizeMinus(){
-  let currentSize = parseInt($(".sign").css("font-size"));
+function fontSizeMinus() {
+  let currentSize = parseInt($("#sign").css("font-size"));
   currentSize = currentSize - 4;
-  $(".sign").css({'font-size':currentSize});
+  $("#sign").css({ "font-size": currentSize });
   $("#currentFontSize").html(currentSize);
-
-  }
+}
 
 function openFontPicker() {
   $("#fontPicker").toggleClass("active");
