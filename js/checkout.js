@@ -1,5 +1,6 @@
 let bathrobeAmount = 0;
 let postalCode = "";
+let b = 1;
 if (localStorage.getItem("bathrobeAmount")) {
   bathrobeAmount = parseInt(localStorage.getItem("bathrobeAmount"), 10);
 } else {
@@ -126,12 +127,14 @@ $(document).ready(function() {
   });
 
   $("#selectedDeliveryDay").click(function() {
+    if (b == 1) {$("#pickPrev").css("pointerEvents", "none");};
     $("#deliveryDayPicker").addClass("active");
     $("#deliveryDayPicker .deliveryPickerItem").addClass("active");
     $("#deliveryDateError").css("opacity", 0);
     $(".datepicker-here").css("opacity", 1);
     $(".datepicker-here").css("z-index", 1);
     $(this).toggleClass("selectedDeliveryDayAactive");
+    b += 1;
   });
 
   $(document).mouseup(function(e) {

@@ -246,7 +246,7 @@
 
 .datepicker {
   width: 400px;
-  height: 275px;
+  height: 300px;
   border-radius: 25px;
   box-shadow: 0 0 10px 0 rgba(0, 9, 51, 0.2);
   background-color: #ffffff;
@@ -283,8 +283,7 @@
 
 .datepicker--content {
   width: 400px;
-  height: 360pc;
-  box-sizing: content-box;
+  height: 260px;
   padding: 4px;
 }
 .-only-timepicker- .datepicker--content {

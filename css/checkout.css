@@ -185,7 +185,7 @@ nav {
 }
 
 #deliveryDayPicker.active {
-  height: 270px;
+  height: 298px;
   grid-template-rows: 50px repeat(3, 1fr);
 }
 
