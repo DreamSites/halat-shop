@@ -126,16 +126,22 @@ $(document).ready(function() {
   });
 
   $("#selectedDeliveryDay").click(function() {
-    openPicker($("#deliveryDayPicker"), $("#deliveryDayPicker .deliveryPickerItem"), $("#selectedDeliveryDay img"));
+    $("#deliveryDayPicker").addClass("active");
+    $("#deliveryDayPicker .deliveryPickerItem").addClass("active");
     $("#deliveryDateError").css("opacity", 0);
     $(".datepicker-here").css("opacity", 1);
+    $(".datepicker-here").css("z-index", 1);
     $(this).toggleClass("selectedDeliveryDayAactive");
   });
 
   $(document).mouseup(function(e) {
     const deliveryDayPicker = $("#deliveryDayPicker");
     if (!deliveryDayPicker.is(e.target) && deliveryDayPicker.has(e.target).length === 0) {
-      closePicker(deliveryDayPicker, $("#deliveryDayPicker .deliveryPickerItem"), $("#selectedDeliveryDay img"));
+      $("#deliveryDayPicker").removeClass("active");
+      $("#deliveryDayPicker .deliveryPickerItem").removeClass("active");
+      $(".datepicker-here").css("opacity", 0);
+      $(".datepicker-here").css("z-index", -1);
+      $("#selectedDeliveryDay").removeClass("selectedDeliveryDayAactive");
     }
   });
 
