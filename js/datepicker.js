@@ -50,10 +50,10 @@
 
         // navigation
         monthsField: "monthsShort",
-        prevHtml: '<img src="img/rightArrowBlue.svg" >',
-        nextHtml: '<img src="img/leftArrowBlue.svg" >',
+        prevHtml: '<img src="img/leftArrowBlue.svg" >',
+        nextHtml: '<img src="img/rightArrowBlue.svg" >',
         navTitles: {
-          days: "MM yyyy"
+          days: "MM"
         },
 
         // timepicker
@@ -1483,6 +1483,9 @@
 
       if (this.opts.onlyTimepicker) return;
       this.init();
+
+
+     
     };
 
     datepicker.Body.prototype = {
@@ -1756,12 +1759,49 @@
         if ($el.hasClass("-disabled-")) return;
 
         this._handleClick.bind(this)($el);
+        $(".datepicker--cell-day").click(function(){
+          var day = $(this).text();
+          var title = $(".datepicker--nav-title").text();
+          var selectedDeliveryDayName = $("#selectedDeliveryDayName").text();
+          $("#deliveryDayPicker").removeClass("active");
+          $("#deliveryDayPicker .deliveryPickerItem").removeClass("active");
+          $(".datepicker-here").css("opacity", 0);
+          $(".datepicker-here").css("z-index", -1);
+          $("#selectedDeliveryDay").removeClass("selectedDeliveryDayAactive");
+          if (title == "Январь") {cm = "01"}
+          else
+          if (title == "Февраль") {cm = "02"}
+          else
+          if (title == "Март") {cm = "03"}
+          else
+          if (title == "Апрель") {cm = "04"}
+          else
+          if (title == "Май") {cm = "05"}
+          else
+          if (title == "Июнь") {cm = "06"}
+          else
+          if (title == "Июль") {cm ="07"}
+          else
+          if (title == "Август") {cm = "08"}
+          else
+          if (title == "Сентабрь") {cm = "09"}
+          else
+          if (title == "Октябрь") {cm = "10"}
+          else
+          if (title =="Ноябрь") {cm = "11"}
+          else
+          if (title =="Декабрь") {cm = "12"}
+          if (day < 10) {$("#selectedDeliveryDayName").text("0" + day + "." + cm);}
+          else
+          if (day => 10)
+          {$("#selectedDeliveryDayName").text(day + "." + cm);}
+        })
       }
     };
   })();
 
   (function() {
-    var template = "" + '<div class="datepicker--nav-action" data-action="prev">#{prevHtml}</div>' + '<div class="datepicker--nav-title">#{title}</div>' + '<div class="datepicker--nav-action" data-action="next">#{nextHtml}</div>',
+    var template = "" + '<div class="datepicker--nav-action" data-action="next">#{nextHtml}</div>' + '<div class="datepicker--nav-title">#{title}</div>' + '<div class="datepicker--nav-action" data-action="prev">#{prevHtml}</div>',
       buttonsContainerTemplate = '<div class="datepicker--buttons"></div>',
       button = '<span class="datepicker--button" data-action="#{action}">#{label}</span>',
       datepicker = $.fn.datepicker,
