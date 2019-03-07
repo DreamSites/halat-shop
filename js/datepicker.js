@@ -1466,7 +1466,45 @@
       $(autoInitSelector).datepicker();
     });
   })();
-
+ function pick(){
+  $(".datepicker--cell-day").click(function(){
+    var day = $(this).text();
+    var title = $(".datepicker--nav-title").text();
+    var selectedDeliveryDayName = $("#selectedDeliveryDayName").text();
+    $("#deliveryDayPicker").removeClass("active");
+    $("#deliveryDayPicker .deliveryPickerItem").removeClass("active");
+    $(".datepicker-here").css("opacity", 0);
+    $(".datepicker-here").css("z-index", -1);
+    $("#selectedDeliveryDay").removeClass("selectedDeliveryDayAactive");
+    if (title == "Январь") {cm = "01"}
+    else
+    if (title == "Февраль") {cm = "02"}
+    else
+    if (title == "Март") {cm = "03"}
+    else
+    if (title == "Апрель") {cm = "04"}
+    else
+    if (title == "Май") {cm = "05"}
+    else
+    if (title == "Июнь") {cm = "06"}
+    else
+    if (title == "Июль") {cm ="07"}
+    else
+    if (title == "Август") {cm = "08"}
+    else
+    if (title == "Сентабрь") {cm = "09"}
+    else
+    if (title == "Октябрь") {cm = "10"}
+    else
+    if (title =="Ноябрь") {cm = "11"}
+    else
+    if (title =="Декабрь") {cm = "12"}
+    if (day < 10) {$("#selectedDeliveryDayName").text("0" + day + "." + cm);}
+    else
+    if (day => 10)
+    {$("#selectedDeliveryDayName").text(day + "." + cm);}
+  })
+ };
   (function() {
     var templates = {
         days: "" + '<div class="datepicker--days datepicker--body">' + '<div class="datepicker--days-names"></div>' + '<div class="datepicker--cells datepicker--cells-days"></div>' + "</div>",
@@ -1483,9 +1521,7 @@
 
       if (this.opts.onlyTimepicker) return;
       this.init();
-
-
-     
+       pick();
     };
 
     datepicker.Body.prototype = {
@@ -1759,43 +1795,7 @@
         if ($el.hasClass("-disabled-")) return;
 
         this._handleClick.bind(this)($el);
-        $(".datepicker--cell-day").click(function(){
-          var day = $(this).text();
-          var title = $(".datepicker--nav-title").text();
-          var selectedDeliveryDayName = $("#selectedDeliveryDayName").text();
-          $("#deliveryDayPicker").removeClass("active");
-          $("#deliveryDayPicker .deliveryPickerItem").removeClass("active");
-          $(".datepicker-here").css("opacity", 0);
-          $(".datepicker-here").css("z-index", -1);
-          $("#selectedDeliveryDay").removeClass("selectedDeliveryDayAactive");
-          if (title == "Январь") {cm = "01"}
-          else
-          if (title == "Февраль") {cm = "02"}
-          else
-          if (title == "Март") {cm = "03"}
-          else
-          if (title == "Апрель") {cm = "04"}
-          else
-          if (title == "Май") {cm = "05"}
-          else
-          if (title == "Июнь") {cm = "06"}
-          else
-          if (title == "Июль") {cm ="07"}
-          else
-          if (title == "Август") {cm = "08"}
-          else
-          if (title == "Сентабрь") {cm = "09"}
-          else
-          if (title == "Октябрь") {cm = "10"}
-          else
-          if (title =="Ноябрь") {cm = "11"}
-          else
-          if (title =="Декабрь") {cm = "12"}
-          if (day < 10) {$("#selectedDeliveryDayName").text("0" + day + "." + cm);}
-          else
-          if (day => 10)
-          {$("#selectedDeliveryDayName").text(day + "." + cm);}
-        })
+        pick();     
       }
     };
   })();
