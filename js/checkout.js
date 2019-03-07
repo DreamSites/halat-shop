@@ -225,7 +225,7 @@ const phoneMask = new IMask(document.getElementById("phoneNumberInput"), {
 });
 
 $("#bathrobePrice").html(3190 * bathrobeAmount + "₽");
-$("#fullPrice").html(3190 * bathrobeAmount + 500 + "₽");
+$("#fullPrice").html("от " + (3190 * bathrobeAmount + 300) + "₽");
 
 $(window).resize(function() {
   responsiveNavigation();
@@ -397,6 +397,8 @@ function getDeliveryPrice() {
 function setPrice(price, additionalDays) {
   const deliveryPrice = $(".deliveryPrice h4");
   deliveryPrice.html(price);
+  $("#deliveryPrice").html(price);
+  $("#fullPrice").html(3190 * bathrobeAmount + parseInt(price.slice(0, price.length - 1)) + "₽");
   getDate(additionalDays);
   $(".deliveryPrice").css("opacity", 1);
 }
@@ -404,4 +406,6 @@ function setPrice(price, additionalDays) {
 function clearDeliveryType() {
   $("#selectedDeliveryTypeName").html("Выберите тип доставки");
   $("#selectedDeliveryType").removeClass("picked");
+  $("#fullPrice").html("от " + (3190 * bathrobeAmount + 300) + "₽");
+  $("#deliveryPrice").html("от 300₽");
 }
