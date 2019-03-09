@@ -159,6 +159,10 @@ nav {
   display: none;
 }
 
+#deliveryDay {
+  opacity: 5;
+}
+
 #deliveryTypePicker.MSK.active {
   height: 250px;
   grid-template-rows: 50px repeat(4, 1fr);
@@ -171,21 +175,6 @@ nav {
 
 #deliveryTypePicker.RUS.active {
   height: 200px;
-  grid-template-rows: 50px repeat(3, 1fr);
-}
-
-.datepicker-here {
-  margin-top: -100px;
-  opacity: 0;
-  z-index: -1;
-}
-
-.selectedDeliveryDayAactive {
-  opacity: 0;
-}
-
-#deliveryDayPicker.active {
-  height: 298px;
   grid-template-rows: 50px repeat(3, 1fr);
 }
 

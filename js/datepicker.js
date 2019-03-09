@@ -34,7 +34,7 @@
         selectOtherYears: true,
         moveToOtherYearsOnSelect: true,
 
-        minDate: "",
+        minDate: new Date(),
         maxDate: "",
         disableNavWhenOutOfRange: true,
 
@@ -53,20 +53,8 @@
         prevHtml: '<img src="img/leftArrowBlue.svg" >',
         nextHtml: '<img src="img/rightArrowBlue.svg" >',
         navTitles: {
-          days: "MM"
+          days: "MM yyyy"
         },
-
-        // timepicker
-        timepicker: false,
-        onlyTimepicker: false,
-        dateTimeSeparator: " ",
-        timeFormat: "",
-        minHours: 0,
-        maxHours: 24,
-        minMinutes: 0,
-        maxMinutes: 59,
-        hoursStep: 1,
-        minutesStep: 1,
 
         // events
         onSelect: "",
@@ -1466,49 +1454,9 @@
       $(autoInitSelector).datepicker();
     });
   })();
- function pick(){
-  $(".datepicker--cell-day").click(function(){
-    var day = $(this).text();
-    var title = $(".datepicker--nav-title").text();
-    var selectedDeliveryDayName = $("#selectedDeliveryDayName").text();
-    $("#deliveryDayPicker").removeClass("active");
-    $("#deliveryDayPicker .deliveryPickerItem").removeClass("active");
-    $(".datepicker-here").css("opacity", 0);
-    $(".datepicker-here").css("z-index", -1);
-    $("#selectedDeliveryDay").removeClass("selectedDeliveryDayAactive");
-    if (title == "Январь") {cm = "01"}
-    else
-    if (title == "Февраль") {cm = "02"}
-    else
-    if (title == "Март") {cm = "03"}
-    else
-    if (title == "Апрель") {cm = "04"}
-    else
-    if (title == "Май") {cm = "05"}
-    else
-    if (title == "Июнь") {cm = "06"}
-    else
-    if (title == "Июль") {cm ="07"}
-    else
-    if (title == "Август") {cm = "08"}
-    else
-    if (title == "Сентабрь") {cm = "09"}
-    else
-    if (title == "Октябрь") {cm = "10"}
-    else
-    if (title =="Ноябрь") {cm = "11"}
-    else
-    if (title =="Декабрь") {cm = "12"}
-    if (day < 10) {$("#selectedDeliveryDayName").text("0" + day + "." + cm);}
-    else
-    if (day => 10)
-    {$("#selectedDeliveryDayName").text(day + "." + cm);}
-  })
- };
   (function() {
     var templates = {
         days: "" + '<div class="datepicker--days datepicker--body">' + '<div class="datepicker--days-names"></div>' + '<div class="datepicker--cells datepicker--cells-days"></div>' + "</div>",
-        years: "" + '<div class="datepicker--years datepicker--body">' + '<div class="datepicker--cells datepicker--cells-years"></div>' + "</div>"
       },
       datepicker = $.fn.datepicker,
       dp = datepicker.Constructor;
@@ -1521,7 +1469,7 @@
 
       if (this.opts.onlyTimepicker) return;
       this.init();
-       pick();
+
     };
 
     datepicker.Body.prototype = {
@@ -1794,29 +1742,10 @@
 
         if ($el.hasClass("-disabled-")) return;
 
-        this._handleClick.bind(this)($el);
-        pick();     
+        this._handleClick.bind(this)($el);  
       }
     };
   })();
-  var k = 0;
-function back() {
-  $("#pickNext").click(function(){
-    k += 1;
-  })
-  $("#pickPrev").click(function(){
-    if (k == 0) {
-      $("#deliveryDayPicker").removeClass("active");
-      $("#deliveryDayPicker .deliveryPickerItem").removeClass("active");
-      $(".datepicker-here").css("opacity", 0);
-      $(".datepicker-here").css("z-index", -1);
-      $("#selectedDeliveryDay").removeClass("selectedDeliveryDayAactive");
-            }
-    else {
-      k -= 1;
-    }
-})
-};
   (function() {
     var template = "" + '<div class="datepicker--nav-action" id="pickNext" data-action="next">#{nextHtml}</div>' + '<div class="datepicker--nav-title">#{title}</div>' + '<div class="datepicker--nav-action" id="pickPrev" data-action="prev">#{prevHtml}</div>',
       buttonsContainerTemplate = '<div class="datepicker--buttons"></div>',
@@ -1830,7 +1759,6 @@ function back() {
       this.$buttonsContainer = "";
 
       this.init();
-    back();
       
     };
 
@@ -1917,7 +1845,6 @@ function back() {
         var $el = $(e.target).closest("[data-action]")
           action = $el.data("action");
         this.d[action]();
-        back();
       },
     
 

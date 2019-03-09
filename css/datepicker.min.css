@@ -237,12 +237,14 @@
 /* -------------------------------------------------
     Datepicker
    ------------------------------------------------- */
-
-@media print {
-  .datepickers-container {
-    display: none;
-  }
-}
+   .datepickers-container {
+    position: absolute;
+  left: 50%;
+top :50%;}
+    @media print {
+      .datepickers-container {
+        display: none; } }
+  
 
 .datepicker {
   width: 400px;
@@ -250,7 +252,8 @@
   border-radius: 25px;
   box-shadow: 0 0 10px 0 rgba(0, 9, 51, 0.2);
   background-color: #ffffff;
-  margin-bottom: 100px;
+  z-index: 100; 
+  opacity: 0;
 }
 .datepicker.-from-top- {
   -webkit-transform: translateY(-8px);

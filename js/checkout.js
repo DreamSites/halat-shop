@@ -34,7 +34,7 @@ $(document).ready(function() {
     checkEmptiness(cityName, "", $("#cityError"));
     checkEmptiness(deliveryWayName, "Выберите способ получения", $("#deliveryWayError"));
     checkEmptiness(deliveryTypeName, "Выберите тип доставки", $("#deliveryTypeError"));
-    checkEmptiness(deliveryDayName, "Выберите дату доставки", $("#deliveryDayError"));
+    checkEmptiness(datepicker-here, " ", $("#deliveryDateError"));
     checkEmptiness(deliveryTimeName, "Выберите время доставки", $("#deliveryTimeError"));
     checkEmptiness(address, "", $("#addressError"));
     checkEmptiness(boxberryAddress, "", $("#boxberryAddress"));
@@ -123,28 +123,6 @@ $(document).ready(function() {
     const deliveryWayPicker = $("#deliveryWayPicker");
     if (!deliveryWayPicker.is(e.target) && deliveryWayPicker.has(e.target).length === 0) {
       closePicker(deliveryWayPicker, $("#deliveryWayPicker .deliveryPickerItem"), $("#selectedDeliveryWay img"));
-    }
-  });
-
-  $("#selectedDeliveryDay").click(function() {
-    if (b == 1) {$("#pickPrev").css("pointerEvents", "none");};
-    $("#deliveryDayPicker").addClass("active");
-    $("#deliveryDayPicker .deliveryPickerItem").addClass("active");
-    $("#deliveryDateError").css("opacity", 0);
-    $(".datepicker-here").css("opacity", 1);
-    $(".datepicker-here").css("z-index", 1);
-    $(this).toggleClass("selectedDeliveryDayAactive");
-    b += 1;
-  });
-
-  $(document).mouseup(function(e) {
-    const deliveryDayPicker = $("#deliveryDayPicker");
-    if (!deliveryDayPicker.is(e.target) && deliveryDayPicker.has(e.target).length === 0) {
-      $("#deliveryDayPicker").removeClass("active");
-      $("#deliveryDayPicker .deliveryPickerItem").removeClass("active");
-      $(".datepicker-here").css("opacity", 0);
-      $(".datepicker-here").css("z-index", -1);
-      $("#selectedDeliveryDay").removeClass("selectedDeliveryDayAactive");
     }
   });
 
