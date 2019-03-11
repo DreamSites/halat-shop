@@ -18,7 +18,7 @@ $(document).ready(function() {
     const address = $("#addressInput").val();
 
     if ($("#cityInput") == "Москва")
-    {$(".deliveryPickerContainer").css("height", "60px");}
+    {$(".deliveryPickerContainer").css("height", "60px")}
 
     if ((deliveryTypeName !== "Выберите тип доставки" && cityName !== "Введите ваш город" && deliveryWayName === "Доставка" && deliveryDayName !== "Выберите дату доставки" && deliveryTimeName !== "Выберите время доставки" && address !== "") || (deliveryWayName === "Пункт BoxBerry" && boxberryAddress !== "")) {
       $(".deliveryInfo").removeClass("active");

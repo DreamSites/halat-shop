@@ -462,6 +462,18 @@ function changeFontSize(value) {
   $("#sign").css({ "font-size": currentSize });
   $("#currentFontSize").html(currentSize);
   pickedFontSize[bathrobeID] = currentSize;
+  if (currentSize >= 56) {
+    $("#plus").css("pointer-events", "none");
+    $("#minus").click(function(){
+      $("#plus").css("pointer-events", "auto");
+    })
+  }
+  if (currentSize <= 12) {
+    $("#minus").css("pointer-events", "none");
+    $("#plus").click(function(){
+      $("#minus").css("pointer-events", "auto");
+    })
+  }
 }
 
 function openFontPicker() {
