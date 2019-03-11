@@ -34,7 +34,7 @@ $(document).ready(function() {
     checkEmptiness(cityName, "", $("#cityError"));
     checkEmptiness(deliveryWayName, "Выберите способ получения", $("#deliveryWayError"));
     checkEmptiness(deliveryTypeName, "Выберите тип доставки", $("#deliveryTypeError"));
-    checkEmptiness(datepicker-here, " ", $("#deliveryDateError"));
+    checkEmptiness(datepicker - here, " ", $("#deliveryDateError"));
     checkEmptiness(deliveryTimeName, "Выберите время доставки", $("#deliveryTimeError"));
     checkEmptiness(address, "", $("#addressError"));
     checkEmptiness(boxberryAddress, "", $("#boxberryAddress"));
@@ -303,6 +303,9 @@ function getDate(additionalDays) {
     const today = new Date();
     const monthNames = ["Января", "Февраля", "Марта", "Апреля", "Мая", "Июня", "Июля", "Августа", "Сентября", "Октября", "Ноября", "Декабря"];
     today.setDate(today.getDate() + additionalDays);
+    $("#datepicker").datepicker({
+      minDate: today
+    });
     let dd = today.getDate();
     const mm = today.getMonth();
     if (dd < 10) {

@@ -26,7 +26,7 @@ main {
   cursor: pointer;
 }
 
-nav {
+#nav {
   display: flex;
   flex-direction: row-reverse;
   align-items: center;
@@ -372,7 +372,7 @@ input {
 }
 
 @media (max-width: 1620px) {
-  nav {
+  #nav {
     width: calc(100vw - 100px);
   }
 
@@ -471,7 +471,7 @@ input {
     margin-right: auto;
   }
 
-  nav {
+  #nav {
     width: calc(100vw - 40px);
     margin: 20px auto 0;
     height: 50px;

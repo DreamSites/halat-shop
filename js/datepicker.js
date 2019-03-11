@@ -6,7 +6,7 @@
       $body,
       $datepickersContainer,
       containerBuilt = false,
-      baseTemplate = "" + '<div class="datepicker">' + '<i class="datepicker--pointer"></i>' + '<nav class="datepicker--nav"></nav>' + '<div class="datepicker--content"></div>' + "</div>",
+      baseTemplate = "" + '<div class="datepicker">' + '<nav class="datepicker--nav"></nav>' + '<div class="datepicker--content"></div>' + "</div>",
       defaults = {
         classes: "",
         inline: false,
@@ -34,7 +34,6 @@
         selectOtherYears: true,
         moveToOtherYearsOnSelect: true,
 
-        minDate: new Date(),
         maxDate: "",
         disableNavWhenOutOfRange: true,
 
@@ -1456,7 +1455,7 @@
   })();
   (function() {
     var templates = {
-        days: "" + '<div class="datepicker--days datepicker--body">' + '<div class="datepicker--days-names"></div>' + '<div class="datepicker--cells datepicker--cells-days"></div>' + "</div>",
+        days: "" + '<div class="datepicker--days datepicker--body">' + '<div class="datepicker--days-names"></div>' + '<div class="datepicker--cells datepicker--cells-days"></div>' + "</div>"
       },
       datepicker = $.fn.datepicker,
       dp = datepicker.Constructor;
@@ -1469,7 +1468,6 @@
 
       if (this.opts.onlyTimepicker) return;
       this.init();
-
     };
 
     datepicker.Body.prototype = {
@@ -1742,12 +1740,12 @@
 
         if ($el.hasClass("-disabled-")) return;
 
-        this._handleClick.bind(this)($el);  
+        this._handleClick.bind(this)($el);
       }
     };
   })();
   (function() {
-    var template = "" + '<div class="datepicker--nav-action" id="pickNext" data-action="next">#{nextHtml}</div>' + '<div class="datepicker--nav-title">#{title}</div>' + '<div class="datepicker--nav-action" id="pickPrev" data-action="prev">#{prevHtml}</div>',
+    var template = "" + '<div class="datepicker--nav-action" data-action="prev">#{prevHtml}</div>' + '<div class="datepicker--nav-title">#{title}</div>' + '<div class="datepicker--nav-action" data-action="next">#{nextHtml}</div>',
       buttonsContainerTemplate = '<div class="datepicker--buttons"></div>',
       button = '<span class="datepicker--button" data-action="#{action}">#{label}</span>',
       datepicker = $.fn.datepicker,
@@ -1759,7 +1757,6 @@
       this.$buttonsContainer = "";
 
       this.init();
-      
     };
 
     datepicker.Navigation.prototype = {
@@ -1831,6 +1828,12 @@
           m = date.month,
           y = date.year,
           d = date.date;
+        if (!this.d._isInRange(new Date(y, m - 1, 1), "month")) {
+          this._disableNav("prev");
+        }
+        if (!this.d._isInRange(new Date(y, m + 1, 1), "month")) {
+          this._disableNav("next");
+        }
       },
 
       _disableNav: function(nav) {
@@ -1839,20 +1842,15 @@
 
       _activateNav: function(nav) {
         $('[data-action="' + nav + '"]', this.d.$nav).removeClass("-disabled-");
-      },  
+      },
 
-      _onClickNavButton: function (e) { 
-        var $el = $(e.target).closest("[data-action]")
-          action = $el.data("action");
+      _onClickNavButton: function(e) {
+        var $el = $(e.target).closest("[data-action]");
+        action = $el.data("action");
         this.d[action]();
       },
-    
 
-      _onClickNavTitle: function(e) {
-       
-      }
+      _onClickNavTitle: function(e) {}
     };
   })();
-
- 
 })(window, jQuery);

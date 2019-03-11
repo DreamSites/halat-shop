@@ -28,7 +28,7 @@
     <link href="css/main.css" rel="stylesheet" />
     <link href="css/fonts.css" rel="stylesheet" />
     <link href="css/checkout.css" rel="stylesheet" />
-    <link href="css/datepicker.min.css" rel="stylesheet" />
+    <link href="css/datepicker.css" rel="stylesheet" />
 
     <link href="https://fonts.googleapis.com/css?family=Ubuntu:400,500" rel="stylesheet" />
 
@@ -130,7 +130,7 @@
                 </div>
                 <div class="deliveryInfoItem" id="deliveryDay">
                   <h4>Дата</h4>
-                   <input class="datepicker-here" type="date" placeholder="Выберите дату" />
+                  <input class="datepicker-here" type="date" placeholder="Выберите дату" id="datepicker" />
                   <div class="errorMessage" id="deliveryDateError">
                     Сначала заполните это поле
                   </div>
@@ -224,7 +224,7 @@
           </div>
         </div>
       </div>
-      <nav>
+      <nav id="nav">
         <div id="rightNav">
           <div class="navItem" id="phone">
             <img alt="" src="img/phoneBlue.svg" />
