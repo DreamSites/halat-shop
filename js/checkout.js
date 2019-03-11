@@ -1,6 +1,5 @@
 let bathrobeAmount = 0;
 let postalCode = "";
-let b = 1;
 if (localStorage.getItem("bathrobeAmount")) {
   bathrobeAmount = parseInt(localStorage.getItem("bathrobeAmount"), 10);
 } else {
@@ -171,6 +170,7 @@ $(document).ready(function() {
   $("#deliveryType .deliveryPickerItem").click(function() {
     if ($("#deliveryType .deliveryPickerItem").html() !== "Выберите тип доставки") {
       getDeliveryPrice();
+      deliverySecondStage();
     }
   });
 
@@ -253,24 +253,31 @@ $street.suggestions({
 });
 
 function deliverySecondStage() {
-  if ($("#cityInput").val() !== "" && $("#selectedDeliveryWayName").html() === "Доставка") {
-    $("#type-delivery").show();
-    $("#type-boxberry").hide();
-    $("#deliveryType").show();
-    $(".deliveryInfo").removeClass("type-boxberry");
-    $(".deliveryInfo").addClass("type-delivery");
-  } else if ($("#cityInput").val() !== "" && $("#selectedDeliveryWayName").html() === "Пункт BoxBerry") {
-    $("#type-delivery").hide();
-    $("#type-boxberry").show();
-    $("#deliveryType").hide();
-    $(".deliveryInfo").removeClass("type-delivery");
-    $(".deliveryInfo").addClass("type-boxberry");
-  } else if ($("#cityInput").val() !== "" && $("#selectedDeliveryWayName").html() === "Самовывоз из магазина") {
-    $("#type-delivery").hide();
-    $("#type-boxberry").hide();
-    $("#deliveryType").hide();
-    $(".deliveryInfo").removeClass("type-boxberry");
-    $(".deliveryInfo").removeClass("type-delivery");
+  if ($("#cityInput").val() !== "") {
+    switch ($("#selectedDeliveryWayName").html()) {
+      case "Доставка":
+        $("#deliveryType").show();
+        $("#type-boxberry").hide();
+        $(".deliveryInfo").removeClass("type-boxberry");
+        $(".deliveryInfo").addClass("type-delivery");
+        if ($("#selectedDeliveryTypeName").html() !== "Выберите тип доставки") {
+          $("#type-delivery").show();
+        }
+        break;
+      case "Пункт BoxBerry":
+        $("#type-delivery").hide();
+        $("#deliveryType").hide();
+        $("#type-boxberry").show();
+        $(".deliveryInfo").removeClass("type-delivery");
+        $(".deliveryInfo").addClass("type-boxberry");
+        break;
+      case "Самовывоз из магазина":
+        $("#type-delivery").hide();
+        $("#type-boxberry").hide();
+        $("#deliveryType").hide();
+        $(".deliveryInfo").removeClass("type-boxberry");
+        $(".deliveryInfo").removeClass("type-delivery");
+    }
   }
 }
 

@@ -143,8 +143,7 @@ main {
 }
 
 #type-delivery,
-#type-boxberry,
-#deliveryType {
+#type-boxberry {
   display: none;
 }
 
