@@ -239,21 +239,21 @@
    ------------------------------------------------- */
    .datepickers-container {
     position: absolute;
-  left: 50%;
-top :50%;}
+    left: 0;
+    top: 0; }
     @media print {
       .datepickers-container {
         display: none; } }
-  
+
 
 .datepicker {
-  width: 400px;
-  height: 300px;
   border-radius: 25px;
   box-shadow: 0 0 10px 0 rgba(0, 9, 51, 0.2);
   background-color: #ffffff;
   z-index: 100; 
   opacity: 0;
+  position: absolute;
+  left: -100000px;
 }
 .datepicker.-from-top- {
   -webkit-transform: translateY(-8px);
@@ -279,19 +279,27 @@ top :50%;}
   transition: opacity 0.3s ease, transform 0.3s ease, left 0s 0s;
   transition: opacity 0.3s ease, transform 0.3s ease, left 0s 0s, -webkit-transform 0.3s ease;
 }
+.datepicker-inline .datepicker {
+  border-color: #d7d7d7;
+  box-shadow: none;
+  position: static;
+  left: auto;
+  right: auto;
+  opacity: 1;
+  -webkit-transform: none;
+          transform: none; }
 
 .datepicker-inline .datepicker--pointer {
   display: none;
 }
 
 .datepicker--content {
-  width: 400px;
-  height: 260px;
   padding: 4px;
 }
 .-only-timepicker- .datepicker--content {
   display: none;
 }
+
 
 .-top-left- .datepicker--pointer,
 .-top-center- .datepicker--pointer,
@@ -393,6 +401,7 @@ top :50%;}
     Navigation
    ------------------------------------------------- */
 .datepicker--nav {
+  margin-top: -2px;
   width: 400px;
   display: -webkit-flex;
   display: -ms-flexbox;

@@ -1849,13 +1849,7 @@
     
 
       _onClickNavTitle: function(e) {
-        if ($(e.target).hasClass("-disabled-")) return;
-
-        if (this.d.view == "days") {
-          return (this.d.view = "months");
-        }
-
-        this.d.view = "years";
+       
       }
     };
   })();
