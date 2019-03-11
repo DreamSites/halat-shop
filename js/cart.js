@@ -75,7 +75,7 @@ function getOrderInfo() {
     .eq(pickedImageID[bathrobeID])
     .css("display", "block");
   updateBathrobeID();
-  $("#fullPrice").html(bathrobeAmount * 1790 + "₽");
+  $("#fullPrice").html(bathrobeAmount * 3190 + "₽");
 
   if (pickedBathrobeColor[bathrobeID] === "Персиковый") {
     $("#wreathsWithCrown").attr("src", "img/wreathsWithCrownBlue.png");

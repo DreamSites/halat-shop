@@ -7,7 +7,7 @@ if($_POST){
     $city = $_POST['city'];
     $deliveryWay = $_POST['deliveryWay'];
     $deliveryType = $_POST['deliveryType'];
-    $deliveryDay = $_POST['deliveryDay'];
+    $deliveryDate = $_POST['deliveryDate'];
     $deliveryTime = $_POST['deliveryTime'];
     $address = $_POST['address'];
     $boxberryAddress = $_POST['boxberryAddress'];
@@ -16,6 +16,7 @@ if($_POST){
     $pickedSex = $_POST['pickedSex'];
     $signInput = $_POST['signInput'];
     $pickedFont = $_POST['pickedFont'];
+    $pickedFontSize = $_POST['pickedFontSize'];
     $pickedBathrobeColor = $_POST['pickedBathrobeColor'];
     $pickedImage = $_POST['pickedImage'];
 
@@ -39,6 +40,7 @@ if($_POST){
     Размер халата: $pickedSize
     Надпись: $signInput
     Шрифт: $pickedFont
+    Размер шрифта: $pickedFontSize
     Цвет халата: $pickedBathrobeColor
     Рисунок: $pickedImage
     ";

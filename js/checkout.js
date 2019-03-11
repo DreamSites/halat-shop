@@ -6,43 +6,51 @@ if (localStorage.getItem("bathrobeAmount")) {
   window.location = "index.html";
 }
 
+$(".clientInfo").hide();
+const stage = $(".stage a");
+
 $(document).ready(function() {
-  const stage = $(".stage a");
   $("#continue").click(function() {
-    const boxberryAddress = $("#boxberryAddressInput").val();
-    const deliveryTypeName = $("#selectedDeliveryTypeName").html();
     const cityName = $("#cityInput").val();
     const deliveryWayName = $("#selectedDeliveryWayName").html();
-    const deliveryDayName = $("#selectedDeliveryDayName").html();
-    const deliveryTimeName = $("#selectedDeliveryTimeName").html();
+
+    const deliveryTypeName = $("#selectedDeliveryTypeName").html();
     const address = $("#addressInput").val();
+    const deliveryDate = $("#datepicker").val();
+    const deliveryTimeName = $("#selectedDeliveryTimeName").html();
 
-    if ($("#cityInput") == "Москва")
-    {$(".deliveryPickerContainer").css("height", "60px")}
+    const boxberryAddress = $("#boxberryAddressInput").val();
 
-    if ((deliveryTypeName !== "Выберите тип доставки" && cityName !== "Введите ваш город" && deliveryWayName === "Доставка" && deliveryDayName !== "Выберите дату доставки" && deliveryTimeName !== "Выберите время доставки" && address !== "") || (deliveryWayName === "Пункт BoxBerry" && boxberryAddress !== "")) {
-      $(".deliveryInfo").removeClass("active");
-      $(".clientInfo").addClass("active");
-      stage.eq(0).css("color", "var(--brown-grey)");
-      stage.eq(1).css("color", "var(--black)");
-      $("html, body").animate(
-        {
-          scrollTop: 0
-        },
-        500
-      );
-      return false;
-    }
     checkEmptiness(cityName, "", $("#cityError"));
     checkEmptiness(deliveryWayName, "Выберите способ получения", $("#deliveryWayError"));
     checkEmptiness(deliveryTypeName, "Выберите тип доставки", $("#deliveryTypeError"));
-    checkEmptiness(datepicker - here, " ", $("#deliveryDateError"));
-    checkEmptiness(deliveryTimeName, "Выберите время доставки", $("#deliveryTimeError"));
-    checkEmptiness(address, "", $("#addressError"));
-    checkEmptiness(boxberryAddress, "", $("#boxberryAddress"));
+
+    switch (deliveryWayName) {
+      case "Доставка":
+        if (cityName !== "" && deliveryTypeName !== "Выберите тип доставки" && address !== "" && deliveryDate !== "" && deliveryTimeName !== "Выберите время доставки") {
+          activateSecondStage();
+        } else {
+          checkEmptiness(address, "", $("#addressError"));
+          checkEmptiness(deliveryDate, "", $("#deliveryDateError"));
+          checkEmptiness(deliveryTimeName, "Выберите время доставки", $("#deliveryTimeError"));
+        }
+        break;
+      case "Самовывоз из магазина":
+        if (cityName !== "") {
+          activateSecondStage();
+        }
+        break;
+      case "Пункт BoxBerry":
+        if (cityName !== "" && boxberryAddress !== "") {
+          checkEmptiness(boxberryAddress, "", $("#boxberryAddress"));
+        }
+    }
   });
   $("#addressInput").keyup(function() {
     $("#addressError").css("opacity", 0);
+  });
+  $("#datepicker").focus(function() {
+    $("#deliveryDateError").css("opacity", 0);
   });
   $("#boxberryAddressInput").keyup(function() {
     $("#boxberryAddressError").css("opacity", 0);
@@ -67,15 +75,17 @@ $(document).ready(function() {
         city: $("#cityInput").val(),
         deliveryWay: $("#selectedDeliveryWayName").html(),
         deliveryType: $("#selectedDeliveryTypeName").html(),
-        deliveryDay: $("#selectedDeliveryDayName").html(),
+        deliveryDate: $("#datepicker").val(),
         deliveryTime: $("#selectedDeliveryTimeName").html(),
         address: $("#addressInput").val(),
+
         boxberryAddress: $("#boxberryAddressInput").val(),
 
         pickedSex: localStorage.getItem("pickedSex"),
         pickedSize: localStorage.getItem("pickedSize"),
         signInput: localStorage.getItem("signInput"),
         pickedFont: localStorage.getItem("pickedFont"),
+        pickedFontSize: localStorage.getItem("pickedFontSize"),
         pickedColor: localStorage.getItem("pickedColor"),
         pickedBathrobeColor: localStorage.getItem("pickedBathrobeColor"),
         pickedImage: localStorage.getItem("pickedImage")
@@ -148,11 +158,17 @@ $(document).ready(function() {
     const SPB = new RegExp("Санкт-Петербург|Ленинградская обл|Ленинградская область");
     if (MSK.test($("#cityInput").val())) {
       deliveryPicker.addClass("MSK");
+      deliveryPicker.removeClass("SPB");
+      deliveryPicker.removeClass("RUS");
       $(".deliveryPickerItem.MSK").css("display", "flex");
     } else if (SPB.test($("#cityInput").val())) {
+      deliveryPicker.removeClass("MSK");
       deliveryPicker.addClass("SPB");
+      deliveryPicker.removeClass("RUS");
       $(".deliveryPickerItem.SPB").css("display", "flex");
     } else {
+      deliveryPicker.removeClass("MSK");
+      deliveryPicker.removeClass("SPB");
       deliveryPicker.addClass("RUS");
       $(".deliveryPickerItem.RUS").css("display", "flex");
     }
@@ -233,7 +249,7 @@ $city.suggestions({
   token: token,
   type: "ADDRESS",
   hint: false,
-  bounds: "city",
+  bounds: "region-city",
   count: 3,
   /* Вызывается, когда пользователь выбирает одну из подсказок */
   onSelect: function(suggestion) {
@@ -308,7 +324,7 @@ function checkEmptiness(field, defaultState, error) {
 
 function getDate(additionalDays) {
   const selectedDeliveryType = $("#selectedDeliveryType").html();
-  const deliveryDay = $(".deliveryPrice span");
+  const deliveryDate = $(".deliveryPrice span");
   if (selectedDeliveryType !== "Выберите тип доставки") {
     const today = new Date();
     const monthNames = ["Января", "Февраля", "Марта", "Апреля", "Мая", "Июня", "Июля", "Августа", "Сентября", "Октября", "Ноября", "Декабря"];
@@ -321,7 +337,7 @@ function getDate(additionalDays) {
     if (dd < 10) {
       dd = "0" + dd;
     }
-    deliveryDay.html("С " + dd + " " + monthNames[mm]);
+    deliveryDate.html("С " + dd + " " + monthNames[mm]);
   }
 }
 
@@ -402,4 +418,19 @@ function clearDeliveryType() {
   $("#selectedDeliveryType").removeClass("picked");
   $("#fullPrice").html("от " + (3190 * bathrobeAmount + 300) + "₽");
   $("#deliveryPrice").html("от 300₽");
+}
+
+function activateSecondStage() {
+  $(".deliveryInfo").hide();
+  $(".clientInfo").show();
+  $(".deliveryPrice").hide();
+  $("#continue").hide();
+  stage.eq(0).css("color", "var(--brown-grey)");
+  stage.eq(1).css("color", "var(--black)");
+  $("html, body").animate(
+    {
+      scrollTop: 0
+    },
+    500
+  );
 }

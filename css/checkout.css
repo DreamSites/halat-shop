@@ -158,7 +158,7 @@ main {
   display: none;
 }
 
-#deliveryDay {
+#deliveryDate {
   opacity: 5;
 }
 
@@ -272,11 +272,9 @@ input {
 }
 
 .deliveryInfo {
-  opacity: 0;
   display: flex;
   flex-direction: column;
   flex-wrap: wrap;
-  z-index: -1;
   transition: all 0.5s ease;
   max-width: 900px;
   width: calc(100vw - 40px);
@@ -303,11 +301,6 @@ input {
   margin-right: 10px;
   -webkit-box-shadow: 0 0 10px rgba(0, 9, 51, 0.15);
   box-shadow: 0 0 10px rgba(0, 9, 51, 0.15);
-}
-
-.deliveryInfo.active {
-  opacity: 1;
-  z-index: 1;
 }
 
 .deliveryInfoItem {
@@ -338,18 +331,11 @@ input {
 }
 
 .clientInfo {
-  opacity: 0;
-  z-index: -1;
   transition: all 0.5s ease;
   display: flex;
   flex-direction: column;
   align-items: center;
   width: 400px;
-}
-
-.clientInfo.active {
-  opacity: 1;
-  z-index: 1;
 }
 
 .clientInfoItem {
