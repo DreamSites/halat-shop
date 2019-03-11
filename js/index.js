@@ -15,6 +15,7 @@ let pickedSex = [];
 let pickedSexID = [];
 let pickedSize = [];
 let pickedFont = [];
+let pickedFontSize = [];
 let pickedBathrobeColor = [];
 let pickedBathrobeColorIMG = [];
 let pickedImage = [];
@@ -34,6 +35,9 @@ if (localStorage.getItem("pickedSize") !== null) {
 }
 if (localStorage.getItem("pickedFont") !== null) {
   pickedFont = JSON.parse(localStorage.getItem("pickedFont"));
+}
+if (localStorage.getItem("pickedFontSize") !== null) {
+  pickedFontSize = JSON.parse(localStorage.getItem("pickedFontSize"));
 }
 if (localStorage.getItem("pickedBathrobeColor") !== null) {
   pickedBathrobeColor = JSON.parse(localStorage.getItem("pickedBathrobeColor"));
@@ -191,6 +195,7 @@ $(document).ready(function() {
       localStorage.setItem("pickedSize", JSON.stringify(pickedSize));
       localStorage.setItem("signInput", JSON.stringify(pickedSign));
       localStorage.setItem("pickedFont", JSON.stringify(pickedFont));
+      localStorage.setItem("pickedFontSize", JSON.stringify(pickedFontSize));
       localStorage.setItem("pickedBathrobeColor", JSON.stringify(pickedBathrobeColor));
       localStorage.setItem("pickedBathrobeColorIMG", JSON.stringify(pickedBathrobeColorIMG));
       localStorage.setItem("pickedImage", JSON.stringify(pickedImage));
@@ -451,18 +456,12 @@ function responsiveNavigation() {
   }
 }
 
-function fontSizePlus() {
+function changeFontSize(value) {
   let currentSize = parseInt($("#sign").css("font-size"));
-  currentSize = currentSize + 4;
+  currentSize = currentSize + value;
   $("#sign").css({ "font-size": currentSize });
   $("#currentFontSize").html(currentSize);
-}
-
-function fontSizeMinus() {
-  let currentSize = parseInt($("#sign").css("font-size"));
-  currentSize = currentSize - 4;
-  $("#sign").css({ "font-size": currentSize });
-  $("#currentFontSize").html(currentSize);
+  pickedFontSize[bathrobeID] = currentSize;
 }
 
 function openFontPicker() {

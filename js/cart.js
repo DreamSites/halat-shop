@@ -7,6 +7,7 @@ let pickedSex = JSON.parse(localStorage.getItem("pickedSex"));
 let pickedSize = JSON.parse(localStorage.getItem("pickedSize"));
 let signInput = JSON.parse(localStorage.getItem("signInput"));
 let pickedFont = JSON.parse(localStorage.getItem("pickedFont"));
+let pickedFontSize = JSON.parse(localStorage.getItem("pickedFontSize"));
 let pickedBathrobeColor = JSON.parse(localStorage.getItem("pickedBathrobeColor"));
 let pickedBathrobeColorIMG = JSON.parse(localStorage.getItem("pickedBathrobeColorIMG"));
 let pickedImage = JSON.parse(localStorage.getItem("pickedImage"));
@@ -35,6 +36,7 @@ $(document).ready(function() {
     pickedSize.splice(bathrobeID, 1);
     signInput.splice(bathrobeID, 1);
     pickedFont.splice(bathrobeID, 1);
+    pickedFontSize.splice(bathrobeID, 1);
     pickedBathrobeColor.splice(bathrobeID, 1);
     pickedBathrobeColorIMG.splice(bathrobeID, 1);
     pickedImage.splice(bathrobeID, 1);
@@ -51,6 +53,7 @@ $(document).ready(function() {
     localStorage.setItem("pickedSize", JSON.stringify(pickedSize));
     localStorage.setItem("signInput", JSON.stringify(signInput));
     localStorage.setItem("pickedFont", JSON.stringify(pickedFont));
+    localStorage.setItem("pickedFontSize", JSON.stringify(pickedFontSize));
     localStorage.setItem("pickedBathrobeColor", JSON.stringify(pickedBathrobeColor));
     localStorage.setItem("pickedBathrobeColorIMG", JSON.stringify(pickedBathrobeColorIMG));
     localStorage.setItem("pickedImage", JSON.stringify(pickedImage));
@@ -63,6 +66,7 @@ function getOrderInfo() {
   $("#size").html(pickedSize[bathrobeID]);
   $("#signInput").html(signInput[bathrobeID]);
   $("#font").html(pickedFont[bathrobeID]);
+  $("#fontSize").html(pickedFontSize[bathrobeID]);
   $("#bathrobeColor").html(pickedBathrobeColor[bathrobeID]);
   $(".preview").attr("src", pickedBathrobeColorIMG[bathrobeID]);
   $("#pickedImage").html(pickedImage[bathrobeID]);
@@ -90,7 +94,8 @@ function getOrderInfo() {
   const sign = $("#sign");
   sign.html(signInput[bathrobeID]);
   sign.css({
-    "font-family": pickedFont[bathrobeID]
+    "font-family": pickedFont[bathrobeID],
+    "font-size": pickedFontSize[bathrobeID]
   });
 
   if (bathrobeID < bathrobeAmount) {

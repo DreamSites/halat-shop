@@ -532,6 +532,7 @@ main {
   width: 50px;
   height: 50px;
   box-shadow: 0 0 10px 0 rgba(0, 9, 51, 0.15);
+  transform: scale(1);
 }
 
 .fontSizeChanger .circleButton:hover {
@@ -545,6 +546,10 @@ main {
   width: 50px;
   height: 50px;
   margin: auto;
+  -webkit-user-select: none;
+  -ms-user-select: none;
+  user-select: none;
+  cursor: default;
 }
 
 .sexPickerContainer {
@@ -1566,7 +1571,6 @@ footer {
     width: 350px;
     padding-left: 10px;
     padding-right: 10px;
-    margin-bottom: 20px;
   }
 
   .sexPickerContainer {
@@ -1716,10 +1720,10 @@ footer {
 
   .constructorSecondCircle {
     position: absolute;
-    width: 1049px;
-    height: 1049px;
+    width: 1099px;
+    height: 1099px;
     border-radius: 50%;
-    left: calc(50% - 1049px / 2);
+    left: calc(50% - 1099px / 2);
     top: 650px;
     background: #ffffff;
     -webkit-box-shadow: 0 0 20px rgba(0, 9, 51, 0.1);
