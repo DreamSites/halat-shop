@@ -881,7 +881,7 @@ main {
   height: 40px;
 }
 
-.imagePickerItems .curlsGold {
+.imagePickerItems #curlsGold {
   width: 110px;
   height: 25px;
   padding-right: 15px;
