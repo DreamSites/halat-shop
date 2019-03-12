@@ -856,7 +856,7 @@ main {
 }
 
 .imagePicker {
-  width: 300px;
+  width:  300px;
   height: 50px;
   border-radius: 25px;
   background-color: var(--pale-grey);
@@ -867,6 +867,24 @@ main {
   display: grid;
   grid-template-rows: 50px;
   position: absolute;
+}
+.imagePickerItems {
+  padding-top:  20px;
+  display: grid;
+  grid-template-rows: 1fr 1fr;
+  grid-template-columns: 1fr 1fr 1fr;
+  grid-gap: 2vw;
+}
+
+.imagePickerItems img {
+  width: 60px;
+  height: 40px;
+}
+
+.imagePickerItems .curlsGold {
+  width: 110px;
+  height: 25px;
+  padding-right: 15px;
 }
 
 .imagePicker:hover #selectedImage {
@@ -891,14 +909,16 @@ main {
 .imagePickerItem {
   display: none;
   align-items: center;
+  justify-items: center;
   color: var(--greyish-brown);
-  padding-left: 20px;
+  padding-left: 15px;
   cursor: pointer;
   transition: all 0.2s ease;
 }
 
 .imagePickerItem:hover {
   background-color: var(--pale-grey);
+  border-radius: 25px;
 }
 
 .imagePickerItem.active {
@@ -1619,6 +1639,7 @@ footer {
 
   .imagePicker.active {
     width: 350px;
+    height: 200px;
   }
 
   .imageButtons {
