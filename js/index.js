@@ -464,15 +464,15 @@ function changeFontSize(value) {
   pickedFontSize[bathrobeID] = currentSize;
   if (currentSize >= 56) {
     $("#plus").css("pointer-events", "none");
-    $("#minus").click(function(){
+    $("#minus").click(function() {
       $("#plus").css("pointer-events", "auto");
-    })
+    });
   }
   if (currentSize <= 12) {
     $("#minus").css("pointer-events", "none");
-    $("#plus").click(function(){
+    $("#plus").click(function() {
       $("#minus").css("pointer-events", "auto");
-    })
+    });
   }
 }
 
@@ -519,12 +519,14 @@ function closeBathrobeColorPicker() {
 function openImagePicker() {
   $("#imagePicker").toggleClass("active");
   $(".image, .imagePickerItem").toggleClass("active");
+  $(".image, .imagePicture").toggleClass("active");
   $("#selectedImage img").toggleClass("flip");
 }
 
 function closeImagePicker() {
   $("#imagePicker").removeClass("active");
   $(".image, .imagePickerItem").removeClass("active");
+  $(".image, .imagePicture").removeClass("active");
   $("#selectedImage img").removeClass("flip");
 }
 
@@ -538,28 +540,49 @@ function pickFont(font) {
   pickedFont[bathrobeID] = font;
 }
 
-function pickBathrobeColor(color, colorLink) {
+function pickBathrobeColor(color, colorLinkMale, colorLinkFemale) {
   $("#selectedBathrobeColorName").html(color);
   $("#selectedBathrobeColor").addClass("picked");
-  $("#previewContainer img")
-    .eq(0)
-    .attr("src", colorLink);
+  if (pickedSexID[bathrobeID] === 0) {
+    $("#previewContainer img")
+      .eq(0)
+      .attr("src", colorLinkMale);
+    pickedBathrobeColorIMG[bathrobeID] = colorLinkMale;
+  } else if (pickedSexID[bathrobeID] === 1) {
+    $("#previewContainer img")
+      .eq(0)
+      .attr("src", colorLinkFemale);
+    pickedBathrobeColorIMG[bathrobeID] = colorLinkFemale;
+  } else {
+    pickSex("Мужской", 0);
+    $("#previewContainer img")
+      .eq(0)
+      .attr("src", colorLinkMale);
+    pickedBathrobeColorIMG[bathrobeID] = colorLinkMale;
+  }
   if (color === "Персиковый") {
     $("#wreathsWithCrown").attr("src", "img/wreathsWithCrownBlue.png");
     $("#curls").attr("src", "img/curlsBlue.png");
     $("#crown").attr("src", "img/crownBlue.png");
     $("#diadem").attr("src", "img/diademBlue.png");
     $("#sign").css("color", "#4053ff");
+    $("#wreathsWithCrownPicker").attr("src", "img/wreathsWithCrownBlue.png");
+    $("#curlsPicker").attr("src", "img/curlsBlue.png");
+    $("#crownPicker").attr("src", "img/crownBlue.png");
+    $("#diademPicker").attr("src", "img/diademBlue.png");
   } else {
     $("#wreathsWithCrown").attr("src", "img/wreathsWithCrownGold.png");
     $("#curls").attr("src", "img/curlsGold.png");
     $("#crown").attr("src", "img/crownGold.png");
     $("#diadem").attr("src", "img/diademGold.png");
+    $("#wreathsWithCrownPicker").attr("src", "img/wreathsWithCrownGold.png");
+    $("#curlsPicker").attr("src", "img/curlsGold.png");
+    $("#crownPicker").attr("src", "img/crownGold.png");
+    $("#diademPicker").attr("src", "img/diademGold.png");
     $("#sign").css("color", "#ffd400");
   }
   closeBathrobeColorPicker();
   pickedBathrobeColor[bathrobeID] = color;
-  pickedBathrobeColorIMG[bathrobeID] = colorLink;
 }
 
 function pickImage(image, imageID) {
@@ -716,9 +739,15 @@ function pickSex(sex, sexID) {
   pickedSexID[bathrobeID] = sexID;
   $("#selectedBathrobeColorName").html("Выберите цвет халата");
   $("#selectedBathrobeColor").removeClass("picked");
-  $("#previewContainer img")
-    .eq(0)
-    .attr("src", "img/previewWhite.png");
+  if (sexID === 0) {
+    $("#previewContainer img")
+      .eq(0)
+      .attr("src", "img/previewWhiteMale.png");
+  } else {
+    $("#previewContainer img")
+      .eq(0)
+      .attr("src", "img/previewWhiteFemale.png");
+  }
 }
 
 const signInput = $("#signInput");

@@ -181,7 +181,7 @@
       <div class="constructorBG">
         <section class="constructor" id="constructor">
           <div class="previewContainer" id="previewContainer">
-            <img alt="махровый халат с именной вышивкой" src="img/previewWhite.png" />
+            <img alt="махровый халат с именной вышивкой" src="img/previewWhiteFemale.png" />
             <p class="sign" id="sign"></p>
             <img src="img/wreathsWithCrownGold.png" alt="рисунок венки с короной" id="wreathsWithCrown" class="picture" />
             <img src="img/curlsGold.png" alt="рисунок завитки" id="curls" class="picture" />
@@ -274,16 +274,16 @@
                         <span id="selectedBathrobeColorName">Выберите цвет халата</span>
                         <img alt="" class="selectorArrow" src="img/selectorOpenArrow.svg" />
                       </div>
-                      <div class="colorPickerItem" id="bathrobeColorPickerItem1" onclick="pickBathrobeColor('Белый', 'img/previewWhite.png')">
+                      <div class="colorPickerItem" id="bathrobeColorPickerItem1" onclick="pickBathrobeColor('Белый', 'img/previewWhiteMale.png', 'img/previewWhiteFemale.png')">
                         Белый
                       </div>
-                      <div class="colorPickerItem" id="bathrobeColorPickerItem2" onclick="pickBathrobeColor('Синий', 'img/previewBlue.png')">
+                      <div class="colorPickerItem" id="bathrobeColorPickerItem2" onclick="pickBathrobeColor('Синий', 'img/previewBlue.png', 'img/previewBlue.png')">
                         Синий
                       </div>
-                      <div class="colorPickerItem" id="bathrobeColorPickerItem3" onclick="pickBathrobeColor('Персиковый', 'img/previewPeach.png')">
+                      <div class="colorPickerItem" id="bathrobeColorPickerItem3" onclick="pickBathrobeColor('Персиковый', 'img/previewPeach.png', 'img/previewPeach.png')">
                         Персиковый
                       </div>
-                      <div class="colorPickerItem" id="bathrobeColorPickerItem4" onclick="pickBathrobeColor('Коричневый', 'img/previewBrown.png')">
+                      <div class="colorPickerItem" id="bathrobeColorPickerItem4" onclick="pickBathrobeColor('Коричневый', 'img/previewBrown.png', 'img/previewBrown.png')">
                         Коричневый
                       </div>
                     </div>
@@ -298,21 +298,21 @@
                         <img alt="" class="selectorArrow" src="img/selectorOpenArrow.svg" />
                       </div>
                       <div class="imagePickerItems">
-                      <div class="imagePickerItem" id="imagePickerItem1" onclick="pickImage('Корона с венками', 1)">
-                          <img alt="" id="wreathsWithCrownGold" src="img/wreathsWithCrownGold.png" />
-                      </div>
-                      <div class="imagePickerItem" id="imagePickerItem2" onclick="pickImage('Завитки', 2)">
-                          <img alt="" id="curlsGold" src="img/curlsGold.png" />
-                      </div>
-                      <div class="imagePickerItem" id="imagePickerItem3" onclick="pickImage('Корона', 3)">
-                          <img alt="" id="crownGold" src="img/crownGold.png" />
-                      </div>
-                      <div class="imagePickerItem" id="imagePickerItem4" onclick="pickImage('Диадема', 4)">
-                          <img alt="" id="diadem" src="img/diademGold.png" />
-                      </div>
-                      <div class="imagePickerItem" id="imagePickerItem5" onclick="pickImage('Без рисунка')">
-                        Без рисунка
-                      </div>
+                        <div class="imagePicture" id="imagePickerItem1" onclick="pickImage('Корона с венками', 1)">
+                          <img alt="" id="wreathsWithCrownPicker" src="img/wreathsWithCrownGold.png" />
+                        </div>
+                        <div class="imagePicture" id="imagePickerItem2" onclick="pickImage('Завитки', 2)">
+                          <img alt="" id="curlsPicker" src="img/curlsGold.png" />
+                        </div>
+                        <div class="imagePicture" id="imagePickerItem3" onclick="pickImage('Корона', 3)">
+                          <img alt="" id="crownPicker" src="img/crownGold.png" />
+                        </div>
+                        <div class="imagePicture" id="imagePickerItem4" onclick="pickImage('Диадема', 4)">
+                          <img alt="" id="diademPicker" src="img/diademGold.png" />
+                        </div>
+                        <div class="imagePicture" id="imagePickerItem5" onclick="pickImage('Без рисунка')">
+                          Без рисунка
+                        </div>
                       </div>
                     </div>
                   </div>
