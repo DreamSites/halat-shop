@@ -52,6 +52,8 @@ if (localStorage.getItem("pickedImageID") !== null) {
   pickedImageID = JSON.parse(localStorage.getItem("pickedImageID"));
 }
 
+pickedFontSize[bathrobeID] = parseInt($("#sign").css("font-size"));
+
 $(document).ready(function() {
   responsiveNavigation();
   const reviewButtonRight = $("#reviewButtonRight");
@@ -186,7 +188,18 @@ $(document).ready(function() {
   });
 
   $("#order").click(function() {
-    if (pickedSize.length > 0 && pickedSex.length > 0 && pickedSexID.length > 0 && pickedSign.length > 0 && pickedFont.length > 0 && pickedBathrobeColor.length > 0 && pickedBathrobeColorIMG.length > 0 && pickedImage.length > 0 && pickedImageID.length > 0) {
+    if (
+      typeof pickedSize[bathrobeID] !== "undefined" &&
+      typeof pickedSex[bathrobeID] !== "undefined" &&
+      typeof pickedSexID[bathrobeID] !== "undefined" &&
+      typeof pickedSign[bathrobeID] !== "undefined" &&
+      typeof pickedFont[bathrobeID] !== "undefined" &&
+      typeof pickedFontSize[bathrobeID] !== "undefined" &&
+      typeof pickedBathrobeColor[bathrobeID] !== "undefined" &&
+      typeof pickedBathrobeColorIMG[bathrobeID] !== "undefined" &&
+      typeof pickedImage[bathrobeID] !== "undefined" &&
+      typeof pickedImageID[bathrobeID] !== "undefined"
+    ) {
       $("#successAlert").addClass("active");
       bathrobeAmount += 1;
       localStorage.setItem("bathrobeAmount", bathrobeAmount);
