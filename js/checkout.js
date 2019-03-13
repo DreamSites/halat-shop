@@ -6,7 +6,8 @@ if (localStorage.getItem("bathrobeAmount")) {
   window.location = "index.html";
 }
 
-$(".clientInfo").hide();
+$(".clientInfo").fadeOut(0);
+$(".checkoutEnd").fadeOut(0);
 const stage = $(".stage a");
 
 $(document).ready(function() {
@@ -96,11 +97,11 @@ $(document).ready(function() {
         url: "mail.php",
         data: emailData,
         success: function() {
-          $(".clientInfo").removeClass("active");
-          $(".checkoutEnd").addClass("active");
+          $(".clientInfo").fadeOut("fast");
+          $(".checkoutEnd").fadeIn("fast");
           stage.eq(1).css("color", "var(--brown-grey)");
           stage.eq(2).css("color", "var(--black)");
-          $(".leftCircle h2").css({ opacity: 0 });
+          $(".leftCircle h2").css("opacity", 0);
           localStorage.clear();
         }
       });
@@ -275,25 +276,25 @@ function deliverySecondStage() {
   if ($("#cityInput").val() !== "") {
     switch ($("#selectedDeliveryWayName").html()) {
       case "Доставка":
-        $("#deliveryType").show();
-        $("#type-boxberry").hide();
+        $("#deliveryType").fadeIn("fast");
+        $("#type-boxberry").fadeOut("fast");
         $(".deliveryInfo").removeClass("type-boxberry");
         $(".deliveryInfo").addClass("type-delivery");
         if ($("#selectedDeliveryTypeName").html() !== "Выберите тип доставки") {
-          $("#type-delivery").show();
+          $("#type-delivery").fadeIn("fast");
         }
         break;
       case "Пункт BoxBerry":
-        $("#type-delivery").hide();
-        $("#deliveryType").hide();
-        $("#type-boxberry").show();
+        $("#type-delivery").fadeOut("fast");
+        $("#deliveryType").fadeOut("fast");
+        $("#type-boxberry").fadeIn("fast");
         $(".deliveryInfo").removeClass("type-delivery");
         $(".deliveryInfo").addClass("type-boxberry");
         break;
       case "Самовывоз из магазина":
-        $("#type-delivery").hide();
-        $("#type-boxberry").hide();
-        $("#deliveryType").hide();
+        $("#type-delivery").fadeOut("fast");
+        $("#type-boxberry").fadeOut("fast");
+        $("#deliveryType").fadeOut("fast");
         $(".deliveryInfo").removeClass("type-boxberry");
         $(".deliveryInfo").removeClass("type-delivery");
     }
@@ -376,7 +377,7 @@ function getDeliveryPrice() {
         response = getDeliveryPriceRequest.response;
         price = JSON.parse(response).paynds;
         console.log(price);
-        price += 20000;
+        price += 200000;
         price = price.toString();
         setPrice(price.slice(0, price.length - 2) + "₽", 25);
       };
@@ -386,7 +387,7 @@ function getDeliveryPrice() {
         response = getDeliveryPriceRequest.response;
         price = JSON.parse(response).paynds;
         console.log(price);
-        price = price * 3 + 20000;
+        price = price * 3 + 200000;
         price = price.toString();
         setPrice(price.slice(0, price.length - 2) + "₽", 11);
       };
@@ -421,10 +422,10 @@ function clearDeliveryType() {
 }
 
 function activateSecondStage() {
-  $(".deliveryInfo").hide();
-  $(".clientInfo").show();
-  $(".deliveryPrice").hide();
-  $("#continue").hide();
+  $(".deliveryInfo").fadeOut("fast");
+  $(".clientInfo").fadeIn("fast");
+  $(".deliveryPrice").fadeOut("fast");
+  $("#continue").fadeOut("fast");
   stage.eq(0).css("color", "var(--brown-grey)");
   stage.eq(1).css("color", "var(--black)");
   $("html, body").animate(
