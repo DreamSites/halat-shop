@@ -383,3 +383,25 @@
   background: none;
   border: none;
 }
+
+@media (max-width: 440px) {
+  .datepicker--cell,
+  .datepicker--nav-title,
+  .datepicker--day-name {
+    font-size: 16px;
+  }
+
+  .datepicker--day-name,
+  .datepicker--cell-day {
+    width: 40px;
+    height: 40px;
+  }
+}
+
+@media (max-width: 340px) {
+  .datepicker--day-name,
+  .datepicker--cell-day {
+    width: 35px;
+    height: 35px;
+  }
+}
