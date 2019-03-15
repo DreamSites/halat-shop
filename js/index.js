@@ -218,6 +218,7 @@ $(document).ready(function() {
         $("#footerOpenCartButton span").html(bathrobeAmount);
         $("#mobileHeaderOpenCartButton span").html(bathrobeAmount);
         $("#mobileFooterOpenCartButton span").html(bathrobeAmount);
+        bathrobeAmount == 0;
       }
     } else {
       alert("Сначала заполните все поля!");
