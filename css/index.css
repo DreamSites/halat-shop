@@ -924,6 +924,10 @@ main {
   background-color: var(--pale-grey);
 }
 
+.imagePicture.picked {
+  background-color: var(--pale-grey);
+}
+
 .imagePickerItem.active {
   display: flex;
 }

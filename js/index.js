@@ -218,7 +218,6 @@ $(document).ready(function() {
         $("#footerOpenCartButton span").html(bathrobeAmount);
         $("#mobileHeaderOpenCartButton span").html(bathrobeAmount);
         $("#mobileFooterOpenCartButton span").html(bathrobeAmount);
-        bathrobeAmount == 0;
       }
     } else {
       alert("Сначала заполните все поля!");
@@ -473,19 +472,23 @@ function responsiveNavigation() {
 function changeFontSize(value) {
   let currentSize = parseInt($("#sign").css("font-size"));
   currentSize = currentSize + value;
-  $("#sign").css({ "font-size": currentSize });
+  $("#sign").css("font-size", currentSize);
   $("#currentFontSize").html(currentSize);
   pickedFontSize[bathrobeID] = currentSize;
   if (currentSize >= 56) {
     $("#plus").css("pointer-events", "none");
+    $("#plus img").attr("src", "img/plusGrey.svg");
     $("#minus").click(function() {
       $("#plus").css("pointer-events", "auto");
+      $("#plus img").attr("src", "img/plusBlue.svg");
     });
   }
   if (currentSize <= 12) {
     $("#minus").css("pointer-events", "none");
+    $("#minus img").attr("src", "img/minusGrey.svg");
     $("#plus").click(function() {
       $("#minus").css("pointer-events", "auto");
+      $("#minus img").attr("src", "img/minusBlue.svg");
     });
   }
 }
@@ -606,9 +609,16 @@ function pickImage(image, imageID) {
   if (imageID) {
     $("#previewContainer img")
       .eq(imageID)
-      .css("display", "block");
+      .fadeIn("fast");
+    $(".imagePicture").removeClass("picked");
+    $(".imagePicture")
+      .eq(imageID - 1)
+      .addClass("picked");
   } else {
-    $(".picture").css("display", "none");
+    $(".picture").fadeOut("fast");
+    $(".imagePicture")
+      .eq(4)
+      .addClass("picked");
   }
   closeImagePicker();
   pickedImage[bathrobeID] = image;
@@ -787,13 +797,20 @@ function clearConstructor() {
   previewSign.css("font-family", "Ubuntu");
   $("#selectedFont").removeClass("picked");
 
+  changeFontSize(25);
+
   previewSign.css("color", "#ffd400");
 
   $("#selectedBathrobeColorName").html("Выберите цвет халата");
   $("#selectedBathrobeColor").removeClass("picked");
+  $("#previewContainer img")
+    .eq(0)
+    .attr("src", "img/previewWhiteFemale.png");
 
   $("#selectedImageName").html("Выберите рисунок");
   $("#selectedImage").removeClass("picked");
+  $(".imagePicture").removeClass("picked");
+  $(".picture").fadeOut("fast");
 }
 
 $(window).resize(function() {
